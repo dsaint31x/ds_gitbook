@@ -1,0 +1,355 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>10_02 Difference Equation · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="01_hello_linear_algebra.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linear Algebra
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01_hello_linear_algebra.html">
+            
+                <a href="01_hello_linear_algebra.html">
+            
+                    
+                    01 Hello Linear Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="01_10_02_Difference_Equation.html">
+            
+                <a href="01_10_02_Difference_Equation.html">
+            
+                    
+                    10_02 Difference Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >10_02 Difference Equation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ch0110-linear-models-in-business-science-and-engineering">Ch01.10 Linear Models in Business, Science, and Engineering</h1>
+<h2 id="011002--difference-equation">01.10.02 : Difference Equation</h2>
+<ul>
+<li>In many fields, a dynamic system that changes over a time should be mathematically modeled. </li>
+<li>Several features of the system are each measured at discrete time intervals, producing a sequence of vectors, <script type="math/tex; "> \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots, </script>. </li>
+<li>The entries in <script type="math/tex; ">\textbf{x}_k</script> provide information about the state of system at the time of the <script type="math/tex; ">k</script>th measurement.</li>
+<li>If there is a matrix <script type="math/tex; ">A</script> such that <script type="math/tex; ">\textbf{x}_1=A\textbf{x}_0, \textbf{x}_2=A\textbf{x}_1</script>, and , in general 
+<script type="math/tex; mode=display">
+\textbf{x}_{k+1}=A\textbf{x}_k \text{  for }k=0,1,2,\cdots
+</script></li>
+<li>then it is called a linear difference equation (or recurrence relation)</li>
+<li>Given such an equation, one can compute <script type="math/tex; ">\textbf{x}_1,\textbf{x}_2</script>, and so on, provided <script type="math/tex; ">\textbf{x}_0</script> is known.</li>
+<li>The dicussion below illustrates how a difference equation might arise.</li>
+<li>A subject of interest to demographers is the movement of populations or groups of people from one region to another. The simple model here considers the changes in the population of a certain city and its surrounding suburbs over a period of years.</li>
+<li>Fix an initial year-say,2019- and denote the populations of the city and suburbs that year by <script type="math/tex; ">r_0</script> and <script type="math/tex; ">s_0</script>, repectively. Let <script type="math/tex; ">\textbf{x}_0</script> be the population vector
+<script type="math/tex; mode=display">
+\textbf{x}_0 = \begin{bmatrix}r_0 \\ s_0 \end{bmatrix}
+\begin{matrix} \text{City population, 2019} \\ \text{Suburban population, 2019} \end{matrix}
+</script></li>
+<li>For 2020 and subsequent years, denote the populations of the city and suburbs by vectors
+<script type="math/tex; mode=display">
+\textbf{x}_1 = \begin{bmatrix}r_1 \\ s_1 \end{bmatrix},
+\textbf{x}_2 = \begin{bmatrix}r_2 \\ s_2 \end{bmatrix},
+\textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
+</script></li>
+<li>Our goal is to describe mathematically how these vectors might be related.</li>
+<li>Suppose demographic studies show that each year about 5% of the city&apos;s population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
+<img src="fig/la_01_10_02.png" alt="figure2"></li>
+<li>After 1 year, the original <script type="math/tex; ">r_0</script> persons in the city are now distributed between city and suburbs as
+<script type="math/tex; mode=display">
+\begin{bmatrix}.95 r_0 \\.05 r_0\end{bmatrix} = r_0 
+\begin{bmatrix}.95 \\ .05 \end{bmatrix}
+\begin{matrix} \text{Remain in city} \\ \text{Move to suburbs} \end{matrix} \tag{6}
+</script></li>
+<li>The so persons in the suburbs in 2019 are distributed 1 year later as
+<script type="math/tex; mode=display">
+s_0\begin{bmatrix}.03 \\.97 \end{bmatrix} 
+\begin{matrix} \text{Move to city} \\ \text{Remain in suburbs} \end{matrix}
+\tag{7}
+</script></li>
+<li>The vectors in (6) and (7) account for all of the populations in 2020. Thus
+<script type="math/tex; mode=display">
+\begin{bmatrix} r_1 \\ s_1 \end{bmatrix}
+=r_0\begin{bmatrix} .95 \\ .05 \end{bmatrix}
++s_0\begin{bmatrix} .03 \\ .97 \end{bmatrix}
+=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+\begin{bmatrix} r_0 \\ s_0 \end{bmatrix}
+</script></li>
+<li>That is, 
+<script type="math/tex; mode=display">
+\textbf{x}_1 = M \textbf{x}_0 \tag{8}
+</script></li>
+<li>Where <script type="math/tex; ">M</script> is the migration matrix determined by the following table:
+<script type="math/tex; mode=display">
+M=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+</script></li>
+<li>Equation (8) describes how the population changes
+from 2019 to 2020. If the migration percentages
+remain constant, then the change from 2020 to 2021
+is given by
+<script type="math/tex; mode=display">
+\textbf{x}_2 = M \textbf{x}_1 
+</script></li>
+<li>And similarly for 2021 to 2022 and subsequent years. In general,
+<script type="math/tex; mode=display">
+\textbf{x}_{k+1} = M\textbf{x}_k \text{ for }k=0,1,2,\cdots \tag{9}
+</script></li>
+<li>The sequence of vectors <script type="math/tex; ">\left\{ \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots \right\}</script> describes the population of the city/suburban region over a period of years.</li>
+</ul>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- ds_gitbook -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_hello_linear_algebra.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 01 Hello Linear Algebra">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"10_02 Difference Equation","level":"1.2.2","depth":2,"previous":{"title":"01 Hello Linear Algebra","level":"1.2.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_10_02_Difference_Equation.md","mtime":"2019-07-05T05:31:23.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-05T05:39:48.914Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-adsense/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
