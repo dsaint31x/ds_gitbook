@@ -20,8 +20,8 @@ $$
 $$
 * For 2020 and subsequent years, denote the populations of the city and suburbs by vectors
 $$
-\textbf{x}_1 = \begin{bmatrix}r_1 \\ s_1 \end{bmatrix}
-\textbf{x}_2 = \begin{bmatrix}r_2 \\ s_2 \end{bmatrix}
+\textbf{x}_1 = \begin{bmatrix}r_1 \\ s_1 \end{bmatrix},
+\textbf{x}_2 = \begin{bmatrix}r_2 \\ s_2 \end{bmatrix},
 \textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
 $$
 * Our goal is to describe mathematically how these vectors might be related.
