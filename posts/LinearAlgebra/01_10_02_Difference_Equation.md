@@ -1,4 +1,4 @@
-# Test
+# Ch01.10 Linear Models in Business, Science, and Engineering
 
 ## 01.10.02 : Difference Equation
 
@@ -26,6 +26,7 @@ $$
 $$
 * Our goal is to describe mathematically how these vectors might be related.
 * Suppose demographic studies show that each year about 5% of the city's population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
+![figure2](./fig/la_01_10_02.png)
 * After 1 year, the original $$r_0$$ persons in the city are now distributed between city and suburbs as
 $$
 \begin{bmatrix}.95 r_0 \\.05 r_0\end{bmatrix} = r_0 
@@ -50,7 +51,10 @@ $$
 $$
 \textbf{x}_1 = M \textbf{x}_0 \tag{8}
 $$
-* Where M is the migration matrix determined by the following table:
+* Where $$M$$ is the migration matrix determined by the following table:
+$$
+M=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+$$
 * Equation (8) describes how the population changes
 from 2019 to 2020. If the migration percentages
 remain constant, then the change from 2020 to 2021

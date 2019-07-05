@@ -190,7 +190,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="test">Test</h1>
+                                <h1 id="ch0110-linear-models-in-business-science-and-engineering">Ch01.10 Linear Models in Business, Science, and Engineering</h1>
 <h2 id="011002--difference-equation">01.10.02 : Difference Equation</h2>
 <ul>
 <li>In many fields, a dynamic system that changes over a time should be mathematically modeled. </li>
@@ -216,7 +216,8 @@
 \textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
 </script></li>
 <li>Our goal is to describe mathematically how these vectors might be related.</li>
-<li>Suppose demographic studies show that each year about 5% of the city&apos;s population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:</li>
+<li>Suppose demographic studies show that each year about 5% of the city&apos;s population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
+<img src="fig/la_01_10_02.png" alt="figure2"></li>
 <li>After 1 year, the original <script type="math/tex; ">r_0</script> persons in the city are now distributed between city and suburbs as
 <script type="math/tex; mode=display">
 \begin{bmatrix}.95 r_0 \\.05 r_0\end{bmatrix} = r_0 
@@ -241,7 +242,10 @@ s_0\begin{bmatrix}.03 \\.97 \end{bmatrix}
 <script type="math/tex; mode=display">
 \textbf{x}_1 = M \textbf{x}_0 \tag{8}
 </script></li>
-<li>Where M is the migration matrix determined by the following table:</li>
+<li>Where <script type="math/tex; ">M</script> is the migration matrix determined by the following table:
+<script type="math/tex; mode=display">
+M=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+</script></li>
 <li>Equation (8) describes how the population changes
 from 2019 to 2020. If the migration percentages
 remain constant, then the change from 2020 to 2021
@@ -294,7 +298,7 @@ is given by
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"10_02 Difference Equation","level":"1.2.2","depth":2,"previous":{"title":"01 Hello Linear Algebra","level":"1.2.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_10_02_Difference_Equation.md","mtime":"2019-07-05T03:28:37.172Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-05T03:56:24.111Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10_02 Difference Equation","level":"1.2.2","depth":2,"previous":{"title":"01 Hello Linear Algebra","level":"1.2.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax"],"pluginsConfig":{"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_10_02_Difference_Equation.md","mtime":"2019-07-05T05:04:12.593Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-05T05:04:21.884Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
