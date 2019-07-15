@@ -7,4 +7,5 @@
 	* [05_01](posts/LinearAlgebra/la_05_01.md)
 	* [05_02](posts/LinearAlgebra/la_05_02.md)
 	* [05_03](posts/LinearAlgebra/la_05_03.md)
+	* [05_04](posts/LinearAlgebra/la_05_04.md)
 
