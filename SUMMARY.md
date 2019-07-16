@@ -5,19 +5,14 @@
   * [Docker CMD Summary](posts/Docker/docker_summary.md)
   * [Docker Hub CMD Summary](posts/Docker/docker_hub.md)
 * [Linear Algebra](posts/LinearAlgebra/README.md)
-<<<<<<< HEAD
   * [01 Hello Linear Algebra](posts/LinearAlgebra/01_hello_linear_algebra.md)
   * [10_02 Difference Equation](posts/LinearAlgebra/01_10_02_Difference_Equation.md)
   * [02_01_Matrix_Algebra](posts/LinearAlgebra/la_02_01.md)
   * [02_02_Inverse_Matrix](posts/LinearAlgebra/la_02_02.md)
+  * [05_01](posts/LinearAlgebra/la_05_01.md)
+  * [05_02](posts/LinearAlgebra/la_05_02.md)
+  * [05_03](posts/LinearAlgebra/la_05_03.md)
+  * [05_04](posts/LinearAlgebra/la_05_04.md)
+
 * [Etc](posts/Etc/README.md)
   * [Video Test](posts/Etc/video.md)
-=======
-	* [01 Hello Linear Algebra](posts/LinearAlgebra/01_hello_linear_algebra.md)
-	* [10_02 Difference Equation](posts/LinearAlgebra/01_10_02_Difference_Equation.md)
-	* [05_01](posts/LinearAlgebra/la_05_01.md)
-	* [05_02](posts/LinearAlgebra/la_05_02.md)
-	* [05_03](posts/LinearAlgebra/la_05_03.md)
-	* [05_04](posts/LinearAlgebra/la_05_04.md)
-
->>>>>>> 5d6f5554d55e6696b7a4791202d0c0c47a9cfc9f
