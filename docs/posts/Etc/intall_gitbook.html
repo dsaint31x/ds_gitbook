@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Video Test · GitBook</title>
+        <title>Install Gitbook · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="video.html" />
     
-    <link rel="prev" href="intall_gitbook.html" />
+    
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -295,7 +297,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="intall_gitbook.html">
+        <li class="chapter active" data-level="1.4.1" data-path="intall_gitbook.html">
             
                 <a href="intall_gitbook.html">
             
@@ -308,7 +310,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.2" data-path="video.html">
+        <li class="chapter " data-level="1.4.2" data-path="video.html">
             
                 <a href="video.html">
             
@@ -356,7 +358,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Video Test</a>
+        <a href="../.." >Install Gitbook</a>
     </h1>
 </div>
 
@@ -371,10 +373,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="test">Test</h1>
-<p>{embed YouTube video: &apos;<a href="https://youtu.be/qp0HIF3SfI4&apos;}" target="_blank">https://youtu.be/qp0HIF3SfI4&apos;}</a></p>
-<p>@(<a href="https://youtu.be/qp0HIF3SfI4" target="_blank">https://youtu.be/qp0HIF3SfI4</a>)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RyTQ5-SQYTo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <h1 id="install-gitbook-cli">Install gitbook-cli</h1>
+<h2 id="test-env">Test Env.</h2>
+<ul>
+<li>Ubuntu18.04</li>
+</ul>
+<h2 id="npm&#xC124;&#xCE58;">NPM&#xC124;&#xCE58;</h2>
+<pre><code>sudo apt-get install npm
+sudo npm install -g gitbook-cli
+</code></pre><h2 id="gitbook-&#xCD08;&#xAE30;&#xD654;">Gitbook &#xCD08;&#xAE30;&#xD654;</h2>
+<p>&#xAE30;&#xC874;&#xC5D0; github&#xC5D0;&#xC11C; &#xAD00;&#xB9AC;&#xB418;&#xB358; &#xC18C;&#xC2A4; &#xC788;&#xC744; &#xACBD;&#xC6B0;, &#xAC00;&#xC838;&#xC634;.</p>
+<pre><code>git clone https://github.com/dsaint31x/ds_gitbook.git
+</code></pre><p>&#xC544;&#xB798;&#xC758; sh&#xC744; <code>publish-gitbook.sh</code>&#xB85C; &#xC800;&#xC7A5;&#xD558;&#xACE0; &#xC218;&#xD589; (&#xCD08;&#xAE30;&#xD654; &#xBC0F; github update&#xAE4C;&#xC9C0; &#xC218;&#xD589;)</p>
+<pre><code>#!/bin/bash
+
+# remove gitbook old things
+rm -rf _book
+rm -rf docs
+
+# gitbook init
+gitbook install &amp;&amp; gitbook build
+
+# build pages
+mkdir docs
+cp -R _book/* docs/
+cp -R ds_temp/* docs/
+
+# delete things
+git clean -fx _book
+
+# upload
+git add .
+git commit -a -m &quot;update docs&quot;
+git push -u origin master
+</code></pre><h2 id="gitbook-&#xB85C;&#xCEEC;&#xC5D0;&#xC11C;-&#xC218;&#xD589;">Gitbook &#xB85C;&#xCEEC;&#xC5D0;&#xC11C; &#xC218;&#xD589;.</h2>
+<p>&#xD3B8;&#xC9D1;&#xB41C; &#xB0B4;&#xC6A9; &#xD655;&#xC778;&#xC6A9;&#xC774;&#xACE0;, &#xC11C;&#xBE44;&#xC2A4;&#xB97C; &#xD558;&#xB824;&#xBA74; github page&#xC640; &#xC5F0;&#xB3D9;&#xC774; &#xB418;&#xC5B4;&#xC57C; &#xD568;.</p>
+<pre><code>gitbook serve
+</code></pre><h2 id="github-page&#xB9CC;&#xB4E4;&#xAE30;">Github page&#xB9CC;&#xB4E4;&#xAE30;.</h2>
+<h2 id="references">References</h2>
+<ul>
+<li>(<a href="https://pinedance.github.io/blog/2018/10/04/build-eBook-with-gitbook-cli" target="_blank">https://pinedance.github.io/blog/2018/10/04/build-eBook-with-gitbook-cli</a>)</li>
+<li>(<a href="https://blog.chulgil.me/how-to-make-blog-using-github-5/" target="_blank">https://blog.chulgil.me/how-to-make-blog-using-github-5/</a>)</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -401,10 +442,14 @@
 
             
                 
-                <a href="intall_gitbook.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Install Gitbook">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Etc">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="video.html" class="navigation navigation-next " aria-label="Next page: Video Test">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -413,7 +458,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Video Test","level":"1.4.2","depth":2,"previous":{"title":"Install Gitbook","level":"1.4.1","depth":2,"path":"posts/Etc/intall_gitbook.md","ref":"posts/Etc/intall_gitbook.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/Etc/video.md","mtime":"2019-07-22T07:40:17.958Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-22T10:52:56.042Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Install Gitbook","level":"1.4.1","depth":2,"next":{"title":"Video Test","level":"1.4.2","depth":2,"path":"posts/Etc/video.md","ref":"posts/Etc/video.md","articles":[]},"previous":{"title":"Etc","level":"1.4","depth":1,"path":"posts/Etc/README.md","ref":"posts/Etc/README.md","articles":[{"title":"Install Gitbook","level":"1.4.1","depth":2,"path":"posts/Etc/intall_gitbook.md","ref":"posts/Etc/intall_gitbook.md","articles":[]},{"title":"Video Test","level":"1.4.2","depth":2,"path":"posts/Etc/video.md","ref":"posts/Etc/video.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/Etc/intall_gitbook.md","mtime":"2019-07-22T10:50:30.985Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-22T10:52:56.042Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
 * [Docker](posts/Docker/README.md)
+  * [Install Nvidia-Docker2](posts/Docker/nvidia_docker.md)
   * [Docker CMD Summary](posts/Docker/docker_summary.md)
   * [Docker Hub CMD Summary](posts/Docker/docker_hub.md)
 * [Linear Algebra](posts/LinearAlgebra/README.md)
@@ -15,4 +16,5 @@
   * [05_04](posts/LinearAlgebra/la_05_04.md)
 
 * [Etc](posts/Etc/README.md)
+  * [Install Gitbook](posts/Etc/intall_gitbook.md)
   * [Video Test](posts/Etc/video.md)
