@@ -32,6 +32,7 @@ sudo apt-get install uim
 * 그 다음 `Byeoru key bindings 1`으로 이동하여 `[Byeoru] on`과 '[Byeoru] off`를  아래 그림 처럼 설정.
 ![](./fig/20190722_uim_05_Byeoru_key_bindings_1.png)
 * 일단 `Apply`를 클릭하고 창을 닫음.
+* 위의 작업을 해도 안되었는데, 이는 `Hangul`키 매핑이 제대로 안 된 경우라고 함.
 * terminal에서 다음을 입력
   * 오른쪽 Alt키의 기본 키 맵핑을 제거하고 'Hangul'키로 맵핑 하는 처리.
   ```
@@ -54,3 +55,7 @@ sudo apt-get install uim
 
 * 정확히 기억이 나질 않음. ==;;
 * `reboot`은 확실히 됨.
+
+## References
+
+* [가장 스트레스 안받는 우분투 한글입력기, UIM 설치](http://www.kwangsiklee.com/2016/12/%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90%EC%84%9C-uim-%ED%95%9C%EA%B8%80%EC%9E%85%EB%A0%A5%EA%B8%B0-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)
