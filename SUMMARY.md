@@ -16,5 +16,6 @@
   * [05_04](posts/LinearAlgebra/la_05_04.md)
 
 * [Etc](posts/Etc/README.md)
-  * [Install Gitbook](posts/Etc/intall_gitbook.md)
+  * [Install Gitbook](posts/Etc/install_gitbook.md)
+  * [Install uim](posts/Etc/install_uim.md)
   * [Video Test](posts/Etc/video.md)
