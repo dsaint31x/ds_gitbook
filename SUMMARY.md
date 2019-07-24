@@ -18,4 +18,5 @@
 * [Etc](posts/Etc/README.md)
   * [Install Gitbook](posts/Etc/install_gitbook.md)
   * [Install uim](posts/Etc/install_uim.md)
+  * [Install virtualbox](posts/Etc/install_virtualbox.md)
   * [Video Test](posts/Etc/video.md)
