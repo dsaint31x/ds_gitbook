@@ -392,6 +392,8 @@
 <li>Ubuntu 18.04</li>
 </ul>
 <h2 id="remove-nouveau-driver">Remove <em>nouveau</em> Driver</h2>
+<blockquote>
+<p>&#xC774; &#xBD80;&#xBD84;&#xC744; &#xC0DD;&#xB7B5;&#xD558;&#xACE0; &#xC124;&#xCE58;&#xD574;&#xB3C4; &#xB428;. &#xC624;&#xD788;&#xB824; &#xC774; &#xBD80;&#xBD84;&#xC744; &#xC218;&#xD589;&#xC2DC; 18.04&#xC5D0;&#xC11C; youtube&#xB4F1;&#xC758; &#xC218;&#xD589;&#xC5D0; &#xBB38;&#xC81C;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;&#xB294; &#xC9C0;&#xC801;&#xC774; &#xC788;&#xC74C;.</p>
 <ul>
 <li><em>nouveau</em> &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xAC00; &#xC790;&#xCCB4;&#xC801;&#xC73C;&#xB85C; &#xC124;&#xCE58;&#xB418;&#xC5B4; &#xC788;&#xC74C;.</li>
 <li>&#xD574;&#xB2F9; &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xB294; ML&#xC744; &#xC704;&#xD55C; gpu&#xC5F0;&#xC0B0;&#xB4F1;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xC81C;&#xAC70;&#xD558;&#xACE0; nvidia &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xB97C; &#xC124;&#xCE58;&#xD574;&#xC57C;&#xD568;.<pre><code>lsmod | grep nouveau
@@ -408,6 +410,7 @@ sudo reboot
 </ul>
 </li>
 </ul>
+</blockquote>
 <h2 id="cuda-92-&#xC774;&#xC0C1;&#xC758;-&#xBC84;&#xC804;&#xACFC;-&#xD638;&#xD658;-&#xAC00;&#xB2A5;&#xD55C;-nvidia-&#xB4DC;&#xB77C;&#xC774;&#xBC84;-&#xC124;&#xCE58;">CUDA 9.2 &#xC774;&#xC0C1;&#xC758; &#xBC84;&#xC804;&#xACFC; &#xD638;&#xD658; &#xAC00;&#xB2A5;&#xD55C; nvidia &#xB4DC;&#xB77C;&#xC774;&#xBC84; &#xC124;&#xCE58;</h2>
 <pre><code>sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt update
@@ -422,11 +425,20 @@ sudo reboot
 <p>nvidia-docker2&#xC124;&#xCE58;&#xB97C; &#xC704;&#xD574; &#xAE30;&#xC874; &#xC124;&#xCE58;&#xB41C; docker&#xC81C;&#xAC70;.</p>
 <pre><code>sudo apt-get remove docker docker-engine docker.io
 </code></pre><p>nvidia-docker2 &#xC124;&#xCE58;&#xB97C; &#xC704;&#xD574; <code>docker-ce</code> &#xC124;&#xCE58;.</p>
-<pre><code>sudo apt-get update &amp;&amp; sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+<pre><code>sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo add-apt-repository \
-    &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) \
+   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
    stable&quot;
 
 sudo apt-get update &amp;&amp; sudo apt-cache search docker-ce
@@ -439,15 +451,13 @@ sudo usermod -aG docker $USER
 </ul>
 <h2 id="nvidia-docker2-&#xC124;&#xCE58;">nvidia-docker2 &#xC124;&#xCE58;</h2>
 <p>ubuntu&#xACC4;&#xC5F4;&#xC758; nvidia-docker2 &#xC124;&#xCE58;</p>
-<pre><code>curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
-   sudo apt-key add -
-
+<pre><code># Add the package repositories
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \ 
-   sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-
-sudo apt-get install -y nvidia-docker2
+sudo apt-get update &amp;&amp; sudo apt-get install -y nvidia-container-toolkit
+sudo systemctl restart docker
 </code></pre><h2 id="docker-image-&#xB97C;-&#xBC1B;&#xC544;&#xC640;&#xC11C;-&#xD14C;&#xC2A4;&#xD2B8;">docker image &#xB97C; &#xBC1B;&#xC544;&#xC640;&#xC11C; &#xD14C;&#xC2A4;&#xD2B8;.</h2>
 <p>docker hub&#xC758; NVIDIA&#xC758; &#xC774;&#xBBF8;&#xC9C0; &#xBC84;&#xC804;&#xB4E4;&#xC5D0;&#xC11C; &#xC801;&#xC808;&#xD55C; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; pull.</p>
 <ul>
@@ -456,10 +466,22 @@ sudo apt-get install -y nvidia-docker2
 <p>&#xB2E4;&#xC74C;&#xC758; &#xBA85;&#xB839;&#xC5B4;&#xB294; CUDA 10.1&#xACFC; cuDNN 7 &#xBC84;&#xC804;&#xC758; Container&#xC5D0; &#xD574;&#xB2F9;&#xD558;&#xB294; image&#xB97C; &#xBC1B;&#xC740; &#xAC83;&#xC784;.</p>
 <pre><code>docker pull nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
 
-docker run -ti --rm nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04 bash
-</code></pre><p>&#xC774;&#xD6C4; <code>nvidia-smi</code>&#xB97C; &#xC218;&#xD589;&#xD574;&#xC11C; &#xCD5C;&#xC885; &#xD655;&#xC778;.</p>
+docker run -ti --gpus all --rm nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04 bash
+</code></pre><blockquote>
+<h1 id="start-a-gpu-enabled-container-on-two-gpus">Start a GPU enabled container on two GPUs</h1>
+<p>$ docker run --gpus 2 nvidia/cuda:9.0-base nvidia-smi</p>
+</blockquote>
+<h1 id="starting-a-gpu-enabled-container-on-specific-gpus">Starting a GPU enabled container on specific GPUs</h1>
+<p>$ docker run --gpus device=1,2 nvidia/cuda:9.0-base nvidia-smi
+$ docker run --gpus device=UUID-ABCDEF,1 nvidia/cuda:9.0-base nvidia-smi</p>
+<h1 id="specifying-a-capability-graphics-compute--for-my-container">Specifying a capability (graphics, compute, ...) for my container</h1>
+<h1 id="note-this-is-rarely-if-ever-used-this-way">Note this is rarely if ever used this way</h1>
+<p>$ docker run --gpus all,capabilities=utility nvidia/cuda:9.0-base nvidia-smi</p>
+<p>&#xC774;&#xD6C4; <code>nvidia-smi</code>&#xB97C; &#xC218;&#xD589;&#xD574;&#xC11C; &#xCD5C;&#xC885; &#xD655;&#xC778;.</p>
 <h2 id="references">References</h2>
 <ul>
+<li><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank">docker documents</a></li>
+<li><a href="https://github.com/NVIDIA/nvidia-docker" target="_blank">nvida-docker</a></li>
 <li><a href="https://crystalcube.co.kr/193" target="_blank">&#xC720;&#xB9AC;&#xC0C1;&#xC790; &#xC18D; &#xC774;&#xC57C;&#xAE30; : RedHat &#xC5D0; Tensorflow GPU &#xBAA8;&#xB4DC;&#xB85C; &#xC124;&#xCE58;&#xD558;&#xAE30;</a></li>
 </ul>
 
@@ -505,7 +527,7 @@ docker run -ti --rm nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04 bash
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Install Nvidia-Docker2","level":"1.2.1","depth":2,"next":{"title":"Docker CMD Summary","level":"1.2.2","depth":2,"path":"posts/Docker/docker_summary.md","ref":"posts/Docker/docker_summary.md","articles":[]},"previous":{"title":"Docker","level":"1.2","depth":1,"path":"posts/Docker/README.md","ref":"posts/Docker/README.md","articles":[{"title":"Install Nvidia-Docker2","level":"1.2.1","depth":2,"path":"posts/Docker/nvidia_docker.md","ref":"posts/Docker/nvidia_docker.md","articles":[]},{"title":"Docker CMD Summary","level":"1.2.2","depth":2,"path":"posts/Docker/docker_summary.md","ref":"posts/Docker/docker_summary.md","articles":[]},{"title":"Docker Hub CMD Summary","level":"1.2.3","depth":2,"path":"posts/Docker/docker_hub.md","ref":"posts/Docker/docker_hub.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/Docker/nvidia_docker.md","mtime":"2019-07-22T10:34:52.114Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-24T03:14:00.065Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Install Nvidia-Docker2","level":"1.2.1","depth":2,"next":{"title":"Docker CMD Summary","level":"1.2.2","depth":2,"path":"posts/Docker/docker_summary.md","ref":"posts/Docker/docker_summary.md","articles":[]},"previous":{"title":"Docker","level":"1.2","depth":1,"path":"posts/Docker/README.md","ref":"posts/Docker/README.md","articles":[{"title":"Install Nvidia-Docker2","level":"1.2.1","depth":2,"path":"posts/Docker/nvidia_docker.md","ref":"posts/Docker/nvidia_docker.md","articles":[]},{"title":"Docker CMD Summary","level":"1.2.2","depth":2,"path":"posts/Docker/docker_summary.md","ref":"posts/Docker/docker_summary.md","articles":[]},{"title":"Docker Hub CMD Summary","level":"1.2.3","depth":2,"path":"posts/Docker/docker_hub.md","ref":"posts/Docker/docker_hub.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/Docker/nvidia_docker.md","mtime":"2019-07-24T09:58:18.258Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-24T10:18:07.417Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
