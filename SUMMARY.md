@@ -14,6 +14,7 @@
   * [05_02](posts/LinearAlgebra/la_05_02.md)
   * [05_03](posts/LinearAlgebra/la_05_03.md)
   * [05_04](posts/LinearAlgebra/la_05_04.md)
+  * [07_01](posts/LinearAlgebra/la_07_01.md)
 
 * [Etc](posts/Etc/README.md)
   * [Install Gitbook](posts/Etc/install_gitbook.md)
