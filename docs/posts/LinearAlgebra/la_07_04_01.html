@@ -475,11 +475,11 @@ that can be imitated for rectangular matrices:
 The <strong>absolute values of the eigenvalues</strong> of a symmetric matrix <script type="math/tex; ">A</script> measure the amounts that <script type="math/tex; ">A</script> stretches or shrinks certain vectors (the <strong>eigenvectors</strong>). </p>
 <p>If <script type="math/tex; ">A\textbf{x}=\lambda\textbf{x}</script> and <script type="math/tex; ">||\textbf{x}||=1</script>, then</p>
 <p><script type="math/tex; mode=display">
-\begin{align *}
-||A\textbf{x}|| &= ||\lambda\textbf{x}|| \\
-&= |\lambda |||\textbf{x}||
-&= |\lambda | \tag{1}
-\end{align *}
+\begin{align}
+|| A \textbf{x} || &= || \lambda \textbf{x} || \\
+&= | \lambda | || \textbf{x} || \\
+&= | \lambda | \tag{1}
+\end{align}
 </script></p>
 <p>If <script type="math/tex; ">\lambda_1</script> is <strong>the eigenvalue with the greatest magnitude</strong>, 
 then a corresponding unit eigenvector <script type="math/tex; ">\textbf{v}_1</script> identifies a direction 
@@ -493,7 +493,7 @@ that will lead to the <em>singular value decomposition</em>.</p>
 <p>If <script type="math/tex; ">A=\begin{bmatrix}
 4 & 11 & 14 \\
 8 & 7 && -2 
-\end{bmatrix}</script>, then the linear transformation <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> maps the unit sphere <script type="math/tex; ">\left\{ \textbf{x}: ||\textbf{x}||=1\rifht\}</script> in <script type="math/tex; ">\mathbb{R}^3</script> onto an ellipse in <script type="math/tex; ">\mathbb{R}^2</script>, shown figure 1. 
+\end{bmatrix}</script>, then the linear transformation <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> maps the unit sphere <script type="math/tex; ">\left\{ \textbf{x}: ||\textbf{x}||=1\right\}</script> in <script type="math/tex; ">\mathbb{R}^3</script> onto an ellipse in <script type="math/tex; ">\mathbb{R}^2</script>, shown figure 1. 
 Find a unit vector <script type="math/tex; ">\textbf{x}</script> at which the length <script type="math/tex; ">||A\textbf{x}||</script> is maximized, and compute this maximum length.</p>
 <p><img src="fig/la_07_04_01.png" alt="Fig1"></p>
 <h3 id="solution-of-example-1">Solution of Example 1</h3>
@@ -543,8 +543,9 @@ an orthogonal basis for <script type="math/tex; ">\text{Col} A</script>, and <sc
 <p><script type="math/tex; mode=display">
 \begin{align*}
 (A\textbf{v}_i)^T(A\textbf{v}_j) &= \textbf{v}_i^T A^T A\textbf{v}_j \\
-&=\textbf{v}_i)^T (\lambda_j \textbf{v}_j)
+&=\textbf{v}_i)^T (\lambda_j \textbf{v}_j) \\
 &=0
+\end{align*}
 </script></p>
 <p>Thus <script type="math/tex; ">\left\{ A\textbf{v}_1 \cdots A\textbf{v}_n \right\}</script> is an orthogonal set.
 Furthermore, since the length of the voectors <script type="math/tex; ">A\textbf{v}_1 \cdots A\textbf{v}_n</script> are the singular values of <script type="math/tex; ">A</script>, and since there are <script type="math/tex; ">r</script> nonzero singular vectors, 
@@ -572,10 +573,10 @@ Hence <script type="math/tex; ">\text{rank }A=dim \text{Col }A=r</script>.
 <p>where <script type="math/tex; ">D</script> is an <script type="math/tex; ">r \times r</script> diagonal matrix for some <script type="math/tex; ">r</script> not excedding the smaller of <script type="math/tex; ">m</script> and <script type="math/tex; ">n</script>. (If <script type="math/tex; ">r</script> equals <script type="math/tex; ">m</script> or <script type="math/tex; ">n</script> or both, some or all of the zero matrices do not appear.)</p>
 <p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix with rank <script type="math/tex; ">r</script>. Then there exists an <script type="math/tex; ">m \times n</script> matrix <script type="math/tex; ">\Sigma</script> as in (3) for which the diagonal entries in <script type="math/tex; ">D</script> are the first <script type="math/tex; ">r</script> singular values of <script type="math/tex; ">A</script>, <script type="math/tex; ">\sigma_1 \ge \sigma_2 \cdots, \sigma_r >0</script>, and there exists an <script type="math/tex; ">m \times m</script> orthogonal matrix <script type="math/tex; ">U</script> and an <script type="math/tex; ">n \times n</script> orthogonal matrix <script type="math/tex; ">V</script> such that 
 <script type="math/tex; mode=display">
-A=U\SigmaV^T
+A=U\Sigma V^T
 </script></p>
 <hr>
-<p>Any factorization <script type="math/tex; ">A=U\SigmaV^T</script>, 
+<p>Any factorization <script type="math/tex; ">A=U\Sigma V^T</script>, 
 with <script type="math/tex; ">U</script> and <script type="math/tex; ">V</script> orthogonal, 
 <script type="math/tex; ">\Sigma</script> as in (3), 
 and positive diagonal entries in <script type="math/tex; ">D</script>, 
@@ -587,10 +588,10 @@ the columns of <script type="math/tex; ">V</script> are called <strong>right sin
 so that <script type="math/tex; ">\left\{ A\textbf{v}_1 \cdots A\textbf{v}_r \right\}</script> is an orthogonal basis for <script type="math/tex; ">\text{Col }A</script>.</p>
 <p>Normalize each <script type="math/tex; ">A\textbf{v}_i</script> to obtain an orthonormal basis <script type="math/tex; ">\left\{ \textbf{u}_1 \cdots \textbf{u}_r \right\}</script>, where</p>
 <p><script type="math/tex; mode=display">
-\begin{aling*}
+\begin{align*}
 \textbf{u}_i &= \frac{1}{||A\textbf{v}_i||}A\textbf{v}_i \\
 &= \frac{1}{\sigma_i}A\textbf{v}_i
-\end{aling*}
+\end{align*}
 </script></p>
 <p>And</p>
 <p><script type="math/tex; mode=display">
@@ -670,7 +671,7 @@ would use a different approach.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"07_04_01","level":"1.3.12","depth":2,"next":{"title":"07_04_02","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},"previous":{"title":"07_03","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_07_04_01.md","mtime":"2019-08-20T12:35:56.935Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-20T12:37:12.398Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"07_04_01","level":"1.3.12","depth":2,"next":{"title":"07_04_02","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},"previous":{"title":"07_03","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_07_04_01.md","mtime":"2019-08-20T12:44:25.181Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-20T13:37:59.391Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
