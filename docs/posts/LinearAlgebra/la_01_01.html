@@ -70,6 +70,10 @@
     <div class="book-summary">
         
             
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
             
                 <nav role="navigation">
                 
@@ -481,42 +485,55 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
+<div id="book-search-results">
+    <div class="search-noresults">
+    
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
 <h1 id="11-systems-of-linear-equations">1.1 Systems of Linear Equations</h1>
 <h2 id="linear-equation">Linear Equation</h2>
-<p>A <strong>linear equation</strong> in the variables <script type="math/tex; ">x_1, \cdots, x_n</script> 
+<p> A <strong>linear equation</strong> in the variables <script type="math/tex; ">x_1, \cdots, x_n</script> 
 is an equation that can be represented in the form</p>
 <p><script type="math/tex; mode=display">
-a_1x_1+a_2x_2+\cdots+a_nx_n = b
+a_1x_1+a_2x_2+\cdots+a_nx_n = b \tag{1}
 </script></p>
 <p>where <script type="math/tex; ">b</script> and the coefficients <script type="math/tex; ">a_1, \cdots, a_n</script> are real or complex numbers, usually known in addvance.</p>
-<p>A <strong>system of linear equations</strong> (or a <strong>linear system</strong>)
+<p> A <strong>system of linear equations</strong> (or a <strong>linear system</strong>)
 is a collection of one or more linear equations
 involving the same variables -- say, <script type="math/tex; ">x_1, \cdots, x_n</script>.</p>
-<p>A <strong>solution</strong> of the system is 
+<p><script type="math/tex; mode=display">
+\begin{align}
+2x_1 -x_2 +1.5x_3 &= 8 \\
+x_1 -4x_3 = -7 \tag{2}
+\end{align}
+</script></p>
+<p> A <strong>solution</strong> of the system is 
 a list <script type="math/tex; ">\left(s_1,s_2,\cdots,s_n\right)</script> of numbers 
 that makes each equation a true statement 
 when the values <script type="math/tex; ">\left(s_1,\cdots,s_n\right)</script> are substituted
-for <script type="math/tex; ">x_1, \cdots, x_n</script> respectively.</p>
-<p>The set of all possible solutions is called 
+for <script type="math/tex; ">x_1, \cdots, x_n</script> respectively.
+ The <em>set of all possible solutions</em> is called 
 the <strong>solution set</strong> of the linear system.</p>
-<p>Two linear systems are called <strong>equivalent</strong> 
-if they have the same solution set.</p>
-<p>A system of linear equations has</p>
+<p> Two linear systems are called <strong>equivalent</strong> 
+if they have <strong>the same solution set</strong>.</p>
+<p> A system of linear equations has</p>
 <ol>
 <li>no solution, or</li>
 <li>exactly one solution, or</li>
 <li>infinitely many solutions.</li>
 </ol>
-<p>A system of linear equations is said to be <strong>consistent</strong> 
-if it has either 
-one solution or 
-infinitely many solutions.</p>
-<p>A system is <strong>inconsistent</strong> if it has no solution.</p>
+<p> A system of linear equations is said to be <strong>consistent</strong> 
+if it has either </p>
+<ul>
+<li><strong>one solution</strong> or </li>
+<li><p><strong>infinitely many solutions</strong>.</p>
+<p>A system is <strong>inconsistent</strong> if it has </p>
+</li>
+<li>no solution.</li>
+</ul>
 <h2 id="matrix-notation">Matrix Notation</h2>
-<p>The essential information of a linear system can be 
+<p> The essential information of a linear system can be 
 recorded compactly in a rectangular array called a <strong>matrix</strong>.
 Given the system,</p>
 <p><script type="math/tex; mode=display">
@@ -524,7 +541,7 @@ Given the system,</p>
 x_1-2x_2+x_3 &= 0 \\
 2x_2-8x_3 &= 8 \\
 -4x_1+5x_2+9x_3 &= -9 \\
-\end{align*}
+\end{align*} \tag{3}
 </script>,</p>
 <p>with the coefficients of each variable aligned in columns, 
 the matrix</p>
@@ -533,11 +550,11 @@ the matrix</p>
 1 & -2 & 1 \\
 0 & 2 & -8 \\
 -4 & 5 & 9 
-\end{bmatrix}
+\end{bmatrix} 
 </script></p>
 <p>is called the <strong>coefficient matrix</strong> (or <strong>matrix of coefficients</strong>) of
 the system.</p>
-<p>An <strong>augmented matrix</strong> of a system 
+<p> An <strong>augmented matrix</strong> of a system 
 consists of 
 the coefficient matrix 
 with an added column containing
@@ -548,20 +565,21 @@ the constants from the right sides of the equations. </p>
 1 & -2 & 1 &0\\
 0 & 2 & -8 &8\\
 -4 & 5 & 9 &-9
-\end{bmatrix}
+\end{bmatrix} \tag{4}
 </script></p>
 <p>is called the <strong>augmented matrix</strong> of the system.</p>
 <h2 id="matrix-size">Matrix Size</h2>
-<p>The size of a matrix tells how many rows and
-columns it has. If m and n are positive integers, 
+<p> The size of a matrix tells how many rows and
+columns it has. If <script type="math/tex; ">m</script> and <script type="math/tex; ">n</script> are positive integers, 
 an <strong><script type="math/tex; ">m \times n</script> matrix</strong> is a rectangular array of numbers 
 with <script type="math/tex; ">m</script> rows and <script type="math/tex; ">n</script> columns. 
 (The number of rows always comes first.)</p>
-<p>The basic strategy for solving a linear system is 
-to replace one system with an equivalent system 
+<h2 id="solving-a-linear-system">Solving a Linear System</h2>
+<p> The basic strategy for solving a linear system is 
+<em>to replace one system with an <strong>equivalent</strong> system 
 (i.e., one with the same solution set) 
-that is easier to solve.</p>
-<h2 id="example-1--solving-system-of-equations">Example 1 : Solving System of Equations</h2>
+that is easier to solve.</em></p>
+<h2 id="example-1">Example 1</h2>
 <p>Solve the given system of equations.</p>
 <p><script type="math/tex; mode=display">
 \begin{align}
@@ -571,7 +589,7 @@ x_1-2x_2+x_3 &= 0 \tag{1}\\
 \end{align}
 </script>,</p>
 <h3 id="solution-of-example-1">Solution of Example 1</h3>
-<p>The elimination procedure is shown here 
+<p> The elimination procedure is shown here 
 with and without matrix notation, and 
 the results are placed side by side for comparison.</p>
 <p><script type="math/tex; mode=display">
@@ -722,32 +740,37 @@ substitute these values into the left side of the
 original system, and compute.</p>
 <p><script type="math/tex; mode=display">
 \begin{align*}
-(29)-2(16+(3)     &= 29-32+3 &= 0 \\
-2(16)-8(3)        &= 32-24   &= 8 \\
--4(29)+5(16)+9(3) &= -116+80+27 &= -9
+(29)-2(16)+(3)     &= 29-32+3 &= 0 \\
+2(16)-8(3)         &= 32-24   &= 8 \\
+-4(29)+5(16)+9(3)  &= -116+80+27 &= -9
 \end{align*}
 </script></p>
 <p>The results agree with the right side of the original 
 system, so (29,16,3) is a solution of the system.</p>
 <h2 id="elementary-row-operations">Elementary Row Operations</h2>
-<p>Elementary row operations include the following:</p>
+<p>Three basic operations are used to simplify a linear system.</p>
+<p>These <strong>Elementary row operations</strong> include the following:</p>
 <ol>
-<li>(Replacement) Replace one row by the sum of itself and a multiple of another row.</li>
+<li>(Replacement) Replace one row by the sum of itself and a multiple of another row.
+= Add to one row a multiple of another row.</li>
 <li>(Interchange) Interchange two rows.</li>
-<li>(Scaling) Multiply all entries in a row by a nonzero constant.</li>
-</ol>
+<li><p>(Scaling) Multiply all entries in a row by a nonzero constant.</p>
 <p>Two matrices are called <strong>row equivalent</strong> if there is 
 a sequence of elementary row operations that 
 transforms one matrix into the other.</p>
-<p>It is important to note that row operations are reversible.</p>
-<p>If the augmented matrices of two linear systems are 
-row equivalent, then the two systems have the same solution set.</p>
+<p>It is important to note that row operations are <strong>reversible</strong>.</p>
+</li>
+</ol>
+<blockquote>
+<p>If the augmented matrices of two linear systems are <strong>row equivalent</strong>, 
+then the two systems have the <strong>same solution set</strong>.</p>
+</blockquote>
+<h2 id="existence-and-uniqueness-of-system-of-equations">Existence and Uniqueness of System of Equations</h2>
 <p>Two fundamental questions about a linear system are as follows:</p>
 <ol>
-<li>Is the system consistent; that is, does at least one solution exist?</li>
-<li>If a solution exists, is it the only one; that is, is the solution unique?</li>
+<li>Is the system <strong>consistent</strong>; that is, does at least one solution exist?</li>
+<li>If a solution exists, is it the only one; that is, is the solution <strong>unique</strong>?</li>
 </ol>
-<h2 id="existence-and-uniqueness-of-system-of-equations">Existence and Uniqueness of System of Equations</h2>
 <h2 id="exampel-3">Exampel 3:</h2>
 <p>Determine if the following system is consistent:</p>
 <p><script type="math/tex; mode=display">
@@ -803,20 +826,36 @@ x_2-4x_3 &= 8 \\
 </ul>
 <p><script type="math/tex; mode=display">
 \begin{align}
-2x_2-3x_3 &= 1 \\
-x_2+4x_3 &= 8 \\
+2x_1-3x_2+2x_3 &= 1 \\
+x_2-4x_3 &= 8 \\
 0 &= \frac{5}{2}
 \end{align} \tag{8}
 </script></p>
 <ul>
 <li>The equation <script type="math/tex; ">0=\frac{5}{2}</script> is a short form of <script type="math/tex; ">0x_1+0x_2+0x_3=\frac{5}{2}</script>.</li>
 <li>There are no values of <script type="math/tex; ">x_1,x_2,x_3</script> that satisfy (8) because the equation <script type="math/tex; ">0=\frac{5}{2}</script> is never true.</li>
-<li>Since (8) and (5) have the same solution set, the original system is inconsistent (i.e., has no solution).</li>
+<li>Since (8) and (5) have the same solution set, the original system is <strong>inconsistent</strong> (i.e., has no solution).</li>
 </ul>
 
                                 
                                 </section>
                             
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
                         </div>
                     </div>
                 
@@ -840,7 +879,7 @@ x_2+4x_3 &= 8 \\
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 01","level":"1.3.2","depth":2,"next":{"title":"10_02 Difference Equation","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"previous":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_01.md","mtime":"2019-08-22T05:56:42.022Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-22T06:00:50.806Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 01","level":"1.3.2","depth":2,"next":{"title":"10_02 Difference Equation","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"previous":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_01.md","mtime":"2019-08-22T05:47:16.854Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-22T07:04:47.952Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -862,7 +901,7 @@ x_2+4x_3 &= 8 \\
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/lunr.min.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
         
     
         
@@ -882,7 +921,7 @@ x_2+4x_3 &= 8 \\
         
     
         
-        <script src="../../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
         
     
 
