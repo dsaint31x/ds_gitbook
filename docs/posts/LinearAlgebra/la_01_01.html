@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>07_03 · GitBook</title>
+        <title>01 01 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_07_04_01.html" />
+    <link rel="next" href="la_01_10_02_Difference_Equation.html" />
     
     
-    <link rel="prev" href="la_07_02.html" />
+    <link rel="prev" href="01_hello_linear_algebra.html" />
     
 
     </head>
@@ -187,7 +187,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="la_01_01.html">
+        <li class="chapter active" data-level="1.3.2" data-path="la_01_01.html">
             
                 <a href="la_01_01.html">
             
@@ -330,7 +330,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.13" data-path="la_07_03.html">
+        <li class="chapter " data-level="1.3.13" data-path="la_07_03.html">
             
                 <a href="la_07_03.html">
             
@@ -475,7 +475,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >07_03</a>
+        <a href="../.." >01 01</a>
     </h1>
 </div>
 
@@ -490,157 +490,339 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ch07-symmetric-matrices-and-quadratic-forms">Ch07 Symmetric Matrices and Quadratic Forms</h1>
-<h1 id="73-constrained-optimization">7.3 Constrained Optimization</h1>
-<p>Engineers, economists, scientists, and mathematicians often need 
-to find the maximum or minimum value 
-of a quadratic form <script type="math/tex; ">Q(\textbf{x})</script> 
-for <script type="math/tex; ">\textbf{x}</script> 
-in some specified set. 
-Typically, the problem can be arranged 
-so that <script type="math/tex; ">\textbf{x}</script> varies over the set of unit vectors. 
-This <em>constrained optimization problem</em> has an interesting and elegant solution.
-The requirement that a vector <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\mathbb{R}^n</script> be a unit vector can be stated in several equivalent ways:</p>
+                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
+<h1 id="11-systems-of-linear-equations">1.1 Systems of Linear Equations</h1>
+<h2 id="linear-equation">Linear Equation</h2>
+<p>A <strong>linear equation</strong> in the variables <script type="math/tex; ">x_1, \cdots, x_n</script> 
+is an equation that can be represented in the form</p>
 <p><script type="math/tex; mode=display">
-||\textbf{x}|| = 1,
-||\textbf{x}||^2 = 1,
-\textbf{x}^T\textbf{x} = 1,\\
-\text {and} \\
-x_1^2 + x_2^2 + \cdots + x_n^2 =1 \tag{1}
+a_1x_1+a_2x_2+\cdots+a_nx_n = b
 </script></p>
-<p>The expanded version (1) of <script type="math/tex; ">\textbf{x}^T\textbf{x}=1</script> is commonly used in applications.</p>
-<p>When a quadratic form <script type="math/tex; ">Q</script> has no cross-product terms, 
-it is easy to find 
-the maximum and minimum of <script type="math/tex; ">Q(\textbf{x})</script>
-for <script type="math/tex; ">\textbf{x}^T\textbf{x} = 1</script>.</p>
-<p><script type="math/tex; mode=display">
-m = \text{min}\left\{ \textbf{x}^TA\textbf{x} : ||\textbf{x}||=1\right\}, \\
-M = \text{max}\left\{ \textbf{x}^TA\textbf{x} : ||\textbf{x}||=1\right\}
-\tag{2}
-</script></p>
-<hr>
-<h2 id="theorem-6">Theorem 6</h2>
-<p>Let <script type="math/tex; ">A</script> be a symmetric matrix, 
-and define <script type="math/tex; ">m</script> and <script type="math/tex; ">M</script> as in (2). </p>
-<ul>
-<li>Then <script type="math/tex; ">M</script> is the greatest eigenvalue <script type="math/tex; ">\lambda_1</script> of <script type="math/tex; ">A</script>and</li>
-<li><script type="math/tex; ">m</script> is the least eigenvalue of <script type="math/tex; ">A</script>. 
-The value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is <script type="math/tex; ">M</script> 
-when <script type="math/tex; ">\textbf{x}</script> is a unit eigenvector <script type="math/tex; ">\textbf{u}_1</script> 
-corresponding to <script type="math/tex; ">M</script>. 
-The value of  <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is <script type="math/tex; ">m</script> 
-when <script type="math/tex; ">\textbf{x}</script> is a unit eigenvector corresponding to <script type="math/tex; ">m</script>.</li>
-</ul>
-<hr>
-<h3 id="proof">Proof</h3>
-<p>Orthogonally diagonalize <script type="math/tex; ">A</script> as <script type="math/tex; ">PDP^{-1}</script>.
-We know that</p>
-<p><script type="math/tex; mode=display">
-\textbf{x}^TA\textbf{x} = \textbf{y}^TD\textbf{y}
-\text{ when } 
-\textbf{x} = p \textbf{y} \tag{3}
-</script></p>
-<p>Also,</p>
-<p><script type="math/tex; mode=display">
-||\textbf{x}||=||P\textbf{y}||=\textbf{y} \text{ for all }\textbf{y}
-</script></p>
-<p>Because <script type="math/tex; ">P^T P=I</script> and <script type="math/tex; ">||P\textbf{y}||^2 = (P\textbf{y})^T (P\textbf{y}) = \textbf{y}^TP^TP\textbf{y} = \textbf{y}^T\textbf{y} = ||\textbf{y}||^2</script>. 
-In particular, <script type="math/tex; ">||\textbf{y}||=1</script> if and only if <script type="math/tex; ">||\textbf{x}||=1</script>.</p>
-<p>Thus, <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> and <script type="math/tex; ">\textbf{y}^TD\textbf{y}</script> assume the same set of values as <script type="math/tex; ">\textbf{x}</script> and <script type="math/tex; ">\textbf{y}</script> range over the set of all unit vectors.</p>
-<p>To simplify notation, 
-suppose that <script type="math/tex; ">A</script> is a <script type="math/tex; ">3\times 3</script> matrix
-with eigenvalues <script type="math/tex; ">a \le b \le c</script>.
-Arrange the columns of <script type="math/tex; ">P</script> so that <script type="math/tex; ">P=\begin{bmatrix} \textbf{u}_1 & \textbf{u}_2 & \textbf{u}_3 \end{bmatrix}</script> and </p>
-<p><script type="math/tex; mode=display">
-D =
-\begin{bmatrix} 
-a & 0 & 0 \\
-0 & b & 0 \\
-0 & 0 & c 
-\end{bmatrix}
-</script></p>
-<p>Given any unit vector <script type="math/tex; ">\textbf{y} \in \mathbb{R}^3</script> with coordinates <script type="math/tex; ">y_1, y_2,y_3</script>, observe that</p>
-<p><script type="math/tex; mode=display">
-ay_1^2 = ay_1^2 \\
-by_2^2 \le ay_2^2 \\
-cy_3^2 \le ay_3^2 
-</script></p>
-<p>and obtain these inequalities:</p>
+<p>where <script type="math/tex; ">b</script> and the coefficients <script type="math/tex; ">a_1, \cdots, a_n</script> are real or complex numbers, usually known in addvance.</p>
+<p>A <strong>system of linear equations</strong> (or a <strong>linear system</strong>)
+is a collection of one or more linear equations
+involving the same variables -- say, <script type="math/tex; ">x_1, \cdots, x_n</script>.</p>
+<p>A <strong>solution</strong> of the system is 
+a list <script type="math/tex; ">\left(s_1,s_2,\cdots,s_n\right)</script> of numbers 
+that makes each equation a true statement 
+when the values <script type="math/tex; ">\left(s_1,\cdots,s_n\right)</script> are substituted
+for <script type="math/tex; ">x_1, \cdots, x_n</script> respectively.</p>
+<p>The set of all possible solutions is called 
+the <strong>solution set</strong> of the linear system.</p>
+<p>Two linear systems are called <strong>equivalent</strong> 
+if they have the same solution set.</p>
+<p>A system of linear equations has</p>
+<ol>
+<li>no solution, or</li>
+<li>exactly one solution, or</li>
+<li>infinitely many solutions.</li>
+</ol>
+<p>A system of linear equations is said to be <strong>consistent</strong> 
+if it has either 
+one solution or 
+infinitely many solutions.</p>
+<p>A system is <strong>inconsistent</strong> if it has no solution.</p>
+<h2 id="matrix-notation">Matrix Notation</h2>
+<p>The essential information of a linear system can be 
+recorded compactly in a rectangular array called a <strong>matrix</strong>.
+Given the system,</p>
 <p><script type="math/tex; mode=display">
 \begin{align*}
-\textbf{y}^TD\textbf{y} &= ay_1^2+by_s^2+cy_3^2 \\
-&\le ay_1^2+ay_s^2+ay_3^2 \\
-&= a \left( y_1^2+y_2^2+y_3^2\right) \\
-&= a ||\textbf{y}||^2 = a
+x_1-2x_2+x_3 &= 0 \\
+2x_2-8x_3 &= 8 \\
+-4x_1+5x_2+9x_3 &= -9 \\
+\end{align*}
+</script>,</p>
+<p>with the coefficients of each variable aligned in columns, 
+the matrix</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+1 & -2 & 1 \\
+0 & 2 & -8 \\
+-4 & 5 & 9 
+\end{bmatrix}
+</script></p>
+<p>is called the <strong>coefficient matrix</strong> (or <strong>matrix of coefficients</strong>) of
+the system.</p>
+<p>An <strong>augmented matrix</strong> of a system 
+consists of 
+the coefficient matrix 
+with an added column containing
+the constants from the right sides of the equations. </p>
+<p>For the given system of equations,</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+1 & -2 & 1 &0\\
+0 & 2 & -8 &8\\
+-4 & 5 & 9 &-9
+\end{bmatrix}
+</script></p>
+<p>is called the <strong>augmented matrix</strong> of the system.</p>
+<h2 id="matrix-size">Matrix Size</h2>
+<p>The size of a matrix tells how many rows and
+columns it has. If m and n are positive integers, 
+an <strong><script type="math/tex; ">m \times n</script> matrix</strong> is a rectangular array of numbers 
+with <script type="math/tex; ">m</script> rows and <script type="math/tex; ">n</script> columns. 
+(The number of rows always comes first.)</p>
+<p>The basic strategy for solving a linear system is 
+to replace one system with an equivalent system 
+(i.e., one with the same solution set) 
+that is easier to solve.</p>
+<h2 id="example-1--solving-system-of-equations">Example 1 : Solving System of Equations</h2>
+<p>Solve the given system of equations.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+x_1-2x_2+x_3 &= 0 \tag{1}\\
+2x_2-8x_3 &= 8 \tag{2}\\
+-4x_1+5x_2+9x_3 &= -9 \tag{3}\\
+\end{align}
+</script>,</p>
+<h3 id="solution-of-example-1">Solution of Example 1</h3>
+<p>The elimination procedure is shown here 
+with and without matrix notation, and 
+the results are placed side by side for comparison.</p>
+<p><script type="math/tex; mode=display">
+\begin{matrix}
+\begin{align*}
+x_1-2x_2+x_3 &= 0 \\
+2x_2-8x_3 &= 8 \\
+-4x_1+5x_2+9x_3 &= -9 
+\end{align*}
+&
+\begin{bmatrix}
+1 & -2 & 1 &0\\
+0 & 2 & -8 &8\\
+-4 & 5 & 9 &-9
+\end{bmatrix}
+\end{matrix}
+</script></p>
+<p>Keep <script type="math/tex; ">x_1</script> in the first equation and eliminate it from the other equations. 
+To do so, add 4 times equation 1 to equation 3.</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+4x_1-8x_2+4x_3 &= 0 \\
+-4x_1+5x_2+9x_3 &= -9 \\
+\hline
+-3x_2+13x_3 &= -9 
 \end{align*}
 </script></p>
-<p>Thus <script type="math/tex; ">M \le a</script>, by definition of <script type="math/tex; ">M</script>. 
-However, <script type="math/tex; ">\textbf{y}^TD\textbf{y}=a</script> when <script type="math/tex; ">\textbf{y}=\textbf{e}_1=(1,0,0)</script> ,so in fact <script type="math/tex; ">M=a</script>.
-By (3), the <script type="math/tex; ">textbf{x}</script> that corresponds by <script type="math/tex; ">\textbf{y}=\textbf{e}_1</script> is the eigenvector <script type="math/tex; ">\textbf{u}_1</script> of <script type="math/tex; ">A</script>, because</p>
+<p>The result of this calculation is written in place of 
+the original third equation:</p>
 <p><script type="math/tex; mode=display">
-\textbf{x} = P \textbf{e}_1 = 
+\begin{matrix}
+\begin{align*}
+x_1-2x_2+x_3 &= 0 \\
+2x_2-8x_3 &= 8 \\
+-3x_2+13x_3 &= -9 
+\end{align*}
+&
 \begin{bmatrix}
-\textbf{u}_1 & \textbf{u}_2 & \textbf{u}_3
+1 & -2 & 1 &0\\
+0 & 2 & -8 &8\\
+0 & -3 & 13 &-9
 \end{bmatrix}
+\end{matrix}
+</script></p>
+<p>Now, multiply equation 2 by <script type="math/tex; ">\frac{1}{2}</script> 
+in order to obtain 1 as the coefficient for <script type="math/tex; ">x_2</script></p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+x_1-2x_2+x_3 &= 0 \\
+x_2-4x_3 &= 4 \\
+-3x_2+13x_3 &= -9 
+\end{matrix}
+& &
 \begin{bmatrix}
-1 \\ 0 \\ 0
+1 & -2 & 1 &0\\
+0 & 1 & -4 &4\\
+0 & -3 & 13 &-9
 \end{bmatrix}
-=\textbf{u}_1
+\end{align}
 </script></p>
-<p>Thus <script type="math/tex; ">M=a=\textbf{e}_1^TD\textbf{e}_1= \textbf{u}_1^TA\textbf{u}_1</script>,
-which proves the statement about <script type="math/tex; ">M</script>. 
-A similar argument shows that <script type="math/tex; ">m</script> is the least eigenvalue, <script type="math/tex; ">c</script>, and this value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is attained when <script type="math/tex; ">\textbf{x}=P\textbf{e}_3=\textbf{u}_3</script>.
-<script type="math/tex; ">\blacksquare</script></p>
-<h2 id="example-3">Example 3</h2>
-<p>Let <script type="math/tex; ">A=\begin{bmatrix} 3& 2& 1 \\ 2& 3& 1 \\ 1& 1& 4 \end{bmatrix}</script>.
-Find the maximum value of the quadratic form <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script>
-subject to the constraint <script type="math/tex; ">\textbf{x}^T\textbf{x}</script> and find a unit vector at which this maximum value is attained.</p>
-<h3 id="solution">Solution</h3>
-<p>By Theorem 6, 
-the desired maximum value is the greatest eigenvalue of <script type="math/tex; ">A</script>. 
-The characteristic equation turns out to be</p>
+<p>Use the <script type="math/tex; ">x_2</script> in equation 2 
+to eliminate the <script type="math/tex; ">-3x_2</script> in equation 3.</p>
 <p><script type="math/tex; mode=display">
-0=-\lambda^3+10 \lambda^2 -27 \lambda +18 = -(\lambda-6)(\lambda-3)(\lambda-1)
+\begin{align*}
+3x_2-12x_3 &= 12 \\
+-3x_2+13x_3 &= -9 \\
+\hline
+x_3 &= 3 
+\end{align*}
 </script></p>
-<p>The greatest eigenvalue is 6.</p>
-<p>The constrained maximum of  <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is attained 
-when <script type="math/tex; ">\textbf{x}</script> is a unit eigenvector for <script type="math/tex; ">\lambda=6</script>.
-Solve <script type="math/tex; ">(A-6I)\textbf{x}=0</script> and and find an eigenvector <script type="math/tex; ">\begin{bmatrix}1\\1\\1\end{bmatrix}</script>.
-Set <script type="math/tex; ">\textbf{u}_1 = \begin{bmatrix}1/\sqrt{3} \\ 1/\sqrt{3} \\ 1/\sqrt{3}  \end{bmatrix}</script>.
-<script type="math/tex; ">\blacksquare</script></p>
-<p>In Theorem 7 and in later applications, 
-the values of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> are computed 
-with additional constraints on the unit vector <script type="math/tex; ">\textbf{x}</script>.</p>
-<hr>
-<h2 id="theorem-7">Theorem 7</h2>
-<p>Let <script type="math/tex; ">A</script>, and <script type="math/tex; ">\textbf{u}_1</script> be as in Theorem 6. 
-Then the maximum value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> subject to the constraints</p>
+<p>The new system has a triangular form.</p>
 <p><script type="math/tex; mode=display">
-\textbf{x}^T\textbf{x}=1, \textbf{x}^T\textbf{u}_1 = 0
+\begin{align}
+\begin{matrix}
+x_1-2x_2+x_3 &= 0 \\
+x_2-4x_3 &= 4 \\
+x_3 &= 3 
+\end{matrix}
+& &
+\begin{bmatrix}
+1 & -2 & 1 & 0\\
+0 & 1 & -4 & 4\\
+0 & 0 & 1 & 3
+\end{bmatrix}
+\end{align}
 </script></p>
-<p>is the second greatest eigenvalue <script type="math/tex; ">\lambda_2</script>,
-and this maximum is attained 
-when <script type="math/tex; ">\textbf{x}</script> is an eigenvector <script type="math/tex; ">\textbf{u}_2</script> corresponding to <script type="math/tex; ">\lambda_2</script>.</p>
-<hr>
-<p>Theorem 7 can be proved by an argument similar to the one above in which the theorem is reduced to the case where the matrix of the quadratic form is diagonal. The next example gives an idea of the proof for the case of a diagonal matrix.</p>
-<h2 id="example-4">Example 4</h2>
-<h3 id="solution-of-example-4">Solution of Example 4</h3>
-<hr>
-<h2 id="theorem-8">Theorem 8</h2>
-<p>Let <script type="math/tex; ">A</script> be a symmetric <script type="math/tex; ">n \times n</script> matrix 
-with an orthogonal diagonalization <script type="math/tex; ">A=PDP^{-1}</script>, 
-where the entries on the diagonal of <script type="math/tex; ">D</script> 
-are arranged so that <script type="math/tex; ">\lambda_1 \ge \lambda_2 \ge \cdots \lambda_n</script>
-and where columns of <script type="math/tex; ">P</script> are corresponding 
-unit eigenvectors <script type="math/tex; ">\textbf{u}_1, \textbf{u}_2, \cdots, \textbf{u}_n</script>.
-Then for <script type="math/tex; ">k=2, \cdots, n</script>, 
-the maximum value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> 
-subject to the constraints </p>
+<p>Eventually, you want to eliminate <script type="math/tex; ">-2x_2</script> the term from equation 1, 
+but it is more efficient to use the <script type="math/tex; ">x_3</script> term in equation 3 
+first to eliminate 
+the <script type="math/tex; ">-4x_3</script> and <script type="math/tex; ">x_3</script> terms in equations 2 and 1.</p>
 <p><script type="math/tex; mode=display">
-\textbf{x}^T\textbf{x}=1, \textbf{x}^T\textbf{u}_1=0, \cdots, \textbf{x}^T\textbf{u}_{k-1}=0
+\begin{align}
+\begin{matrix}
+&&4x_3 &= 12 \\
+&x_2&-4x_3 &= 4 \\
+\hline
+&x_2& &= 16 
+\end{matrix}
+& &
+\begin{matrix}
+&&-x_3 &= -3 \\
+x_1&-2x_2&+x_3 &= 0 \\ 
+\hline
+x_1&-2x_2& &= -3 
+\end{matrix}
+\end{align}
 </script></p>
-<p>is the eigenvalue <script type="math/tex; ">\lambda_k</script>,</p>
-<h2 id="and-this-maximum-is-attained-at-textbfxtextbfuk">and this maximum is attained at <script type="math/tex; ">\textbf{x}=\textbf{u}_k</script>.</h2>
+<p>Now, combine the results of these two operations.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+x_1-2x_2 &= -3 \\
+x_2 &= 16 \\
+x_3 &= 3 
+\end{matrix}
+& &
+\begin{bmatrix}
+1 & -2 & 0 & -3\\
+0 & 1 & 0 & 16\\
+0 & 0 & 1 & 3
+\end{bmatrix}
+\end{align}
+</script></p>
+<p>Move back to the <script type="math/tex; ">x_2</script> in equation 2, 
+and use it to eliminate the <script type="math/tex; ">-2x_2</script> above it. 
+Because of the previous work with <script type="math/tex; ">x_3</script>, 
+there is now no arithmetic involving <script type="math/tex; ">x_3</script> terms. 
+Add 2 times equation 2 to equation 1 and obtain the system:</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+x_1 &= 29 \\
+x_2 &= 16 \\
+x_3 &= 3 
+\end{matrix}
+& &
+\begin{bmatrix}
+1 & 0 & 0 & 29\\
+0 & 1 & 0 & 16\\
+0 & 0 & 1 & 3
+\end{bmatrix}
+\end{align}
+</script></p>
+<p>Thus, the only solution of the original system is
+(29,16,3). To verify that (29,16,3) is a solution,
+substitute these values into the left side of the
+original system, and compute.</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+(29)-2(16+(3)     &= 29-32+3 &= 0 \\
+2(16)-8(3)        &= 32-24   &= 8 \\
+-4(29)+5(16)+9(3) &= -116+80+27 &= -9
+\end{align*}
+</script></p>
+<p>The results agree with the right side of the original 
+system, so (29,16,3) is a solution of the system.</p>
+<h2 id="elementary-row-operations">Elementary Row Operations</h2>
+<p>Elementary row operations include the following:</p>
+<ol>
+<li>(Replacement) Replace one row by the sum of itself and a multiple of another row.</li>
+<li>(Interchange) Interchange two rows.</li>
+<li>(Scaling) Multiply all entries in a row by a nonzero constant.</li>
+</ol>
+<p>Two matrices are called <strong>row equivalent</strong> if there is 
+a sequence of elementary row operations that 
+transforms one matrix into the other.</p>
+<p>It is important to note that row operations are reversible.</p>
+<p>If the augmented matrices of two linear systems are 
+row equivalent, then the two systems have the same solution set.</p>
+<p>Two fundamental questions about a linear system are as follows:</p>
+<ol>
+<li>Is the system consistent; that is, does at least one solution exist?</li>
+<li>If a solution exists, is it the only one; that is, is the solution unique?</li>
+</ol>
+<h2 id="existence-and-uniqueness-of-system-of-equations">Existence and Uniqueness of System of Equations</h2>
+<h2 id="exampel-3">Exampel 3:</h2>
+<p>Determine if the following system is consistent:</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+x_2-4x_3 &= 8 \\
+2x_1-3x_2+2x_3 &= 1 \\
+5x_1-8x_2+7x_3 &= 1
+\end{align} \tag{5}
+</script></p>
+<h3 id="solution">Solution:</h3>
+<ul>
+<li>The augmented matrix is</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+0 & 1 & -4 & 8 \\
+2 & -3 & 2 & 1 \\
+5 & -8 & 7 & 1 
+\end{bmatrix}
+</script></p>
+<ul>
+<li>To obtain an $x_1$ in the first equation, interchange rows 1 and 2:</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+2 & -3 & 2 & 1 \\
+0 & 1 & -4 & 8 \\
+5 & -8 & 7 & 1 
+\end{bmatrix}
+</script></p>
+<ul>
+<li>To eliminate the $5x_1$ term in the third equation, add $\frac{-5}{2}$ times row 1 to row 3.</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+2 & -3 & 2 & 1 \\
+0 & 1 & -4 & 8 \\
+0 & \frac{-1}{2} & 2 & \frac{-3}{2} 
+\end{bmatrix} \tag{6}
+</script></p>
+<ul>
+<li>Next, use the $x_2$ term in the second equation to eliminate the $-\frac{1}{2}x_2$ term from the third equaton. Add $\frac{1}{2}$ times row 2 to row 3.</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+2 & -3 & 2 & 1 \\
+0 & 1 & -4 & 8 \\
+0 & 0 & 0 & \frac{5}{2} 
+\end{bmatrix} \tag{7}
+</script></p>
+<ul>
+<li>The augmented matrix is now in triangular form. To interpret it correctly, go back to equation notation.</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{align}
+2x_2-3x_3 &= 1 \\
+x_2+4x_3 &= 8 \\
+0 &= \frac{5}{2}
+\end{align} \tag{8}
+</script></p>
+<ul>
+<li><p>The equation $0=\frac{5}{2}$ is a short form of $0x_1+0x_2+0x_3=\frac{5}{2}$.</p>
+</li>
+<li><p>There are no values of $x_1,x_2,x_3$ that satisfy (8) because the equation $0=\frac{5}{2}$ is never true.</p>
+</li>
+<li><p>Since (8) and (5) have the same solution set, the original system is inconsistent (i.e., has no solution).</p>
+</li>
+</ul>
 
                                 
                                 </section>
@@ -668,12 +850,12 @@ subject to the constraints </p>
 
             
                 
-                <a href="la_07_02.html" class="navigation navigation-prev " aria-label="Previous page: 07_02">
+                <a href="01_hello_linear_algebra.html" class="navigation navigation-prev " aria-label="Previous page: 01 Hello Linear Algebra">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_07_04_01.html" class="navigation navigation-next " aria-label="Next page: 07_04_01">
+                <a href="la_01_10_02_Difference_Equation.html" class="navigation navigation-next " aria-label="Next page: 10_02 Difference Equation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -684,7 +866,7 @@ subject to the constraints </p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"07_03","level":"1.3.13","depth":2,"next":{"title":"07_04_01","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},"previous":{"title":"07_02","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_07_03.md","mtime":"2019-08-12T07:46:23.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-22T05:00:04.857Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 01","level":"1.3.2","depth":2,"next":{"title":"10_02 Difference Equation","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"previous":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_01.md","mtime":"2019-08-22T04:57:25.541Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-22T05:00:04.857Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
