@@ -7,6 +7,7 @@
   * [Docker Hub CMD Summary](posts/Docker/docker_hub.md)
 * [Linear Algebra](posts/LinearAlgebra/README.md)
   * [01 Hello Linear Algebra](posts/LinearAlgebra/01_hello_linear_algebra.md)
+  * [01 01](posts/LinearAlgebra/la_01_01.md)
   * [10_02 Difference Equation](posts/LinearAlgebra/la_01_10_02_Difference_Equation.md)
   * [02_01_Matrix_Algebra](posts/LinearAlgebra/la_02_01.md)
   * [02_02_Inverse_Matrix](posts/LinearAlgebra/la_02_02.md)
