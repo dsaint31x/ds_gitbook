@@ -70,10 +70,6 @@
     <div class="book-summary">
         
             
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
             
                 <nav role="navigation">
                 
@@ -511,14 +507,11 @@
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
                             
-<div id="book-search-results">
-    <div class="search-noresults">
-    
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
 <h1 id="12-row-reduction-and-echelon-forms">1.2 Row Reduction and Echelon Forms</h1>
-<p> A <strong>nonzero row or column</strong> in a matrix means a row or column that contains at least one nonzero entry</p>
+<p> A <strong>nonzero row or column</strong> in a matrix means a row or column that contains at least one nonzero entry.</p>
 <p> A <strong>leading entry</strong> of a row refers to the leftmost nonzero entry in a nonzero row.</p>
 <h2 id="definition-of-echelon-form">Definition of Echelon Form</h2>
 <p> A rectangular matrix is in <strong>echelon form</strong> (or <strong>row echelon form, REF</strong>) 
@@ -559,10 +552,11 @@ using different sequences of row operations.
 However, the <strong>reduced echelon form</strong> one obtains from a matrix is <strong>unique</strong>.  </p>
 <h2 id="theorem-1-uniqueness-of-the-reduced-echelon-form">Theorem 1: Uniqueness of the Reduced Echelon Form</h2>
 <p>Each matrix is <em>row equivalent</em> to one and <strong>only one reduced echelon matrix</strong>.</p>
-<h2 id="pivot-position">Pivot Position</h2>
+<hr>
 <p> If a matrix <script type="math/tex; ">A</script> is row equivalent to an echelon matrix <script type="math/tex; ">U</script>, 
 we call <script type="math/tex; ">U</script> <strong>an echelon form</strong> (or row echelon form) of <script type="math/tex; ">A</script>; 
-if <script type="math/tex; ">U</script> is in reduced echelon form, we call i<script type="math/tex; ">U</script> <strong>the reduced echelon form of <script type="math/tex; ">A</script></strong>.</p>
+if <script type="math/tex; ">U</script> is in reduced echelon form, we call <script type="math/tex; ">U</script> <strong>the reduced echelon form of <script type="math/tex; ">A</script></strong>.</p>
+<h2 id="pivot-position">Pivot Position</h2>
 <h2 id="definition-of-pivot-position-and-pivot-column">Definition of Pivot Position and Pivot Column</h2>
 <ul>
 <li>A <code>pivot position</code> in a matrix <script type="math/tex; ">A</script> is a location in <script type="math/tex; ">A</script> that corresponds to a <strong>leading 1 in the reduced echelon form of <script type="math/tex; ">A</script></strong>. </li>
@@ -654,7 +648,7 @@ Repeat the process until there are no more nonzero rows to modify.</p>
 for step 2, select as a pivot the &quot;top&quot; entry in that column.</p>
 <p><img src="fig/la_01_02_m08.png" alt="mat"></p>
 <p>For step 3, we could insert an optional step of dividing the &quot;top&quot; row of the submatrix by the pivot, 2. 
-Instead, we add <script type="math/tex; ">\frac{2}{3}</script> times the &quot;top&quot; row to the row below.</p>
+Instead, we add <script type="math/tex; ">\frac{3}{2}</script> times the &quot;top&quot; row to the row below.</p>
 <p>This produces the following matrix.</p>
 <p><img src="fig/la_01_02_m09.png" alt="mat"></p>
 <p>When we cover the row containing the second pivot
@@ -719,7 +713,7 @@ variables in terms of the free variables.
  This operation is possible because the reduced
 echelon form places each basic variable in one
 and only one equation.
- In (4), solve the first and second equations for <script type="math/tex; ">x_1</script> and the second for <script type="math/tex; ">x_2</script> 
+ In (4), solve the first equations for <script type="math/tex; ">x_1</script> and the second for <script type="math/tex; ">x_2</script> 
 (Ignore the third equation; it offers no restriction on the variables.)</p>
 <p><script type="math/tex; mode=display">
 \begin{align*}
@@ -735,35 +729,37 @@ when <script type="math/tex; ">x_3=1</script>, the solution is (6,3,1).
  Each different choice of <script type="math/tex; ">x_3</script> determines a (different) solution of the system, 
 and every solution of the system is determined by a choice of <script type="math/tex; ">x_3</script>.</p>
 <h2 id="parametric-descriptions-of-solution-sets">Parametric Descriptions of Solution Sets</h2>
-<p> The descriptions in (5) and (7) are <strong>parametric
-descriptions</strong> of solutions sets in which the free
-variables act as parameters.
- <em>Solving a system</em> amounts to finding a parametric
-description of the solution set or determining that
-the solution set is empty.</p>
-<p> Whenever a system is consistent and has free
-variables, the solution set has many parametric
-descriptions.
- For instance, in system (4), we may add 5 times
-equation 2 to equation 1 and obtain the following
-equivalent system</p>
+<p> The description in (5) is <strong>parametric
+description</strong> of solutions sets in which 
+the <strong>free variables act as parameters</strong>.
+ <em>Solving a system</em> amounts to </p>
+<ul>
+<li><strong>finding a parametric description of the solution set</strong> or </li>
+<li><p>determining that the <strong>solution set is empty</strong>.</p>
+<p>Whenever a system is <strong>consistent and has free variables</strong>, 
+the solution set has <strong>many parametric descriptions</strong>.
+For instance, in system (4), we may add 5 times equation 2 to equation 1 
+and obtain the following equivalent system</p>
+</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \begin{align*}
 x_1 + 5x_2 & = 21 \\
 x_2 +x_3 &= 4 \\
 \end{align*} 
 </script></p>
-<p> We could treat <script type="math/tex; ">x_2</script> as a parameter and solve for <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_3</script> 
-in terms of <script type="math/tex; ">x_2</script>, and we would have an accurate description of the solution set.</p>
-<p> Whenever a system is inconsistent, the solution set is
-empty, even when the system has free variables. In this
-case, the solution set has no parametric representation.</p>
-<p>When a system is in echelon form and contains no equation of the form <script type="math/tex; ">0=b</script>, with <script type="math/tex; ">b</script> nonzero, 
+<p> We could treat <strong><script type="math/tex; ">x_2</script> as a parameter</strong> and 
+solve for <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_3</script> in terms of <script type="math/tex; ">x_2</script>, and 
+we would have an <strong>accurate description of the solution set</strong>.</p>
+<p> Whenever a system is <strong>inconsistent</strong>, 
+the <strong>solution set is empty</strong>, even when the system has free variables. 
+In this case, the <strong>solution set has no parametric representation</strong>.</p>
+<p> When a system is in echelon form and contains no equation of the form <script type="math/tex; ">0=b</script>, with <script type="math/tex; ">b</script> nonzero, 
 every nonzero equation contains a <strong>basic variable</strong> with a nonzero coefficient.
-Either the basic variables are completely determined (with no free variables) or at least
-one of the basic variables may be expressed in terms of one or more free variables. 
-In the former case, there is a unique solution; 
-in the latter case, there are infinitely many solutions (one for each choice of values for the free variables).
+Either the basic variables are completely determined (with no free variables) or 
+at least one of the basic variables may be expressed in terms of one or more free variables. 
+In the former case, there is a <strong>unique solution</strong>; 
+in the latter case, there are <strong>infinitely many solutions</strong> (one for each choice of values for the free variables).
 These remarks justify the following theorem.</p>
 <hr>
 <h2 id="theorem-2--existence-and-uniqueness-theorem">Theorem 2 : Existence and Uniqueness Theorem</h2>
@@ -771,11 +767,13 @@ These remarks justify the following theorem.</p>
 the rightmost column of the augmented matrix is <em>not</em> a pivot column (<strong><script type="math/tex; ">b</script>&#xAC00; 0&#xC774; &#xC544;&#xB2C8;&#xBA74;&#xC11C; <script type="math/tex; ">0=b</script> &#xD615;&#xD0DC;&#xC758; equation</strong>&#xC774; &#xC5C6;&#xC74C;)
 -- i.e.,if and only if an echelon form of the augmented matrix has <em>no</em> row of the form</p>
 <p><script type="math/tex; mode=display">
-\begin{bmatrix}0 & \cdots & 0\end{bmatrix} \text{ with } b \text{ nonzero.}
+\begin{bmatrix}0 & \cdots & 0 & b \end{bmatrix} \text{ with } b \text{ nonzero.}
 </script></p>
-<p>If a linear system is consistent, then the solution set contains
-either (i) a unique solution, when there are no free variables,
-or (ii) infinitely many solutions, when there is at least on free variable.</p>
+<p>If a linear system is consistent, then the solution set contains either </p>
+<ul>
+<li>(i) a unique solution, when there are no free variables, or </li>
+<li>(ii) infinitely many solutions, when there is at least on free variable.</li>
+</ul>
 <hr>
 <h2 id="using-row-reduction-to-solve-a-linear-system">Using Row Reduction to Solve a Linear System</h2>
 <ol>
@@ -791,22 +789,6 @@ If there is no solution, stop; otherwise, go to the next step.</li>
                                 
                                 </section>
                             
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
-
                         </div>
                     </div>
                 
@@ -830,7 +812,7 @@ If there is no solution, stop; otherwise, go to the next step.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 02","level":"1.3.3","depth":2,"next":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"previous":{"title":"01 01","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_02.md","mtime":"2019-08-22T09:31:27.664Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-22T10:07:00.097Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 02","level":"1.3.3","depth":2,"next":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"previous":{"title":"01 01","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_02.md","mtime":"2019-08-23T15:20:46.579Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-23T15:23:53.295Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -852,7 +834,7 @@ If there is no solution, stop; otherwise, go to the next step.</li>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        <script src="../../gitbook/gitbook-plugin-search/lunr.min.js"></script>
         
     
         
@@ -872,7 +854,7 @@ If there is no solution, stop; otherwise, go to the next step.</li>
         
     
         
-        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        <script src="../../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
         
     
 
