@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>10_02 Difference Equation · GitBook</title>
+        <title>01 05 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_02_01.html" />
+    <link rel="next" href="la_01_10_02_Difference_Equation.html" />
     
     
-    <link rel="prev" href="la_01_05.html" />
+    <link rel="prev" href="la_01_04.html" />
     
 
     </head>
@@ -239,7 +239,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
+        <li class="chapter active" data-level="1.3.6" data-path="la_01_05.html">
             
                 <a href="la_01_05.html">
             
@@ -252,7 +252,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.7" data-path="la_01_10_02_Difference_Equation.html">
+        <li class="chapter " data-level="1.3.7" data-path="la_01_10_02_Difference_Equation.html">
             
                 <a href="la_01_10_02_Difference_Equation.html">
             
@@ -527,7 +527,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >10_02 Difference Equation</a>
+        <a href="../.." >01 05</a>
     </h1>
 </div>
 
@@ -542,75 +542,250 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ch0110-linear-models-in-business-science-and-engineering">Ch01.10 Linear Models in Business, Science, and Engineering</h1>
-<h2 id="011002--difference-equation">01.10.02 : Difference Equation</h2>
-<ul>
-<li>In many fields, a dynamic system that changes over a time should be mathematically modeled. </li>
-<li>Several features of the system are each measured at discrete time intervals, producing a sequence of vectors, <script type="math/tex; "> \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots, </script>. </li>
-<li>The entries in <script type="math/tex; ">\textbf{x}_k</script> provide information about the state of system at the time of the <script type="math/tex; ">k</script>th measurement.</li>
-<li>If there is a matrix <script type="math/tex; ">A</script> such that <script type="math/tex; ">\textbf{x}_1=A\textbf{x}_0, \textbf{x}_2=A\textbf{x}_1</script>, and , in general 
+                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
+<h1 id="15-solution-sets-of-linear-systems">1.5 Solution Sets of Linear Systems</h1>
+<h2 id="homogeneous-linear-systems">Homogeneous Linear Systems</h2>
+<p>A system of linear equations is said to be <strong>homogeneous</strong>
+if it can be written in the form <script type="math/tex; ">A\bf{x}=\bf{0}</script> 
+where <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix and <script type="math/tex; ">\bf{0}</script> is the zero vector in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<p>Such a system <script type="math/tex; ">A\bf{x}=\bf{0}</script> always has at least one solution, namely, <script type="math/tex; ">\bf{x}=\bf{0}</script> (the zero veoctor in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<p>This zero solution is usually called the <strong>trivial solution</strong>.</p>
+<p>The homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script>, the important equation is whether there exists a <strong>nontrivial solution</strong>, that is, a nonzero vector <script type="math/tex; ">\bf{x}</script> that satisfies <script type="math/tex; ">A\bf{x}=\bf{0}</script>.</p>
+<h2 id="example-1">Example 1:</h2>
+<p>Determine if the following homogeneous system has a nontrivial solution. 
+Then describe the solution set.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+3x_1+5x_2-4x_3 &=0 \\
+-3x_1-2x_2+4x_3 &=0 \\
+6x_1+x_2-8x_3 &=0 \\
+\end{align}
+</script></p>
+<h3 id="solution-fo-example-1">Solution fo Example 1</h3>
+<p>Let <script type="math/tex; ">A</script> be the matrix of coefficients of the system and row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & \bf{0} \end{bmatrix}$ to echelon form:
+
+</script>
+\begin{bmatrix}
+3 &amp; 5 &amp; -4 &amp; 0 \
+-3 &amp; -2 &amp; 4 &amp; 0 \
+6 &amp; 1 &amp; -8 &amp; 0 \
+\end{bmatrix}
+\tild
+\begin{bmatrix}
+3 &amp; 5 &amp; -4 &amp; 0 \
+0 &amp; 3 &amp; 0 &amp; 0 \
+0 &amp; -9 &amp; 0 &amp; 0 \
+\end{bmatrix}
+\tild
+\begin{bmatrix}
+3 &amp; 5 &amp; -4 &amp; 0 \
+0 &amp; 3 &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; 0 \
+\end{bmatrix}
 <script type="math/tex; mode=display">
-\textbf{x}_{k+1}=A\textbf{x}_k \text{  for }k=0,1,2,\cdots
-</script></li>
-<li>then it is called a linear difference equation (or recurrence relation)</li>
-<li>Given such an equation, one can compute <script type="math/tex; ">\textbf{x}_1,\textbf{x}_2</script>, and so on, provided <script type="math/tex; ">\textbf{x}_0</script> is known.</li>
-<li>The dicussion below illustrates how a difference equation might arise.</li>
-<li>A subject of interest to demographers is the movement of populations or groups of people from one region to another. The simple model here considers the changes in the population of a certain city and its surrounding suburbs over a period of years.</li>
-<li>Fix an initial year-say,2019- and denote the populations of the city and suburbs that year by <script type="math/tex; ">r_0</script> and <script type="math/tex; ">s_0</script>, repectively. Let <script type="math/tex; ">\textbf{x}_0</script> be the population vector
+
+Since </script>x_3<script type="math/tex; "> is a free variable,
+has nontrivial solutions (one for each choice of </script>x_3<script type="math/tex; ">.)
+
+Continue the row reduction of </script>\begin{bmatrix} A &amp; \bf{0} \end{bmatrix}<script type="math/tex; "> to reduced echelon form:
+
+</script>
+\begin{bmatrix}
+1 &amp; 5/3 &amp; -4/3 &amp; 0 \
+0 &amp; 1 &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; 0 &amp; 0 \
+\end{bmatrix}
+\begin{align}
+x_1-\frac{4}{3}x_3 &amp;= 0 \
+x_2 = 0\
+0=0\
+\end{align}
 <script type="math/tex; mode=display">
-\textbf{x}_0 = \begin{bmatrix}r_0 \\ s_0 \end{bmatrix}
-\begin{matrix} \text{City population, 2019} \\ \text{Suburban population, 2019} \end{matrix}
-</script></li>
-<li>For 2020 and subsequent years, denote the populations of the city and suburbs by vectors
+
+Solve for the basic variables </script>x_1<script type="math/tex; "> and </script>x_2<script type="math/tex; "> to obtain </script>x_1=\frac{4}{3}x_3, x_2=0<script type="math/tex; ">, with </script>x_3<script type="math/tex; "> free.
+
+As a vector, the general solution of </script>A\bf{x}=\bf{0}<script type="math/tex; "> has the form given below.
+
+</script>
+\bf{x}=
+\begin{bmatrix}
+x_1 \
+x_2 \
+x_3 
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{4}{3}x_3 \
+0 \
+x_3 
+\end{bmatrix}
+=
+x_3
+\begin{bmatrix}
+\frac{4}{3} \
+0 \
+1 
+\end{bmatrix}
+=x_3 \bf{v}
 <script type="math/tex; mode=display">
-\textbf{x}_1 = \begin{bmatrix}r_1 \\ s_1 \end{bmatrix},
-\textbf{x}_2 = \begin{bmatrix}r_2 \\ s_2 \end{bmatrix},
-\textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
-</script></li>
-<li>Our goal is to describe mathematically how these vectors might be related.</li>
-<li>Suppose demographic studies show that each year about 5% of the city&apos;s population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
-<img src="fig/la_01_10_02.png" alt="figure2"></li>
-<li>After 1 year, the original <script type="math/tex; ">r_0</script> persons in the city are now distributed between city and suburbs as
+
+where
+
+</script>
+\bf{v}= 
+\begin{bmatrix}
+4/3 \ 0 \ 1
+\end{bmatrix}
 <script type="math/tex; mode=display">
-\begin{bmatrix}.95 r_0 \\.05 r_0\end{bmatrix} = r_0 
-\begin{bmatrix}.95 \\ .05 \end{bmatrix}
-\begin{matrix} \text{Remain in city} \\ \text{Move to suburbs} \end{matrix} \tag{6}
-</script></li>
-<li>The so persons in the suburbs in 2019 are distributed 1 year later as
+
+Here </script>x_3<script type="math/tex; "> is factored out of the expression for the general solution vector.
+
+This shows that every solution of </script>A\bf{x}=\bf{0}<script type="math/tex; "> in this case is a scalar multiple of </script>\bf{v}<script type="math/tex; ">.
+
+The trivial solution is obtained by choosing </script>x_3=0<script type="math/tex; mode=display">
+
+Geometrically, the solution set is a line through </script>\bf{0}<script type="math/tex; "> in </script>\mathbb{R}^3<script type="math/tex; ">.
+
+See Fig.1 below.
+
+![fig1](./fig/la_01_05_01.png)
+
+## Parametric Vector Form
+
+The equation of the form </script>\bf{x}=s\bf{u} +t\bf{v} (s,t in \mathbb{R})<script type="math/tex; "> is called a **parametric vector equation** of the plane.
+
+In Example 1, the equation </script>\bf{x}=x_3\bf{v}<script type="math/tex; "> (with </script>x_3<script type="math/tex; "> free), or </script>\bf{x}=t\bf{v}<script type="math/tex; "> (with </script>t<script type="math/tex; "> in </script>\mathbb{R}<script type="math/tex; ">),
+is a parametric vector equation of a line.
+
+Whenever a solution set is described explicitly
+with vectors as in Example 1, we say that the
+solution is in **parametric vector form**.
+
+## Solutions of Nonhomogeneous Systems 
+
+ When a nonhomogeneous linear system has many solutions, the general solution can be 
+written in parametric vector form as one vector 
+plus an arbitrary linear combination of vectors that 
+satisfy the corresponding homogeneous system.
+
+## Example 3
+
+Describe all solutions of </script>A\bf{x}=\bf{b}<script type="math/tex; "> where
+
+</script>
+A = 
+\begin{bmatrix}
+3 &amp; 5 &amp; -4 \
+-3 &amp; -2 &amp; 4 \
+6 &amp; 1 &amp; -8 
+\end{bmatrix}
+\text{ and }
+\bf{b} =
+\begin{bmatrix}
+7 \
+-1 \
+-4 
+\end{bmatrix}
 <script type="math/tex; mode=display">
-s_0\begin{bmatrix}.03 \\.97 \end{bmatrix} 
-\begin{matrix} \text{Move to city} \\ \text{Remain in suburbs} \end{matrix}
-\tag{7}
-</script></li>
-<li>The vectors in (6) and (7) account for all of the populations in 2020. Thus
+
+### Solution of Example 3
+
+Row operations on </script>\begin{bmatrix} A &amp; \bf{b}\end{bmatrix} <script type="math/tex; "> produce
+
+</script>
+\begin{bmatrix}
+3 &amp; 5 &amp; -4 &amp;7 \
+-3 &amp; -2 &amp; 4&amp;-1 \
+6 &amp; 1 &amp; -8&amp;-4 
+\end{bmatrix}
+\tild
+\begin{bmatrix}
+1 &amp; 0 &amp; -4/3 &amp;-1 \
+0 &amp; 1 &amp; 0 &amp; 2 \
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix},
+\begin{align}
+x_1-\frac{4}{3}x_3&amp;=-1 \
+x_2 &amp;= 2 \
+0 &amp;= 0
+\end{align}
 <script type="math/tex; mode=display">
-\begin{bmatrix} r_1 \\ s_1 \end{bmatrix}
-=r_0\begin{bmatrix} .95 \\ .05 \end{bmatrix}
-+s_0\begin{bmatrix} .03 \\ .97 \end{bmatrix}
-=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
-\begin{bmatrix} r_0 \\ s_0 \end{bmatrix}
-</script></li>
-<li>That is, 
+
+Thus, </script>x_1 = -1 + \frac{4}{3}x_3, x_2=2<script type="math/tex; ">, and </script>x_3<script type="math/tex; "> is free.
+
+As a vector, the general solution of </script>A\bf{x}=\bf{b}<script type="math/tex; "> has the form
+
+![fig_ex](./fig/la_01_05_ex01.png)
+
+The equation </script>\bf{x}=\bf{p}+x_3\bf{v}<script type="math/tex; ">, or, writing t as a general parameter,
+
+</script>
+\bf{x}=\bf{p}+t\bf{v} \quad (t \text{ in }\mathbb{R}
+\tag{3}
 <script type="math/tex; mode=display">
-\textbf{x}_1 = M \textbf{x}_0 \tag{8}
-</script></li>
-<li>Where <script type="math/tex; ">M</script> is the migration matrix determined by the following table:
+
+describes the solution set of </script>A\bf{x}=\bf{b}<script type="math/tex; "> in parametric vector form.
+
+The solution set of </script>A\bf{x}=\bf{0}<script type="math/tex; "> has the parametric vector equation
+
+</script>
+\bf{x}=t\bf{v} \quad (t \text{ in }  \mathbb{R}) \tag{4}
 <script type="math/tex; mode=display">
-M=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
-</script></li>
-<li>Equation (8) describes how the population changes
-from 2019 to 2020. If the migration percentages
-remain constant, then the change from 2020 to 2021
-is given by
-<script type="math/tex; mode=display">
-\textbf{x}_2 = M \textbf{x}_1 
-</script></li>
-<li>And similarly for 2021 to 2022 and subsequent years. In general,
-<script type="math/tex; mode=display">
-\textbf{x}_{k+1} = M\textbf{x}_k \text{ for }k=0,1,2,\cdots \tag{9}
-</script></li>
-<li>The sequence of vectors <script type="math/tex; ">\left\{ \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots \right\}</script> describes the population of the city/suburban region over a period of years.</li>
-</ul>
+
+[with the same </script>\bf{v}<script type="math/tex; "> that appears in (3)].
+
+Thus the solutions of </script>A\bf{x}=\bf{b}<script type="math/tex; "> are obtained by adding
+the vector </script>\bf{p}<script type="math/tex; "> to the solutions of </script>A\bf{x}=\bf{0}<script type="math/tex; ">.
+
+The vector </script>\bf{p}<script type="math/tex; "> itself is just one particular solution of </script>A\bf{x}=\bf{b}<script type="math/tex; "> [corresponding to </script>t<script type="math/tex; "> = 0 in (3).]
+
+To describe the solution of </script>A\bf{x}=\bf{b}<script type="math/tex; "> geometrically, we can think of vector addition as a translation.
+
+Given </script>\bf{v}<script type="math/tex; "> and </script>\bf{p}<script type="math/tex; "> in </script>\mathbb{R}^2<script type="math/tex; "> or </script>\mathbb{R}^3<script type="math/tex; ">, the effect of adding </script>\bf{p}<script type="math/tex; "> to </script>\bf{v}<script type="math/tex; "> 
+is to move </script>\bf{v}<script type="math/tex; "> in a direction parallel to the line through </script>\bf{p}<script type="math/tex; "> and </script>\bf{0}<script type="math/tex; ">.
+
+We say that </script>\bf{v}<script type="math/tex; "> is translated by </script>\bf{p}<script type="math/tex; "> to See the following figure.
+
+![](./fig/la_01_05_.png)
+
+If each point on a line </script>L<script type="math/tex; "> in </script>\mathbb{R}^2<script type="math/tex; "> or </script>\mathbb{R}^3<script type="math/tex; "> is translated by 
+a vector </script>\bf{p}<script type="math/tex; ">, the result is a line parallel to </script>L<script type="math/tex; ">. 
+See the following figure.
+
+![](./fig/la_01_05_.png)
+
+Suppose </script>L<script type="math/tex; "> is the line through </script>\bf{0}<script type="math/tex; "> and </script>\bf{v}<script type="math/tex; ">, described by equation (4).
+
+Adding </script>\bf{p}<script type="math/tex; "> to each point on </script>L<script type="math/tex; "> produces the translated line described by equation (3).
+
+We call (3) the equation of the line through </script>\bf{p}<script type="math/tex; "> parallel to </script>\bf{v}<script type="math/tex; ">.
+
+Thus the solution set of </script>A\bf{x}=\bf{b}<script type="math/tex; "> is a line through </script>\bf{p}<script type="math/tex; "> parallel to the solution set of </script>A\bf{x}=\bf{0}<script type="math/tex; ">.
+The figure below illustrates this case.
+
+![](./fig/la_01_05_.png)
+
+The relation between the solution sets of </script>A\bf{x}=\bf{b}<script type="math/tex; "> and </script>A\bf{x}=\bf{0}<script type="math/tex; "> 
+shown in the figure above generalizes to any consistent equation </script>A\bf{x}=\bf{b}<script type="math/tex; "> 
+,although the solution set will be larger than a line when there
+are several free variables.
+
+## Theorem 6
+
+Suppose the equation </script>A\bf{x}=\bf{b}<script type="math/tex; "> is consistent for some given </script>\bf{b}<script type="math/tex; ">, and let </script>\bf{p}<script type="math/tex; "> be a solution. 
+
+Then the solution set of </script>A\bf{x}=\bf{b}<script type="math/tex; "> is the set of all vectors of the form </script>\bf{w}=\bf{p}+\bf{v}_h<script type="math/tex; ">, where </script>\bf{v}_h<script type="math/tex; "> 
+is any solution of the homogeneous equation.
+
+* Theorem 6 says that if </script>A\bf{x}=\bf{b}<script type="math/tex; "> has a solution, then the solution set is obtained by translating the solution set of
+  </script>A\bf{x}=\bf{0}<script type="math/tex; "> using any particular solution </script>\bf{p}<script type="math/tex; "> of </script>A\bf{x}=\bf{b}<script type="math/tex; "> for the translation.
+
+## Writing a Solution Set (of a Consistent System) in Parametric Vector Form
+
+1. Row reduce the augmented matrix to reduced echelon form.
+2. Express each basic variable in terms of any free variables appearing in an equation.
+3. Write a typical solution </script>\bf{x}<script type="math/tex; "> as a vector whose entries depend on the free variables, if any.
+4. Decompose </script>\bf{x}$$ into a linear combination of vectors (with numeric entries) using the free variables as parameters.</p>
 
                                 
                                 </section>
@@ -638,12 +813,12 @@ is given by
 
             
                 
-                <a href="la_01_05.html" class="navigation navigation-prev " aria-label="Previous page: 01 05">
+                <a href="la_01_04.html" class="navigation navigation-prev " aria-label="Previous page: 01 04">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_02_01.html" class="navigation navigation-next " aria-label="Next page: 02_01_Matrix_Algebra">
+                <a href="la_01_10_02_Difference_Equation.html" class="navigation navigation-next " aria-label="Next page: 10_02 Difference Equation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -654,7 +829,7 @@ is given by
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"10_02 Difference Equation","level":"1.3.7","depth":2,"next":{"title":"02_01_Matrix_Algebra","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},"previous":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","mtime":"2019-08-20T12:30:49.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T03:52:54.619Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 05","level":"1.3.6","depth":2,"next":{"title":"10_02 Difference Equation","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"previous":{"title":"01 04","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_05.md","mtime":"2019-08-28T10:23:23.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T03:52:54.619Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
