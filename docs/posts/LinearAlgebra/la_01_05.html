@@ -548,7 +548,7 @@
 <p>A system of linear equations is said to be <strong>homogeneous</strong>
 if it can be written in the form <script type="math/tex; ">A\bf{x}=\bf{0}</script> 
 where <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix and <script type="math/tex; ">\bf{0}</script> is the zero vector in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
-<p>Such a system <script type="math/tex; ">A\bf{x}=\bf{0}</script> always has at least one solution, namely, <script type="math/tex; ">\bf{x}=\bf{0}</script> (the zero veoctor in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<p>Such a system <script type="math/tex; ">A\bf{x}=\bf{0}</script> always has at least one solution, namely, <script type="math/tex; ">\bf{x}=\bf{0}</script> (the zero veoctor in <script type="math/tex; ">\mathbb{R}^n</script>).</p>
 <p>This zero solution is usually called the <strong>trivial solution</strong>.</p>
 <p>The homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script>, the important equation is whether there exists a <strong>nontrivial solution</strong>, that is, a nonzero vector <script type="math/tex; ">\bf{x}</script> that satisfies <script type="math/tex; ">A\bf{x}=\bf{0}</script>.</p>
 <h2 id="example-1">Example 1:</h2>
@@ -562,230 +562,178 @@ Then describe the solution set.</p>
 \end{align}
 </script></p>
 <h3 id="solution-fo-example-1">Solution fo Example 1</h3>
-<p>Let <script type="math/tex; ">A</script> be the matrix of coefficients of the system and row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & \bf{0} \end{bmatrix}$ to echelon form:
-
-</script>
+<p>Let <script type="math/tex; ">A</script> be the matrix of coefficients of the system and row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & \bf{0} \end{bmatrix}</script> to echelon form:</p>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}
-3 &amp; 5 &amp; -4 &amp; 0 \
--3 &amp; -2 &amp; 4 &amp; 0 \
-6 &amp; 1 &amp; -8 &amp; 0 \
+3 & 5 & -4 & 0 \\
+-3 & -2 & 4 & 0 \\
+6 & 1 & -8 & 0 \\
 \end{bmatrix}
 \tild
 \begin{bmatrix}
-3 &amp; 5 &amp; -4 &amp; 0 \
-0 &amp; 3 &amp; 0 &amp; 0 \
-0 &amp; -9 &amp; 0 &amp; 0 \
+3 & 5 & -4 & 0 \\
+0 & 3 & 0 & 0 \\
+0 & -9 & 0 & 0 \\
 \end{bmatrix}
 \tild
 \begin{bmatrix}
-3 &amp; 5 &amp; -4 &amp; 0 \
-0 &amp; 3 &amp; 0 &amp; 0 \
-0 &amp; 0 &amp; 0 &amp; 0 \
+3 & 5 & -4 & 0 \\
+0 & 3 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-Since </script>x_3<script type="math/tex; "> is a free variable,
-has nontrivial solutions (one for each choice of </script>x_3<script type="math/tex; ">.)
-
-Continue the row reduction of </script>\begin{bmatrix} A &amp; \bf{0} \end{bmatrix}<script type="math/tex; "> to reduced echelon form:
-
-</script>
+</script></p>
+<p>Since <script type="math/tex; ">x_3</script> is a free variable,
+has nontrivial solutions (one for each choice of <script type="math/tex; ">x_3</script>.)</p>
+<p>Continue the row reduction of <script type="math/tex; ">\begin{bmatrix} A & \bf{0} \end{bmatrix}</script> to reduced echelon form:</p>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}
-1 &amp; 5/3 &amp; -4/3 &amp; 0 \
-0 &amp; 1 &amp; 0 &amp; 0 \
-0 &amp; 0 &amp; 0 &amp; 0 \
+1 & 5/3 & -4/3 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
 \end{bmatrix}
 \begin{align}
-x_1-\frac{4}{3}x_3 &amp;= 0 \
-x_2 = 0\
-0=0\
+x_1-\frac{4}{3}x_3 &= 0 \\
+x_2 = 0\\
+0=0\\
 \end{align}
-<script type="math/tex; mode=display">
-
-Solve for the basic variables </script>x_1<script type="math/tex; "> and </script>x_2<script type="math/tex; "> to obtain </script>x_1=\frac{4}{3}x_3, x_2=0<script type="math/tex; ">, with </script>x_3<script type="math/tex; "> free.
-
-As a vector, the general solution of </script>A\bf{x}=\bf{0}<script type="math/tex; "> has the form given below.
-
-</script>
+</script></p>
+<p>Solve for the basic variables <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> to obtain <script type="math/tex; ">x_1=\frac{4}{3}x_3, x_2=0</script>, with <script type="math/tex; ">x_3</script> free.</p>
+<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the form given below.</p>
+<p><script type="math/tex; mode=display">
 \bf{x}=
 \begin{bmatrix}
-x_1 \
-x_2 \
+x_1 \\
+x_2 \\
 x_3 
 \end{bmatrix}
 =
 \begin{bmatrix}
-\frac{4}{3}x_3 \
-0 \
+\frac{4}{3}x_3 \\
+0 \\
 x_3 
 \end{bmatrix}
 =
 x_3
 \begin{bmatrix}
-\frac{4}{3} \
-0 \
+\frac{4}{3} \\
+0 \\
 1 
 \end{bmatrix}
 =x_3 \bf{v}
-<script type="math/tex; mode=display">
-
-where
-
-</script>
+</script></p>
+<p>where</p>
+<p><script type="math/tex; mode=display">
 \bf{v}= 
 \begin{bmatrix}
-4/3 \ 0 \ 1
+4/3 \\ 0 \\ 1
 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-Here </script>x_3<script type="math/tex; "> is factored out of the expression for the general solution vector.
-
-This shows that every solution of </script>A\bf{x}=\bf{0}<script type="math/tex; "> in this case is a scalar multiple of </script>\bf{v}<script type="math/tex; ">.
-
-The trivial solution is obtained by choosing </script>x_3=0<script type="math/tex; mode=display">
-
-Geometrically, the solution set is a line through </script>\bf{0}<script type="math/tex; "> in </script>\mathbb{R}^3<script type="math/tex; ">.
-
-See Fig.1 below.
-
-![fig1](./fig/la_01_05_01.png)
-
-## Parametric Vector Form
-
-The equation of the form </script>\bf{x}=s\bf{u} +t\bf{v} (s,t in \mathbb{R})<script type="math/tex; "> is called a **parametric vector equation** of the plane.
-
-In Example 1, the equation </script>\bf{x}=x_3\bf{v}<script type="math/tex; "> (with </script>x_3<script type="math/tex; "> free), or </script>\bf{x}=t\bf{v}<script type="math/tex; "> (with </script>t<script type="math/tex; "> in </script>\mathbb{R}<script type="math/tex; ">),
-is a parametric vector equation of a line.
-
-Whenever a solution set is described explicitly
+</script></p>
+<p>Here <script type="math/tex; ">x_3</script> is factored out of the expression for the general solution vector.</p>
+<p>This shows that every solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> in this case is a scalar multiple of <script type="math/tex; ">\bf{v}</script>.</p>
+<p>The trivial solution is obtained by choosing <script type="math/tex; ">x_3=0</script></p>
+<p>Geometrically, the solution set is a line through <script type="math/tex; ">\bf{0}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
+<p>See Fig.1 below.</p>
+<p><img src="fig/la_01_05_01.png" alt="fig1"></p>
+<h2 id="parametric-vector-form">Parametric Vector Form</h2>
+<p>The equation of the form <script type="math/tex; ">\bf{x}=s\bf{u} +t\bf{v} (s,t in \mathbb{R})</script> is called a <strong>parametric vector equation</strong> of the plane.</p>
+<p>In Example 1, the equation <script type="math/tex; ">\bf{x}=x_3\bf{v}</script> (with <script type="math/tex; ">x_3</script> free), or <script type="math/tex; ">\bf{x}=t\bf{v}</script> (with <script type="math/tex; ">t</script> in <script type="math/tex; ">\mathbb{R}</script>),
+is a parametric vector equation of a line.</p>
+<p>Whenever a solution set is described explicitly
 with vectors as in Example 1, we say that the
-solution is in **parametric vector form**.
-
-## Solutions of Nonhomogeneous Systems 
-
- When a nonhomogeneous linear system has many solutions, the general solution can be 
+solution is in <strong>parametric vector form</strong>.</p>
+<h2 id="solutions-of-nonhomogeneous-systems">Solutions of Nonhomogeneous Systems</h2>
+<p> When a nonhomogeneous linear system has many solutions, the general solution can be 
 written in parametric vector form as one vector 
 plus an arbitrary linear combination of vectors that 
-satisfy the corresponding homogeneous system.
-
-## Example 3
-
-Describe all solutions of </script>A\bf{x}=\bf{b}<script type="math/tex; "> where
-
-</script>
+satisfy the corresponding homogeneous system.</p>
+<h2 id="example-3">Example 3</h2>
+<p>Describe all solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script> where</p>
+<p><script type="math/tex; mode=display">
 A = 
 \begin{bmatrix}
-3 &amp; 5 &amp; -4 \
--3 &amp; -2 &amp; 4 \
-6 &amp; 1 &amp; -8 
+3 & 5 & -4 \\
+-3 & -2 & 4 \\
+6 & 1 & -8 
 \end{bmatrix}
 \text{ and }
 \bf{b} =
 \begin{bmatrix}
-7 \
--1 \
+7 \\
+-1 \\
 -4 
 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-### Solution of Example 3
-
-Row operations on </script>\begin{bmatrix} A &amp; \bf{b}\end{bmatrix} <script type="math/tex; "> produce
-
-</script>
+</script></p>
+<h3 id="solution-of-example-3">Solution of Example 3</h3>
+<p>Row operations on <script type="math/tex; ">\begin{bmatrix} A & \bf{b}\end{bmatrix} </script> produce</p>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}
-3 &amp; 5 &amp; -4 &amp;7 \
--3 &amp; -2 &amp; 4&amp;-1 \
-6 &amp; 1 &amp; -8&amp;-4 
+3 & 5 & -4 &7 \\
+-3 & -2 & 4&-1 \\
+6 & 1 & -8&-4 
 \end{bmatrix}
 \tild
 \begin{bmatrix}
-1 &amp; 0 &amp; -4/3 &amp;-1 \
-0 &amp; 1 &amp; 0 &amp; 2 \
-0 &amp; 0 &amp; 0 &amp; 0
+1 & 0 & -4/3 &-1 \\
+0 & 1 & 0 & 2 \\
+0 & 0 & 0 & 0
 \end{bmatrix},
 \begin{align}
-x_1-\frac{4}{3}x_3&amp;=-1 \
-x_2 &amp;= 2 \
-0 &amp;= 0
+x_1-\frac{4}{3}x_3&=-1 \\
+x_2 &= 2 \\
+0 &= 0
 \end{align}
-<script type="math/tex; mode=display">
-
-Thus, </script>x_1 = -1 + \frac{4}{3}x_3, x_2=2<script type="math/tex; ">, and </script>x_3<script type="math/tex; "> is free.
-
-As a vector, the general solution of </script>A\bf{x}=\bf{b}<script type="math/tex; "> has the form
-
-![fig_ex](./fig/la_01_05_ex01.png)
-
-The equation </script>\bf{x}=\bf{p}+x_3\bf{v}<script type="math/tex; ">, or, writing t as a general parameter,
-
-</script>
+</script></p>
+<p>Thus, <script type="math/tex; ">x_1 = -1 + \frac{4}{3}x_3, x_2=2</script>, and <script type="math/tex; ">x_3</script> is free.</p>
+<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> has the form</p>
+<p><img src="fig/la_01_05_ex01.png" alt="fig_ex"></p>
+<p>The equation <script type="math/tex; ">\bf{x}=\bf{p}+x_3\bf{v}</script>, or, writing t as a general parameter,</p>
+<p><script type="math/tex; mode=display">
 \bf{x}=\bf{p}+t\bf{v} \quad (t \text{ in }\mathbb{R}
 \tag{3}
-<script type="math/tex; mode=display">
-
-describes the solution set of </script>A\bf{x}=\bf{b}<script type="math/tex; "> in parametric vector form.
-
-The solution set of </script>A\bf{x}=\bf{0}<script type="math/tex; "> has the parametric vector equation
-
-</script>
+</script></p>
+<p>describes the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> in parametric vector form.</p>
+<p>The solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the parametric vector equation</p>
+<p><script type="math/tex; mode=display">
 \bf{x}=t\bf{v} \quad (t \text{ in }  \mathbb{R}) \tag{4}
-<script type="math/tex; mode=display">
-
-[with the same </script>\bf{v}<script type="math/tex; "> that appears in (3)].
-
-Thus the solutions of </script>A\bf{x}=\bf{b}<script type="math/tex; "> are obtained by adding
-the vector </script>\bf{p}<script type="math/tex; "> to the solutions of </script>A\bf{x}=\bf{0}<script type="math/tex; ">.
-
-The vector </script>\bf{p}<script type="math/tex; "> itself is just one particular solution of </script>A\bf{x}=\bf{b}<script type="math/tex; "> [corresponding to </script>t<script type="math/tex; "> = 0 in (3).]
-
-To describe the solution of </script>A\bf{x}=\bf{b}<script type="math/tex; "> geometrically, we can think of vector addition as a translation.
-
-Given </script>\bf{v}<script type="math/tex; "> and </script>\bf{p}<script type="math/tex; "> in </script>\mathbb{R}^2<script type="math/tex; "> or </script>\mathbb{R}^3<script type="math/tex; ">, the effect of adding </script>\bf{p}<script type="math/tex; "> to </script>\bf{v}<script type="math/tex; "> 
-is to move </script>\bf{v}<script type="math/tex; "> in a direction parallel to the line through </script>\bf{p}<script type="math/tex; "> and </script>\bf{0}<script type="math/tex; ">.
-
-We say that </script>\bf{v}<script type="math/tex; "> is translated by </script>\bf{p}<script type="math/tex; "> to See the following figure.
-
-![](./fig/la_01_05_.png)
-
-If each point on a line </script>L<script type="math/tex; "> in </script>\mathbb{R}^2<script type="math/tex; "> or </script>\mathbb{R}^3<script type="math/tex; "> is translated by 
-a vector </script>\bf{p}<script type="math/tex; ">, the result is a line parallel to </script>L<script type="math/tex; ">. 
-See the following figure.
-
-![](./fig/la_01_05_.png)
-
-Suppose </script>L<script type="math/tex; "> is the line through </script>\bf{0}<script type="math/tex; "> and </script>\bf{v}<script type="math/tex; ">, described by equation (4).
-
-Adding </script>\bf{p}<script type="math/tex; "> to each point on </script>L<script type="math/tex; "> produces the translated line described by equation (3).
-
-We call (3) the equation of the line through </script>\bf{p}<script type="math/tex; "> parallel to </script>\bf{v}<script type="math/tex; ">.
-
-Thus the solution set of </script>A\bf{x}=\bf{b}<script type="math/tex; "> is a line through </script>\bf{p}<script type="math/tex; "> parallel to the solution set of </script>A\bf{x}=\bf{0}<script type="math/tex; ">.
-The figure below illustrates this case.
-
-![](./fig/la_01_05_.png)
-
-The relation between the solution sets of </script>A\bf{x}=\bf{b}<script type="math/tex; "> and </script>A\bf{x}=\bf{0}<script type="math/tex; "> 
-shown in the figure above generalizes to any consistent equation </script>A\bf{x}=\bf{b}<script type="math/tex; "> 
+</script></p>
+<p>[with the same <script type="math/tex; ">\bf{v}</script> that appears in (3)].</p>
+<p>Thus the solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script> are obtained by adding
+the vector <script type="math/tex; ">\bf{p}</script> to the solutions of <script type="math/tex; ">A\bf{x}=\bf{0}</script>.</p>
+<p>The vector <script type="math/tex; ">\bf{p}</script> itself is just one particular solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> [corresponding to <script type="math/tex; ">t</script> = 0 in (3).]</p>
+<p>To describe the solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> geometrically, we can think of vector addition as a translation.</p>
+<p>Given <script type="math/tex; ">\bf{v}</script> and <script type="math/tex; ">\bf{p}</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script>, the effect of adding <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}</script> 
+is to move <script type="math/tex; ">\bf{v}</script> in a direction parallel to the line through <script type="math/tex; ">\bf{p}</script> and <script type="math/tex; ">\bf{0}</script>.</p>
+<p>We say that <script type="math/tex; ">\bf{v}</script> is translated by <script type="math/tex; ">\bf{p}</script> to See the following figure.</p>
+<p><img src="fig/la_01_05_.png" alt=""></p>
+<p>If each point on a line <script type="math/tex; ">L</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script> is translated by 
+a vector <script type="math/tex; ">\bf{p}</script>, the result is a line parallel to <script type="math/tex; ">L</script>. 
+See the following figure.</p>
+<p><img src="fig/la_01_05_.png" alt=""></p>
+<p>Suppose <script type="math/tex; ">L</script> is the line through <script type="math/tex; ">\bf{0}</script> and <script type="math/tex; ">\bf{v}</script>, described by equation (4).</p>
+<p>Adding <script type="math/tex; ">\bf{p}</script> to each point on <script type="math/tex; ">L</script> produces the translated line described by equation (3).</p>
+<p>We call (3) the equation of the line through <script type="math/tex; ">\bf{p}</script> parallel to <script type="math/tex; ">\bf{v}</script>.</p>
+<p>Thus the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is a line through <script type="math/tex; ">\bf{p}</script> parallel to the solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script>.
+The figure below illustrates this case.</p>
+<p><img src="fig/la_01_05_.png" alt=""></p>
+<p>The relation between the solution sets of <script type="math/tex; ">A\bf{x}=\bf{b}</script> and <script type="math/tex; ">A\bf{x}=\bf{0}</script> 
+shown in the figure above generalizes to any consistent equation <script type="math/tex; ">A\bf{x}=\bf{b}</script> 
 ,although the solution set will be larger than a line when there
-are several free variables.
-
-## Theorem 6
-
-Suppose the equation </script>A\bf{x}=\bf{b}<script type="math/tex; "> is consistent for some given </script>\bf{b}<script type="math/tex; ">, and let </script>\bf{p}<script type="math/tex; "> be a solution. 
-
-Then the solution set of </script>A\bf{x}=\bf{b}<script type="math/tex; "> is the set of all vectors of the form </script>\bf{w}=\bf{p}+\bf{v}_h<script type="math/tex; ">, where </script>\bf{v}_h<script type="math/tex; "> 
-is any solution of the homogeneous equation.
-
-* Theorem 6 says that if </script>A\bf{x}=\bf{b}<script type="math/tex; "> has a solution, then the solution set is obtained by translating the solution set of
-  </script>A\bf{x}=\bf{0}<script type="math/tex; "> using any particular solution </script>\bf{p}<script type="math/tex; "> of </script>A\bf{x}=\bf{b}<script type="math/tex; "> for the translation.
-
-## Writing a Solution Set (of a Consistent System) in Parametric Vector Form
-
-1. Row reduce the augmented matrix to reduced echelon form.
-2. Express each basic variable in terms of any free variables appearing in an equation.
-3. Write a typical solution </script>\bf{x}<script type="math/tex; "> as a vector whose entries depend on the free variables, if any.
-4. Decompose </script>\bf{x}$$ into a linear combination of vectors (with numeric entries) using the free variables as parameters.</p>
+are several free variables.</p>
+<h2 id="theorem-6">Theorem 6</h2>
+<p>Suppose the equation <script type="math/tex; ">A\bf{x}=\bf{b}</script> is consistent for some given <script type="math/tex; ">\bf{b}</script>, and let <script type="math/tex; ">\bf{p}</script> be a solution. </p>
+<p>Then the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is the set of all vectors of the form <script type="math/tex; ">\bf{w}=\bf{p}+\bf{v}_h</script>, where <script type="math/tex; ">\bf{v}_h</script> 
+is any solution of the homogeneous equation.</p>
+<ul>
+<li>Theorem 6 says that if <script type="math/tex; ">A\bf{x}=\bf{b}</script> has a solution, then the solution set is obtained by translating the solution set of
+<script type="math/tex; ">A\bf{x}=\bf{0}</script> using any particular solution <script type="math/tex; ">\bf{p}</script> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> for the translation.</li>
+</ul>
+<h2 id="writing-a-solution-set-of-a-consistent-system-in-parametric-vector-form">Writing a Solution Set (of a Consistent System) in Parametric Vector Form</h2>
+<ol>
+<li>Row reduce the augmented matrix to reduced echelon form.</li>
+<li>Express each basic variable in terms of any free variables appearing in an equation.</li>
+<li>Write a typical solution <script type="math/tex; ">\bf{x}</script> as a vector whose entries depend on the free variables, if any.</li>
+<li>Decompose <script type="math/tex; ">\bf{x}</script> into a linear combination of vectors (with numeric entries) using the free variables as parameters.</li>
+</ol>
 
                                 
                                 </section>
@@ -829,7 +777,7 @@ is any solution of the homogeneous equation.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 05","level":"1.3.6","depth":2,"next":{"title":"10_02 Difference Equation","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"previous":{"title":"01 04","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_05.md","mtime":"2019-08-28T10:23:23.108Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T04:10:24.926Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 05","level":"1.3.6","depth":2,"next":{"title":"10_02 Difference Equation","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"previous":{"title":"01 04","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_05.md","mtime":"2019-09-02T04:23:42.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T04:23:47.945Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
