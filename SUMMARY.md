@@ -10,6 +10,8 @@
   * [01 01](posts/LinearAlgebra/la_01_01.md)
   * [01 02](posts/LinearAlgebra/la_01_02.md)
   * [01 03](posts/LinearAlgebra/la_01_03.md)
+  * [01 04](posts/LinearAlgebra/la_01_03.md)
+  * [01 05](posts/LinearAlgebra/la_01_03.md)
   * [10_02 Difference Equation](posts/LinearAlgebra/la_01_10_02_Difference_Equation.md)
   * [02_01_Matrix_Algebra](posts/LinearAlgebra/la_02_01.md)
   * [02_02_Inverse_Matrix](posts/LinearAlgebra/la_02_02.md)
