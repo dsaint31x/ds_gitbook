@@ -545,10 +545,10 @@
                                 <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
 <h1 id="14-the-matrix-equation-abfx">1.4 The Matrix Equation <script type="math/tex; ">A\bf{x}</script></h1>
 <h2 id="definition">Definition</h2>
-<p> If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \tiems n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \cdots, \bf{a}_n</script>, 
+<p> If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \cdots, \bf{a}_n</script>, 
 and if <script type="math/tex; ">\bf{x}</script> is in <script type="math/tex; ">\mathbb{i}^n</script>, 
 then the product of <script type="math/tex; ">A</script> and <script type="math/tex; ">\bf{x}</script>, denoted by <script type="math/tex; ">A\bf{x}</script>
-** is the linear combination of the columns of <script type="math/tex; ">A</script> using the corresponding entries in <script type="math/tex; ">\bf{x}</script>
+ is the linear combination of the columns of <script type="math/tex; ">A</script> using the corresponding entries in <script type="math/tex; ">\bf{x}</script>
 as weights; that is,</p>
 <p><script type="math/tex; mode=display">
 A\bf{x} =
@@ -573,16 +573,16 @@ That is,</p>
 <p><script type="math/tex; mode=display">
 3\bf{v}_1-5\bf{v}_2+7\bf{v}_3=\begin{bmatrix} \bf{v}_1 & \bf{v}_2 & \bf{v}_3 \end{bmatrix} 
 \begin{bmatrix} 3 \\ -5 \\ 7 \end{bmatrix} = A \bf{x}
-
+\\
 \blacksquare
 </script></p>
 <p>Now, write the system of linear equations as a vector equation involving a linear combination of vectors.</p>
 <p>For examples, the following system</p>
 <p><script type="math/tex; mode=display">
-\begin{align*}
+\begin{align}
 x_1+2_x_2-x_3 &=4 \\
--5x_2 +3 x_3 =1 
-\end{align*} \tag{1}
+-5x_2 +3 x_3 &=1 
+\end{align} \tag{1}
 </script></p>
 <p>is equivalent to </p>
 <p><script type="math/tex; mode=display">
@@ -592,21 +592,21 @@ x_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix}
 = \begin{bmatrix} 4 \\ 1 \end{bmatrix} 
 \tag{2}
 </script></p>
-<p>As in the example, the linear combination of the left side is a matrix times a vector, so that (2) becomes</p>
+<p>As in the example, the linear combination of the left side is <strong>a matrix times a vector</strong>, so that (2) becomes</p>
 <p><script type="math/tex; mode=display">
-\begin{bmatrix} 1 & 2 & -1 \\ 0 & -5 & 3 \end{bmatrix} =
+\begin{bmatrix} 1 & 2 & -1 \\ 0 & -5 & 3 \end{bmatrix} 
 \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} =
 \begin{bmatrix} 4 \\ 1 \end{bmatrix} \tag{3}
 </script></p>
 <p>Equation (3) has the form <script type="math/tex; ">A\bf{x}=\bf{b}</script>. Such an equation is called a <strong>matrix equation</strong> to distinguish it from a vector equation such as shown in (2).</p>
 <h2 id="thoerem-3">Thoerem 3</h2>
-<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \bf{a}_2, \cdots, \bf{a}_n</script>, and if <script type="math/tex; ">\bf</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then the matrix equation</p>
+<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \bf{a}_2, \cdots, \bf{a}_n</script>, and if <script type="math/tex; ">\bf</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then the <strong>matrix equation</strong></p>
 <p><script type="math/tex; mode=display">
 A\bf{x} = \bf{b}
 </script></p>
-<p>has the same solution set as the vector equation.</p>
+<p>has the same solution set as the <strong>vector equation</strong>.</p>
 <p><script type="math/tex; mode=display">
-x_1\bf{a}_1+x_2\bf{a}_2+\cdots+x_n\bf{a}_n = \bf{b}
+{x_1}\bf{a}_1 + {x_2} \bf{a}_2 + \cdots + {x_n} \bf{a}_n = \bf{b}
 </script></p>
 <p>which, in turn, has the same solution set as the systme of linear euqations whose augmented matrix is</p>
 <p><script type="math/tex; mode=display">
@@ -618,15 +618,15 @@ x_1\bf{a}_1+x_2\bf{a}_2+\cdots+x_n\bf{a}_n = \bf{b}
 <li>The equation <script type="math/tex; ">A\bf{x} = \bf{b}</script> has a solution if and only if <script type="math/tex; ">\bf{b}</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</li>
 </ul>
 <h2 id="theorem-4">Theorem 4</h2>
-<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \tiems n</script> matrix. Then the following statements are logically equivalent. 
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix. Then the following statements are logically equivalent. 
 That is, for a particular <script type="math/tex; ">A</script>, 
 either they are all true statements or they are all false.</p>
-<p>a. For each <script type="math/tex; ">\bf{b}</script>, in <script type="math/tex; ">mathbb{R}^m</script> the equation <script type="math/tex; ">A\bf{x}</script> has a solution.
-b. Each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">mathbb{R}^m</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.
-c. The columns of <script type="math/tex; ">A</script> span <script type="math/tex; ">mathbb{R}^m</script>
-d. <script type="math/tex; ">A</script> has a pivot position in every row.</p>
+<p>a. For each <script type="math/tex; ">\bf{b}</script>, in <script type="math/tex; ">\mathbb{R}^m</script> the equation <script type="math/tex; ">A\bf{x}</script> has a solution.</p>
+<p>b. Each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^m</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</p>
+<p>c. The columns of <script type="math/tex; ">A</script> span <script type="math/tex; ">\mathbb{R}^m</script></p>
+<p>d. <script type="math/tex; ">A</script> has a pivot position in every row.</p>
 <h2 id="example-4">Example 4</h2>
-<p>Comput <script type="math/tex; ">A\bf{x}</script>, where <script type="math/tex; ">\bf{A} = \begin{bmatrix} 2 & 3 & 4 \\ -1 & 5 & -3 \\ 6 & -2 & 8 \end{bmatrix}</script> and <script type="math/tex; ">\bf{x} =\begin{bmatix}x_1 \\ x_2 \\ x_3 \end{bmatrix}.
+<p>Compute <script type="math/tex; ">A\bf{x}</script>, where <script type="math/tex; ">\bf{A} = \begin{bmatrix} 2 & 3 & 4 \\ -1 & 5 & -3 \\ 6 & -2 & 8 \end{bmatrix}</script> and <script type="math/tex; ">\bf{x} = \begin{bmatrix}x_1 \\ x_2 \\ x_3 \end{bmatrix}.
 
 ### Solution of Example 4
 
@@ -814,7 +814,7 @@ using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 04","level":"1.3.5","depth":2,"next":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"previous":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_04.md","mtime":"2019-09-02T03:51:13.921Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T03:52:54.619Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 04","level":"1.3.5","depth":2,"next":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"previous":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_04.md","mtime":"2019-09-02T04:01:54.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T04:02:06.365Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
