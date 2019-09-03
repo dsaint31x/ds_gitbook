@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 04 · GitBook</title>
+        <title>07_03 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_05.html" />
+    <link rel="next" href="la_07_04_01.html" />
     
     
-    <link rel="prev" href="la_01_03.html" />
+    <link rel="prev" href="la_07_02.html" />
     
 
     </head>
@@ -226,7 +226,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="la_01_04.html">
+        <li class="chapter " data-level="1.3.5" data-path="la_01_04.html">
             
                 <a href="la_01_04.html">
             
@@ -421,7 +421,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.20" data-path="la_07_03.html">
+        <li class="chapter active" data-level="1.3.20" data-path="la_07_03.html">
             
                 <a href="la_07_03.html">
             
@@ -566,7 +566,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 04</a>
+        <a href="../.." >07_03</a>
     </h1>
 </div>
 
@@ -581,245 +581,157 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
-<h1 id="14-the-matrix-equation-abfx">1.4 The Matrix Equation <script type="math/tex; ">A\bf{x}</script></h1>
-<p> A fundamental idea of linear algebra is to view a <strong>linear combination of vectors</strong> as the <strong>product of a matrix and a vector</strong>!!</p>
-<h2 id="definition">Definition</h2>
-<p> If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \cdots, \bf{a}_n</script>, 
-and if <script type="math/tex; ">\bf{x}</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, 
-then the product of <script type="math/tex; ">A</script> and <script type="math/tex; ">\bf{x}</script>, denoted by <script type="math/tex; ">A\bf{x}</script>
- is the linear combination of the columns of <script type="math/tex; ">A</script> using the corresponding entries in <script type="math/tex; ">\bf{x}</script>
-as weights; that is,</p>
+                                <h1 id="ch07-symmetric-matrices-and-quadratic-forms">Ch07 Symmetric Matrices and Quadratic Forms</h1>
+<h1 id="73-constrained-optimization">7.3 Constrained Optimization</h1>
+<p>Engineers, economists, scientists, and mathematicians often need 
+to find the maximum or minimum value 
+of a quadratic form <script type="math/tex; ">Q(\textbf{x})</script> 
+for <script type="math/tex; ">\textbf{x}</script> 
+in some specified set. 
+Typically, the problem can be arranged 
+so that <script type="math/tex; ">\textbf{x}</script> varies over the set of unit vectors. 
+This <em>constrained optimization problem</em> has an interesting and elegant solution.
+The requirement that a vector <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\mathbb{R}^n</script> be a unit vector can be stated in several equivalent ways:</p>
 <p><script type="math/tex; mode=display">
-A\bf{x} =
-\begin{bmatrix}
- & & \\
-\textbf{a}_1 & \cdots & \textbf{a}_n\\
- & & \\
-\end{bmatrix}
-\begin{bmatrix}
-{x}_1 \\ 
-\vdots \\
-{x}_n
-\end{bmatrix}
-=
-x_1\textbf{a}_1 +x_2\textbf{a}_2 + \cdots +  x_n\textbf{a}_n
+||\textbf{x}|| = 1,
+||\textbf{x}||^2 = 1,
+\textbf{x}^T\textbf{x} = 1,\\
+\text {and} \\
+x_1^2 + x_2^2 + \cdots + x_n^2 =1 \tag{1}
 </script></p>
-<p>Note that <script type="math/tex; ">A\bf{x}</script> is defined only if the number of columns
-of <script type="math/tex; ">A</script> equals the number of entries in <script type="math/tex; ">\bf{x}</script>.</p>
-<h2 id="example-2">Example 2</h2>
-<p>For <script type="math/tex; ">\bf{v}_1, \bf{v}_2, \bf{v}_3</script> in <script type="math/tex; ">\mathbb{R}^m</script>, write the linear combination <script type="math/tex; ">3\textbf{v}_1-5\textbf{v}_2+7\textbf{v}_3</script> as a matrix times a vector.</p>
-<h3 id="solution-of-example-2">Solution of Example 2</h3>
-<p>Place <script type="math/tex; ">\bf{v}_1, \bf{v}_2, \bf{v}_3</script> into the columns of a matrix <script type="math/tex; ">A</script> and place the weights 3,-5, and 7 into a vector <script type="math/tex; ">\bf{x}</script>.
-That is,</p>
+<p>The expanded version (1) of <script type="math/tex; ">\textbf{x}^T\textbf{x}=1</script> is commonly used in applications.</p>
+<p>When a quadratic form <script type="math/tex; ">Q</script> has no cross-product terms, 
+it is easy to find 
+the maximum and minimum of <script type="math/tex; ">Q(\textbf{x})</script>
+for <script type="math/tex; ">\textbf{x}^T\textbf{x} = 1</script>.</p>
 <p><script type="math/tex; mode=display">
-3\textbf{v}_1-5\textbf{v}_2+7\textbf{v}_3=\begin{bmatrix} \textbf{v}_1 & \textbf{v}_2 & \textbf{v}_3 \end{bmatrix} 
-\begin{bmatrix} 3 \\ -5 \\ 7 \end{bmatrix} = A \textbf{x}
-</script></p>
-<p><script type="math/tex; ">\blacksquare</script></p>
-<p>Now, write the system of linear equations as a vector equation involving a linear combination of vectors.</p>
-<p>For examples, the following system</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-x_1+2x_2-x_3 &=4 \\
--5x_2 +3 x_3 &=1 
-\end{align} \tag{1}
-</script></p>
-<p>is equivalent to </p>
-<p><script type="math/tex; mode=display">
-x_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} 
-+x_2 \begin{bmatrix} 2 \\ -5 \end{bmatrix} 
-+x_3 \begin{bmatrix} -1 \\ 3 \end{bmatrix} 
-= \begin{bmatrix} 4 \\ 1 \end{bmatrix} 
+m = \text{min}\left\{ \textbf{x}^TA\textbf{x} : ||\textbf{x}||=1\right\}, \\
+M = \text{max}\left\{ \textbf{x}^TA\textbf{x} : ||\textbf{x}||=1\right\}
 \tag{2}
 </script></p>
-<p>As in the example, the linear combination of the left side is <strong>a matrix times a vector</strong>, so that (2) becomes</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix} 1 & 2 & -1 \\ 0 & -5 & 3 \end{bmatrix} 
-\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} =
-\begin{bmatrix} 4 \\ 1 \end{bmatrix} \tag{3}
-</script></p>
-<p>Equation (3) has the form <script type="math/tex; ">A\bf{x}=\bf{b}</script>. Such an equation is called a <strong>matrix equation</strong> to distinguish it from a vector equation such as shown in (2).</p>
 <hr>
-<h2 id="theorem-3">Theorem 3</h2>
-<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \bf{a}_2, \cdots, \bf{a}_n</script>, and if <script type="math/tex; ">\bf</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then the <strong>matrix equation</strong></p>
+<h2 id="theorem-6">Theorem 6</h2>
+<p>Let <script type="math/tex; ">A</script> be a symmetric matrix, 
+and define <script type="math/tex; ">m</script> and <script type="math/tex; ">M</script> as in (2). </p>
+<ul>
+<li>Then <script type="math/tex; ">M</script> is the greatest eigenvalue <script type="math/tex; ">\lambda_1</script> of <script type="math/tex; ">A</script>and</li>
+<li><script type="math/tex; ">m</script> is the least eigenvalue of <script type="math/tex; ">A</script>. 
+The value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is <script type="math/tex; ">M</script> 
+when <script type="math/tex; ">\textbf{x}</script> is a unit eigenvector <script type="math/tex; ">\textbf{u}_1</script> 
+corresponding to <script type="math/tex; ">M</script>. 
+The value of  <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is <script type="math/tex; ">m</script> 
+when <script type="math/tex; ">\textbf{x}</script> is a unit eigenvector corresponding to <script type="math/tex; ">m</script>.</li>
+</ul>
+<hr>
+<h3 id="proof">Proof</h3>
+<p>Orthogonally diagonalize <script type="math/tex; ">A</script> as <script type="math/tex; ">PDP^{-1}</script>.
+We know that</p>
 <p><script type="math/tex; mode=display">
-A\bf{x} = \bf{b}
+\textbf{x}^TA\textbf{x} = \textbf{y}^TD\textbf{y}
+\text{ when } 
+\textbf{x} = p \textbf{y} \tag{3}
 </script></p>
-<p>has the same solution set as the <strong>vector equation</strong>.</p>
+<p>Also,</p>
 <p><script type="math/tex; mode=display">
-x_1
-\textbf{a}_1 + 
-x_2 
-\textbf{a}_2 + 
-\cdots + 
-x_n \textbf{a}_n = \textbf{b}
+||\textbf{x}||=||P\textbf{y}||=\textbf{y} \text{ for all }\textbf{y}
 </script></p>
-<p>which, in turn, has the same solution set as the systme of linear euqations whose augmented matrix is</p>
+<p>Because <script type="math/tex; ">P^T P=I</script> and <script type="math/tex; ">||P\textbf{y}||^2 = (P\textbf{y})^T (P\textbf{y}) = \textbf{y}^TP^TP\textbf{y} = \textbf{y}^T\textbf{y} = ||\textbf{y}||^2</script>. 
+In particular, <script type="math/tex; ">||\textbf{y}||=1</script> if and only if <script type="math/tex; ">||\textbf{x}||=1</script>.</p>
+<p>Thus, <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> and <script type="math/tex; ">\textbf{y}^TD\textbf{y}</script> assume the same set of values as <script type="math/tex; ">\textbf{x}</script> and <script type="math/tex; ">\textbf{y}</script> range over the set of all unit vectors.</p>
+<p>To simplify notation, 
+suppose that <script type="math/tex; ">A</script> is a <script type="math/tex; ">3\times 3</script> matrix
+with eigenvalues <script type="math/tex; ">a \le b \le c</script>.
+Arrange the columns of <script type="math/tex; ">P</script> so that <script type="math/tex; ">P=\begin{bmatrix} \textbf{u}_1 & \textbf{u}_2 & \textbf{u}_3 \end{bmatrix}</script> and </p>
 <p><script type="math/tex; mode=display">
-\begin{bmatrix}
-\bf{a}_1 & \bf{a}_2 & \cdots & \bf{a}_n & \bf{b}
+D =
+\begin{bmatrix} 
+a & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & c 
 \end{bmatrix}
 </script></p>
+<p>Given any unit vector <script type="math/tex; ">\textbf{y} \in \mathbb{R}^3</script> with coordinates <script type="math/tex; ">y_1, y_2,y_3</script>, observe that</p>
+<p><script type="math/tex; mode=display">
+ay_1^2 = ay_1^2 \\
+by_2^2 \le ay_2^2 \\
+cy_3^2 \le ay_3^2 
+</script></p>
+<p>and obtain these inequalities:</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+\textbf{y}^TD\textbf{y} &= ay_1^2+by_s^2+cy_3^2 \\
+&\le ay_1^2+ay_s^2+ay_3^2 \\
+&= a \left( y_1^2+y_2^2+y_3^2\right) \\
+&= a ||\textbf{y}||^2 = a
+\end{align*}
+</script></p>
+<p>Thus <script type="math/tex; ">M \le a</script>, by definition of <script type="math/tex; ">M</script>. 
+However, <script type="math/tex; ">\textbf{y}^TD\textbf{y}=a</script> when <script type="math/tex; ">\textbf{y}=\textbf{e}_1=(1,0,0)</script> ,so in fact <script type="math/tex; ">M=a</script>.
+By (3), the <script type="math/tex; ">textbf{x}</script> that corresponds by <script type="math/tex; ">\textbf{y}=\textbf{e}_1</script> is the eigenvector <script type="math/tex; ">\textbf{u}_1</script> of <script type="math/tex; ">A</script>, because</p>
+<p><script type="math/tex; mode=display">
+\textbf{x} = P \textbf{e}_1 = 
+\begin{bmatrix}
+\textbf{u}_1 & \textbf{u}_2 & \textbf{u}_3
+\end{bmatrix}
+\begin{bmatrix}
+1 \\ 0 \\ 0
+\end{bmatrix}
+=\textbf{u}_1
+</script></p>
+<p>Thus <script type="math/tex; ">M=a=\textbf{e}_1^TD\textbf{e}_1= \textbf{u}_1^TA\textbf{u}_1</script>,
+which proves the statement about <script type="math/tex; ">M</script>. 
+A similar argument shows that <script type="math/tex; ">m</script> is the least eigenvalue, <script type="math/tex; ">c</script>, and this value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is attained when <script type="math/tex; ">\textbf{x}=P\textbf{e}_3=\textbf{u}_3</script>.
+<script type="math/tex; ">\blacksquare</script></p>
+<h2 id="example-3">Example 3</h2>
+<p>Let <script type="math/tex; ">A=\begin{bmatrix} 3& 2& 1 \\ 2& 3& 1 \\ 1& 1& 4 \end{bmatrix}</script>.
+Find the maximum value of the quadratic form <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script>
+subject to the constraint <script type="math/tex; ">\textbf{x}^T\textbf{x}</script> and find a unit vector at which this maximum value is attained.</p>
+<h3 id="solution">Solution</h3>
+<p>By Theorem 6, 
+the desired maximum value is the greatest eigenvalue of <script type="math/tex; ">A</script>. 
+The characteristic equation turns out to be</p>
+<p><script type="math/tex; mode=display">
+0=-\lambda^3+10 \lambda^2 -27 \lambda +18 = -(\lambda-6)(\lambda-3)(\lambda-1)
+</script></p>
+<p>The greatest eigenvalue is 6.</p>
+<p>The constrained maximum of  <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is attained 
+when <script type="math/tex; ">\textbf{x}</script> is a unit eigenvector for <script type="math/tex; ">\lambda=6</script>.
+Solve <script type="math/tex; ">(A-6I)\textbf{x}=0</script> and and find an eigenvector <script type="math/tex; ">\begin{bmatrix}1\\1\\1\end{bmatrix}</script>.
+Set <script type="math/tex; ">\textbf{u}_1 = \begin{bmatrix}1/\sqrt{3} \\ 1/\sqrt{3} \\ 1/\sqrt{3}  \end{bmatrix}</script>.
+<script type="math/tex; ">\blacksquare</script></p>
+<p>In Theorem 7 and in later applications, 
+the values of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> are computed 
+with additional constraints on the unit vector <script type="math/tex; ">\textbf{x}</script>.</p>
 <hr>
-<h2 id="existence-of-solutions">Existence of Solutions</h2>
-<blockquote>
-<ul>
-<li>The equation <script type="math/tex; ">A\bf{x} = \bf{b}</script> has a solution if and only if <script type="math/tex; ">\bf{b}</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</li>
-</ul>
-</blockquote>
-<h2 id="theorem-4">Theorem 4</h2>
-<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix. Then the following statements are logically equivalent. 
-That is, for a particular <script type="math/tex; ">A</script>, 
-either they are all true statements or they are all false.</p>
-<p>a. For each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^m</script>, the equation <script type="math/tex; ">A\bf{x}</script> has a solution.</p>
-<p>b. Each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^m</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</p>
-<p>c. The columns of <script type="math/tex; ">A</script> span <script type="math/tex; ">\mathbb{R}^m</script></p>
-<p>d. <script type="math/tex; ">A</script> has a pivot position in every row.</p>
+<h2 id="theorem-7">Theorem 7</h2>
+<p>Let <script type="math/tex; ">A</script>, and <script type="math/tex; ">\textbf{u}_1</script> be as in Theorem 6. 
+Then the maximum value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> subject to the constraints</p>
+<p><script type="math/tex; mode=display">
+\textbf{x}^T\textbf{x}=1, \textbf{x}^T\textbf{u}_1 = 0
+</script></p>
+<p>is the second greatest eigenvalue <script type="math/tex; ">\lambda_2</script>,
+and this maximum is attained 
+when <script type="math/tex; ">\textbf{x}</script> is an eigenvector <script type="math/tex; ">\textbf{u}_2</script> corresponding to <script type="math/tex; ">\lambda_2</script>.</p>
 <hr>
-<blockquote>
-<ul>
-<li>Theorem 4 is about a <em>coefficient matrix</em>, not an augmented matrix.</li>
-</ul>
-</blockquote>
-<h2 id="example-4--computation-of-atextbfx">Example 4 : Computation of <script type="math/tex; ">A\textbf{x}</script></h2>
-<p>Compute <script type="math/tex; ">A\textbf{x}</script>, where <script type="math/tex; ">\textbf{A} = \begin{bmatrix} 2 & 3 & 4 \\ -1 & 5 & -3 \\ 6 & -2 & 8 \end{bmatrix}</script> and <script type="math/tex; ">\textbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ x_3 \end{bmatrix}</script>.</p>
+<p>Theorem 7 can be proved by an argument similar to the one above in which the theorem is reduced to the case where the matrix of the quadratic form is diagonal. The next example gives an idea of the proof for the case of a diagonal matrix.</p>
+<h2 id="example-4">Example 4</h2>
 <h3 id="solution-of-example-4">Solution of Example 4</h3>
-<p>From the definition,</p>
+<hr>
+<h2 id="theorem-8">Theorem 8</h2>
+<p>Let <script type="math/tex; ">A</script> be a symmetric <script type="math/tex; ">n \times n</script> matrix 
+with an orthogonal diagonalization <script type="math/tex; ">A=PDP^{-1}</script>, 
+where the entries on the diagonal of <script type="math/tex; ">D</script> 
+are arranged so that <script type="math/tex; ">\lambda_1 \ge \lambda_2 \ge \cdots \lambda_n</script>
+and where columns of <script type="math/tex; ">P</script> are corresponding 
+unit eigenvectors <script type="math/tex; ">\textbf{u}_1, \textbf{u}_2, \cdots, \textbf{u}_n</script>.
+Then for <script type="math/tex; ">k=2, \cdots, n</script>, 
+the maximum value of <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> 
+subject to the constraints </p>
 <p><script type="math/tex; mode=display">
-\begin{align}
-\begin{bmatrix}
-2 & 3 & 4 \\
--1 & 5 & -3 \\
-6 & -2 & 8
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-&=
-x_1
-\begin{bmatrix}
-2 \\
--1 \\
-6 
-\end{bmatrix}
-+x_2
-\begin{bmatrix}
-3 \\
-5 \\
--2 
-\end{bmatrix}
-+x_3
-\begin{bmatrix}
-4 \\
--3 \\
-8 
-\end{bmatrix}
-\\
-&=
-\begin{bmatrix}
-2x_1 \\
--x_1 \\
-6x_1 
-\end{bmatrix}
-+
-\begin{bmatrix}
-3x_2 \\
-5x_2 \\
--2x_2 
-\end{bmatrix}
-+
-\begin{bmatrix}
-4x_3 \\
--3x_3 \\
-8x_3 
-\end{bmatrix}
-\\
-&=
-\begin{bmatrix}
-2x_1+3x_2+4x_3 \\
--x_1+5x_2-3x_3 \\
-6x_1-2x_2+8x_3
-\end{bmatrix}
-\end{align}
-\tag{1}
+\textbf{x}^T\textbf{x}=1, \textbf{x}^T\textbf{u}_1=0, \cdots, \textbf{x}^T\textbf{u}_{k-1}=0
 </script></p>
-<p>The first entry in the product <script type="math/tex; ">A\textbf{x}</script> is a sum of products (sometimes called a <strong>dot</strong> product), 
-using the first row of <script type="math/tex; ">A</script> and the entries in <script type="math/tex; ">\bf{x}</script>.</p>
-<p>That is,</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-2 & 3 & 4 \\
-& & \\
-& & 
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-=
-\begin{bmatrix}
-2x_1+3x_2+4x_3 \\
- \\
- \\
-\end{bmatrix}
-</script></p>
-<p>Similarly, the second entry in <script type="math/tex; ">A\bf{x}</script>
-can be calculated
-by multiplying the entries in the second row of <script type="math/tex; ">A</script> by the
-corresponding entries in <script type="math/tex; ">\bf{x}</script> and then summing the
-resulting products.
-<script type="math/tex; mode=display">
-\begin{bmatrix}
-& & \\
--1&5 &3 \\
-& & 
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-=
-\begin{bmatrix}
- \\
--x_1+5x_2-3x_3 \\
- \\
-\end{bmatrix}
-</script></p>
-<p>Likewise, the third entry in <script type="math/tex; ">A\bf{x}</script> can be calculated 
-from the third row of <script type="math/tex; ">A</script> and the entries in <script type="math/tex; ">\bf{x}</script> <script type="math/tex; ">\blacksquare</script>.</p>
-<p>If the product <script type="math/tex; ">A\bf{x}</script> is defined, then the <script type="math/tex; ">i</script>-th entry in <script type="math/tex; ">A\bf{x}</script>
-the sum of the products of corresponding entries
-from row <script type="math/tex; ">i</script> of <script type="math/tex; ">A</script> and from the vector <script type="math/tex; ">\bf{x}</script>.</p>
-<h2 id="row-vector-rule-for-computing-abfx">Row-Vector Rule for Computing <script type="math/tex; ">A\bf{x}</script></h2>
-<p>The matrix with 1&#x2019;s on the diagonal and 0&#x2019;s
-elsewhere is called an <code>identity matrix</code> and is
-denoted by <script type="math/tex; ">I</script>.</p>
-<p>For example, <script type="math/tex; ">\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}</script> is an identity matrix.</p>
-<h2 id="properties-of-the-matrix-vector-product-abfx">Properties of the Matrix-Vector Product <script type="math/tex; ">A\bf{x}</script></h2>
-<p>The facts in the next theorem are important and will be used throughout the text.
-Think about <strong>Linearity</strong>.</p>
-<h2 id="theorem-5">Theorem 5</h2>
-<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> are vectors in
-<script type="math/tex; ">mathbb{R}^n</script>, and <script type="math/tex; ">c</script> is a scalar, then</p>
-<p>a. <script type="math/tex; ">A(\bf{u} +\bf{v}) = A\bf{u} +A\bf{v} </script></p>
-<p>b. <script type="math/tex; ">A(c\bf{u}) = c(A\bf{u})</script></p>
-<h3 id="proof-of-theorem-5">Proof of Theorem 5</h3>
-<p>For simplicity, take <script type="math/tex; ">n =3</script>, <script type="math/tex; ">A = \begin{bmatrix} a_1 & a_2 & a_3 \end{bmatrix} </script>,
-and <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
-<p>For <script type="math/tex; ">i=1,2,3</script>, let <script type="math/tex; ">u_i</script> and <script type="math/tex; ">v_i</script> be the <script type="math/tex; ">i</script>-th entries in <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script>, respectively.</p>
-<p>To prove statement (a), compute <script type="math/tex; ">A(\bf{u}+\bf{v})</script> 
-as a linear combination of the columns of <script type="math/tex; ">A</script> using the entries in
-<script type="math/tex; ">\bf{u} + \bf{v}</script> as weights.</p>
-<p><img src="fig/la_01_04_t5_01.png" alt=""></p>
-<p>To prove statement (b), compute <script type="math/tex; ">A(c\bf{u})</script> as a linear combination of the columns of <script type="math/tex; ">A</script>
-using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
-<p><img src="fig/la_01_04_t5_02.png" alt=""></p>
-<p><script type="math/tex; ">\blacksquare</script></p>
+<p>is the eigenvalue <script type="math/tex; ">\lambda_k</script>,</p>
+<h2 id="and-this-maximum-is-attained-at-textbfxtextbfuk">and this maximum is attained at <script type="math/tex; ">\textbf{x}=\textbf{u}_k</script>.</h2>
 
                                 
                                 </section>
@@ -847,12 +759,12 @@ using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
 
             
                 
-                <a href="la_01_03.html" class="navigation navigation-prev " aria-label="Previous page: 01 03">
+                <a href="la_07_02.html" class="navigation navigation-prev " aria-label="Previous page: 07_02">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_05.html" class="navigation navigation-next " aria-label="Next page: 01 05">
+                <a href="la_07_04_01.html" class="navigation navigation-next " aria-label="Next page: 07_04_01">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -863,7 +775,7 @@ using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 04","level":"1.3.5","depth":2,"next":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"previous":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_04.md","mtime":"2019-09-03T02:33:43.894Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:56:44.129Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"07_03","level":"1.3.20","depth":2,"next":{"title":"07_04_01","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},"previous":{"title":"07_02","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_07_03.md","mtime":"2019-08-12T07:46:23.658Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:56:44.129Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 04 · GitBook</title>
+        <title>05_02 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_05.html" />
+    <link rel="next" href="la_05_03.html" />
     
     
-    <link rel="prev" href="la_01_03.html" />
+    <link rel="prev" href="la_05_01.html" />
     
 
     </head>
@@ -226,7 +226,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="la_01_04.html">
+        <li class="chapter " data-level="1.3.5" data-path="la_01_04.html">
             
                 <a href="la_01_04.html">
             
@@ -343,7 +343,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.14" data-path="la_05_02.html">
+        <li class="chapter active" data-level="1.3.14" data-path="la_05_02.html">
             
                 <a href="la_05_02.html">
             
@@ -566,7 +566,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 04</a>
+        <a href="../.." >05_02</a>
     </h1>
 </div>
 
@@ -581,245 +581,159 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
-<h1 id="14-the-matrix-equation-abfx">1.4 The Matrix Equation <script type="math/tex; ">A\bf{x}</script></h1>
-<p> A fundamental idea of linear algebra is to view a <strong>linear combination of vectors</strong> as the <strong>product of a matrix and a vector</strong>!!</p>
-<h2 id="definition">Definition</h2>
-<p> If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \cdots, \bf{a}_n</script>, 
-and if <script type="math/tex; ">\bf{x}</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, 
-then the product of <script type="math/tex; ">A</script> and <script type="math/tex; ">\bf{x}</script>, denoted by <script type="math/tex; ">A\bf{x}</script>
- is the linear combination of the columns of <script type="math/tex; ">A</script> using the corresponding entries in <script type="math/tex; ">\bf{x}</script>
-as weights; that is,</p>
-<p><script type="math/tex; mode=display">
-A\bf{x} =
-\begin{bmatrix}
- & & \\
-\textbf{a}_1 & \cdots & \textbf{a}_n\\
- & & \\
-\end{bmatrix}
-\begin{bmatrix}
-{x}_1 \\ 
-\vdots \\
-{x}_n
-\end{bmatrix}
-=
-x_1\textbf{a}_1 +x_2\textbf{a}_2 + \cdots +  x_n\textbf{a}_n
-</script></p>
-<p>Note that <script type="math/tex; ">A\bf{x}</script> is defined only if the number of columns
-of <script type="math/tex; ">A</script> equals the number of entries in <script type="math/tex; ">\bf{x}</script>.</p>
+                                <h1 id="ch05-eigenvectors-and-eigenvalues">Ch05. Eigenvectors and Eigenvalues</h1>
+<h1 id="52-the-characteristic-equation">5.2 The Characteristic Equation</h1>
+<blockquote>
+<p>Useful information about <strong>the eigenvalues</strong> of a square matrix <script type="math/tex; ">A</script> is <strong>encoded</strong> in <strong>a special scalar equation</strong> called <strong>the characteristic equation of <script type="math/tex; ">A</script></strong>.</p>
+</blockquote>
+<h2 id="determinants">Determinants</h2>
+<ul>
+<li>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">n \times n</script> matrix, let <script type="math/tex; ">U</script> be any echelon form obtained from <script type="math/tex; ">A</script> by row replacements and row interchanges (without scaling), and let <script type="math/tex; ">r</script> be the number of such row interchanges.</li>
+<li>Then the determinant of <script type="math/tex; ">A</script>, written as <script type="math/tex; ">\text{det }A</script>, is <strong><script type="math/tex; ">(-1)^{r}</script> times the products of diagonal entries <script type="math/tex; ">u_{11},\cdots,u_{nn}</script></strong> in <script type="math/tex; ">U</script>.</li>
+<li>If <script type="math/tex; ">A</script> is <strong>invertible</strong>, then <strong><script type="math/tex; ">u_{11},\cdots,u_{nn}</script> are all pivots</strong> (because <script type="math/tex; ">A \sim I_n</script> and the <script type="math/tex; ">u_{ii}</script> have not been scaled to 1&#x2019;s).</li>
+<li>Otherwise, at least <script type="math/tex; ">u_{nn}</script> is zero, and the product <script type="math/tex; ">u_{11}\cdots u_{nn}</script> is zero.</li>
+<li>Thus</li>
+</ul>
+<p><img src="fig/la_05_02_e01.png" alt="determinant"></p>
 <h2 id="example-2">Example 2</h2>
-<p>For <script type="math/tex; ">\bf{v}_1, \bf{v}_2, \bf{v}_3</script> in <script type="math/tex; ">\mathbb{R}^m</script>, write the linear combination <script type="math/tex; ">3\textbf{v}_1-5\textbf{v}_2+7\textbf{v}_3</script> as a matrix times a vector.</p>
-<h3 id="solution-of-example-2">Solution of Example 2</h3>
-<p>Place <script type="math/tex; ">\bf{v}_1, \bf{v}_2, \bf{v}_3</script> into the columns of a matrix <script type="math/tex; ">A</script> and place the weights 3,-5, and 7 into a vector <script type="math/tex; ">\bf{x}</script>.
-That is,</p>
+<p>Compute <script type="math/tex; ">\text{det }A</script> for <script type="math/tex; mode=display">
+A=
+\begin{bmatrix}
+1 & 5 &  0 \\ 
+2 & 4 & -1 \\ 
+0 & -2 & 0 
+\end{bmatrix}
+</script>.</p>
+<h3 id="solution">Solution:</h3>
+<p>The following row reduction uses one row interchange:</p>
 <p><script type="math/tex; mode=display">
-3\textbf{v}_1-5\textbf{v}_2+7\textbf{v}_3=\begin{bmatrix} \textbf{v}_1 & \textbf{v}_2 & \textbf{v}_3 \end{bmatrix} 
-\begin{bmatrix} 3 \\ -5 \\ 7 \end{bmatrix} = A \textbf{x}
+A \sim 
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -6 & -1 \\ 0 & -2 &  0 \end{bmatrix} \sim 
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -2 &  0 \\ 0 & -6 & -1 \end{bmatrix} \sim
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -2 & -1 \\ 0 &  0 & -1 \end{bmatrix} 
+= U_1
 </script></p>
-<p><script type="math/tex; ">\blacksquare</script></p>
-<p>Now, write the system of linear equations as a vector equation involving a linear combination of vectors.</p>
-<p>For examples, the following system</p>
+<ul>
+<li>So <script type="math/tex; ">\text{det }A</script> equals <script type="math/tex; "> (-1)^1(1)(-2)(-1)=-2</script>.</li>
+</ul>
+<p>The following alternative row reduction avoids the row interchange and produces a different echelon form.</p>
+<ul>
+<li>The last step adds <script type="math/tex; ">\frac{-1}{3}</script> times row 2 to row 3: <script type="math/tex; mode=display">
+A \sim \begin{bmatrix} 1 & 5 & 0 \\ 0 & -6 & -1 \\ 0 & -2 & 0 \end{bmatrix} \sim 
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -6 & -1 \\ 0 & 0 & \frac{1}{3} \end{bmatrix} = U_2
+</script></li>
+<li>This time <script type="math/tex; ">\text{det }A</script> equals <script type="math/tex; "> (-1)^0(1)(-6)\left(\frac{1}{3}\right)=-2</script>, the same as before. <script type="math/tex; ">\blacksquare</script></li>
+</ul>
+<h2 id="theorem-the-invertible-matrix-theorem-continued">Theorem: The Invertible Matrix Theorem. (continued)</h2>
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">n \times n</script> matrix. Then <script type="math/tex; ">A</script> is <strong>invertible</strong> if and only if:</p>
+<p> 19.The number <strong>0 is not an eigenvalue</strong> of <script type="math/tex; ">A</script>.</p>
+<p> 20.The <strong>determinant of <script type="math/tex; ">A</script> is not zero</strong>.</p>
+<h2 id="theorem-3-properties-of-determinants">Theorem 3: Properties of Determinants</h2>
+<p>Let <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> be an <script type="math/tex; ">n \times n</script> matrices.</p>
+<ol>
+<li><script type="math/tex; ">A</script> is invertible if and only if <script type="math/tex; ">\text{det }A \ne 0</script>.</li>
+<li><script type="math/tex; ">\text{det }AB = (\text{det }A)(\text{det }B)</script>.</li>
+<li><script type="math/tex; ">\text{det }A^T = \text{det }A</script>.</li>
+<li>If <script type="math/tex; ">A</script> is triangular, then <script type="math/tex; ">\text{det }A</script> is the product of the entries on the main diagonal of <script type="math/tex; ">A</script>.</li>
+<li>Row operations and Determinants<ul>
+<li>A <em>row replacement</em> operation on <script type="math/tex; ">A</script> does not change the determinant. </li>
+<li>A <em>row interchange</em> changes the sign of the determinant. </li>
+<li>A <em>row scaling</em> also scales the determinant by the same scalar factor. </li>
+</ul>
+</li>
+</ol>
+<h2 id="the-characteristic-equation">The Characteristic Equation</h2>
+<ul>
+<li><strong>Theorem 3(1)</strong> shows how to determine when a matrix of the form <script type="math/tex; ">A-\lambda I</script> is not invetible.<blockquote>
+<p><script type="math/tex; ">\text{det }(A-\lambda I) \ne 0</script> &#xB85C; invertible&#xC5EC;&#xBD80; &#xD310;&#xBCC4;. </p>
+</blockquote>
+</li>
+<li>The scalar equation <script type="math/tex; ">\text{det } (A-\lambda I)=0</script> is called <strong>the characteristic equation of <script type="math/tex; ">A</script></strong>.</li>
+<li>A scalar <script type="math/tex; ">\lambda</script> is an eigenvalue of an matrix <script type="math/tex; ">A</script> if and only if <script type="math/tex; ">\lambda</script> satisfies the characteristic equation <script type="math/tex; mode=display">
+\text{det } (A-\lambda I)=0
+</script></li>
+</ul>
+<h2 id="example-3">Example 3</h2>
+<p>Find the characteristic equation of <script type="math/tex; mode=display">
+A = \begin{bmatrix} 
+5 & -2 &  6 & -1 \\
+0 &  3 & -8 &  0 \\
+0 &  0 &  5 &  4 \\
+0 &  0 &  0 &  1 
+\end{bmatrix}
+</script>.</p>
+<h3 id="solution-">Solution :</h3>
+<p>Form <script type="math/tex; ">A-\lambda I</script>, and use Theorem 3(4):</p>
 <p><script type="math/tex; mode=display">
 \begin{align}
-x_1+2x_2-x_3 &=4 \\
--5x_2 +3 x_3 &=1 
-\end{align} \tag{1}
-</script></p>
-<p>is equivalent to </p>
-<p><script type="math/tex; mode=display">
-x_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} 
-+x_2 \begin{bmatrix} 2 \\ -5 \end{bmatrix} 
-+x_3 \begin{bmatrix} -1 \\ 3 \end{bmatrix} 
-= \begin{bmatrix} 4 \\ 1 \end{bmatrix} 
-\tag{2}
-</script></p>
-<p>As in the example, the linear combination of the left side is <strong>a matrix times a vector</strong>, so that (2) becomes</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix} 1 & 2 & -1 \\ 0 & -5 & 3 \end{bmatrix} 
-\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} =
-\begin{bmatrix} 4 \\ 1 \end{bmatrix} \tag{3}
-</script></p>
-<p>Equation (3) has the form <script type="math/tex; ">A\bf{x}=\bf{b}</script>. Such an equation is called a <strong>matrix equation</strong> to distinguish it from a vector equation such as shown in (2).</p>
-<hr>
-<h2 id="theorem-3">Theorem 3</h2>
-<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \bf{a}_2, \cdots, \bf{a}_n</script>, and if <script type="math/tex; ">\bf</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then the <strong>matrix equation</strong></p>
-<p><script type="math/tex; mode=display">
-A\bf{x} = \bf{b}
-</script></p>
-<p>has the same solution set as the <strong>vector equation</strong>.</p>
-<p><script type="math/tex; mode=display">
-x_1
-\textbf{a}_1 + 
-x_2 
-\textbf{a}_2 + 
-\cdots + 
-x_n \textbf{a}_n = \textbf{b}
-</script></p>
-<p>which, in turn, has the same solution set as the systme of linear euqations whose augmented matrix is</p>
-<p><script type="math/tex; mode=display">
+\text{det }(A-\lambda I) &= \text{det }
 \begin{bmatrix}
-\bf{a}_1 & \bf{a}_2 & \cdots & \bf{a}_n & \bf{b}
-\end{bmatrix}
-</script></p>
-<hr>
-<h2 id="existence-of-solutions">Existence of Solutions</h2>
-<blockquote>
-<ul>
-<li>The equation <script type="math/tex; ">A\bf{x} = \bf{b}</script> has a solution if and only if <script type="math/tex; ">\bf{b}</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</li>
-</ul>
-</blockquote>
-<h2 id="theorem-4">Theorem 4</h2>
-<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix. Then the following statements are logically equivalent. 
-That is, for a particular <script type="math/tex; ">A</script>, 
-either they are all true statements or they are all false.</p>
-<p>a. For each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^m</script>, the equation <script type="math/tex; ">A\bf{x}</script> has a solution.</p>
-<p>b. Each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^m</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</p>
-<p>c. The columns of <script type="math/tex; ">A</script> span <script type="math/tex; ">\mathbb{R}^m</script></p>
-<p>d. <script type="math/tex; ">A</script> has a pivot position in every row.</p>
-<hr>
-<blockquote>
-<ul>
-<li>Theorem 4 is about a <em>coefficient matrix</em>, not an augmented matrix.</li>
-</ul>
-</blockquote>
-<h2 id="example-4--computation-of-atextbfx">Example 4 : Computation of <script type="math/tex; ">A\textbf{x}</script></h2>
-<p>Compute <script type="math/tex; ">A\textbf{x}</script>, where <script type="math/tex; ">\textbf{A} = \begin{bmatrix} 2 & 3 & 4 \\ -1 & 5 & -3 \\ 6 & -2 & 8 \end{bmatrix}</script> and <script type="math/tex; ">\textbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ x_3 \end{bmatrix}</script>.</p>
-<h3 id="solution-of-example-4">Solution of Example 4</h3>
-<p>From the definition,</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-\begin{bmatrix}
-2 & 3 & 4 \\
--1 & 5 & -3 \\
-6 & -2 & 8
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-&=
-x_1
-\begin{bmatrix}
-2 \\
--1 \\
-6 
-\end{bmatrix}
-+x_2
-\begin{bmatrix}
-3 \\
-5 \\
--2 
-\end{bmatrix}
-+x_3
-\begin{bmatrix}
-4 \\
--3 \\
-8 
-\end{bmatrix}
-\\
-&=
-\begin{bmatrix}
-2x_1 \\
--x_1 \\
-6x_1 
-\end{bmatrix}
-+
-\begin{bmatrix}
-3x_2 \\
-5x_2 \\
--2x_2 
-\end{bmatrix}
-+
-\begin{bmatrix}
-4x_3 \\
--3x_3 \\
-8x_3 
-\end{bmatrix}
-\\
-&=
-\begin{bmatrix}
-2x_1+3x_2+4x_3 \\
--x_1+5x_2-3x_3 \\
-6x_1-2x_2+8x_3
-\end{bmatrix}
+5-\lambda & -2 & 6 & -1 \\
+0 & 3-\lambda & -8 & 0 \\
+0 & 0 & 5-\lambda & 4 \\
+0 & 0 & 0 & 1-\lambda 
+\end{bmatrix} \\
+&= (5-\lambda)(3-\lambda)(5-\lambda)(1-\lambda)
 \end{align}
-\tag{1}
 </script></p>
-<p>The first entry in the product <script type="math/tex; ">A\textbf{x}</script> is a sum of products (sometimes called a <strong>dot</strong> product), 
-using the first row of <script type="math/tex; ">A</script> and the entries in <script type="math/tex; ">\bf{x}</script>.</p>
-<p>That is,</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-2 & 3 & 4 \\
-& & \\
-& & 
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-=
-\begin{bmatrix}
-2x_1+3x_2+4x_3 \\
- \\
- \\
-\end{bmatrix}
-</script></p>
-<p>Similarly, the second entry in <script type="math/tex; ">A\bf{x}</script>
-can be calculated
-by multiplying the entries in the second row of <script type="math/tex; ">A</script> by the
-corresponding entries in <script type="math/tex; ">\bf{x}</script> and then summing the
-resulting products.
+<ul>
+<li>The characteristic equation is <script type="math/tex; mode=display">
+(5-\lambda)^2(3-\lambda)(1-\lambda) = 0
+</script>
+or
 <script type="math/tex; mode=display">
-\begin{bmatrix}
-& & \\
--1&5 &3 \\
-& & 
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-=
-\begin{bmatrix}
- \\
--x_1+5x_2-3x_3 \\
- \\
-\end{bmatrix}
+(\lambda-5)^2(\lambda-3)(\lambda-1) = 0
+</script></li>
+<li>Expanding the product, we can also write <script type="math/tex; mode=display">
+\lambda^4 -14 \lambda^3 + 68 \lambda^2 - 130 \lambda +75 = 0
+</script></li>
+</ul>
+<ul>
+<li>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">n \times n </script> matrix, then <script type="math/tex; ">\text{det }(A-\lambda I)</script> is a polynomial of degree <script type="math/tex; ">n</script> called <strong>the characteristic polynomial of <script type="math/tex; ">A</script></strong>.</li>
+<li>The eigenvalue 5 in Example 3 is said to have multiplicity 2 because <script type="math/tex; ">(\lambda-5)</script> occurs two times as a factor of the characteristic polynomial.</li>
+<li>In general, the <strong>(algebraic) multiplicity</strong> of an eigenvalue <script type="math/tex; ">\lambda</script> is its multiplicity as a root of the characteristic equation.</li>
+</ul>
+<h2 id="similarity">Similarity</h2>
+<ul>
+<li>If <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are <script type="math/tex; ">n \times n</script> matrices, then <strong><script type="math/tex; ">A</script> is similar to <script type="math/tex; ">B</script></strong> if there is an invertible matrix <script type="math/tex; ">P</script> such that <script type="math/tex; ">P^{-1}AP=B</script>, or, equivalently, <script type="math/tex; ">A=PBP^{-1}</script>.</li>
+<li>Writing <script type="math/tex; ">Q</script> for <script type="math/tex; ">P^{-1}</script>, we have <script type="math/tex; ">Q^{-1}BQ=A</script>.</li>
+<li>So <script type="math/tex; ">B</script> is also similar to <script type="math/tex; ">A</script>, and we say simply that <strong><script type="math/tex; ">A</script>
+and <script type="math/tex; ">B</script> are similar</strong>.</li>
+<li>Changing <script type="math/tex; ">A</script> into <script type="math/tex; ">P^{-1}AP</script> is called a <strong>similarity transformation</strong>.</li>
+</ul>
+<h2 id="theorem-4">Theorem 4:</h2>
+<p>If <script type="math/tex; ">n \times n</script> matrices <strong><script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are similar</strong>, then they have <strong>the same characteristic polynomial</strong> and hence <strong>the same eigenvalues (with the same multiplicities)</strong>.</p>
+<h3 id="proof">Proof:</h3>
+<p>If <script type="math/tex; ">B=P^{-1}AP</script> then,
+<script type="math/tex; mode=display">
+B-\lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP-\lambda P)= P^{-1}(A-\lambda I )P
 </script></p>
-<p>Likewise, the third entry in <script type="math/tex; ">A\bf{x}</script> can be calculated 
-from the third row of <script type="math/tex; ">A</script> and the entries in <script type="math/tex; ">\bf{x}</script> <script type="math/tex; ">\blacksquare</script>.</p>
-<p>If the product <script type="math/tex; ">A\bf{x}</script> is defined, then the <script type="math/tex; ">i</script>-th entry in <script type="math/tex; ">A\bf{x}</script>
-the sum of the products of corresponding entries
-from row <script type="math/tex; ">i</script> of <script type="math/tex; ">A</script> and from the vector <script type="math/tex; ">\bf{x}</script>.</p>
-<h2 id="row-vector-rule-for-computing-abfx">Row-Vector Rule for Computing <script type="math/tex; ">A\bf{x}</script></h2>
-<p>The matrix with 1&#x2019;s on the diagonal and 0&#x2019;s
-elsewhere is called an <code>identity matrix</code> and is
-denoted by <script type="math/tex; ">I</script>.</p>
-<p>For example, <script type="math/tex; ">\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}</script> is an identity matrix.</p>
-<h2 id="properties-of-the-matrix-vector-product-abfx">Properties of the Matrix-Vector Product <script type="math/tex; ">A\bf{x}</script></h2>
-<p>The facts in the next theorem are important and will be used throughout the text.
-Think about <strong>Linearity</strong>.</p>
-<h2 id="theorem-5">Theorem 5</h2>
-<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> are vectors in
-<script type="math/tex; ">mathbb{R}^n</script>, and <script type="math/tex; ">c</script> is a scalar, then</p>
-<p>a. <script type="math/tex; ">A(\bf{u} +\bf{v}) = A\bf{u} +A\bf{v} </script></p>
-<p>b. <script type="math/tex; ">A(c\bf{u}) = c(A\bf{u})</script></p>
-<h3 id="proof-of-theorem-5">Proof of Theorem 5</h3>
-<p>For simplicity, take <script type="math/tex; ">n =3</script>, <script type="math/tex; ">A = \begin{bmatrix} a_1 & a_2 & a_3 \end{bmatrix} </script>,
-and <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
-<p>For <script type="math/tex; ">i=1,2,3</script>, let <script type="math/tex; ">u_i</script> and <script type="math/tex; ">v_i</script> be the <script type="math/tex; ">i</script>-th entries in <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script>, respectively.</p>
-<p>To prove statement (a), compute <script type="math/tex; ">A(\bf{u}+\bf{v})</script> 
-as a linear combination of the columns of <script type="math/tex; ">A</script> using the entries in
-<script type="math/tex; ">\bf{u} + \bf{v}</script> as weights.</p>
-<p><img src="fig/la_01_04_t5_01.png" alt=""></p>
-<p>To prove statement (b), compute <script type="math/tex; ">A(c\bf{u})</script> as a linear combination of the columns of <script type="math/tex; ">A</script>
-using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
-<p><img src="fig/la_01_04_t5_02.png" alt=""></p>
-<p><script type="math/tex; ">\blacksquare</script></p>
+<ul>
+<li>Using the multiplicative property (2) in Theorem (3), we compute
+<script type="math/tex; mode=display">
+\begin{align}
+\text{det}(B-\lambda I) &= \text{det}\left[ P^{-1}(A-\lambda I)P\right] \\
+&= \text{det}(P^{-1})\text{det}(A-\lambda I)\text{det}(P) \tag{2}
+\end{align}
+</script></li>
+<li>Since <script type="math/tex; ">\text{det}(P^{-1})\text{det}(P) = \text{det}(P^{-1}P)= \text{det }I = 1</script>, we see from equation (2) that <script type="math/tex; ">\text{det}(B-\lambda I) = \text{det}(A-\lambda I)</script>.</li>
+</ul>
+<h2 id="warnings">Warnings</h2>
+<ul>
+<li>The matrices 
+<script type="math/tex; mode=display">
+\begin{bmatrix} 
+2 & 1 \\ 
+0 & 2 
+\end{bmatrix} \text{ and }
+\begin{bmatrix} 
+2 & 0 \\ 
+0 & 2 
+\end{bmatrix} 
+</script> 
+are <strong>not similar even though they have the same eigenvalues</strong>.</li>
+<li><strong>Similarity</strong> is not the same as <strong>row equivalence</strong> (If <script type="math/tex; ">A</script> is row equivalent to <script type="math/tex; ">B</script>, then <script type="math/tex; ">B=EA</script> for some invertible matrix <script type="math/tex; ">E</script>). Row operations on a matrix usually change its eigenvalues.</li>
+</ul>
 
                                 
                                 </section>
@@ -847,12 +761,12 @@ using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
 
             
                 
-                <a href="la_01_03.html" class="navigation navigation-prev " aria-label="Previous page: 01 03">
+                <a href="la_05_01.html" class="navigation navigation-prev " aria-label="Previous page: 05_01">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_05.html" class="navigation navigation-next " aria-label="Next page: 01 05">
+                <a href="la_05_03.html" class="navigation navigation-next " aria-label="Next page: 05_03">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -863,7 +777,7 @@ using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 04","level":"1.3.5","depth":2,"next":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"previous":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_04.md","mtime":"2019-09-03T02:33:43.894Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:56:44.129Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"05_02","level":"1.3.14","depth":2,"next":{"title":"05_03","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},"previous":{"title":"05_01","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_05_02.md","mtime":"2019-07-29T00:19:23.238Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:56:44.129Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

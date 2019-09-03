@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 04 · GitBook</title>
+        <title>10_02 Difference Equation · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_05.html" />
+    <link rel="next" href="la_02_01.html" />
     
     
-    <link rel="prev" href="la_01_03.html" />
+    <link rel="prev" href="la_01_09.html" />
     
 
     </head>
@@ -226,7 +226,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.5" data-path="la_01_04.html">
+        <li class="chapter " data-level="1.3.5" data-path="la_01_04.html">
             
                 <a href="la_01_04.html">
             
@@ -291,7 +291,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
+        <li class="chapter active" data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
             
                 <a href="la_01_10_02_Difference_Equation.html">
             
@@ -566,7 +566,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 04</a>
+        <a href="../.." >10_02 Difference Equation</a>
     </h1>
 </div>
 
@@ -581,245 +581,75 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
-<h1 id="14-the-matrix-equation-abfx">1.4 The Matrix Equation <script type="math/tex; ">A\bf{x}</script></h1>
-<p> A fundamental idea of linear algebra is to view a <strong>linear combination of vectors</strong> as the <strong>product of a matrix and a vector</strong>!!</p>
-<h2 id="definition">Definition</h2>
-<p> If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \cdots, \bf{a}_n</script>, 
-and if <script type="math/tex; ">\bf{x}</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, 
-then the product of <script type="math/tex; ">A</script> and <script type="math/tex; ">\bf{x}</script>, denoted by <script type="math/tex; ">A\bf{x}</script>
- is the linear combination of the columns of <script type="math/tex; ">A</script> using the corresponding entries in <script type="math/tex; ">\bf{x}</script>
-as weights; that is,</p>
-<p><script type="math/tex; mode=display">
-A\bf{x} =
-\begin{bmatrix}
- & & \\
-\textbf{a}_1 & \cdots & \textbf{a}_n\\
- & & \\
-\end{bmatrix}
-\begin{bmatrix}
-{x}_1 \\ 
-\vdots \\
-{x}_n
-\end{bmatrix}
-=
-x_1\textbf{a}_1 +x_2\textbf{a}_2 + \cdots +  x_n\textbf{a}_n
-</script></p>
-<p>Note that <script type="math/tex; ">A\bf{x}</script> is defined only if the number of columns
-of <script type="math/tex; ">A</script> equals the number of entries in <script type="math/tex; ">\bf{x}</script>.</p>
-<h2 id="example-2">Example 2</h2>
-<p>For <script type="math/tex; ">\bf{v}_1, \bf{v}_2, \bf{v}_3</script> in <script type="math/tex; ">\mathbb{R}^m</script>, write the linear combination <script type="math/tex; ">3\textbf{v}_1-5\textbf{v}_2+7\textbf{v}_3</script> as a matrix times a vector.</p>
-<h3 id="solution-of-example-2">Solution of Example 2</h3>
-<p>Place <script type="math/tex; ">\bf{v}_1, \bf{v}_2, \bf{v}_3</script> into the columns of a matrix <script type="math/tex; ">A</script> and place the weights 3,-5, and 7 into a vector <script type="math/tex; ">\bf{x}</script>.
-That is,</p>
-<p><script type="math/tex; mode=display">
-3\textbf{v}_1-5\textbf{v}_2+7\textbf{v}_3=\begin{bmatrix} \textbf{v}_1 & \textbf{v}_2 & \textbf{v}_3 \end{bmatrix} 
-\begin{bmatrix} 3 \\ -5 \\ 7 \end{bmatrix} = A \textbf{x}
-</script></p>
-<p><script type="math/tex; ">\blacksquare</script></p>
-<p>Now, write the system of linear equations as a vector equation involving a linear combination of vectors.</p>
-<p>For examples, the following system</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-x_1+2x_2-x_3 &=4 \\
--5x_2 +3 x_3 &=1 
-\end{align} \tag{1}
-</script></p>
-<p>is equivalent to </p>
-<p><script type="math/tex; mode=display">
-x_1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} 
-+x_2 \begin{bmatrix} 2 \\ -5 \end{bmatrix} 
-+x_3 \begin{bmatrix} -1 \\ 3 \end{bmatrix} 
-= \begin{bmatrix} 4 \\ 1 \end{bmatrix} 
-\tag{2}
-</script></p>
-<p>As in the example, the linear combination of the left side is <strong>a matrix times a vector</strong>, so that (2) becomes</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix} 1 & 2 & -1 \\ 0 & -5 & 3 \end{bmatrix} 
-\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix} =
-\begin{bmatrix} 4 \\ 1 \end{bmatrix} \tag{3}
-</script></p>
-<p>Equation (3) has the form <script type="math/tex; ">A\bf{x}=\bf{b}</script>. Such an equation is called a <strong>matrix equation</strong> to distinguish it from a vector equation such as shown in (2).</p>
-<hr>
-<h2 id="theorem-3">Theorem 3</h2>
-<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, with columns <script type="math/tex; ">\bf{a}_1, \bf{a}_2, \cdots, \bf{a}_n</script>, and if <script type="math/tex; ">\bf</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then the <strong>matrix equation</strong></p>
-<p><script type="math/tex; mode=display">
-A\bf{x} = \bf{b}
-</script></p>
-<p>has the same solution set as the <strong>vector equation</strong>.</p>
-<p><script type="math/tex; mode=display">
-x_1
-\textbf{a}_1 + 
-x_2 
-\textbf{a}_2 + 
-\cdots + 
-x_n \textbf{a}_n = \textbf{b}
-</script></p>
-<p>which, in turn, has the same solution set as the systme of linear euqations whose augmented matrix is</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-\bf{a}_1 & \bf{a}_2 & \cdots & \bf{a}_n & \bf{b}
-\end{bmatrix}
-</script></p>
-<hr>
-<h2 id="existence-of-solutions">Existence of Solutions</h2>
-<blockquote>
+                                <h1 id="ch0110-linear-models-in-business-science-and-engineering">Ch01.10 Linear Models in Business, Science, and Engineering</h1>
+<h2 id="011002--difference-equation">01.10.02 : Difference Equation</h2>
 <ul>
-<li>The equation <script type="math/tex; ">A\bf{x} = \bf{b}</script> has a solution if and only if <script type="math/tex; ">\bf{b}</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</li>
-</ul>
-</blockquote>
-<h2 id="theorem-4">Theorem 4</h2>
-<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix. Then the following statements are logically equivalent. 
-That is, for a particular <script type="math/tex; ">A</script>, 
-either they are all true statements or they are all false.</p>
-<p>a. For each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^m</script>, the equation <script type="math/tex; ">A\bf{x}</script> has a solution.</p>
-<p>b. Each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^m</script> is a linear combination of the columns of <script type="math/tex; ">A</script>.</p>
-<p>c. The columns of <script type="math/tex; ">A</script> span <script type="math/tex; ">\mathbb{R}^m</script></p>
-<p>d. <script type="math/tex; ">A</script> has a pivot position in every row.</p>
-<hr>
-<blockquote>
-<ul>
-<li>Theorem 4 is about a <em>coefficient matrix</em>, not an augmented matrix.</li>
-</ul>
-</blockquote>
-<h2 id="example-4--computation-of-atextbfx">Example 4 : Computation of <script type="math/tex; ">A\textbf{x}</script></h2>
-<p>Compute <script type="math/tex; ">A\textbf{x}</script>, where <script type="math/tex; ">\textbf{A} = \begin{bmatrix} 2 & 3 & 4 \\ -1 & 5 & -3 \\ 6 & -2 & 8 \end{bmatrix}</script> and <script type="math/tex; ">\textbf{x} = \begin{bmatrix}x_1 \\ x_2 \\ x_3 \end{bmatrix}</script>.</p>
-<h3 id="solution-of-example-4">Solution of Example 4</h3>
-<p>From the definition,</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-\begin{bmatrix}
-2 & 3 & 4 \\
--1 & 5 & -3 \\
-6 & -2 & 8
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-&=
-x_1
-\begin{bmatrix}
-2 \\
--1 \\
-6 
-\end{bmatrix}
-+x_2
-\begin{bmatrix}
-3 \\
-5 \\
--2 
-\end{bmatrix}
-+x_3
-\begin{bmatrix}
-4 \\
--3 \\
-8 
-\end{bmatrix}
-\\
-&=
-\begin{bmatrix}
-2x_1 \\
--x_1 \\
-6x_1 
-\end{bmatrix}
-+
-\begin{bmatrix}
-3x_2 \\
-5x_2 \\
--2x_2 
-\end{bmatrix}
-+
-\begin{bmatrix}
-4x_3 \\
--3x_3 \\
-8x_3 
-\end{bmatrix}
-\\
-&=
-\begin{bmatrix}
-2x_1+3x_2+4x_3 \\
--x_1+5x_2-3x_3 \\
-6x_1-2x_2+8x_3
-\end{bmatrix}
-\end{align}
-\tag{1}
-</script></p>
-<p>The first entry in the product <script type="math/tex; ">A\textbf{x}</script> is a sum of products (sometimes called a <strong>dot</strong> product), 
-using the first row of <script type="math/tex; ">A</script> and the entries in <script type="math/tex; ">\bf{x}</script>.</p>
-<p>That is,</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-2 & 3 & 4 \\
-& & \\
-& & 
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-=
-\begin{bmatrix}
-2x_1+3x_2+4x_3 \\
- \\
- \\
-\end{bmatrix}
-</script></p>
-<p>Similarly, the second entry in <script type="math/tex; ">A\bf{x}</script>
-can be calculated
-by multiplying the entries in the second row of <script type="math/tex; ">A</script> by the
-corresponding entries in <script type="math/tex; ">\bf{x}</script> and then summing the
-resulting products.
+<li>In many fields, a dynamic system that changes over a time should be mathematically modeled. </li>
+<li>Several features of the system are each measured at discrete time intervals, producing a sequence of vectors, <script type="math/tex; "> \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots, </script>. </li>
+<li>The entries in <script type="math/tex; ">\textbf{x}_k</script> provide information about the state of system at the time of the <script type="math/tex; ">k</script>th measurement.</li>
+<li>If there is a matrix <script type="math/tex; ">A</script> such that <script type="math/tex; ">\textbf{x}_1=A\textbf{x}_0, \textbf{x}_2=A\textbf{x}_1</script>, and , in general 
 <script type="math/tex; mode=display">
-\begin{bmatrix}
-& & \\
--1&5 &3 \\
-& & 
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 
-\end{bmatrix}
-=
-\begin{bmatrix}
- \\
--x_1+5x_2-3x_3 \\
- \\
-\end{bmatrix}
-</script></p>
-<p>Likewise, the third entry in <script type="math/tex; ">A\bf{x}</script> can be calculated 
-from the third row of <script type="math/tex; ">A</script> and the entries in <script type="math/tex; ">\bf{x}</script> <script type="math/tex; ">\blacksquare</script>.</p>
-<p>If the product <script type="math/tex; ">A\bf{x}</script> is defined, then the <script type="math/tex; ">i</script>-th entry in <script type="math/tex; ">A\bf{x}</script>
-the sum of the products of corresponding entries
-from row <script type="math/tex; ">i</script> of <script type="math/tex; ">A</script> and from the vector <script type="math/tex; ">\bf{x}</script>.</p>
-<h2 id="row-vector-rule-for-computing-abfx">Row-Vector Rule for Computing <script type="math/tex; ">A\bf{x}</script></h2>
-<p>The matrix with 1&#x2019;s on the diagonal and 0&#x2019;s
-elsewhere is called an <code>identity matrix</code> and is
-denoted by <script type="math/tex; ">I</script>.</p>
-<p>For example, <script type="math/tex; ">\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}</script> is an identity matrix.</p>
-<h2 id="properties-of-the-matrix-vector-product-abfx">Properties of the Matrix-Vector Product <script type="math/tex; ">A\bf{x}</script></h2>
-<p>The facts in the next theorem are important and will be used throughout the text.
-Think about <strong>Linearity</strong>.</p>
-<h2 id="theorem-5">Theorem 5</h2>
-<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> are vectors in
-<script type="math/tex; ">mathbb{R}^n</script>, and <script type="math/tex; ">c</script> is a scalar, then</p>
-<p>a. <script type="math/tex; ">A(\bf{u} +\bf{v}) = A\bf{u} +A\bf{v} </script></p>
-<p>b. <script type="math/tex; ">A(c\bf{u}) = c(A\bf{u})</script></p>
-<h3 id="proof-of-theorem-5">Proof of Theorem 5</h3>
-<p>For simplicity, take <script type="math/tex; ">n =3</script>, <script type="math/tex; ">A = \begin{bmatrix} a_1 & a_2 & a_3 \end{bmatrix} </script>,
-and <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
-<p>For <script type="math/tex; ">i=1,2,3</script>, let <script type="math/tex; ">u_i</script> and <script type="math/tex; ">v_i</script> be the <script type="math/tex; ">i</script>-th entries in <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script>, respectively.</p>
-<p>To prove statement (a), compute <script type="math/tex; ">A(\bf{u}+\bf{v})</script> 
-as a linear combination of the columns of <script type="math/tex; ">A</script> using the entries in
-<script type="math/tex; ">\bf{u} + \bf{v}</script> as weights.</p>
-<p><img src="fig/la_01_04_t5_01.png" alt=""></p>
-<p>To prove statement (b), compute <script type="math/tex; ">A(c\bf{u})</script> as a linear combination of the columns of <script type="math/tex; ">A</script>
-using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
-<p><img src="fig/la_01_04_t5_02.png" alt=""></p>
-<p><script type="math/tex; ">\blacksquare</script></p>
+\textbf{x}_{k+1}=A\textbf{x}_k \text{  for }k=0,1,2,\cdots
+</script></li>
+<li>then it is called a linear difference equation (or recurrence relation)</li>
+<li>Given such an equation, one can compute <script type="math/tex; ">\textbf{x}_1,\textbf{x}_2</script>, and so on, provided <script type="math/tex; ">\textbf{x}_0</script> is known.</li>
+<li>The dicussion below illustrates how a difference equation might arise.</li>
+<li>A subject of interest to demographers is the movement of populations or groups of people from one region to another. The simple model here considers the changes in the population of a certain city and its surrounding suburbs over a period of years.</li>
+<li>Fix an initial year-say,2019- and denote the populations of the city and suburbs that year by <script type="math/tex; ">r_0</script> and <script type="math/tex; ">s_0</script>, repectively. Let <script type="math/tex; ">\textbf{x}_0</script> be the population vector
+<script type="math/tex; mode=display">
+\textbf{x}_0 = \begin{bmatrix}r_0 \\ s_0 \end{bmatrix}
+\begin{matrix} \text{City population, 2019} \\ \text{Suburban population, 2019} \end{matrix}
+</script></li>
+<li>For 2020 and subsequent years, denote the populations of the city and suburbs by vectors
+<script type="math/tex; mode=display">
+\textbf{x}_1 = \begin{bmatrix}r_1 \\ s_1 \end{bmatrix},
+\textbf{x}_2 = \begin{bmatrix}r_2 \\ s_2 \end{bmatrix},
+\textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
+</script></li>
+<li>Our goal is to describe mathematically how these vectors might be related.</li>
+<li>Suppose demographic studies show that each year about 5% of the city&apos;s population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
+<img src="fig/la_01_10_02.png" alt="figure2"></li>
+<li>After 1 year, the original <script type="math/tex; ">r_0</script> persons in the city are now distributed between city and suburbs as
+<script type="math/tex; mode=display">
+\begin{bmatrix}.95 r_0 \\.05 r_0\end{bmatrix} = r_0 
+\begin{bmatrix}.95 \\ .05 \end{bmatrix}
+\begin{matrix} \text{Remain in city} \\ \text{Move to suburbs} \end{matrix} \tag{6}
+</script></li>
+<li>The so persons in the suburbs in 2019 are distributed 1 year later as
+<script type="math/tex; mode=display">
+s_0\begin{bmatrix}.03 \\.97 \end{bmatrix} 
+\begin{matrix} \text{Move to city} \\ \text{Remain in suburbs} \end{matrix}
+\tag{7}
+</script></li>
+<li>The vectors in (6) and (7) account for all of the populations in 2020. Thus
+<script type="math/tex; mode=display">
+\begin{bmatrix} r_1 \\ s_1 \end{bmatrix}
+=r_0\begin{bmatrix} .95 \\ .05 \end{bmatrix}
++s_0\begin{bmatrix} .03 \\ .97 \end{bmatrix}
+=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+\begin{bmatrix} r_0 \\ s_0 \end{bmatrix}
+</script></li>
+<li>That is, 
+<script type="math/tex; mode=display">
+\textbf{x}_1 = M \textbf{x}_0 \tag{8}
+</script></li>
+<li>Where <script type="math/tex; ">M</script> is the migration matrix determined by the following table:
+<script type="math/tex; mode=display">
+M=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+</script></li>
+<li>Equation (8) describes how the population changes
+from 2019 to 2020. If the migration percentages
+remain constant, then the change from 2020 to 2021
+is given by
+<script type="math/tex; mode=display">
+\textbf{x}_2 = M \textbf{x}_1 
+</script></li>
+<li>And similarly for 2021 to 2022 and subsequent years. In general,
+<script type="math/tex; mode=display">
+\textbf{x}_{k+1} = M\textbf{x}_k \text{ for }k=0,1,2,\cdots \tag{9}
+</script></li>
+<li>The sequence of vectors <script type="math/tex; ">\left\{ \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots \right\}</script> describes the population of the city/suburban region over a period of years.</li>
+</ul>
 
                                 
                                 </section>
@@ -847,12 +677,12 @@ using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
 
             
                 
-                <a href="la_01_03.html" class="navigation navigation-prev " aria-label="Previous page: 01 03">
+                <a href="la_01_09.html" class="navigation navigation-prev " aria-label="Previous page: 01 09">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_05.html" class="navigation navigation-next " aria-label="Next page: 01 05">
+                <a href="la_02_01.html" class="navigation navigation-next " aria-label="Next page: 02_01_Matrix_Algebra">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -863,7 +693,7 @@ using the entries in <script type="math/tex; ">c\bf{u}</script> as weights.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 04","level":"1.3.5","depth":2,"next":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"previous":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_04.md","mtime":"2019-09-03T02:33:43.894Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:56:44.129Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10_02 Difference Equation","level":"1.3.10","depth":2,"next":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},"previous":{"title":"01 09","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","mtime":"2019-08-20T12:30:49.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:56:44.129Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
