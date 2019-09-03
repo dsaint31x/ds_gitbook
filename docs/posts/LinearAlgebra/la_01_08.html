@@ -600,88 +600,87 @@
 <li>The range of <script type="math/tex; ">T</script> is the set of all linear combinations of the columns of <script type="math/tex; ">A</script>, because each image <script type="math/tex; ">T(\textbf{x})</script> is of the form <script type="math/tex; ">A\textbf{x}</script>. </li>
 </ul>
 <h2 id="example-1">Example 1:</h2>
-<p>Let <script type="math/tex; ">A=\begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}, \textbf{u} =\begin{bmatrix} 2 \\ 1\end{bmatrix}, \textbf{b} =\begin{bmatrix} 3 \\ 3 \\ -5 \end{bmatrix}, \textbf{c} =\begin{bmatrix} 3 \\ 2 \\ 5\end{bmatrix}</script> and define a transformation <script type="math/tex; ">T: \mathbb{R}^2 \mapsto \mathbb{R}^3</script> by <script type="math/tex; ">T(\textbf{x})=A\textbf{x}</script>, so that <script type="math/tex; ">$$T(\textbf{x})=A\textbf{x}=\begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} =\begin{bmatrix} x_1-3x_2 \\ 3x_1 + 5x_2 \\ -1x_1 + 7x_2 \end{bmatrix}</script><script type="math/tex; ">.
-
-1. Find </script>T(\textbf{u})<script type="math/tex; ">, the image of </script>\textbf{u}<script type="math/tex; "> under the transfomation </script>T<script type="math/tex; mode=display">
-2. Find </script>\textbf{x} \in \mathbb{R}^2<script type="math/tex; "> whose image under </script>T<script type="math/tex; "> is </script>\textbf{b}<script type="math/tex; ">.
-3. Is there more than one </script>\textbf{x}<script type="math/tex; "> whose image under </script>T<script type="math/tex; "> is </script>\textbf{b}<script type="math/tex; ">?
-4. Determine if </script>textbf{c}<script type="math/tex; "> is in the range of the
-transformation </script>T<script type="math/tex; ">.
-
-### Solution of Example 1
-
-**1. Compute**
-
-</script><script type="math/tex; mode=display">
+<p>Let <script type="math/tex; ">A=\begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}, \textbf{u} =\begin{bmatrix} 2 \\ 1\end{bmatrix}, \textbf{b} =\begin{bmatrix} 3 \\ 3 \\ -5 \end{bmatrix}, \textbf{c} =\begin{bmatrix} 3 \\ 2 \\ 5\end{bmatrix}</script> and define a transformation <script type="math/tex; ">T: \mathbb{R}^2 \mapsto \mathbb{R}^3</script> by <script type="math/tex; ">T(\textbf{x})=A\textbf{x}</script>, so that <script type="math/tex; ">T(\textbf{x})=A\textbf{x}=\begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} =\begin{bmatrix} x_1-3x_2 \\ 3x_1 + 5x_2 \\ -1x_1 + 7x_2 \end{bmatrix}</script>.</p>
+<ol>
+<li>Find <script type="math/tex; ">T(\textbf{u})</script>, the image of <script type="math/tex; ">\textbf{u}</script> under the transfomation <script type="math/tex; ">T</script></li>
+<li>Find <script type="math/tex; ">\textbf{x} \in \mathbb{R}^2</script> whose image under <script type="math/tex; ">T</script> is <script type="math/tex; ">\textbf{b}</script>.</li>
+<li>Is there more than one <script type="math/tex; ">\textbf{x}</script> whose image under <script type="math/tex; ">T</script> is <script type="math/tex; ">\textbf{b}</script>?</li>
+<li>Determine if <script type="math/tex; ">textbf{c}</script> is in the range of the
+transformation <script type="math/tex; ">T</script>.</li>
+</ol>
+<h3 id="solution-of-example-1">Solution of Example 1</h3>
+<p><strong>1. Compute</strong></p>
+<p><script type="math/tex; mode=display">
 T(\textbf{u})=A\textbf{u}=\begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}\begin{bmatrix} 2 \\ 1\end{bmatrix}=\begin{bmatrix} 5 \\ 1 \\ -9 \end{bmatrix}
-</script><script type="math/tex; mode=display">
-
-**2. Solve </script>T(\textbf{x})=\textbf{b}<script type="math/tex; "> for </script>\textbf{x}<script type="math/tex; ">. That is, solve </script>A\textbf{x}=\textbf{b}<script type="math/tex; ">, or </script><script type="math/tex; mode=display">
+</script></p>
+<p><strong>2. Solve <script type="math/tex; ">T(\textbf{x})=\textbf{b}</script> for <script type="math/tex; ">\textbf{x}</script>. That is, solve <script type="math/tex; ">A\textbf{x}=\textbf{b}</script>, or <script type="math/tex; mode=display">
 \begin{bmatrix} 1 & -3 \\ 3 & 5 \\ -1 & 7 \end{bmatrix}
 \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
 =
 \begin{bmatrix} 3 \\ 2 \\ -5 \end{bmatrix} 
-\tag{1}</script><script type="math/tex; ">**
-* Row reduce the augmented matrix:</script><script type="math/tex; ">\begin{bmatrix} 1 & -3 &3 \\ 3 & 5 & 2\\ -1 & 7 &-5\end{bmatrix} 
+\tag{1}</script></strong></p>
+<ul>
+<li>Row reduce the augmented matrix:<script type="math/tex; ">\begin{bmatrix} 1 & -3 &3 \\ 3 & 5 & 2\\ -1 & 7 &-5\end{bmatrix} 
 \text{~} 
 \begin{bmatrix} 1 & -3 &3 \\ 0 & 14 & -7\\ 0 & 4 & -2\end{bmatrix}
 \text{~} 
 \begin{bmatrix} 1 & -3 &3 \\ 0 & 1 & -.5\\ 0 & 0 & 0\end{bmatrix}
 \text{~} 
 \begin{bmatrix} 1 & 0 & 1.5 \\ 0 & 1 & -.5\\ 0 & 0 & 0\end{bmatrix} \tag{2}
-</script><script type="math/tex; mode=display">
-* Hence </script>x_1=1.5, x_2=-.5, \text{ and } \textbf{x}=\begin{bmatrix} 1.5\ -.5\end{bmatrix}<script type="math/tex; ">.
-* The image of this </script>\textbf{x}<script type="math/tex; "> under </script>T<script type="math/tex; "> is the given vector </script>\textbf{b}<script type="math/tex; mode=display">
-
-**3. Any </script>\textbf{x}<script type="math/tex; "> whose image under </script>T<script type="math/tex; "> is </script>\textbf{b}<script type="math/tex; "> must satisfy equation (1).**
-* From (2), it is clear that equation (1) has a unique solution.
-* So there is exactly one </script>\textbf{x}<script type="math/tex; "> whose image is </script>\textbf{b}<script type="math/tex; ">.
-
-**4. The vector </script>\textbf{c}<script type="math/tex; "> is in the range of </script>T<script type="math/tex; "> if </script>\textbf{c}<script type="math/tex; "> is the image of some </script>\textbf{x}<script type="math/tex; "> in </script>\mathbb{R}^2<script type="math/tex; ">, that is, if </script> \textbf{c}=T(\textbf{x})<script type="math/tex; "> for some </script>\textbf{x}<script type="math/tex; ">.**
-* This is another way of asking if the system </script>A\textbf{x}=\textbf{c}<script type="math/tex; "> is consistent.
-* To find the answer, row reduce the augmented
-matrix: </script><script type="math/tex; ">\begin{bmatrix} 1 & -3 &3 \\ 3 & 5 & 2\\ -1 & 7 &5\end{bmatrix} 
+</script></li>
+<li>Hence <script type="math/tex; ">x_1=1.5, x_2=-.5, \text{ and } \textbf{x}=\begin{bmatrix} 1.5\\ -.5\end{bmatrix}</script>.</li>
+<li>The image of this <script type="math/tex; ">\textbf{x}</script> under <script type="math/tex; ">T</script> is the given vector <script type="math/tex; ">\textbf{b}</script></li>
+</ul>
+<p><strong>3. Any <script type="math/tex; ">\textbf{x}</script> whose image under <script type="math/tex; ">T</script> is <script type="math/tex; ">\textbf{b}</script> must satisfy equation (1).</strong></p>
+<ul>
+<li>From (2), it is clear that equation (1) has a unique solution.</li>
+<li>So there is exactly one <script type="math/tex; ">\textbf{x}</script> whose image is <script type="math/tex; ">\textbf{b}</script>.</li>
+</ul>
+<p><strong>4. The vector <script type="math/tex; ">\textbf{c}</script> is in the range of <script type="math/tex; ">T</script> if <script type="math/tex; ">\textbf{c}</script> is the image of some <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\mathbb{R}^2</script>, that is, if <script type="math/tex; "> \textbf{c}=T(\textbf{x})</script> for some <script type="math/tex; ">\textbf{x}</script>.</strong></p>
+<ul>
+<li>This is another way of asking if the system <script type="math/tex; ">A\textbf{x}=\textbf{c}</script> is consistent.</li>
+<li>To find the answer, row reduce the augmented
+matrix: <script type="math/tex; ">\begin{bmatrix} 1 & -3 &3 \\ 3 & 5 & 2\\ -1 & 7 &5\end{bmatrix} 
 \text{~} 
 \begin{bmatrix} 1 & -3 &3 \\ 0 & 14 & -7\\ 0 & 4 & 8\end{bmatrix}
 \text{~} 
 \begin{bmatrix} 1 & -3 &3 \\ 0 & 1 & 2\\ 0 & 14 & -7\end{bmatrix}
 \text{~} 
 \begin{bmatrix} 1 & -3 & 3 \\ 0 & 1 & 2\\ 0 & 0 & -35\end{bmatrix} \tag{2}
-</script><script type="math/tex; mode=display">
-* The third equation, </script>0 = &#x2212;35<script type="math/tex; ">, shows that the system
-is inconsistent.
-* So </script>\textbf{c}<script type="math/tex; "> is not in the range of </script>T<script type="math/tex; ">. </script>\blacksquare<script type="math/tex; mode=display">
-
-
-## Shear Transformation
-
-Example 3: Let </script>A=\begin{bmatrix} 1 &amp; 3 \ 0 &amp; 1 \end{bmatrix}<script type="math/tex; ">. The transformation </script>T: \mathbb{R}^2 \mapsto \mathbb{R}^2<script type="math/tex; "> defined by </script>T(\textbf{x})=A\textbf{x}<script type="math/tex; "> is called a **shear transformation.**
-
-* It can be shown that if </script>T<script type="math/tex; "> acts on each point in the </script>2\times 2<script type="math/tex; "> square shown in Fig. 4 below, then the set of images forms the shaded parallelogram.
-
-![Fig.4](./fig/la_01_08_04.png)
-
-* The key idea is to show that </script>T<script type="math/tex; "> maps line segments onto line segments and then to check that the corners of the square map onto the vertices of the parallelogram.
-
-* For instance, the image of the point </script>\textbf{u} =\begin{bmatrix} 0 \ 2\end{bmatrix}<script type="math/tex; "> is </script><script type="math/tex; ">T(\textbf{u})=A\textbf{u}=\begin{bmatrix} 1 & 3 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 0 \\ 2\end{bmatrix}=\begin{bmatrix} 6 \\ 2 \end{bmatrix}</script><script type="math/tex; ">, and the image of </script>\begin{bmatrix} 2 \ 2\end{bmatrix}<script type="math/tex; "> is </script>\begin{bmatrix} 1 &amp; 3 \ 0 &amp; 1 \end{bmatrix}\begin{bmatrix} 2 \ 2\end{bmatrix}=\begin{bmatrix} 8 \ 2\end{bmatrix}<script type="math/tex; ">.
-
-* </script>T<script type="math/tex; "> deforms the square as if the top of the square were pushed to the right while the base is held fixed. </script>\blacksquare<script type="math/tex; mode=display">
+</script></li>
+<li>The third equation, <script type="math/tex; ">0 = −35</script>, shows that the system
+is inconsistent.</li>
+<li>So <script type="math/tex; ">\textbf{c}</script> is not in the range of <script type="math/tex; ">T</script>. <script type="math/tex; ">\blacksquare</script></li>
+</ul>
+<h2 id="shear-transformation">Shear Transformation</h2>
+<p>Example 3: Let <script type="math/tex; ">A=\begin{bmatrix} 1 & 3 \\ 0 & 1 \end{bmatrix}</script>. The transformation <script type="math/tex; ">T: \mathbb{R}^2 \mapsto \mathbb{R}^2</script> defined by <script type="math/tex; ">T(\textbf{x})=A\textbf{x}</script> is called a <strong>shear transformation.</strong></p>
+<ul>
+<li>It can be shown that if <script type="math/tex; ">T</script> acts on each point in the <script type="math/tex; ">2\times 2</script> square shown in Fig. 4 below, then the set of images forms the shaded parallelogram.</li>
+</ul>
+<p><img src="fig/la_01_08_04.png" alt="Fig.4"></p>
+<ul>
+<li><p>The key idea is to show that <script type="math/tex; ">T</script> maps line segments onto line segments and then to check that the corners of the square map onto the vertices of the parallelogram.</p>
+</li>
+<li><p>For instance, the image of the point <script type="math/tex; ">\textbf{u} =\begin{bmatrix} 0 \\ 2\end{bmatrix}</script> is <script type="math/tex; ">T(\textbf{u})=A\textbf{u}=\begin{bmatrix} 1 & 3 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 0 \\ 2\end{bmatrix}=\begin{bmatrix} 6 \\ 2 \end{bmatrix}</script>, and the image of <script type="math/tex; ">\begin{bmatrix} 2 \\ 2\end{bmatrix}</script> is <script type="math/tex; ">\begin{bmatrix} 1 & 3 \\ 0 & 1 \end{bmatrix}\begin{bmatrix} 2 \\ 2\end{bmatrix}=\begin{bmatrix} 8 \\ 2\end{bmatrix}</script>.</p>
+</li>
+<li><p><script type="math/tex; ">T</script> deforms the square as if the top of the square were pushed to the right while the base is held fixed. <script type="math/tex; ">\blacksquare</script></p>
+</li>
+</ul>
+<hr>
+<h2 id="definition--a-transformation-or-mapping-t-is-linear-if">Definition : A transformation (or mapping) <script type="math/tex; ">T</script> is linear if:</h2>
+<ol>
+<li><script type="math/tex; ">T(\textbf{u}+\textbf{v})= T(\textbf{u}) + T(\textbf{v})</script> for all <script type="math/tex; ">\textbf{u},\textbf{v}</script> in the domain of <script type="math/tex; ">T</script>;</li>
+<li><script type="math/tex; ">T(c\textbf{u})= cT(\textbf{u})</script> for all scalars <script type="math/tex; ">c</script> and all <script type="math/tex; ">\textbf{u} in the domain of </script>T<script type="math/tex; ">.
 
 ---
 
-## Definition : A transformation (or mapping) </script>T<script type="math/tex; "> is linear if:
-1. </script>T(\textbf{u}+\textbf{v})= T(\textbf{u}) + T(\textbf{v})<script type="math/tex; "> for all </script>\textbf{u},\textbf{v}<script type="math/tex; "> in the domain of </script>T<script type="math/tex; ">;
-2. </script>T(c\textbf{u})= cT(\textbf{u})<script type="math/tex; "> for all scalars </script>c<script type="math/tex; "> and all </script>\textbf{u} in the domain of <script type="math/tex; ">T</script>.</p>
-<hr>
-<ul>
-<li>Linear transformations preserve the operations of vector addition and scalar multiplication.</li>
-<li>Property (i) says that the result <script type="math/tex; ">T(\textbf{u}+\textbf{v})</script> of first adding <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script> in <script type="math/tex; ">\mathbb{R}^n</script> and then applying <script type="math/tex; ">T</script> is the same as first applying <script type="math/tex; ">T</script> to <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script> and then adding <script type="math/tex; ">T(\textbf{u})</script> and <script type="math/tex; ">T(\textbf{v})</script> in <script type="math/tex; ">\mathbb{R}^m</script>.</li>
-</ul>
-<p>These two properties lead to the following useful facts.</p>
-<ul>
-<li>If <script type="math/tex; ">T</script> is a linear transformation, then <script type="math/tex; ">$$T(\textbf{0})=\textbf{0} \tag{3}</script><script type="math/tex; "> and </script>T(c\textbf{u}+d\textbf{v})=cT(\textbf{u})+dT(\textbf{v}) \tag{4}<script type="math/tex; "> for all vectors </script>\textbf{u},\textbf{v}<script type="math/tex; "> in the domain of </script>T<script type="math/tex; "> and all scalar </script>c,d<script type="math/tex; ">.
+* Linear transformations preserve the operations of vector addition and scalar multiplication.
+* Property (i) says that the result </script>T(\textbf{u}+\textbf{v})<script type="math/tex; "> of first adding </script>\textbf{u}<script type="math/tex; "> and </script>\textbf{v}<script type="math/tex; "> in </script>\mathbb{R}^n<script type="math/tex; "> and then applying </script>T<script type="math/tex; "> is the same as first applying </script>T<script type="math/tex; "> to </script>\textbf{u}<script type="math/tex; "> and </script>\textbf{v}<script type="math/tex; "> and then adding </script>T(\textbf{u})<script type="math/tex; "> and </script>T(\textbf{v})<script type="math/tex; "> in </script>\mathbb{R}^m<script type="math/tex; ">.
+
+These two properties lead to the following useful facts.
+* If </script>T<script type="math/tex; "> is a linear transformation, then </script>T(\textbf{0})=\textbf{0} \tag{3}<script type="math/tex; "> and </script>T(c\textbf{u}+d\textbf{v})=cT(\textbf{u})+dT(\textbf{v}) \tag{4}<script type="math/tex; "> for all vectors </script>\textbf{u},\textbf{v}<script type="math/tex; "> in the domain of </script>T<script type="math/tex; "> and all scalar </script>c,d<script type="math/tex; ">.
 * Property(3) follows form codition (2) in the difinition, because </script>T(\textbf{0})=T(0\textbf{u})=0T(\textbf{u})=\textbf{0}<script type="math/tex; ">.
-* Property (4) requires both (1) and (2): </script><script type="math/tex; ">T(c\textbf{u}+d\textbf{v})=T(c\textbf{u})+T(d\textbf{v})=cT(\textbf{u})+dT(\textbf{v})</script><script type="math/tex; mode=display">
+* Property (4) requires both (1) and (2): </script>T(c\textbf{u}+d\textbf{v})=T(c\textbf{u})+T(d\textbf{v})=cT(\textbf{u})+dT(\textbf{v})<script type="math/tex; mode=display">
 * If a transformation satisfies (4) for all </script>\textbf{u}, \textbf{v}<script type="math/tex; "> and </script>c<script type="math/tex; ">, </script>d<script type="math/tex; ">, it must
 be linear.
 * (Set </script>c = d = 1<script type="math/tex; "> for preservation of addition, and set for </script>d = 0<script type="math/tex; mode=display">
@@ -695,7 +694,7 @@ preservation of scalar multiplication.)
 
 * Given a scalar </script>r<script type="math/tex; ">, define </script>T: \mathbb{R}^2 \mapsto \mathbb{R}^2<script type="math/tex; "> by </script>T(\textbf{x}=r\textbf{x}<script type="math/tex; ">.
 * </script>T<script type="math/tex; "> is called a **contraction** when </script>0\le r \le 1<script type="math/tex; "> and a **dilation** when </script>r&gt;1$$.</li>
-</ul>
+</ol>
 
                                 
                                 </section>
@@ -739,7 +738,7 @@ preservation of scalar multiplication.)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 08","level":"1.3.8","depth":2,"next":{"title":"01 09","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},"previous":{"title":"01 07","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_08.md","mtime":"2019-09-03T10:37:39.688Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:57:46.634Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 08","level":"1.3.8","depth":2,"next":{"title":"01 09","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},"previous":{"title":"01 07","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_08.md","mtime":"2019-09-03T11:00:32.095Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T11:00:47.378Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

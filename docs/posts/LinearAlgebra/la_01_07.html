@@ -586,200 +586,187 @@
 <h2 id="liniear-independence">Liniear Independence</h2>
 <hr>
 <h2 id="definition--linear-independence">Definition : Linear Independence</h2>
-<p> An indexed set of vectors <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> in <script type="math/tex; ">\mathbb{R}^n</script> is said to be <strong>linearly independent</strong> if the vector equation <script type="math/tex; ">$$
+<p> An indexed set of vectors <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> in <script type="math/tex; ">\mathbb{R}^n</script> is said to be <strong>linearly independent</strong> if the vector equation </p>
+<p><script type="math/tex; mode=display">
 x_1 \textbf{v}_1+x_2 \textbf{v}_2+ \cdots +x_p \textbf{v}_p = 0 \tag{1}
-</script><script type="math/tex; "> has **only the trivial solution (=only zero vector can be </script>\textbf{x}<script type="math/tex; ">)**. 
-
- That is, the set </script>\left{\textbf{v}<em>1, \textbf{v}_2, \cdots,\textbf{v}_p \right}<script type="math/tex; "> is said to be **linearly dependent** if there exist weights </script>c_1,\cdots,c_p<script type="math/tex; ">, not all zero, such that</script><script type="math/tex; mode=display">
+</script> </p>
+<p>has <strong>only the trivial solution (=only zero vector can be <script type="math/tex; ">\textbfx}</script>)</strong>. </p>
+<p> That is, the set <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> is said to be <strong>linearly dependent</strong> if there exist weights <script type="math/tex; ">c_1,\cdots,c_p</script>, not all zero, such that<script type="math/tex; mode=display">
 c_1v_1 +c_2v_2 +\cdots+c_pv_p = 0 \tag{2} 
-</script><script type="math/tex; "> </script>\blacksquare<script type="math/tex; mode=display">
-
----
-
-* Equation (2) is called a **linear dependence relation** among </script>\left{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right}<script type="math/tex; "> when the weights are not all zero. 
-* An indexed set is **linearly dependent** if and only if it is **not linearly independent**.
-
-> ### Practical Definition : Linear Independence
->
-> Given a set of vectors </script>\left{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right}<script type="math/tex; "> in </script>\mathbb{R}^n<script type="math/tex; ">,
->
-> check if </script>\textbf{v}_j<script type="math/tex; "> can be represented as a linear combination of the previous vectors of the set </script>\left{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right}<script type="math/tex; "> for </script>j=1,\cdots, p<script type="math/tex; ">, e.g.,
-> </script><script type="math/tex; "> \textbf{v}_j \in \text{Span} \left\{ \textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_{j-1} \right\} \text{ for some }j=1,\cdots,p \text{?}</script><script type="math/tex; mode=display">
-> * If at least one such </script>\textbf{v}_j<script type="math/tex; "> is found, then </script>\left{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right}<script type="math/tex; "> is **linearly independent**.
-> * If no such </script>\textbf{v}_j<script type="math/tex; "> is found, then </script>\left{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right}<script type="math/tex; "> is **linearly dependent**.
-
-## Example 1
-
-Let </script>\textbf{v}_1=\begin{bmatrix} 1 \ 2\ 3 \end{bmatrix}<script type="math/tex; ">,</script>\textbf{v}_2=\begin{bmatrix} 4 \ 5\ 6 \end{bmatrix}<script type="math/tex; ">, and </script>\textbf{v}_1=\begin{bmatrix} 2 \ 1\ 0 \end{bmatrix}<script type="math/tex; ">.
-
-1. Determine if the set </script>\left{\textbf{v}_1, \textbf{v}_2, \textbf{v}_3 \right}<script type="math/tex; "> is linearly independent.
-2. If possible, find a linear dependence relation among </script>\textbf{v}_1<script type="math/tex; ">, </script>\textbf{v}_2<script type="math/tex; ">, and </script>\textbf{v}_3<script type="math/tex; ">.
-
-### Solution of Example 1:
-
-**1.**
-
-We must determine if there is a nontrivial solution of the equation (1).
-
-* Row operations on the associated augmented matrix show that </script><script type="math/tex; "> \begin{bmatrix}1 & 4& 2& 0\\2 &5&1&0 \\ 3&6&0 &0 \end{bmatrix} \text{~} \begin{bmatrix}1 & 4& 2& 0\\0 &-3&-3&0\\ 0&0&0 &0 \end{bmatrix}</script><script type="math/tex; mode=display">
-* </script>x_1<script type="math/tex; "> and </script>x_2<script type="math/tex; "> are basic viraibles, and </script>x_3<script type="math/tex; "> is free.
-* Each nonzero value of </script>x_3<script type="math/tex; "> determines a nontrivial solution.
-* </script>\textbf{v}_1<script type="math/tex; ">, </script>\textbf{v}_2<script type="math/tex; ">, </script>\textbf{v}_3<script type="math/tex; "> are linearly dependent.
-
-**2.**
-
-To find a linear dependence relation among </script>\textbf{v}_1<script type="math/tex; ">, </script>\textbf{v}_2<script type="math/tex; ">, and </script>\textbf{v}_3<script type="math/tex; "> completely row reduce the augmented matrix and write the new system: 
-
-</script><script type="math/tex; mode=display">
+</script> <script type="math/tex; ">\blacksquare</script></p>
+<hr>
+<ul>
+<li>Equation (2) is called a <strong>linear dependence relation</strong> among <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> when the weights are not all zero. </li>
+<li>An indexed set is <strong>linearly dependent</strong> if and only if it is <strong>not linearly independent</strong>.</li>
+</ul>
+<blockquote>
+<h3 id="practical-definition--linear-independence">Practical Definition : Linear Independence</h3>
+<p>Given a set of vectors <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> in <script type="math/tex; ">\mathbb{R}^n</script>,</p>
+<p>check if <script type="math/tex; ">\textbf{v}_j</script> can be represented as a linear combination of the previous vectors of the set <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> for <script type="math/tex; ">j=1,\cdots, p</script>, e.g.,
+<script type="math/tex; "> \textbf{v}_j \in \text{Span} \left\{ \textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_{j-1} \right\} \text{ for some }j=1,\cdots,p \text{?}</script></p>
+<ul>
+<li>If at least one such <script type="math/tex; ">\textbf{v}_j</script> is found, then <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> is <strong>linearly independent</strong>.</li>
+<li>If no such <script type="math/tex; ">\textbf{v}_j</script> is found, then <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> is <strong>linearly dependent</strong>.</li>
+</ul>
+</blockquote>
+<h2 id="example-1">Example 1</h2>
+<p>Let <script type="math/tex; ">\textbf{v}_1=\begin{bmatrix} 1 \\ 2\\ 3 \end{bmatrix}</script>,<script type="math/tex; ">\textbf{v}_2=\begin{bmatrix} 4 \\ 5\\ 6 \end{bmatrix}</script>, and <script type="math/tex; ">\textbf{v}_1=\begin{bmatrix} 2 \\ 1\\ 0 \end{bmatrix}</script>.</p>
+<ol>
+<li>Determine if the set <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \textbf{v}_3 \right\}</script> is linearly independent.</li>
+<li>If possible, find a linear dependence relation among <script type="math/tex; ">\textbf{v}_1</script>, <script type="math/tex; ">\textbf{v}_2</script>, and <script type="math/tex; ">\textbf{v}_3</script>.</li>
+</ol>
+<h3 id="solution-of-example-1">Solution of Example 1:</h3>
+<p><strong>1.</strong></p>
+<p>We must determine if there is a nontrivial solution of the equation (1).</p>
+<ul>
+<li>Row operations on the associated augmented matrix show that <script type="math/tex; "> \begin{bmatrix}1 & 4& 2& 0\\2 &5&1&0 \\ 3&6&0 &0 \end{bmatrix} \text{~} \begin{bmatrix}1 & 4& 2& 0\\0 &-3&-3&0\\ 0&0&0 &0 \end{bmatrix}</script></li>
+<li><script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> are basic viraibles, and <script type="math/tex; ">x_3</script> is free.</li>
+<li>Each nonzero value of <script type="math/tex; ">x_3</script> determines a nontrivial solution.</li>
+<li><script type="math/tex; ">\textbf{v}_1</script>, <script type="math/tex; ">\textbf{v}_2</script>, <script type="math/tex; ">\textbf{v}_3</script> are linearly dependent.</li>
+</ul>
+<p><strong>2.</strong></p>
+<p>To find a linear dependence relation among <script type="math/tex; ">\textbf{v}_1</script>, <script type="math/tex; ">\textbf{v}_2</script>, and <script type="math/tex; ">\textbf{v}_3</script> completely row reduce the augmented matrix and write the new system: </p>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}1 & 0& -2& 0\\ 0 &1&1&0 \\ 0&0&0 &0 \end{bmatrix} \begin{align}x_1 -2x_3 &=0 \\ x_2+x_3 &=0 \\0 &= 0\end{align}
-</script><script type="math/tex; mode=display">
-
-* Thus </script>x_1=2x_3<script type="math/tex; "> and </script>x_2=-x_3<script type="math/tex; "> and </script>x_3<script type="math/tex; "> is free.
-* Choose nonzero value for </script>x_3<script type="math/tex; ">, e.g., </script>x_3=5<script type="math/tex; ">.
-* Then </script>x_1=10<script type="math/tex; "> and </script>x_2=-5<script type="math/tex; ">.
-* Substitute these values into equation (1) and obtain the equation below. </script><script type="math/tex; ">10 \textbf{v}_1-5 \textbf{v}_2+ 5 \textbf{v}_3 = 0</script><script type="math/tex; mode=display">
-* This is one (out of infinitely many) possible linear dependence relations among </script>\textbf{v}_1<script type="math/tex; ">, </script>\textbf{v}_2<script type="math/tex; ">, and </script>\textbf{v}_3<script type="math/tex; ">. </script>\blacksquare<script type="math/tex; mode=display">
-
-
-## Linear Independence of Matrix Columns
-
-Suppose that we begin with a matrix </script>A=\begin{bmatrix} \textbf{a}_1, \cdots \textbf{a}_n \end{bmatrix}<script type="math/tex; "> instead of a set of vectors.
-
-The matrix equation </script>A\textbf{x}=\textbf{0}<script type="math/tex; "> can be written as </script><script type="math/tex; ">\left\{x_1\textbf{a}_1, x_2\textbf{a}_2, \cdots,x_n\textbf{a}_n = \textbf{0} \right\}</script><script type="math/tex; mode=display">
-
-Each linear dependence relation among the columns of </script>A<script type="math/tex; "> corresponds to a nontrivial solution of </script>A\textbf{x}=\textbf{0}<script type="math/tex; mode=display">
-
-> **The columns of matrix </script>A<script type="math/tex; "> are linearly independent </script>A\textbf{x}=\textbf{0}<script type="math/tex; "> if and only if the equation has only the trivial solution.** 
-
-</script>\blacksquare<script type="math/tex; mode=display">
-
-
-## Sets of One or Two Vectors
-
-> **A set containing only one vector – say, </script>\textbf{v}<script type="math/tex; "> – is linearly independent if and only if </script>\textbf{v}<script type="math/tex; "> is not the zero vector.**
-
-* This is because the vector equation </script>x_1\textbf{v}=0<script type="math/tex; "> has only the trivial solution when </script>\textbf{v} \ne \textbf{0}<script type="math/tex; ">.
-
-* The zero vector is linearly dependent because </script>x_1\textbf{0}=0<script type="math/tex; "> has many nontrivial solutions.
-
-* A set of two vectors </script>\left{\textbf{v}_1, \textbf{v}_2 \right}<script type="math/tex; "> is **linearly dependent if at least one of the vectors is a multiple of the other**.
-
-> **The set is linearly independent if and only if neither of the vectors is a multiple of the other**.
-
-</script>\blacksquare<script type="math/tex; mode=display">
-
-## Sets of Two or More Vectors
-
----
-
-## Theorem 7 : Characterization of Linearly Dependent Sets
-
-An indexed set </script>S=\left{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right}<script type="math/tex; "> of two or more vectors is linearly dependent if and only if at least one of the vectors in </script>S<script type="math/tex; "> is a linear combination of the others. In fact, if </script>S<script type="math/tex; "> is linearly dependent and </script>\textbf{v}_1 \ne 0<script type="math/tex; "> then some </script>\textbf{v}_j<script type="math/tex; "> (with </script>j&gt;1<script type="math/tex; ">) is a linear combination of the preceding vectors, </script>\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}</em>{j-1}<script type="math/tex; ">.
-
-
-* Theorem 7 does **not say that every vector in a linearly dependent set is a linear combination of the preceding vectors**.
-
-* A vector in a linearly dependent set may fail to be a linear combination of the other vectors.
-
-### Proof of Theorem 7:
-
-* If some </script>\textbf{v}_j<script type="math/tex; "> in </script>S<script type="math/tex; "> equals a linear combination of the other vectors,then </script>\textbf{v}_j<script type="math/tex; "> can be subtracted from both sides of the equation, producing a linear dependence relation with a nonzero weight (−1) on </script>\textbf{v}_j<script type="math/tex; mode=display">
-
-* **e.g.**, if </script>\textbf{v}_1=c_2 \textbf{v}_2 +c_3 \textbf{v}_3<script type="math/tex; ">, then </script>\textbf{0} = -\textbf{v}_1 + c_2 \textbf{v}_2 +c_3 \textbf{v}_3 + 0 \textbf{v}_4 +\cdots+0\textbf{v}_p<script type="math/tex; ">.
-
-* Thus </script>S<script type="math/tex; "> is linearly dependent.
-
-* Conversely, suppose </script>S<script type="math/tex; "> is linearly dependent.
-
-* If </script>\textbf{v}_1<script type="math/tex; "> is zero, then it is a (trivial) linear combination of the other vectors in </script>S<script type="math/tex; ">.
-> 즉, zero vector를 포함한 경우, 해당 집합은 항상 linearly dependent가 된다. zero vector의 coef.는 무엇이든지간에 0이 되기 때문임.
-
-* Otherwise, </script>\textbf{v}_1 \ne \textbf{0}<script type="math/tex; "> and there exist weights </script>c_1,\cdots,c_p<script type="math/tex; ">, not all zero, such that </script><script type="math/tex; ">c_1\textbf{v}_1 +c_2\textbf{v}_2 +\cdots +c_p\textbf{v}_p =\textbf{0} </script><script type="math/tex; ">.
-
-* Let </script>j<script type="math/tex; "> be the largest subscript for which </script>c_j \ne 0<script type="math/tex; ">. 
-
-* If </script>j=1<script type="math/tex; "> then </script>c_1\textbf{v}_1 = \textbf{0}<script type="math/tex; ">, which is impossible because </script>\textbf{v}_1 \ne \textbf{0}<script type="math/tex; ">.
-> (</script>j=1<script type="math/tex; ">인 경우, 1보다 큰 </script>c_j<script type="math/tex; ">들은 모두 0이되어야 함. 즉, 나머지 coef들은 모조리 0이므로 남는 건 </script>c_1\textbf{v}_1<script type="math/tex; ">항 뿐으로 </script>c_1\textbf{v}_1=0<script type="math/tex; ">가 되어야 하는데 이는 불가능함.)
-
-* So </script>j&gt;1<script type="math/tex; mode=display">
-
-* And
-</script><script type="math/tex; mode=display">
+</script></p>
+<ul>
+<li>Thus <script type="math/tex; ">x_1=2x_3</script> and <script type="math/tex; ">x_2=-x_3</script> and <script type="math/tex; ">x_3</script> is free.</li>
+<li>Choose nonzero value for <script type="math/tex; ">x_3</script>, e.g., <script type="math/tex; ">x_3=5</script>.</li>
+<li>Then <script type="math/tex; ">x_1=10</script> and <script type="math/tex; ">x_2=-5</script>.</li>
+<li>Substitute these values into equation (1) and obtain the equation below. <script type="math/tex; ">10 \textbf{v}_1-5 \textbf{v}_2+ 5 \textbf{v}_3 = 0</script></li>
+<li>This is one (out of infinitely many) possible linear dependence relations among <script type="math/tex; ">\textbf{v}_1</script>, <script type="math/tex; ">\textbf{v}_2</script>, and <script type="math/tex; ">\textbf{v}_3</script>. <script type="math/tex; ">\blacksquare</script></li>
+</ul>
+<h2 id="linear-independence-of-matrix-columns">Linear Independence of Matrix Columns</h2>
+<p>Suppose that we begin with a matrix <script type="math/tex; ">A=\begin{bmatrix} \textbf{a}_1, \cdots \textbf{a}_n \end{bmatrix}</script> instead of a set of vectors.</p>
+<p>The matrix equation <script type="math/tex; ">A\textbf{x}=\textbf{0}</script> can be written as <script type="math/tex; ">\left\{x_1\textbf{a}_1, x_2\textbf{a}_2, \cdots,x_n\textbf{a}_n = \textbf{0} \right\}</script></p>
+<p>Each linear dependence relation among the columns of <script type="math/tex; ">A</script> corresponds to a nontrivial solution of <script type="math/tex; ">A\textbf{x}=\textbf{0}</script></p>
+<blockquote>
+<p><strong>The columns of matrix <script type="math/tex; ">A</script> are linearly independent <script type="math/tex; ">A\textbf{x}=\textbf{0}</script> if and only if the equation has only the trivial solution.</strong> </p>
+</blockquote>
+<p><script type="math/tex; ">\blacksquare</script></p>
+<h2 id="sets-of-one-or-two-vectors">Sets of One or Two Vectors</h2>
+<blockquote>
+<p><strong>A set containing only one vector &#x2013; say, <script type="math/tex; ">\textbf{v}</script> &#x2013; is linearly independent if and only if <script type="math/tex; ">\textbf{v}</script> is not the zero vector.</strong></p>
+</blockquote>
+<ul>
+<li><p>This is because the vector equation <script type="math/tex; ">x_1\textbf{v}=0</script> has only the trivial solution when <script type="math/tex; ">\textbf{v} \ne \textbf{0}</script>.</p>
+</li>
+<li><p>The zero vector is linearly dependent because <script type="math/tex; ">x_1\textbf{0}=0</script> has many nontrivial solutions.</p>
+</li>
+<li><p>A set of two vectors <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2 \right\}</script> is <strong>linearly dependent if at least one of the vectors is a multiple of the other</strong>.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>The set is linearly independent if and only if neither of the vectors is a multiple of the other</strong>.</p>
+</blockquote>
+<p><script type="math/tex; ">\blacksquare</script></p>
+<h2 id="sets-of-two-or-more-vectors">Sets of Two or More Vectors</h2>
+<hr>
+<h2 id="theorem-7--characterization-of-linearly-dependent-sets">Theorem 7 : Characterization of Linearly Dependent Sets</h2>
+<p>An indexed set <script type="math/tex; ">S=\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> of two or more vectors is linearly dependent if and only if at least one of the vectors in <script type="math/tex; ">S</script> is a linear combination of the others. In fact, if <script type="math/tex; ">S</script> is linearly dependent and <script type="math/tex; ">\textbf{v}_1 \ne 0</script> then some <script type="math/tex; ">\textbf{v}_j</script> (with <script type="math/tex; ">j>1</script>) is a linear combination of the preceding vectors, <script type="math/tex; ">\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_{j-1}</script>.</p>
+<ul>
+<li><p>Theorem 7 does <strong>not say that every vector in a linearly dependent set is a linear combination of the preceding vectors</strong>.</p>
+</li>
+<li><p>A vector in a linearly dependent set may fail to be a linear combination of the other vectors.</p>
+</li>
+</ul>
+<h3 id="proof-of-theorem-7">Proof of Theorem 7:</h3>
+<ul>
+<li><p>If some <script type="math/tex; ">\textbf{v}_j</script> in <script type="math/tex; ">S</script> equals a linear combination of the other vectors,then <script type="math/tex; ">\textbf{v}_j</script> can be subtracted from both sides of the equation, producing a linear dependence relation with a nonzero weight (&#x2212;1) on <script type="math/tex; ">\textbf{v}_j</script></p>
+</li>
+<li><p><strong>e.g.</strong>, if <script type="math/tex; ">\textbf{v}_1=c_2 \textbf{v}_2 +c_3 \textbf{v}_3</script>, then <script type="math/tex; ">\textbf{0} = -\textbf{v}_1 + c_2 \textbf{v}_2 +c_3 \textbf{v}_3 + 0 \textbf{v}_4 +\cdots+0\textbf{v}_p</script>.</p>
+</li>
+<li><p>Thus <script type="math/tex; ">S</script> is linearly dependent.</p>
+</li>
+<li><p>Conversely, suppose <script type="math/tex; ">S</script> is linearly dependent.</p>
+</li>
+<li><p>If <script type="math/tex; ">\textbf{v}_1</script> is zero, then it is a (trivial) linear combination of the other vectors in <script type="math/tex; ">S</script>.</p>
+<blockquote>
+<p>&#xC989;, zero vector&#xB97C; &#xD3EC;&#xD568;&#xD55C; &#xACBD;&#xC6B0;, &#xD574;&#xB2F9; &#xC9D1;&#xD569;&#xC740; &#xD56D;&#xC0C1; linearly dependent&#xAC00; &#xB41C;&#xB2E4;. zero vector&#xC758; coef.&#xB294; &#xBB34;&#xC5C7;&#xC774;&#xB4E0;&#xC9C0;&#xAC04;&#xC5D0; 0&#xC774; &#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC784;.</p>
+</blockquote>
+</li>
+<li><p>Otherwise, <script type="math/tex; ">\textbf{v}_1 \ne \textbf{0}</script> and there exist weights <script type="math/tex; ">c_1,\cdots,c_p</script>, not all zero, such that <script type="math/tex; ">c_1\textbf{v}_1 +c_2\textbf{v}_2 +\cdots +c_p\textbf{v}_p =\textbf{0} </script>.</p>
+</li>
+<li><p>Let <script type="math/tex; ">j</script> be the largest subscript for which <script type="math/tex; ">c_j \ne 0</script>. </p>
+</li>
+<li><p>If <script type="math/tex; ">j=1</script> then <script type="math/tex; ">c_1\textbf{v}_1 = \textbf{0}</script>, which is impossible because <script type="math/tex; ">\textbf{v}_1 \ne \textbf{0}</script>.</p>
+<blockquote>
+<p>(<script type="math/tex; ">j=1</script>&#xC778; &#xACBD;&#xC6B0;, 1&#xBCF4;&#xB2E4; &#xD070; <script type="math/tex; ">c_j</script>&#xB4E4;&#xC740; &#xBAA8;&#xB450; 0&#xC774;&#xB418;&#xC5B4;&#xC57C; &#xD568;. &#xC989;, &#xB098;&#xBA38;&#xC9C0; coef&#xB4E4;&#xC740; &#xBAA8;&#xC870;&#xB9AC; 0&#xC774;&#xBBC0;&#xB85C; &#xB0A8;&#xB294; &#xAC74; <script type="math/tex; ">c_1\textbf{v}_1</script>&#xD56D; &#xBFD0;&#xC73C;&#xB85C; <script type="math/tex; ">c_1\textbf{v}_1=0</script>&#xAC00; &#xB418;&#xC5B4;&#xC57C; &#xD558;&#xB294;&#xB370; &#xC774;&#xB294; &#xBD88;&#xAC00;&#xB2A5;&#xD568;.)</p>
+</blockquote>
+</li>
+<li><p>So <script type="math/tex; ">j>1</script></p>
+</li>
+<li><p>And
+<script type="math/tex; mode=display">
 c_1\textbf{v}_1 +\cdots+c_j\textbf{v}_j +0\textbf{v}_{j+1} + \cdots + 0\textbf{v}_p  =\textbf{0}\\
 c_j\textbf{v}_j = -c_1\textbf{v}_1 -\cdots -c_{j-1}\textbf{v}_{j-1} \\
 v_j = \left(-\frac{c_1}{c_j}\right)\textbf{v}_1+\cdots+\left(-\frac{c_{j-1}}{c_j}\right)\textbf{v}_{j-1} \blacksquare
-</script><script type="math/tex; mode=display">
-
----
-
-
-## Example 4 
-
-Let </script>\textbf{u}=\begin{bmatrix} 3 \ 1\ 0\end{bmatrix}<script type="math/tex; "> and </script>\textbf{v}=\begin{bmatrix} 1 \ 6\ 0\end{bmatrix}<script type="math/tex; ">. 
-
-Describe the set spanned by </script>\textbf{u}<script type="math/tex; "> and </script>\textbf{v}<script type="math/tex; ">, and explain why a vector </script>\textbf{w}<script type="math/tex; "> is in Span 
-</script>\left{\textbf{u}, \textbf{v} \right}<script type="math/tex; "> 
-if and only if </script>\left{ \textbf{u},\textbf{v}, \textbf{w} \right}<script type="math/tex; "> is linearly dependent.
-
-### Solution of Example 4:
-
-* The vectors </script>\textbf{u}<script type="math/tex; "> and </script>\textbf{v}<script type="math/tex; "> are linearly independent because neither vector is a multiple of the other, and so they span a plane in </script>\mathbb{R}^3<script type="math/tex; ">.
-
-* Span </script>\left{\textbf{u}, \textbf{v}\right}<script type="math/tex; "> is the </script>x_1x_2<script type="math/tex; ">-plane with </script>x_3=0<script type="math/tex; ">.
-
-* If </script>\textbf{w}<script type="math/tex; "> is a linear combination of </script>\textbf{u}<script type="math/tex; "> and </script>\textbf{v}<script type="math/tex; ">, then </script>\left{\textbf{u}, \textbf{v},\textbf{w}\right}<script type="math/tex; "> is linearly dependent, by **Theorem 7**.
-
-* Conversely, suppose that </script>\left{\textbf{u}, \textbf{v},\textbf{w}\right}<script type="math/tex; "> is linearly dependent.
-
-* By **Theorem 7**, some vector in </script>\left{\textbf{u}, \textbf{v},\textbf{w}\right}<script type="math/tex; "> is a linear combination of the preceding vectors since </script>\textbf{u} \ne \textbf{0}<script type="math/tex; ">.
-
-* That vector must be </script>\textbf{w}<script type="math/tex; ">, since </script>\textbf{v}<script type="math/tex; "> is not a multiple of </script>\textbf{u}<script type="math/tex; ">.
-
-* So </script>\textbf{w}<script type="math/tex; "> is in Span </script>\left{\textbf{u}, \textbf{v}\right}<script type="math/tex; ">. Fig.2 below
-
-![Fig.02](./fig/la_01_07_02.png)  </script>\blacksquare<script type="math/tex; mode=display">
-
-* Example 4 generalizes to any set </script>\left{\textbf{u}, \textbf{v},\textbf{w}\right}<script type="math/tex; "> in </script>\mathbb{R}^3<script type="math/tex; "> with </script>\textbf{u}<script type="math/tex; "> and </script>\textbf{v}<script type="math/tex; "> linearly independent.
-
-* The set </script>\left{\textbf{u}, \textbf{v},\textbf{w}\right}<script type="math/tex; "> will be linearly dependent if and only if </script>\textbf{w}<script type="math/tex; "> is in the plane spanned by </script>\textbf{u}<script type="math/tex; "> and </script>\textbf{v}<script type="math/tex; ">.
-
----
-
-## Theorem 8
-
-If a set contains more vectors than there are entries in each vector, then the set is linearly dependent. That is, any set </script>\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right} \in \mathbb{R}^n<script type="math/tex; "> is linearly dependent if </script>p&gt;n<script type="math/tex; ">.
-
-
-### Proof
-
-* Let </script>A=\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right}<script type="math/tex; ">.
-
-* Then </script>A<script type="math/tex; "> is </script>n\times p<script type="math/tex; ">, and the equation </script>A\textbf{x}=\textbf{0}<script type="math/tex; "> corresponds to a system of </script>n<script type="math/tex; "> equation in </script>p<script type="math/tex; "> unknowns.
-
-* If </script>p&gt;n<script type="math/tex; ">, there are more variables than equations, so there must be a free variable.
-
-* Hence </script>A\textbf{x}=\textbf{0}<script type="math/tex; "> has a nontrivial solution, and the columns of </script>A<script type="math/tex; "> is linearly dependent.
-
-* See the figure below for a matrix version of this theorem.
-
-![Fig.02](./fig/la_01_07_03.png)  
-
-* if </script>p&gt;n<script type="math/tex; ">, the columns are linearly dependent. </script>\blacksquare<script type="math/tex; mode=display">
-
-
-* Theorem 8 says nothing about the case in which the number of vectors in the set does not exceed the number of entries in each vector.
-
----
-
-## Theorem 9
-
-If a set </script>S=\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right} \in \mathbb{R}^n<script type="math/tex; "> contains the zero vector, then the set is linearly dependent.
-
-### Proof of Theorem 9
-
-* By renumbering the vectors, we may suppose </script>\textbf{v}_1 = \textbf{0}<script type="math/tex; ">.
-
-* Then the equation </script>1\textbf{v}_1+0\textbf{v}_2+\cdots+0\textbf{v}_p=\textbf{0}<script type="math/tex; "> shows that </script>S<script type="math/tex; "> is linearly dependent. </script>\blacksquare$$</p>
+</script></p>
+</li>
+</ul>
+<hr>
+<h2 id="example-4">Example 4</h2>
+<p>Let <script type="math/tex; ">\textbf{u}=\begin{bmatrix} 3 \\ 1\\ 0\end{bmatrix}</script> and <script type="math/tex; ">\textbf{v}=\begin{bmatrix} 1 \\ 6\\ 0\end{bmatrix}</script>. </p>
+<p>Describe the set spanned by <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script>, and explain why a vector <script type="math/tex; ">\textbf{w}</script> is in Span 
+<script type="math/tex; ">\left\{\textbf{u}, \textbf{v} \right\}</script> 
+if and only if <script type="math/tex; ">\left\{ \textbf{u},\textbf{v}, \textbf{w} \right\}</script> is linearly dependent.</p>
+<h3 id="solution-of-example-4">Solution of Example 4:</h3>
+<ul>
+<li><p>The vectors <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script> are linearly independent because neither vector is a multiple of the other, and so they span a plane in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
+</li>
+<li><p>Span <script type="math/tex; ">\left\{\textbf{u}, \textbf{v}\right\}</script> is the <script type="math/tex; ">x_1x_2</script>-plane with <script type="math/tex; ">x_3=0</script>.</p>
+</li>
+<li><p>If <script type="math/tex; ">\textbf{w}</script> is a linear combination of <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script>, then <script type="math/tex; ">\left\{\textbf{u}, \textbf{v},\textbf{w}\right\}</script> is linearly dependent, by <strong>Theorem 7</strong>.</p>
+</li>
+<li><p>Conversely, suppose that <script type="math/tex; ">\left\{\textbf{u}, \textbf{v},\textbf{w}\right\}</script> is linearly dependent.</p>
+</li>
+<li><p>By <strong>Theorem 7</strong>, some vector in <script type="math/tex; ">\left\{\textbf{u}, \textbf{v},\textbf{w}\right\}</script> is a linear combination of the preceding vectors since <script type="math/tex; ">\textbf{u} \ne \textbf{0}</script>.</p>
+</li>
+<li><p>That vector must be <script type="math/tex; ">\textbf{w}</script>, since <script type="math/tex; ">\textbf{v}</script> is not a multiple of <script type="math/tex; ">\textbf{u}</script>.</p>
+</li>
+<li><p>So <script type="math/tex; ">\textbf{w}</script> is in Span <script type="math/tex; ">\left\{\textbf{u}, \textbf{v}\right\}</script>. Fig.2 below</p>
+</li>
+</ul>
+<p><img src="fig/la_01_07_02.png" alt="Fig.02">  <script type="math/tex; ">\blacksquare</script></p>
+<ul>
+<li><p>Example 4 generalizes to any set <script type="math/tex; ">\left\{\textbf{u}, \textbf{v},\textbf{w}\right\}</script> in <script type="math/tex; ">\mathbb{R}^3</script> with <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script> linearly independent.</p>
+</li>
+<li><p>The set <script type="math/tex; ">\left\{\textbf{u}, \textbf{v},\textbf{w}\right\}</script> will be linearly dependent if and only if <script type="math/tex; ">\textbf{w}</script> is in the plane spanned by <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script>.</p>
+</li>
+</ul>
+<hr>
+<h2 id="theorem-8">Theorem 8</h2>
+<p>If a set contains more vectors than there are entries in each vector, then the set is linearly dependent. That is, any set <script type="math/tex; ">\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\} \in \mathbb{R}^n</script> is linearly dependent if <script type="math/tex; ">p>n</script>.</p>
+<h3 id="proof">Proof</h3>
+<ul>
+<li><p>Let <script type="math/tex; ">A=\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\}</script>.</p>
+</li>
+<li><p>Then <script type="math/tex; ">A</script> is <script type="math/tex; ">n\times p</script>, and the equation <script type="math/tex; ">A\textbf{x}=\textbf{0}</script> corresponds to a system of <script type="math/tex; ">n</script> equation in <script type="math/tex; ">p</script> unknowns.</p>
+</li>
+<li><p>If <script type="math/tex; ">p>n</script>, there are more variables than equations, so there must be a free variable.</p>
+</li>
+<li><p>Hence <script type="math/tex; ">A\textbf{x}=\textbf{0}</script> has a nontrivial solution, and the columns of <script type="math/tex; ">A</script> is linearly dependent.</p>
+</li>
+<li><p>See the figure below for a matrix version of this theorem.</p>
+</li>
+</ul>
+<p><img src="fig/la_01_07_03.png" alt="Fig.02">  </p>
+<ul>
+<li>if <script type="math/tex; ">p>n</script>, the columns are linearly dependent. <script type="math/tex; ">\blacksquare</script></li>
+</ul>
+<ul>
+<li>Theorem 8 says nothing about the case in which the number of vectors in the set does not exceed the number of entries in each vector.</li>
+</ul>
+<hr>
+<h2 id="theorem-9">Theorem 9</h2>
+<p>If a set <script type="math/tex; ">S=\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\} \in \mathbb{R}^n</script> contains the zero vector, then the set is linearly dependent.</p>
+<h3 id="proof-of-theorem-9">Proof of Theorem 9</h3>
+<ul>
+<li><p>By renumbering the vectors, we may suppose <script type="math/tex; ">\textbf{v}_1 = \textbf{0}</script>.</p>
+</li>
+<li><p>Then the equation <script type="math/tex; ">1\textbf{v}_1+0\textbf{v}_2+\cdots+0\textbf{v}_p=\textbf{0}</script> shows that <script type="math/tex; ">S</script> is linearly dependent. <script type="math/tex; ">\blacksquare</script></p>
+</li>
+</ul>
 <hr>
 
                                 
@@ -824,7 +811,7 @@ If a set </script>S=\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right} \in \mathb
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 07","level":"1.3.7","depth":2,"next":{"title":"01 08","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},"previous":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_07.md","mtime":"2019-09-03T10:56:37.949Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T10:57:46.634Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 07","level":"1.3.7","depth":2,"next":{"title":"01 08","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},"previous":{"title":"01 05","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_07.md","mtime":"2019-09-03T11:00:19.711Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T11:00:47.378Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
