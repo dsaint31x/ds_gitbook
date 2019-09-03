@@ -564,12 +564,14 @@ then it is in <strong>reduced echelon form</strong> (or <strong>reduced row eche
 <ul>
 <li>Echelon form : &#xC0AC;&#xB2E4;&#xB9AC;&#xAF34;</li>
 <li>Row Echelon form : &#xD589;&#xC0AC;&#xB2E4;&#xB9AC;&#xAF34;</li>
-<li>Reduced row echelon form : &#xAE30;&#xC57D;&#xD589;&#xC0AC;&#xB2E4;&#xB9AC;&#xAF34;.</li>
+<li>Reduced row echelon form : &#xAE30;&#xC57D;&#xD589;&#xC0AC;&#xB2E4;&#xB9AC;&#xAF34;.
+echelon = steplike</li>
 </ul>
 </blockquote>
 <p> An <strong>echelon matrix</strong> (respectively, <strong>reduced echelon matrix</strong>) 
 is one that is in <strong>echelon form</strong> (respectively, <strong>reduced echelon form</strong>.)</p>
 <h2 id="example-1">Example 1</h2>
+<p>The following matrices are in echelon form. The leading entries (<script type="math/tex; ">\blacksquare</script>) may have any nonzero value; the starred entries(*) may have any value (including zero).</p>
 <p><script type="math/tex; mode=display">
 \begin{bmatrix}
 \blacksquare & * & * & * \\
@@ -591,6 +593,8 @@ However, the <strong>reduced echelon form</strong> one obtains from a matrix is 
 we call <script type="math/tex; ">U</script> <strong>an echelon form</strong> (or row echelon form) of <script type="math/tex; ">A</script>; 
 if <script type="math/tex; ">U</script> is in reduced echelon form, we call <script type="math/tex; ">U</script> <strong>the reduced echelon form of <script type="math/tex; ">A</script></strong>.</p>
 <h2 id="pivot-position">Pivot Position</h2>
+<p> Since the reduced echelonform is <strong>unique</strong>, <em>the leading entries are always in the same positions in any echelon form obtained from a given matrix</em>.</p>
+<p> These leading entries correspond to leading 1&apos;s in the reduced echelon form.</p>
 <h2 id="definition-of-pivot-position-and-pivot-column">Definition of Pivot Position and Pivot Column</h2>
 <ul>
 <li>A <code>pivot position</code> in a matrix <script type="math/tex; ">A</script> is a location in <script type="math/tex; ">A</script> that corresponds to a <strong>leading 1 in the reduced echelon form of <script type="math/tex; ">A</script></strong>. </li>
@@ -634,8 +638,8 @@ thus reveals that columns 1, 2, and 4 of <script type="math/tex; ">A</script> ar
 <p><img src="fig/la_01_02_m04.png" alt="mat"></p>
 <p>The pivots in the example are 1, 2 and -5.</p>
 <h2 id="row-reduction-algorithm">Row Reduction Algorithm</h2>
-<p>The algorithm that follows consists of four steps, and it produces a matrix in <code>echelon form</code>. </p>
-<p>A fifth step produces a matrix in <code>reduced echelon form</code>.</p>
+<p>The algorithm that follows consists of <strong>four steps</strong>, and it produces a matrix in <code>echelon form</code>. </p>
+<p>A <strong>fifth step</strong> produces a matrix in <code>reduced echelon form</code>.</p>
 <h2 id="example-3">Example 3:</h2>
 <p>Apply elementary row operations 
 to transform the following matrix 
@@ -651,7 +655,7 @@ then into <strong>reduced echelon form</strong>:</p>
 <h3 id="solution-of-example-3">Solution of Example 3</h3>
 <h4 id="step-1">Step 1</h4>
 <blockquote>
-<p>Begin with the leftmost nonzero column.
+<p>Begin with the <strong>leftmost nonzero column</strong>.
 This is a pivot column. The pivot position is at the
 top.</p>
 </blockquote>
@@ -659,23 +663,23 @@ top.</p>
 <h4 id="step-2">Step 2</h4>
 <blockquote>
 <p>Select a nonzero entry in the pivot column
-as a pivot. If necessary, interchange rows to move
-this entry into the pivot position.</p>
+as a <strong>pivot</strong>. If necessary, interchange rows to move
+this entry into the <strong>pivot position</strong>.</p>
 </blockquote>
 <p>Interchange rows 1 and 3. (We could have
 interchanged rows 1 and 2 instead)</p>
 <p><img src="fig/la_01_02_m06.png" alt="mat"></p>
 <h4 id="step-3">Step 3:</h4>
 <blockquote>
-<p>Use row replacement operations to create zeros in all positions below the pivot.</p>
+<p>Use row replacement operations to <strong>create zeros in all positions below the pivot</strong>.</p>
 </blockquote>
 <p>We could have divided the top row by the pivot, 3, but with two 3s in column 1, 
 it is just as easy to add -1 times row 1 to row 2.</p>
 <p><img src="fig/la_01_02_m07.png" alt="mat"></p>
 <h4 id="step-4">Step 4:</h4>
 <blockquote>
-<p>Cover (or ignore) the row containing the pivot position and cover all rows, if any, above it. 
-Apply steps 1~3 to the submatrix that remains. 
+<p><strong>Cover (or ignore) the row containing the pivot position and cover all rows, if any, above it</strong>. 
+<strong>Apply steps 1~3</strong> to the submatrix that remains. 
 Repeat the process until there are no more nonzero rows to modify.</p>
 </blockquote>
 <p>With row 1 covered, step 1 shows that column 2 is the next pivot column; 
@@ -693,10 +697,10 @@ that has only one row.</p>
 we have reached an echelon form of the full matrix.
 We perform one more step to obtain the reduced
 echelon form.</p>
-<h2 id="step-5">Step 5:</h2>
+<h4 id="step-5">Step 5:</h4>
 <blockquote>
-<p>Beginning with the rightmost pivot and working upward and to the left, 
-create zeros above each pivot. 
+<p>Beginning with <strong>the rightmost pivot and working upward and to the left</strong>, 
+<strong>create zeros above each pivot</strong>. 
 If a pivot is not 1, make it 1 by a scaling operation.</p>
 </blockquote>
 <p>The rightmost pivot is in row 3. 
@@ -710,13 +714,12 @@ to row 1.</p>
 <p><img src="fig/la_01_02_m13.png" alt="mat"></p>
 <p>Finally, scale row 1, dividing by the pivot, 3.</p>
 <p><img src="fig/la_01_02_m14.png" alt="mat"></p>
-<p>This is the reduced echelon form of the original matrix.</p>
+<p>This is the reduced echelon form of the original matrix. <script type="math/tex; ">\blacksquare</script></p>
 <p>The combination of steps 1~4 is called the <strong>forward phase</strong> of the row reduction algorithm.
 Step 5, which produces the unique reduced echelon form, is called the <strong>backward phase</strong>.</p>
 <h2 id="solutions-of-linear-systems">Solutions of Linear Systems</h2>
-<p> The row reduction algorithm leads to an explicit
-description of the solution set of a linear system when
-the algorithm is applied to the augmented matrix of the
+<p> The row reduction algorithm leads to an <strong>explicit description of the solution set of a linear system</strong> 
+when the algorithm is applied to the <strong>augmented matrix</strong> of the
 system.</p>
 <p> Suppose, for example, that the augmented matrix of a
 linear system has been changed into the equivalent
@@ -740,13 +743,14 @@ x_2 +x_3 &= 4 \\
 </script></p>
 <p> The variables <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> corresponding to pivot columns in the matrix 
 are called <code>basic variables</code>. The other variable, <script type="math/tex; ">x_3</script> is called a <code>free variable</code>.</p>
-<p> Whenever a system is consistent, as in (4), the
-solution set can be described explicitly by solving
-the reduced system of equations for the basic
-variables in terms of the free variables.
- This operation is possible because the reduced
-echelon form places each basic variable in one
-and only one equation.
+<p> Whenever a system is <em>consistent</em>, as in (4), 
+the solution set can be described explicitly 
+by <strong>solving the reduced system of equations 
+for the basic variables in terms of the free variables</strong>.
+ This operation is possible 
+because the reduced echelon form places 
+each basic variable 
+in one and only one equation (&#xAC01;&#xAC01;&#xC758; &#xBC29;&#xC815;&#xC2DD;, &#xC989; &#xAC01; &#xD589;&#xC5D0; &#xD558;&#xB098;&#xC758; &#xAE30;&#xBCF8;&#xBCC0;&#xC218;&#xB97C; &#xAC00;&#xC9C0;&#xB294; &#xD615;&#xD0DC;!).
  In (4), solve the first equations for <script type="math/tex; ">x_1</script> and the second for <script type="math/tex; ">x_2</script> 
 (Ignore the third equation; it offers no restriction on the variables.)</p>
 <p><script type="math/tex; mode=display">
@@ -756,21 +760,21 @@ x_2 &= 4-x_3  \\
 x_3 & \text{ is free}
 \end{align*} \tag{5}
 </script></p>
-<p> The statement <script type="math/tex; ">x_3 \text{ is free}</script> means that you are free to choose any value for <script type="math/tex; ">x_3</script>.
+<p> <strong>The statement <script type="math/tex; ">x_3 \text{ is free}</script> means that you are free to choose any value for <script type="math/tex; ">x_3</script></strong>.
 Once that is done, the formulas in (5) determine the values for <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script>.
 For instance, when <script type="math/tex; ">x_3=0</script>, the solution is (1,4,0); 
 when <script type="math/tex; ">x_3=1</script>, the solution is (6,3,1).
  Each different choice of <script type="math/tex; ">x_3</script> determines a (different) solution of the system, 
 and every solution of the system is determined by a choice of <script type="math/tex; ">x_3</script>.</p>
 <h2 id="parametric-descriptions-of-solution-sets">Parametric Descriptions of Solution Sets</h2>
-<p> The description in (5) is <strong>parametric
-description</strong> of solutions sets in which 
-the <strong>free variables act as parameters</strong>.
+<p> The description in (5) is <strong>parametric description</strong> of solutions sets in which 
+the <strong>free variables act as parameters(&#xB9E4;&#xAC1C;&#xBCC0;&#xC218;)</strong>.
  <em>Solving a system</em> amounts to </p>
 <ul>
 <li><strong>finding a parametric description of the solution set</strong> or </li>
 <li>determining that the <strong>solution set is empty</strong>.</li>
 </ul>
+<h4 id="consistent-linear-system">consistent linear system</h4>
 <p> Whenever a system is <strong>consistent and has free variables</strong>, 
 the solution set has <strong>many parametric descriptions</strong>.
  For instance, in system (4), we may add 5 times equation 2 to equation 1 
@@ -784,6 +788,7 @@ x_2 +x_3 &= 4 \\
 <p> We could treat <strong><script type="math/tex; ">x_2</script> as a parameter</strong> and 
 solve for <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_3</script> in terms of <script type="math/tex; ">x_2</script>, and 
 we would have an <strong>accurate description of the solution set</strong>.</p>
+<h4 id="consistent-linear-system">consistent linear system</h4>
 <p> Whenever a system is <strong>inconsistent</strong>, 
 the <strong>solution set is empty</strong>, even when the system has free variables. 
 In this case, the <strong>solution set has no parametric representation</strong>.</p>
@@ -807,19 +812,19 @@ the rightmost column of the augmented matrix is <em>not</em> a pivot column (<st
 </script></p>
 <p>If a linear system is consistent, then the solution set contains either </p>
 <ul>
-<li>(i) a unique solution, when there are no free variables, or </li>
-<li>(ii) infinitely many solutions, when there is at least on free variable.</li>
+<li>(i) a <strong>unique solution</strong>, when there are no free variables, or </li>
+<li>(ii) <strong>infinitely many solutions</strong>, when there is at least on free variable.</li>
 </ul>
 <hr>
 <h2 id="using-row-reduction-to-solve-a-linear-system">Using Row Reduction to Solve a Linear System</h2>
 <ol>
-<li>Write the augmented matrix of the system.</li>
-<li>Use the row reduction algorithm to obtain an equivalent augmented matrix in echelon form. 
+<li>Write the <strong>augmented matrix</strong> of the system.</li>
+<li>Use the <strong>row reduction algorithm</strong> to obtain an equivalent augmented matrix in echelon form. 
 Decide whether the system is consistent. 
 If there is no solution, stop; otherwise, go to the next step.</li>
-<li>Continue row reduction to obtain the reduced echelon form.</li>
-<li>Write the system of equations corresponding to the matrix obtained in step 3. </li>
-<li>Rewrite each nonzero equation from step 4 so that its <strong>one basic variable</strong> is expressed in terms of any free variables appearing in the equation.</li>
+<li>Continue row reduction to obtain the <strong>reduced echelon form</strong>.</li>
+<li>Write <strong>the system of equations</strong> corresponding to the matrix obtained in step 3. </li>
+<li>Rewrite each nonzero equation from step 4 so that its <strong>one basic variable is expressed in terms of any free variables</strong> appearing in the equation.</li>
 </ol>
 
                                 
@@ -864,7 +869,7 @@ If there is no solution, stop; otherwise, go to the next step.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 02","level":"1.3.3","depth":2,"next":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"previous":{"title":"01 01","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_02.md","mtime":"2019-09-02T02:19:59.416Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-02T04:47:44.824Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 02","level":"1.3.3","depth":2,"next":{"title":"01 03","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},"previous":{"title":"01 01","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_02.md","mtime":"2019-09-03T01:22:55.688Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-03T01:59:07.997Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
