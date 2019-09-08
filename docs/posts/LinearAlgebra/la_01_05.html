@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 01 Systems of Linear Eq. · GitBook</title>
+        <title>01 05 Solution Sets of Linear Systems · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_02.html" />
+    <link rel="next" href="la_01_07.html" />
     
     
-    <link rel="prev" href="01_hello_linear_algebra.html" />
+    <link rel="prev" href="la_01_04.html" />
     
 
     </head>
@@ -183,7 +183,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="la_01_01.html">
+        <li class="chapter " data-level="1.3.2" data-path="la_01_01.html">
             
                 <a href="la_01_01.html">
             
@@ -235,7 +235,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
+        <li class="chapter active" data-level="1.3.6" data-path="la_01_05.html">
             
                 <a href="la_01_05.html">
             
@@ -562,7 +562,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 01 Systems of Linear Eq.</a>
+        <a href="../.." >01 05 Solution Sets of Linear Systems</a>
     </h1>
 </div>
 
@@ -575,373 +575,223 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
-<h1 id="11-systems-of-linear-equations-&#xC120;&#xD615;&#xBC29;&#xC815;&#xC2DD;&#xACC4;&#xC5F0;&#xB9BD;&#xC77C;&#xCC28;&#xBC29;&#xC815;&#xC2DD;">1.1 Systems of Linear Equations (&#xC120;&#xD615;&#xBC29;&#xC815;&#xC2DD;&#xACC4;,&#xC5F0;&#xB9BD;&#xC77C;&#xCC28;&#xBC29;&#xC815;&#xC2DD;)</h1>
-<h2 id="linear-equation">Linear Equation</h2>
-<p> A <strong>linear equation</strong> in the variables <script type="math/tex; ">x_1, \cdots, x_n</script> 
-is an equation that can be represented in the form</p>
-<p><script type="math/tex; mode=display">
-a_1x_1+a_2x_2+\cdots+a_nx_n = b \tag{1}
-</script></p>
-<p>where <script type="math/tex; ">b</script> and the coefficients <script type="math/tex; ">a_1, \cdots, a_n</script> are real or complex numbers, usually known in addvance.</p>
-<p> A <strong>system of linear equations</strong> (or a <strong>linear system</strong>)
-is a collection of one or more linear equations
-involving the same variables -- say, <script type="math/tex; ">x_1, \cdots, x_n</script>.</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-2x_1 -x_2 +1.5x_3 &= 8 \\
-x_1 -4x_3 = -7 \tag{2}
-\end{align}
-</script></p>
-<p> A <strong>solution</strong> of the system is 
-a list <script type="math/tex; ">\left(s_1,s_2,\cdots,s_n\right)</script> of numbers 
-that makes each equation a true statement 
-when the values <script type="math/tex; ">\left(s_1,\cdots,s_n\right)</script> are substituted
-for <script type="math/tex; ">x_1, \cdots, x_n</script> respectively.
- The <em>set of all possible solutions</em> is called 
-the <strong>solution set</strong> of the linear system.</p>
-<p> Two linear systems are called <strong>equivalent</strong> 
-if they have <strong>the same solution set</strong>.</p>
-<p> <strong>A system of linear equations has</strong></p>
-<ol>
-<li>no solution, or</li>
-<li>exactly one solution, or</li>
-<li>infinitely many solutions.</li>
-</ol>
-<p> A system of linear equations is said to be <strong>consistent</strong> 
-if it has either </p>
+<h1 id="15-solution-sets-of-linear-systems">1.5 Solution Sets of Linear Systems</h1>
 <ul>
-<li><strong>one solution</strong> or </li>
-<li><strong>infinitely many solutions</strong>.</li>
+<li>Solution sets of linear systems are important objects of study in linear algebra.</li>
+<li>This section uses vector notation to give exlicit and geometric descriptions of such solution set.</li>
 </ul>
-<p> A system is <strong>inconsistent</strong> if it has </p>
-<ul>
-<li>no solution.</li>
-</ul>
+<h2 id="homogeneous-linear-systems">Homogeneous Linear Systems</h2>
+<p>A system of linear equations is said to be <strong>homogeneous</strong>
+if it can be written in the form <script type="math/tex; ">A\bf{x}=\bf{0}</script> 
+where <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix and <script type="math/tex; ">\bf{0}</script> is the zero vector in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<p>Such a system <script type="math/tex; ">A\bf{x}=\bf{0}</script> always has at least one solution, namely, <script type="math/tex; ">\bf{x}=\bf{0}</script> (the zero veoctor in <script type="math/tex; ">\mathbb{R}^n</script>).</p>
+<p>This zero solution is usually called the <strong>trivial solution</strong>.</p>
+<p>For a given homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script>, the important question is whether there exists a <strong>nontrivial solution</strong>, that is, a nonzero vector <script type="math/tex; ">\bf{x}</script> that satisfies <script type="math/tex; ">A\bf{x}=\bf{0}</script>.</p>
+<p>The <a href="la_01_02.html#theorem-2--existence-and-uniqueness-theorem">Existence and Unqueness Theorem in Section 1.2 (Theorem)</a> leads immediately to the following fact.</p>
 <blockquote>
-<ul>
-<li>linear equation, </li>
-<li>system of linear equations, linear system</li>
-<li>solution(&#xD574;)</li>
-<li>equivalent(&#xB3D9;&#xCE58;)</li>
-<li>no solution, (one solution,  infinitely many solution) </li>
-<li>consistent system, inconsistent system</li>
-</ul>
+<p>The homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script> has a nontrivial solution if and only if the equation has at least one free variable.</p>
 </blockquote>
-<h2 id="matrix-notation">Matrix Notation</h2>
-<p> The essential information of a linear system can be 
-recorded compactly in a rectangular array called a <strong>matrix</strong>.
-Given the system,</p>
-<p><script type="math/tex; mode=display">
-\begin{align*}
-x_1-2x_2+x_3 &= 0 \\
-2x_2-8x_3 &= 8 \\
--4x_1+5x_2+9x_3 &= -9 \\
-\end{align*} \tag{3}
-</script>,</p>
-<p>with the coefficients of each variable aligned in columns, 
-the matrix</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-1 & -2 & 1 \\
-0 & 2 & -8 \\
--4 & 5 & 9 
-\end{bmatrix} 
-</script></p>
-<p>is called the <strong>coefficient matrix</strong> (or <strong>matrix of coefficients</strong>) of
-the system.</p>
-<p> An <strong>augmented matrix</strong> of a system 
-consists of 
-the coefficient matrix 
-with an added column containing
-the constants from the right sides of the equations. </p>
-<p>For the given system of equations,</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-1 & -2 & 1 &0\\
-0 & 2 & -8 &8\\
--4 & 5 & 9 &-9
-\end{bmatrix} \tag{4}
-</script></p>
-<p>is called the <strong>augmented matrix</strong> of the system.</p>
-<blockquote>
-<ul>
-<li>matrix</li>
-<li>coefficient matrix (&#xACC4;&#xC218;&#xD589;&#xB82C;)</li>
-<li>augmented matrix (&#xCCA8;&#xAC00;&#xD589;&#xB82C;)</li>
-</ul>
-</blockquote>
-<h2 id="matrix-size">Matrix Size</h2>
-<p> The size of a matrix tells how many rows and
-columns it has. If <script type="math/tex; ">m</script> and <script type="math/tex; ">n</script> are positive integers, 
-an <strong><script type="math/tex; ">m \times n</script> matrix</strong> is a rectangular array of numbers 
-with <script type="math/tex; ">m</script> rows and <script type="math/tex; ">n</script> columns. 
-(The number of rows always comes first.)</p>
-<h2 id="solving-a-linear-system">Solving a Linear System</h2>
-<p> The basic strategy for solving a linear system is 
-<em>to replace one system with an <strong>equivalent</strong> system 
-(i.e., one with the same solution set) 
-that is easier to solve.</em></p>
-<h2 id="example-1">Example 1</h2>
-<p>Solve the given system of equations.</p>
+<h2 id="example-1">Example 1:</h2>
+<p>Determine if the following homogeneous system has a nontrivial solution. 
+Then describe the solution set.</p>
 <p><script type="math/tex; mode=display">
 \begin{align}
-x_1-2x_2+x_3 &= 0 \tag{1}\\
-2x_2-8x_3 &= 8 \tag{2}\\
--4x_1+5x_2+9x_3 &= -9 \tag{3}\\
-\end{align}
-</script>,</p>
-<h3 id="solution-of-example-1">Solution of Example 1</h3>
-<p> The elimination procedure is shown here 
-with and without matrix notation, and 
-the results are placed side by side for comparison.</p>
-<p><script type="math/tex; mode=display">
-\begin{matrix}
-\begin{align*}
-x_1-2x_2+x_3 &= 0 \\
-2x_2-8x_3 &= 8 \\
--4x_1+5x_2+9x_3 &= -9 
-\end{align*}
-&
-\begin{bmatrix}
-1 & -2 & 1 &0\\
-0 & 2 & -8 &8\\
--4 & 5 & 9 &-9
-\end{bmatrix}
-\end{matrix}
-</script></p>
-<p>Keep <script type="math/tex; ">x_1</script> in the first equation and eliminate it from the other equations. 
-To do so, add 4 times equation 1 to equation 3.</p>
-<p><script type="math/tex; mode=display">
-\begin{align*}
-4x_1-8x_2+4x_3 &= 0 \\
--4x_1+5x_2+9x_3 &= -9 \\
-\hline
--3x_2+13x_3 &= -9 
-\end{align*}
-</script></p>
-<p>The result of this calculation is written in place of 
-the original third equation:</p>
-<p><script type="math/tex; mode=display">
-\begin{matrix}
-\begin{align*}
-x_1-2x_2+x_3 &= 0 \\
-2x_2-8x_3 &= 8 \\
--3x_2+13x_3 &= -9 
-\end{align*}
-&
-\begin{bmatrix}
-1 & -2 & 1 &0\\
-0 & 2 & -8 &8\\
-0 & -3 & 13 &-9
-\end{bmatrix}
-\end{matrix}
-</script></p>
-<p>Now, multiply equation 2 by <script type="math/tex; ">\frac{1}{2}</script> 
-in order to obtain 1 as the coefficient for <script type="math/tex; ">x_2</script></p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-\begin{matrix}
-x_1-2x_2+x_3 &= 0 \\
-x_2-4x_3 &= 4 \\
--3x_2+13x_3 &= -9 
-\end{matrix}
-& &
-\begin{bmatrix}
-1 & -2 & 1 &0\\
-0 & 1 & -4 &4\\
-0 & -3 & 13 &-9
-\end{bmatrix}
+3x_1+5x_2-4x_3 &=0 \\
+-3x_1-2x_2+4x_3 &=0 \\
+6x_1+x_2-8x_3 &=0 \\
 \end{align}
 </script></p>
-<p>Use the <script type="math/tex; ">x_2</script> in equation 2 
-to eliminate the <script type="math/tex; ">-3x_2</script> in equation 3.</p>
+<h3 id="solution-fo-example-1">Solution fo Example 1</h3>
+<p>Let <script type="math/tex; ">A</script> be the matrix of coefficients of the system and row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & \bf{0} \end{bmatrix}</script> to echelon form:</p>
 <p><script type="math/tex; mode=display">
-\begin{align*}
-3x_2-12x_3 &= 12 \\
--3x_2+13x_3 &= -9 \\
-\hline
-x_3 &= 3 
-\end{align*}
-</script></p>
-<p>The new system has a <strong>triangular</strong> form.</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-\begin{matrix}
-x_1-2x_2+x_3 &= 0 \\
-x_2-4x_3 &= 4 \\
-x_3 &= 3 
-\end{matrix}
-& &
 \begin{bmatrix}
-1 & -2 & 1 & 0\\
-0 & 1 & -4 & 4\\
-0 & 0 & 1 & 3
+3 & 5 & -4 & 0 \\
+-3 & -2 & 4 & 0 \\
+6 & 1 & -8 & 0 \\
 \end{bmatrix}
+\sim
+\begin{bmatrix}
+3 & 5 & -4 & 0 \\
+0 & 3 & 0 & 0 \\
+0 & -9 & 0 & 0 \\
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+3 & 5 & -4 & 0 \\
+0 & 3 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{bmatrix}
+</script></p>
+<p>Since <script type="math/tex; ">x_3</script> is a free variable,
+has nontrivial solutions (one for each choice of <script type="math/tex; ">x_3</script>.)</p>
+<p>Continue the row reduction of <script type="math/tex; ">\begin{bmatrix} A & \bf{0} \end{bmatrix}</script> to reduced echelon form:</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+1 & 5/3 & -4/3 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\begin{align}
+x_1-\frac{4}{3}x_3 &= 0 \\
+x_2 &= 0\\
+0&=0\\
 \end{align}
 </script></p>
-<p>Eventually, you want to eliminate <script type="math/tex; ">-2x_2</script> the term from equation 1, 
-but it is more efficient to use the <script type="math/tex; ">x_3</script> term in equation 3 
-first to eliminate 
-the <script type="math/tex; ">-4x_3</script> and <script type="math/tex; ">x_3</script> terms in equations 2 and 1.</p>
+<p>Solve for the basic variables <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> to obtain <script type="math/tex; ">x_1=\frac{4}{3}x_3, x_2=0</script>, with <script type="math/tex; ">x_3</script> free.</p>
+<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the form given below.</p>
 <p><script type="math/tex; mode=display">
+\textbf{x}=
+\begin{bmatrix}
+{x_1} \\
+{x_2} \\
+{x_3} \\ 
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{4}{3}
+{x_3} \\
+0 \\
+{x_3} \\
+\end{bmatrix}
+=
+{x_3}
+\begin{bmatrix}
+\frac{4}{3} \\
+0 \\
+1 \\
+\end{bmatrix}
+= 
+{x_3} 
+\textbf{v}
+</script></p>
+<p>where</p>
+<p><script type="math/tex; mode=display">
+\bf{v}= 
+\begin{bmatrix}
+4/3 \\ 0 \\ 1
+\end{bmatrix}
+</script></p>
+<p>Here <script type="math/tex; ">x_3</script> is factored out of the expression for the general solution vector.</p>
+<p>This shows that every solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> in this case is a scalar multiple of <script type="math/tex; ">\bf{v}</script>.</p>
+<p>The trivial solution is obtained by choosing <script type="math/tex; ">x_3=0</script></p>
+<p>Geometrically, the solution set is a line through <script type="math/tex; ">\bf{0}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
+<p>See Fig.1 below.</p>
+<p><img src="fig/la_01_05_01.png" alt="fig1">
+<script type="math/tex; ">\blacksquare</script></p>
+<h2 id="parametric-vector-form">Parametric Vector Form</h2>
+<p>The equation of the form <script type="math/tex; ">\textbf{x}= s \textbf{u} + t \textbf{v}</script> (<script type="math/tex; ">s,t</script> in <script type="math/tex; ">\mathbb{R}</script>) is called a <strong>parametric vector equation</strong> of the plane.</p>
+<p>In Example 1, the equation <script type="math/tex; ">\textbf{x} = x_3 \textbf{v} </script> (with <script type="math/tex; ">x_3</script> free), or <script type="math/tex; ">\textbf{x} = t \textbf{v} </script> (with <script type="math/tex; ">t</script> in <script type="math/tex; ">\mathbb{R}</script>),
+is a parametric vector equation of a line.</p>
+<p>Whenever a solution set is described explicitly
+with vectors as in Example 1, we say that the
+solution is in <strong>parametric vector form</strong>.</p>
+<h2 id="solutions-of-nonhomogeneous-systems">Solutions of Nonhomogeneous Systems</h2>
+<p> When a nonhomogeneous linear system has many solutions, the general solution can be 
+written in parametric vector form as one vector 
+plus an arbitrary linear combination of vectors that 
+satisfy the corresponding homogeneous system.</p>
+<h2 id="example-3">Example 3</h2>
+<p>Describe all solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script> where</p>
+<p><script type="math/tex; mode=display">
+A = 
+\begin{bmatrix}
+3 & 5 & -4 \\
+-3 & -2 & 4 \\
+6 & 1 & -8 
+\end{bmatrix}
+\text{ and }
+\bf{b} =
+\begin{bmatrix}
+7 \\
+-1 \\
+-4 
+\end{bmatrix}
+</script></p>
+<h3 id="solution-of-example-3">Solution of Example 3</h3>
+<p>Row operations on <script type="math/tex; ">\begin{bmatrix} A & \bf{b}\end{bmatrix} </script> produce</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+3 & 5 & -4 &7 \\
+-3 & -2 & 4&-1 \\
+6 & 1 & -8&-4 
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 0 & -4/3 &-1 \\
+0 & 1 & 0 & 2 \\
+0 & 0 & 0 & 0
+\end{bmatrix},
 \begin{align}
-\begin{matrix}
-&&4x_3 &= 12 \\
-&x_2&-4x_3 &= 4 \\
-\hline
-&x_2& &= 16 
-\end{matrix}
-& &
-\begin{matrix}
-&&-x_3 &= -3 \\
-x_1&-2x_2&+x_3 &= 0 \\ 
-\hline
-x_1&-2x_2& &= -3 
-\end{matrix}
+x_1-\frac{4}{3}x_3&=-1 \\
+x_2 &= 2 \\
+0 &= 0
 \end{align}
 </script></p>
-<p>Now, combine the results of these two operations.</p>
+<p>Thus, <script type="math/tex; ">x_1 = -1 + \frac{4}{3}x_3, x_2=2</script>, and <script type="math/tex; ">x_3</script> is free.</p>
+<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> has the form</p>
+<p><img src="fig/la_01_05_e3.png" alt="fig_ex"></p>
+<p>The equation <script type="math/tex; ">\textbf{x}=\textbf{p}+x_3\textbf{v}</script>, or, writing t as a general parameter,</p>
 <p><script type="math/tex; mode=display">
-\begin{align}
-\begin{matrix}
-x_1-2x_2 &= -3 \\
-x_2 &= 16 \\
-x_3 &= 3 
-\end{matrix}
-& &
+\textbf{x} = \textbf{p} + t \textbf{v} \quad ( {t} \text{ in } \mathbb{R})
+\tag{3}
+</script></p>
+<p>describes the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> in parametric vector form.</p>
+<p>The solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the parametric vector equation</p>
+<p><script type="math/tex; mode=display">
+\textbf{x} = t \textbf{v} \quad ( t \text{ in }  \mathbb{R}) \tag{4}
+</script></p>
+<p>[with the same <script type="math/tex; ">\bf{v}</script> that appears in (3)]. <script type="math/tex; ">\blacksquare</script></p>
+<p>Thus <strong>the solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> are obtained 
+by <strong>adding the vector <script type="math/tex; ">\bf{p}</script> to the solutions of <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong>.</p>
+<p>The vector <script type="math/tex; ">\bf{p}</script> itself is just one <strong>particular solution</strong> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> [corresponding to <script type="math/tex; ">t</script> = 0 in (3).]</p>
+<p>To describe the solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> geometrically, we can think of <strong>vector addition as a translation</strong>.</p>
+<p>Given <script type="math/tex; ">\bf{v}</script> and <script type="math/tex; ">\bf{p}</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script>, the effect of adding <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}</script> 
+is to move <script type="math/tex; ">\bf{v}</script> in a direction parallel to the line through <script type="math/tex; ">\bf{p}</script> and <script type="math/tex; ">\bf{0}</script>.</p>
+<p>We say that <strong><script type="math/tex; ">\bf{v}</script> is translated by <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}+\bf{p</script></strong>. See the following figure.</p>
+<p><img src="fig/la_01_05_03.png" alt="fig3"></p>
+<p>If each point on a line <script type="math/tex; ">L</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script> is translated by 
+a vector <script type="math/tex; ">\bf{p}</script>, the result is a line parallel to <script type="math/tex; ">L</script>. 
+See the following figure.</p>
+<p><img src="fig/la_01_05_04.png" alt="fig4"></p>
+<p>Suppose <script type="math/tex; ">L</script> is the line through <script type="math/tex; ">\bf{0}</script> and <script type="math/tex; ">\bf{v}</script>, described by equation (4).</p>
+<p>Adding <script type="math/tex; ">\bf{p}</script> to each point on <script type="math/tex; ">L</script> produces the translated line described by equation (3).</p>
+<p>We call <strong>(3) the equation of the line through <script type="math/tex; ">\bf{p}</script> parallel to <script type="math/tex; ">\bf{v}</script></strong>.</p>
+<p>Thus <em>the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is a line through <script type="math/tex; ">\bf{p}</script> parallel to the solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script></em>.
+The figure below illustrates this case.</p>
+<p><img src="fig/la_01_05_05.png" alt="fig5"></p>
+<p><strong>The relation between the solution sets of <script type="math/tex; ">A\bf{x}=\bf{b}</script> and <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong> 
+shown in the figure above generalizes to <strong>any consistent equation <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> 
+,although <strong>the solution set will be larger than a line 
+when there are several free variables</strong>.</p>
+<hr>
+<h2 id="theorem-6">Theorem 6</h2>
+<p>Suppose the equation <script type="math/tex; ">A\bf{x}=\bf{b}</script> is <strong>consistent</strong> for some given <script type="math/tex; ">\bf{b}</script>, 
+and let <script type="math/tex; ">\bf{p}</script> be a solution (,it means that <script type="math/tex; ">\bf{p}</script> is a particular solution<script type="math/tex; ">. 
+
+Then the solution set of </script>A\bf{x}=\bf{b}<script type="math/tex; "> is the **set of all vectors of the form </script>\bf{w}=\bf{p}+\bf{v}_h<script type="math/tex; ">**, 
+where **</script>\bf{v}_h<script type="math/tex; "> is any solution of the homogeneous equation </script>A\textbf{x}=\textbf{0}<script type="math/tex; ">**.
+
+---
+
+* Theorem 6 says that if </script>A\bf{x}=\bf{b}<script type="math/tex; "> has a solution, then the solution set is obtained by translating the solution set of
+  </script>A\bf{x}=\bf{0}<script type="math/tex; "> using any particular solution </script>\bf{p}<script type="math/tex; "> of </script>A\bf{x}=\bf{b}<script type="math/tex; "> for the translation.
+
+## Writing a Solution Set (of a Consistent System) in Parametric Vector Form
+
+1. Row reduce the augmented matrix to **reduced echelon form, RREF**.
+2. Express each basic variable in terms of any free variables appearing in an equation.
+3. Write a typical solution </script>\bf{x}<script type="math/tex; "> as a vector whose entries depend on the free variables, if any.
+4. Decompose </script>\bf{x}<script type="math/tex; "> into a **linear combination of vectors (with numeric entries)** using the free variables as parameters.
+
+</script>
 \begin{bmatrix}
-1 & -2 & 0 & -3\\
-0 & 1 & 0 & 16\\
-0 & 0 & 1 & 3
-\end{bmatrix}
-\end{align}
-</script></p>
-<p>Move back to the <script type="math/tex; ">x_2</script> in equation 2, 
-and use it to eliminate the <script type="math/tex; ">-2x_2</script> above it. 
-Because of the previous work with <script type="math/tex; ">x_3</script>, 
-there is now no arithmetic involving <script type="math/tex; ">x_3</script> terms. 
-Add 2 times equation 2 to equation 1 and obtain the system:</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-\begin{matrix}
-x_1 &= 29 \\
-x_2 &= 16 \\
-x_3 &= 3 
-\end{matrix}
-& &
+-1 \ 2 \ 0 
+\end{bmatrix} +
+x_3
 \begin{bmatrix}
-1 & 0 & 0 & 29\\
-0 & 1 & 0 & 16\\
-0 & 0 & 1 & 3
-\end{bmatrix}
-\end{align}
-</script></p>
-<p>Thus, the only solution of the original system is
-(29,16,3). To verify that (29,16,3) is a solution,
-substitute these values into the left side of the
-original system, and compute.</p>
-<p><script type="math/tex; mode=display">
-\begin{align*}
-(29)-2(16)+(3)     &= 29-32+3 &= 0 \\
-2(16)-8(3)         &= 32-24   &= 8 \\
--4(29)+5(16)+9(3)  &= -116+80+27 &= -9
-\end{align*}
-</script></p>
-<p>The results agree with the right side(&#xC6B0;&#xBCC0;) of the original 
-system, so (29,16,3) is a solution of the system. <script type="math/tex; ">\blacksquare</script></p>
-<h2 id="elementary-row-operations">Elementary Row Operations</h2>
-<p>Three basic operations are used to simplify a linear system.</p>
-<p>These <strong>Elementary row operations</strong> include the following:</p>
-<ol>
-<li>(Replacement) Replace one row by the sum of itself and a multiple of another row.
-= Add to one row a multiple of another row.</li>
-<li>(Interchange) Interchange two rows.</li>
-<li>(Scaling) Multiply all entries in a row by a nonzero constant.</li>
-</ol>
-<p> Two matrices are called <strong>row equivalent</strong> if there is 
-a sequence of elementary row operations that 
-transforms one matrix into the other.</p>
-<p> It is important to note that row operations are <strong>reversible</strong>.</p>
-<blockquote>
-<p>If the augmented matrices of two linear systems are <strong>row equivalent</strong>, 
-then the two systems have the <strong>same solution set</strong>.</p>
-<ul>
-<li>elementary row operations (RIS)</li>
-<li>row equivalent</li>
-<li>row operations are reversible.</li>
-</ul>
-</blockquote>
-<h2 id="existence-and-uniqueness-of-system-of-equations">Existence and Uniqueness of System of Equations</h2>
-<p>Two fundamental questions about a linear system are as follows:</p>
-<ol>
-<li>Is the system <strong>consistent</strong>; that is, does at least one solution exist?</li>
-<li>If a solution exists, is it the only one; that is, is the solution <strong>unique</strong>?</li>
-</ol>
-<h2 id="example-3">Example 3:</h2>
-<p>Determine if the following system is consistent:</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-x_2-4x_3 &= 8 \\
-2x_1-3x_2+2x_3 &= 1 \\
-5x_1-8x_2+7x_3 &= 1
-\end{align} \tag{5}
-</script></p>
-<h3 id="solution">Solution:</h3>
-<ul>
-<li>The augmented matrix is</li>
-</ul>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-0 & 1 & -4 & 8 \\
-2 & -3 & 2 & 1 \\
-5 & -8 & 7 & 1 
-\end{bmatrix}
-</script></p>
-<ul>
-<li>To obtain an <script type="math/tex; ">x_1</script> in the first equation, interchange rows 1 and 2:</li>
-</ul>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-2 & -3 & 2 & 1 \\
-0 & 1 & -4 & 8 \\
-5 & -8 & 7 & 1 
-\end{bmatrix}
-</script></p>
-<ul>
-<li>To eliminate the <script type="math/tex; ">5x_1</script> term in the third equation, add <script type="math/tex; ">\frac{-5}{2}</script> times row 1 to row 3.</li>
-</ul>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-2 & -3 & 2 & 1 \\
-0 & 1 & -4 & 8 \\
-0 & \frac{-1}{2} & 2 & \frac{-3}{2} 
-\end{bmatrix} \tag{6}
-</script></p>
-<ul>
-<li>Next, use the <script type="math/tex; ">x_2</script> term in the second equation to eliminate the <script type="math/tex; ">-\frac{1}{2}x_2</script> term from the third equaton. Add <script type="math/tex; ">\frac{1}{2}</script> times row 2 to row 3.</li>
-</ul>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-2 & -3 & 2 & 1 \\
-0 & 1 & -4 & 8 \\
-0 & 0 & 0 & \frac{5}{2} 
-\end{bmatrix} \tag{7}
-</script></p>
-<ul>
-<li>The augmented matrix is now in triangular form. To interpret it correctly, go back to equation notation.</li>
-</ul>
-<p><script type="math/tex; mode=display">
-\begin{align}
-2x_1-3x_2+2x_3 &= 1 \\
-x_2-4x_3 &= 8 \\
-0 &= \frac{5}{2}
-\end{align} \tag{8}
-</script></p>
-<ul>
-<li>The equation <script type="math/tex; ">0=\frac{5}{2}</script> is a short form of <script type="math/tex; ">0x_1+0x_2+0x_3=\frac{5}{2}</script>.</li>
-<li>There are no values of <script type="math/tex; ">x_1,x_2,x_3</script> that satisfy (8) because the equation <script type="math/tex; ">0=\frac{5}{2}</script> is never true.</li>
-<li>Since (8) and (5) have the same solution set, the original system is <strong>inconsistent</strong> (i.e., has no solution).</li>
-</ul>
+4/3 \ 0 \ 1
+\end{bmatrix}</p>
+<p>$$</p>
 
                                 
                                 </section>
@@ -953,12 +803,12 @@ x_2-4x_3 &= 8 \\
 
             
                 
-                <a href="01_hello_linear_algebra.html" class="navigation navigation-prev " aria-label="Previous page: 01 Hello Linear Algebra">
+                <a href="la_01_04.html" class="navigation navigation-prev " aria-label="Previous page: 01 04 Matrix Equation">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_02.html" class="navigation navigation-next " aria-label="Next page: 01 02 Row Reduction and Echelon Forms">
+                <a href="la_01_07.html" class="navigation navigation-next " aria-label="Next page: 01 07">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -969,7 +819,7 @@ x_2-4x_3 &= 8 \\
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"next":{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},"previous":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_01.md","mtime":"2019-09-08T11:20:43.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-08T13:01:02.311Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"next":{"title":"01 07","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},"previous":{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_05.md","mtime":"2019-09-08T12:58:13.724Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-08T13:01:02.311Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
