@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 07 · GitBook</title>
+        <title>01 07 Linear Independence · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -253,7 +253,7 @@
                 <a href="la_01_07.html">
             
                     
-                    01 07
+                    01 07 Linear Independence
             
                 </a>
             
@@ -562,7 +562,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 07</a>
+        <a href="../.." >01 07 Linear Independence</a>
     </h1>
 </div>
 
@@ -579,7 +579,7 @@
 <h2 id="liniear-independence">Liniear Independence</h2>
 <hr>
 <h2 id="definition--linear-independence">Definition : Linear Independence</h2>
-<p>An indexed set of vectors $ \left{ \textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right} $ in <script type="math/tex; "> \mathbb{R}^n</script> is said to be <strong>linearly independent</strong> if the vector equation </p>
+<p>An indexed set of vectors <script type="math/tex; "> \left\{ \textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\} </script> in <script type="math/tex; "> \mathbb{R}^n</script> is said to be <strong>linearly independent</strong> if the vector equation </p>
 <p><script type="math/tex; mode=display">
 x_1 \textbf{v}_1+x_2 \textbf{v}_2+ \cdots +x_p \textbf{v}_p = \textbf{0} \tag{1}
 </script> </p>
@@ -598,9 +598,9 @@ c_1\textbf{v}_1 +c_2\textbf{v}_2 +\cdots+c_p\textbf{v}_p = \textbf{0} \tag{2}
 </ul>
 <blockquote>
 <h3 id="practical-definition--linear-independence">Practical Definition : Linear Independence</h3>
-<p>Given a set of vectors <script type="math/tex; "> \left \{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\} </script> in <script type="math/tex; ">\mathbb{R}^n</script>,</p>
-<p>check if <script type="math/tex; "> \textbf{v}_j </script> can be represented as a linear combination of the previous vectors of the set <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> for <script type="math/tex; ">j=1,\cdots, p</script>, e.g.,
-<script type="math/tex; "> \textbf{v}_j \in \text{Span} \left\{ \textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_{j-1} \right\} \text{ for some }j=1,\cdots,p \text{?}</script></p>
+<p>Given a set of vectors <script type="math/tex; ">\left \{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> in <script type="math/tex; ">\mathbb{R}^n</script>,</p>
+<p>check if <script type="math/tex; ">\textbf{v}_j</script> can be represented as a linear combination of the previous vectors of the set <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> for <script type="math/tex; ">j=1,\cdots, p</script>, 
+e.g., <script type="math/tex; ">\textbf{v}_j \in \text{Span} \left\{ \textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_{j-1} \right\} \text{ for some }j=1,\cdots,p \text{?}</script></p>
 <ul>
 <li>If at least one such <script type="math/tex; ">\textbf{v}_j</script> is found, then <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> is <strong>linearly dependent</strong>.</li>
 <li>If no such <script type="math/tex; ">\textbf{v}_j</script> is found, then <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2, \cdots,\textbf{v}_p \right\}</script> is <strong>linearly independent</strong>.</li>
@@ -616,7 +616,7 @@ c_1\textbf{v}_1 +c_2\textbf{v}_2 +\cdots+c_p\textbf{v}_p = \textbf{0} \tag{2}
 <p><strong>1.</strong></p>
 <p>We must determine if there is a nontrivial solution of the equation (1).</p>
 <ul>
-<li>Row operations on the associated augmented matrix show that <script type="math/tex; "> \begin{bmatrix}1 & 4& 2& 0\\2 &5&1&0 \\ 3&6&0 &0 \end{bmatrix} \text{~} \begin{bmatrix}1 & 4& 2& 0\\0 &-3&-3&0\\ 0&0&0 &0 \end{bmatrix}</script></li>
+<li>Row operations on the associated augmented matrix show that <script type="math/tex; ">\begin{bmatrix}1 & 4& 2& 0\\2 &5&1&0 \\ 3&6&0 &0 \end{bmatrix} \text{~} \begin{bmatrix}1 & 4& 2& 0\\0 &-3&-3&0\\ 0&0&0 &0 \end{bmatrix}</script></li>
 <li><script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> are basic viraibles, and <script type="math/tex; ">x_3</script> is free.</li>
 <li>Each nonzero value of <script type="math/tex; ">x_3</script> determines a nontrivial solution.</li>
 <li><script type="math/tex; ">\textbf{v}_1</script>, <script type="math/tex; ">\textbf{v}_2</script>, <script type="math/tex; ">\textbf{v}_3</script> are linearly dependent.</li>
@@ -793,7 +793,7 @@ if and only if <script type="math/tex; ">\left\{ \textbf{u},\textbf{v}, \textbf{
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 07","level":"1.3.7","depth":2,"next":{"title":"01 08","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},"previous":{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_07.md","mtime":"2019-09-13T09:25:37.910Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-13T09:25:47.572Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"next":{"title":"01 08","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},"previous":{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_07.md","mtime":"2019-09-13T09:54:49.210Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-13T09:55:02.931Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

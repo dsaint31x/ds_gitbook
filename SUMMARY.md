@@ -12,7 +12,7 @@
   * [01 03 Vector Equations](posts/LinearAlgebra/la_01_03.md)
   * [01 04 Matrix Equation](posts/LinearAlgebra/la_01_04.md)
   * [01 05 Solution Sets of Linear Systems](posts/LinearAlgebra/la_01_05.md)
-  * [01 07](posts/LinearAlgebra/la_01_07.md)
+  * [01 07 Linear Independence](posts/LinearAlgebra/la_01_07.md)
   * [01 08](posts/LinearAlgebra/la_01_08.md)
   * [01 09](posts/LinearAlgebra/la_01_09.md)
   * [10_02 Difference Equation](posts/LinearAlgebra/la_01_10_02_Difference_Equation.md)
