@@ -598,6 +598,7 @@
 <li>The two matrices are <strong>equal</strong> if they have the same size (i.e., the same number of rows and the same number of columns) an if their corresponding columns are equal, which amounts to saying that their corresponding entires are equal.</li>
 </ul>
 <h2 id="sums-and-scalar-multiples">Sums and Scalar Multiples</h2>
+<h3 id="sum-of-matrices">Sum of Matrices</h3>
 <ul>
 <li>If <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are <script type="math/tex; ">m\times n</script> matrices, then the <strong>sum</strong> <script type="math/tex; ">A+B</script> is the <script type="math/tex; ">m \times n</script> matrix whose columns are the sums of the corresponding columns in <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script>.</li>
 <li>Since vector addition of the columns is done entrywise, each entry in <script type="math/tex; ">A+B</script> is the sum of the corresponding entries in <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script>.</li>
@@ -608,6 +609,9 @@
 <h4 id="solution">Solution:</h4>
 <ul>
 <li><script type="math/tex; ">A+B=\begin{bmatrix} 5 & 1 & 6 \\ 2 & 8 & 9 \end{bmatrix}</script> but <script type="math/tex; ">A+C</script> is not defined because <script type="math/tex; ">A</script> and <script type="math/tex; ">C</script> have different sizes.</li>
+</ul>
+<h3 id="scalar-multiple-of-matrix">Scalar Multiple of Matrix</h3>
+<ul>
 <li>If <script type="math/tex; ">r</script> is a scalar and <script type="math/tex; ">A</script> is a matrix, then the <strong>scalar multiple</strong> <script type="math/tex; ">r A</script> is the matrix whose columns are <script type="math/tex; ">r</script> times the corresponding columns in <script type="math/tex; ">A</script>.</li>
 </ul>
 <h3 id="theorem-1-let-a-b-and-c-be-matrices-of-the-same-size-and-let-r-and-s-be-scalars">Theorem 1: Let <script type="math/tex; ">A</script>, <script type="math/tex; ">B</script>, and <script type="math/tex; ">C</script> be matrices of the same size, and let <script type="math/tex; ">r</script> and <script type="math/tex; ">s</script> be scalars.</h3>
@@ -624,10 +628,13 @@
 </ul>
 <h2 id="matrix-multiplication">Matrix Multiplication</h2>
 <ul>
-<li>When a matrix <script type="math/tex; ">B</script> multiplies a vector <script type="math/tex; ">\textbf{x}</script>, it transforms <script type="math/tex; ">\textbf{x}</script>
+<li>When a matrix <script type="math/tex; ">B</script> multiplies a vector <script type="math/tex; ">\textbf{x}</script>, it transforms <script type="math/tex; ">\textbf{x}</script> 
 into the vector <script type="math/tex; ">B \textbf{x}</script>.</li>
-<li>If this vector is then multiplied in turn by a matrix <script type="math/tex; ">A</script>, the resulting vector is <script type="math/tex; ">A(B\textbf{x})</script>. See the Fig. 2 below.
-<img src="fig/la_02_01_02.png" alt="Fig2.Multiplication"></li>
+<li>If this vector is then multiplied in turn by a matrix <script type="math/tex; ">A</script>, 
+the resulting vector is <script type="math/tex; ">A(B\textbf{x})</script>. See the Fig. 2 below.</li>
+</ul>
+<p><img src="fig/la_02_01_02.png" alt="Fig2.Multiplication"></p>
+<ul>
 <li>If <script type="math/tex; ">A</script> is <script type="math/tex; ">m\times n</script>, <script type="math/tex; ">B</script> is <script type="math/tex; ">n\times p</script>, and <script type="math/tex; ">\textbf{x}</script> is in <script type="math/tex; ">\mathbb{R}^p</script>, denote the columns of <script type="math/tex; ">B</script> by <script type="math/tex; ">\textbf{b}_1,\cdots,\textbf{b}_p</script> and the entries in <script type="math/tex; ">\textbf{x}</script> by <script type="math/tex; ">x_1,\cdots,x_p</script>.</li>
 <li>Then <script type="math/tex; ">B\textbf{x}=x_1\textbf{b}_1+\cdots+x_p\textbf{b}_p</script>.</li>
 <li>By the linearity of multiplication by <script type="math/tex; ">A</script>,
@@ -637,25 +644,26 @@ A(B\textbf{x})&=A(x_1\textbf{b}_1)+\cdots+A(x_p\textbf{b}_p) \\
 &=x_1A\textbf{b}_1+\cdots+x_pA\textbf{b}_p
 \end{align}
 </script></li>
-<li>The vector <script type="math/tex; ">A(B\textbf{x})</script> is a linear combination of the vectors <script type="math/tex; ">A\textbf{b}_1,\cdots,A\textbf{b}_p</script>, using the entries in <script type="math/tex; ">\textbf{x}</script> as weights.</li>
+<li>The vector <script type="math/tex; ">A(B\textbf{x})</script> is a linear combination of the vectors <script type="math/tex; ">A\textbf{b}_1,\cdots,A\textbf{b}_p</script>, 
+using the entries in <script type="math/tex; ">\textbf{x}</script> as weights.</li>
 <li>In matrix notation, this linear combination is written as
 <script type="math/tex; mode=display">
-A(B\textbf{x})=\begin{bmatrix}A\textbf{b}_1 & A\textbf{b}_2 \cdots A\textbf{b}_p \end{bmatrix} \textbf{x}
+A(B\textbf{x})=\begin{bmatrix} A\textbf{b}_1 & A\textbf{b}_2 & \cdots & A\textbf{b}_p \end{bmatrix} \textbf{x}
 </script></li>
-<li>Thus multiplication by <script type="math/tex; ">\begin{bmatrix}A\textbf{b}_1 & A\textbf{b}_2 \cdots A\textbf{b}_p \end{bmatrix}</script> transforms <script type="math/tex; ">\textbf{x}</script> into <script type="math/tex; ">A(B\textbf{x})</script>.</li>
+<li>Thus multiplication by <script type="math/tex; ">\begin{bmatrix}A\textbf{b}_1 & A\textbf{b}_2 & \cdots & A\textbf{b}_p \end{bmatrix}</script> transforms <script type="math/tex; ">\textbf{x}</script> into <script type="math/tex; ">A(B\textbf{x})</script>.</li>
 </ul>
 <h3 id="definition">Definition</h3>
 <p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, and if <script type="math/tex; ">B</script> is an <script type="math/tex; ">n \times p</script> matrix with columns <script type="math/tex; "> \textbf{b}_1,\cdots,\textbf{b}_p</script>, then the product <script type="math/tex; ">A B</script> is the <script type="math/tex; ">m \times p</script> matrix whose columns are <script type="math/tex; ">A \textbf{b}_1, \cdots, A \textbf{b}_p</script>.</p>
 <p>That is,
 <script type="math/tex; ">AB = A\begin{bmatrix}\textbf{b}_1 &\cdots & \textbf{b}_p \end{bmatrix} =\begin{bmatrix} A \textbf{b}_1 &\cdots & A \textbf{b}_p\end{bmatrix}</script></p>
-<p>Multiplication of matrices corresponds to composition of linear transformations.</p>
+<p><strong>Multiplication of matrices corresponds to composition of linear transformations.</strong></p>
 <h3 id="example-3">Example 3</h3>
 <p>Compute <script type="math/tex; ">A B</script>, where <script type="math/tex; ">A=\begin{bmatrix}2&3\\1&-5\end{bmatrix}</script> and <script type="math/tex; ">B=\begin{bmatrix}4&3&6\\1&-2&3\end{bmatrix}</script>.</p>
 <h4 id="solution">Solution:</h4>
 <p>Write <script type="math/tex; ">B=\begin{bmatrix}\textbf{b}_1,\textbf{b}_2,\textbf{b}_3\end{bmatrix}</script>, and, compute:
 <img src="fig/la_02_01_add01.png" alt=""></p>
 <ul>
-<li>Each column of <script type="math/tex; ">A B</script> is a linear combination of the columns of <script type="math/tex; ">A</script> using weights from the corresponding column of <script type="math/tex; ">B</script>.</li>
+<li>Each column of <script type="math/tex; ">A B</script> is a <strong>linear combination of the columns of <script type="math/tex; ">A</script></strong> using weights from the corresponding column of <script type="math/tex; ">B</script>.</li>
 </ul>
 <h3 id="row&#x2014;column-rule-for-computing-a-b">Row&#x2014;column rule for computing A B</h3>
 <p>If a product <script type="math/tex; ">A B</script> is defined, then the entry in row <script type="math/tex; ">i</script> and column <script type="math/tex; ">j</script> of <script type="math/tex; ">A B</script> is the sum of the products of corresponding entries from row <script type="math/tex; ">i</script> of <script type="math/tex; ">A</script> and column <script type="math/tex; ">j</script> of <script type="math/tex; ">B</script>. If <script type="math/tex; ">(AB)_{ij}</script> denotes the <script type="math/tex; ">(i, j)</script>-entry in <script type="math/tex; ">A B</script>, and if <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, then
@@ -669,21 +677,24 @@ A(B\textbf{x})=\begin{bmatrix}A\textbf{b}_1 & A\textbf{b}_2 \cdots A\textbf{b}_p
 <li><script type="math/tex; ">A(BC)=(AB)C</script> (associative law of multiplication)</li>
 <li><script type="math/tex; ">A(B+C)=AB+AC</script> (left distributive law)</li>
 <li><script type="math/tex; ">(B+C)A=BA+CA</script> (right distributive law)</li>
-<li><script type="math/tex; ">r(AB)=(rA)B =A(rB)</script> for ans scalar <script type="math/tex; ">r</script>.</li>
+<li><script type="math/tex; ">r(AB)=(rA)B =A(rB)</script> for any scalar <script type="math/tex; ">r</script>.</li>
 <li><script type="math/tex; ">I_mA=A=AI_n</script> (identity for matrix multiplication)</li>
 </ol>
 <h3 id="warnings">Warnings:</h3>
 <ol>
 <li>In general, <script type="math/tex; ">AB \ne BA</script>.</li>
-<li>The cancellation laws do not hold for matrix multiplication. That is, if <script type="math/tex; ">AB=AC</script>, then it is not true in general that <script type="math/tex; ">B=C</script>.</li>
+<li><strong>The cancellation laws do not hold for matrix multiplication</strong>. That is, if <script type="math/tex; ">AB=AC</script>, then it is not true in general that <script type="math/tex; ">B=C</script>.</li>
 <li>If a product <script type="math/tex; ">A B</script> is the zero matrix, you cannot conclude in general that either <script type="math/tex; ">A = 0</script> or <script type="math/tex; ">B = 0</script>.</li>
 </ol>
 <h2 id="powers-of-a-matrix">Powers of a Matrix</h2>
 <ul>
-<li>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">n \times n</script> matrix and if <script type="math/tex; ">k</script> is a positive integer, then <script type="math/tex; ">A^k</script> denotes the product of <script type="math/tex; ">k</script> copies of <script type="math/tex; ">A</script>:</li>
-</ul>
-<ul>
-<li>If <script type="math/tex; ">A</script> is nonzero and if <script type="math/tex; ">\textbf{x}</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then <script type="math/tex; ">A^k \textbf{x}</script> is the result of left-multiplying <script type="math/tex; ">\textbf{x}</script> by <script type="math/tex; ">A</script> repeatedly <script type="math/tex; ">k</script> times.</li>
+<li><p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">n \times n</script> matrix and if <script type="math/tex; ">k</script> is a positive integer, then <script type="math/tex; ">A^k</script> denotes the product of <script type="math/tex; ">k</script> copies of <script type="math/tex; ">A</script>:
+<script type="math/tex; mode=display">
+A^k = \underbrace{ A \cdots A }_{k}
+</script></p>
+</li>
+<li><p>If <script type="math/tex; ">A</script> is nonzero and if <script type="math/tex; ">\textbf{x}</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then <script type="math/tex; ">A^k \textbf{x}</script> is the result of left-multiplying <script type="math/tex; ">\textbf{x}</script> by <script type="math/tex; ">A</script> repeatedly <script type="math/tex; ">k</script> times.</p>
+</li>
 <li>If <script type="math/tex; ">k = 0</script>, then <script type="math/tex; ">A^0\textbf{x}</script> should be <script type="math/tex; ">\textbf{x}</script> itself.</li>
 <li>Thus <script type="math/tex; ">A^0</script> is interpreted as the identity matrix.</li>
 </ul>
@@ -697,9 +708,9 @@ A(B\textbf{x})=\begin{bmatrix}A\textbf{b}_1 & A\textbf{b}_2 \cdots A\textbf{b}_p
 <li><script type="math/tex; ">(A^T)^T=A</script></li>
 <li><script type="math/tex; ">(A+B)^T = A^T+B^T</script></li>
 <li>For an scalar <script type="math/tex; ">r</script>, <script type="math/tex; ">(rA)^T=rA^T</script></li>
-<li><script type="math/tex; ">(AB)^T =B^T A^T</script></li>
+<li><strong><script type="math/tex; ">(AB)^T =B^T A^T</script></strong></li>
 </ol>
-<p>The transpose of a product of metrices equals the product of their transposes in the reverse order.</p>
+<p>The <strong>transpose of a product</strong> of metrices equals the product of their transposes in the reverse order.</p>
 
                                 
                                 </section>
@@ -743,7 +754,7 @@ A(B\textbf{x})=\begin{bmatrix}A\textbf{b}_1 & A\textbf{b}_2 \cdots A\textbf{b}_p
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"next":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"previous":{"title":"10_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_01.md","mtime":"2019-09-23T00:03:02.948Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T00:24:33.829Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"next":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"previous":{"title":"10_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_01.md","mtime":"2019-09-23T02:35:26.499Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T02:35:36.567Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
