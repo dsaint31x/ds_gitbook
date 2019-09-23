@@ -633,118 +633,105 @@ That is, for a given <script type="math/tex; ">A</script>, the statements are ei
 <p>If <script type="math/tex; ">A</script> is square and has <script type="math/tex; ">n</script> pivot positions, then the pivots must lie on the main diagonal, in which case the reduced echelon form of <script type="math/tex; ">A</script> is <script type="math/tex; ">I_n</script>. Thus <script type="math/tex; ">(3) \Rightarrow (2)</script>.</p>
 <p>Also, <script type="math/tex; ">(2) \Rightarrow (1)</script>.</p>
 <p>This completes the circle in the previous figure.</p>
-<p>Next, <script type="math/tex; ">(1) \Rightarrow (11) because </script>A^{-1}<script type="math/tex; "> works for </script>D<script type="math/tex; ">.
-
-Also, </script>(11) \Rightarrow (7)<script type="math/tex; "> and </script>(7) \Rightarrow (1)<script type="math/tex; ">.
-
-So, </script>(11)<script type="math/tex; "> and </script>(7)<script type="math/tex; "> are linked to the circle.
-
-Further, </script>(11), (8),<script type="math/tex; "> and </script>(9)<script type="math/tex; "> are equivalent for any matrix.
-
-Thus, </script>(8)<script type="math/tex; "> and </script>(9)<script type="math/tex; "> are linked through </script>(11)<script type="math/tex; "> to the circle.
-
-Since </script>(4)<script type="math/tex; "> is linked to the circle, so are </script>(5)<script type="math/tex; "> and </script>(6)<script type="math/tex; ">, because </script>(4)<script type="math/tex; ">, </script>(5)<script type="math/tex; ">, and </script>(6)<script type="math/tex; "> are all equivalent for any matrix </script>A<script type="math/tex; ">.
-
-Finalyy, </script>(1) \Rightarrow (12)<script type="math/tex; "> and </script>(12) \Rightarrow (1)<script type="math/tex; ">.
-
-This completes the proof. </script>\blacksquare<script type="math/tex; mode=display">
-
-![fig](./fig/la_02_03_01b.png)
----
-
-**Theorem 8** could also be written as 
-
-**The equation </script>A\textbf{x} =\textbf{b}<script type="math/tex; "> has a unique solution for each </script>\textbf{b}<script type="math/tex; "> in </script>\mathbb{R}^n<script type="math/tex; ">.**
-
-* This statement implies (2) and hence implies that </script>A<script type="math/tex; "> is invertible.
-* The following fact follows from **Theorem 8**. Let </script>A<script type="math/tex; "> and </script>B<script type="math/tex; "> be square matrices. If </script>AB=I<script type="math/tex; ">, then </script>A<script type="math/tex; "> and </script>B<script type="math/tex; "> are both invertible, with </script>B=A^{-1}<script type="math/tex; "> and </script>A=B^{-1}<script type="math/tex; ">.
-* The **Invertible Matrix Theorem** divides the set of all </script>n \times n<script type="math/tex; "> matrices into two disjoint classes:
-  * the invertible (nonsingular) matrices, and
-  * the noninvertible (singular) matrices.
-* Each statement in the theorem describes a property of every </script>n \times n<script type="math/tex; "> invertible matrix.
-* The negation of a statement in the theorem describes a property of every </script>n \times n<script type="math/tex; "> singular matrix.
-* For instance, an </script>n \times n<script type="math/tex; "> singular matrix  
-  * is not row equivalent to </script>I_n<script type="math/tex; ">, 
-  * does not have </script>n<script type="math/tex; "> pivot position, and
-  * has linearly dependent columns.
-
-## Example 1:
-
-Use the Invertible Matrix Theorem to decide if </script>A<script type="math/tex; "> is invertible:
-
-</script>
+<p>Next, <script type="math/tex; ">(1) \Rightarrow (11)</script> because <script type="math/tex; ">A^{-1}</script> works for <script type="math/tex; ">D</script>.</p>
+<p>Also, <script type="math/tex; ">(11) \Rightarrow (7)</script> and <script type="math/tex; ">(7) \Rightarrow (1)</script>.</p>
+<p>So, <script type="math/tex; ">(11)</script> and <script type="math/tex; ">(7)</script> are linked to the circle.</p>
+<p>Further, <script type="math/tex; ">(11), (8),</script> and <script type="math/tex; ">(9)</script> are equivalent for any matrix.</p>
+<p>Thus, <script type="math/tex; ">(8)</script> and <script type="math/tex; ">(9)</script> are linked through <script type="math/tex; ">(11)</script> to the circle.</p>
+<p>Since <script type="math/tex; ">(4)</script> is linked to the circle, so are <script type="math/tex; ">(5)</script> and <script type="math/tex; ">(6)</script>, because <script type="math/tex; ">(4)</script>, <script type="math/tex; ">(5)</script>, and <script type="math/tex; ">(6)</script> are all equivalent for any matrix <script type="math/tex; ">A</script>.</p>
+<p>Finalyy, <script type="math/tex; ">(1) \Rightarrow (12)</script> and <script type="math/tex; ">(12) \Rightarrow (1)</script>.</p>
+<p>This completes the proof. <script type="math/tex; ">\blacksquare</script></p>
+<h2 id=""><img src="fig/la_02_03_01b.png" alt="fig"></h2>
+<p><strong>Theorem 8</strong> could also be written as </p>
+<p><strong>The equation <script type="math/tex; ">A\textbf{x} =\textbf{b}</script> has a unique solution for each <script type="math/tex; ">\textbf{b}</script> in <script type="math/tex; ">\mathbb{R}^n</script>.</strong></p>
+<ul>
+<li>This statement implies (2) and hence implies that <script type="math/tex; ">A</script> is invertible.</li>
+<li>The following fact follows from <strong>Theorem 8</strong>. Let <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> be square matrices. If <script type="math/tex; ">AB=I</script>, then <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are both invertible, with <script type="math/tex; ">B=A^{-1}</script> and <script type="math/tex; ">A=B^{-1}</script>.</li>
+<li>The <strong>Invertible Matrix Theorem</strong> divides the set of all <script type="math/tex; ">n \times n</script> matrices into two disjoint classes:<ul>
+<li>the invertible (nonsingular) matrices, and</li>
+<li>the noninvertible (singular) matrices.</li>
+</ul>
+</li>
+<li>Each statement in the theorem describes a property of every <script type="math/tex; ">n \times n</script> invertible matrix.</li>
+<li>The negation of a statement in the theorem describes a property of every <script type="math/tex; ">n \times n</script> singular matrix.</li>
+<li>For instance, an <script type="math/tex; ">n \times n</script> singular matrix  <ul>
+<li>is not row equivalent to <script type="math/tex; ">I_n</script>, </li>
+<li>does not have <script type="math/tex; ">n</script> pivot position, and</li>
+<li>has linearly dependent columns.</li>
+</ul>
+</li>
+</ul>
+<h2 id="example-1">Example 1:</h2>
+<p>Use the Invertible Matrix Theorem to decide if <script type="math/tex; ">A</script> is invertible:</p>
+<p><script type="math/tex; mode=display">
 A=
 \begin{bmatrix}
-1 &amp; 0 &amp; -2 \
-3 &amp; 1 &amp; -2 \
--5 &amp; -1 &amp; 9 
+1 & 0 & -2 \\
+3 & 1 & -2 \\
+-5 & -1 & 9 
 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-### Solution:
-
-</script>
+</script></p>
+<h3 id="solution">Solution:</h3>
+<p><script type="math/tex; mode=display">
 A \sim
 \begin{bmatrix}
-1 &amp; 0 &amp; -2 \
-0 &amp; 1 &amp; 4 \
-0 &amp; -1 &amp; -1 
+1 & 0 & -2 \\
+0 & 1 & 4 \\
+0 & -1 & -1 
 \end{bmatrix}
 \sim
 \begin{bmatrix}
-1 &amp; 0 &amp; -2 \
-0 &amp; 1 &amp; 4 \
-0 &amp; 0 &amp; 3 
+1 & 0 & -2 \\
+0 & 1 & 4 \\
+0 & 0 & 3 
 \end{bmatrix}
+</script></p>
+<ul>
+<li>So <script type="math/tex; ">A</script> has three pivot positions and hence is invertible, 
+by the Invertible Matrix Theorem, statement (3).</li>
+<li>The Invertible Matrix Theorem applies only to square matrices.</li>
+<li>For example, 
+if the columns of a <script type="math/tex; ">4 \times 3</script> matrix are <strong>linearly independent</strong>, 
+we cannot use the Invertible Matrix Theorem 
+to conclude anything about the existence or nonexistence 
+of solutions of equation of the form <script type="math/tex; ">A\textbf{x}=\textbf{b}</script>.</li>
+</ul>
+<h2 id="invertible-linear-transformations">Invertible Linear Transformations</h2>
+<ul>
+<li><strong>Matrix multiplication</strong> corresponds to <strong>composition of linear transformations</strong>.</li>
+<li>When a matrix <script type="math/tex; ">A</script> is invertible, 
+the equation <script type="math/tex; ">A^{-1}A\textbf{x}=\textbf{x}</script> can be viewed as 
+a statement about <strong>linear transformations</strong>. See the following figure.</li>
+</ul>
+<p><img src="fig/la_02_03_02.png" alt="fig"></p>
+<ul>
+<li>A linear transformation <script type="math/tex; ">T: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> is said to be invertible 
+if there exists a function <script type="math/tex; ">S: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> such that
 <script type="math/tex; mode=display">
-
-* So </script>A<script type="math/tex; "> has three pivot positions and hence is invertible, 
-  by the Invertible Matrix Theorem, statement (3).
-* The Invertible Matrix Theorem applies only to square matrices.
-* For example, 
-  if the columns of a </script>4 \times 3<script type="math/tex; "> matrix are **linearly independent**, 
-  we cannot use the Invertible Matrix Theorem 
-  to conclude anything about the existence or nonexistence 
-  of solutions of equation of the form </script>A\textbf{x}=\textbf{b}<script type="math/tex; ">.
-
-## Invertible Linear Transformations
-
-* **Matrix multiplication** corresponds to **composition of linear transformations**.
-* When a matrix </script>A<script type="math/tex; "> is invertible, 
-  the equation </script>A^{-1}A\textbf{x}=\textbf{x}<script type="math/tex; "> can be viewed as 
-  a statement about **linear transformations**. See the following figure.
-
-![fig](./fig/la_02_03_02.png)
-
-* A linear transformation </script>T: \mathbb{R}^n \rightarrow \mathbb{R}^n<script type="math/tex; "> is said to be invertible 
-  if there exists a function </script>S: \mathbb{R}^n \rightarrow \mathbb{R}^n<script type="math/tex; "> such that
-</script>
-S(T(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{1}\
-T(S(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{2}\
-<script type="math/tex; mode=display">
-
----
-
-## Theorem 9: 
-
-Let </script>T: \mathbb{R}^n \rightarrow \mathbb{R}^n<script type="math/tex; "> be a linear transformation and 
-let </script>A<script type="math/tex; "> be the standard matrix for </script>T<script type="math/tex; ">. 
-Then </script>T<script type="math/tex; "> is invertible if and only if 
-</script>A<script type="math/tex; "> is an invertible matrix. 
-In that case, the linear transformation </script>S<script type="math/tex; "> given by 
-</script>S(\textbf{x})=A^{-1}\textbf{x}<script type="math/tex; "> is the **unique function** satisfying equation (1) and (2).
-
-### Proof :
-
-* Suppose that </script>T<script type="math/tex; "> is invertible.
-* Then (2) shows that </script>T<script type="math/tex; "> is onto </script>\mathbb{R}^n<script type="math/tex; ">, for if </script>\bf{b}<script type="math/tex; "> is in </script>\mathbb{R}^n<script type="math/tex; "> and
-  </script>\textbf{x}=S(\textbf{b})<script type="math/tex; ">, then </script>T(\textbf{x})=T(S(\textbf{b}))=\textbf{b}<script type="math/tex; ">,
-  so each </script>\textbf{b}<script type="math/tex; "> is in the range of </script>T<script type="math/tex; ">.
-* Thus </script>A<script type="math/tex; "> is invertible, by the Invertible Matrix Theorem, statement (9).
-* Conversely, suppose that </script>A<script type="math/tex; "> is invertible, and let </script>S(\textbf{x})=A^{-1}\textbf{x}<script type="math/tex; ">.
-* Then, </script>S<script type="math/tex; "> is a linear transformation, and </script>S<script type="math/tex; "> satisfies (1) and (2).
-* For instance, </script>S(T(\textbf{x})) = S(A\textbf{x})=A^{-1}(A\textbf{x})=\textbf{x}<script type="math/tex; ">.
-* Thus, </script>T$$ is invertible.</p>
+S(T(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{1}\\
+T(S(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{2}\\
+</script></li>
+</ul>
+<hr>
+<h2 id="theorem-9">Theorem 9:</h2>
+<p>Let <script type="math/tex; ">T: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> be a linear transformation and 
+let <script type="math/tex; ">A</script> be the standard matrix for <script type="math/tex; ">T</script>. 
+Then <script type="math/tex; ">T</script> is invertible if and only if 
+<script type="math/tex; ">A</script> is an invertible matrix. 
+In that case, the linear transformation <script type="math/tex; ">S</script> given by 
+<script type="math/tex; ">S(\textbf{x})=A^{-1}\textbf{x}</script> is the <strong>unique function</strong> satisfying equation (1) and (2).</p>
+<h3 id="proof-">Proof :</h3>
+<ul>
+<li>Suppose that <script type="math/tex; ">T</script> is invertible.</li>
+<li>Then (2) shows that <script type="math/tex; ">T</script> is onto <script type="math/tex; ">\mathbb{R}^n</script>, for if <script type="math/tex; ">\bf{b}</script> is in <script type="math/tex; ">\mathbb{R}^n</script> and
+<script type="math/tex; ">\textbf{x}=S(\textbf{b})</script>, then <script type="math/tex; ">T(\textbf{x})=T(S(\textbf{b}))=\textbf{b}</script>,
+so each <script type="math/tex; ">\textbf{b}</script> is in the range of <script type="math/tex; ">T</script>.</li>
+<li>Thus <script type="math/tex; ">A</script> is invertible, by the Invertible Matrix Theorem, statement (9).</li>
+<li>Conversely, suppose that <script type="math/tex; ">A</script> is invertible, and let <script type="math/tex; ">S(\textbf{x})=A^{-1}\textbf{x}</script>.</li>
+<li>Then, <script type="math/tex; ">S</script> is a linear transformation, and <script type="math/tex; ">S</script> satisfies (1) and (2).</li>
+<li>For instance, <script type="math/tex; ">S(T(\textbf{x})) = S(A\textbf{x})=A^{-1}(A\textbf{x})=\textbf{x}</script>.</li>
+<li>Thus, <script type="math/tex; ">T</script> is invertible.</li>
+</ul>
 
                                 
                                 </section>
@@ -788,7 +775,7 @@ In that case, the linear transformation </script>S<script type="math/tex; "> giv
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"next":{"title":"05_01","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_03.md","mtime":"2019-09-23T03:27:23.831Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T03:45:53.017Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"next":{"title":"05_01","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_03.md","mtime":"2019-09-23T03:46:51.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T03:46:57.040Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
