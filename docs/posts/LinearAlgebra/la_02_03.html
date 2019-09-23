@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>10_02 Difference Equation · GitBook</title>
+        <title>0203 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_02_01.html" />
+    <link rel="next" href="la_05_01.html" />
     
     
-    <link rel="prev" href="la_01_09.html" />
+    <link rel="prev" href="la_02_02.html" />
     
 
     </head>
@@ -291,7 +291,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
+        <li class="chapter " data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
             
                 <a href="la_01_10_02_Difference_Equation.html">
             
@@ -330,7 +330,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.13" data-path="la_02_03.html">
+        <li class="chapter active" data-level="1.3.13" data-path="la_02_03.html">
             
                 <a href="la_02_03.html">
             
@@ -579,7 +579,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >10_02 Difference Equation</a>
+        <a href="../.." >0203</a>
     </h1>
 </div>
 
@@ -594,75 +594,157 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="ch0110-linear-models-in-business-science-and-engineering">Ch01.10 Linear Models in Business, Science, and Engineering</h1>
-<h2 id="011002--difference-equation">01.10.02 : Difference Equation</h2>
+                                <h1 id="ch02-matrix-algebra">Ch02. Matrix Algebra</h1>
+<h1 id="23-characterizations-of-invertible-matrices">2.3 Characterizations of Invertible Matrices</h1>
+<h2 id="the-invertible-matrix-theorem">The Invertible Matrix Theorem</h2>
+<hr>
+<h2 id="theorem-8">Theorem 8</h2>
+<p>Let <script type="math/tex; ">A</script> be a square <script type="math/tex; "> n \times n </script>matrix. 
+Then the following statements are <strong>equivalent</strong>. 
+That is, for a given <script type="math/tex; ">A</script>, the statements are either all true or all false.</p>
+<ol>
+<li><script type="math/tex; ">A</script> is an <strong>invertible matrix</strong>.</li>
+<li><script type="math/tex; ">A</script> is row equivalent to the identity matrix.</li>
+<li><script type="math/tex; ">A</script> has <script type="math/tex; ">n</script> pivot positions.</li>
+<li>The equation <script type="math/tex; ">A \textbf{x}=\textbf{0}</script> has only the trivial solution.</li>
+<li>The columns of <script type="math/tex; ">A</script> form <strong>a linearly independent set</strong>.</li>
+<li>The linear transformation <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> is one-to-one.</li>
+<li>The equation <script type="math/tex; ">A \textbf{x}=\textbf{b}</script> has at least one solution for each <script type="math/tex; ">\textbf{b}</script> in <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+<li>The columns of <script type="math/tex; ">A</script> span <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+<li>The linear transformation <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> maps <script type="math/tex; ">\mathbb{R}^n</script> onto <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+<li>There is an <script type="math/tex; ">n \times n</script> matrix <script type="math/tex; ">C</script> such that <script type="math/tex; "> CA=I</script>.</li>
+<li>There is an <script type="math/tex; ">n \times n</script> matrix <script type="math/tex; ">D</script> such that <script type="math/tex; "> AD=I</script>.</li>
+<li><p><script type="math/tex; ">A^T</script> is an invertible matrix.</p>
+</li>
+<li><p>First, we need some notation.</p>
+</li>
+<li>If the truth of statement (1) always implies that statment (10) is true, we say that (1) implies (10) and write <script type="math/tex; ">(1) \Rightarrow (10)</script>.</li>
+<li>The proof will establish the &quot;circle&quot; of implications as shown in the following figure.</li>
+</ol>
+<p><img src="fig/la_02_03_01.png" alt="fig"></p>
 <ul>
-<li>In many fields, a dynamic system that changes over a time should be mathematically modeled. </li>
-<li>Several features of the system are each measured at discrete time intervals, producing a sequence of vectors, <script type="math/tex; "> \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots, </script>. </li>
-<li>The entries in <script type="math/tex; ">\textbf{x}_k</script> provide information about the state of system at the time of the <script type="math/tex; ">k</script>th measurement.</li>
-<li>If there is a matrix <script type="math/tex; ">A</script> such that <script type="math/tex; ">\textbf{x}_1=A\textbf{x}_0, \textbf{x}_2=A\textbf{x}_1</script>, and , in general 
-<script type="math/tex; mode=display">
-\textbf{x}_{k+1}=A\textbf{x}_k \text{  for }k=0,1,2,\cdots
-</script></li>
-<li>then it is called a linear difference equation (or recurrence relation)</li>
-<li>Given such an equation, one can compute <script type="math/tex; ">\textbf{x}_1,\textbf{x}_2</script>, and so on, provided <script type="math/tex; ">\textbf{x}_0</script> is known.</li>
-<li>The dicussion below illustrates how a difference equation might arise.</li>
-<li>A subject of interest to demographers is the movement of populations or groups of people from one region to another. The simple model here considers the changes in the population of a certain city and its surrounding suburbs over a period of years.</li>
-<li>Fix an initial year-say,2019- and denote the populations of the city and suburbs that year by <script type="math/tex; ">r_0</script> and <script type="math/tex; ">s_0</script>, repectively. Let <script type="math/tex; ">\textbf{x}_0</script> be the population vector
-<script type="math/tex; mode=display">
-\textbf{x}_0 = \begin{bmatrix}r_0 \\ s_0 \end{bmatrix}
-\begin{matrix} \text{City population, 2019} \\ \text{Suburban population, 2019} \end{matrix}
-</script></li>
-<li>For 2020 and subsequent years, denote the populations of the city and suburbs by vectors
-<script type="math/tex; mode=display">
-\textbf{x}_1 = \begin{bmatrix}r_1 \\ s_1 \end{bmatrix},
-\textbf{x}_2 = \begin{bmatrix}r_2 \\ s_2 \end{bmatrix},
-\textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
-</script></li>
-<li>Our goal is to describe mathematically how these vectors might be related.</li>
-<li>Suppose demographic studies show that each year about 5% of the city&apos;s population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
-<img src="fig/la_01_10_02.png" alt="figure2"></li>
-<li>After 1 year, the original <script type="math/tex; ">r_0</script> persons in the city are now distributed between city and suburbs as
-<script type="math/tex; mode=display">
-\begin{bmatrix}.95 r_0 \\.05 r_0\end{bmatrix} = r_0 
-\begin{bmatrix}.95 \\ .05 \end{bmatrix}
-\begin{matrix} \text{Remain in city} \\ \text{Move to suburbs} \end{matrix} \tag{6}
-</script></li>
-<li>The so persons in the suburbs in 2019 are distributed 1 year later as
-<script type="math/tex; mode=display">
-s_0\begin{bmatrix}.03 \\.97 \end{bmatrix} 
-\begin{matrix} \text{Move to city} \\ \text{Remain in suburbs} \end{matrix}
-\tag{7}
-</script></li>
-<li>The vectors in (6) and (7) account for all of the populations in 2020. Thus
-<script type="math/tex; mode=display">
-\begin{bmatrix} r_1 \\ s_1 \end{bmatrix}
-=r_0\begin{bmatrix} .95 \\ .05 \end{bmatrix}
-+s_0\begin{bmatrix} .03 \\ .97 \end{bmatrix}
-=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
-\begin{bmatrix} r_0 \\ s_0 \end{bmatrix}
-</script></li>
-<li>That is, 
-<script type="math/tex; mode=display">
-\textbf{x}_1 = M \textbf{x}_0 \tag{8}
-</script></li>
-<li>Where <script type="math/tex; ">M</script> is the migration matrix determined by the following table:
-<script type="math/tex; mode=display">
-M=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
-</script></li>
-<li>Equation (8) describes how the population changes
-from 2019 to 2020. If the migration percentages
-remain constant, then the change from 2020 to 2021
-is given by
-<script type="math/tex; mode=display">
-\textbf{x}_2 = M \textbf{x}_1 
-</script></li>
-<li>And similarly for 2021 to 2022 and subsequent years. In general,
-<script type="math/tex; mode=display">
-\textbf{x}_{k+1} = M\textbf{x}_k \text{ for }k=0,1,2,\cdots \tag{9}
-</script></li>
-<li>The sequence of vectors <script type="math/tex; ">\left\{ \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots \right\}</script> describes the population of the city/suburban region over a period of years.</li>
+<li>If any one of these five statements is true, then so are the others.</li>
+<li>Finally, the proof will link the remaining statements of the theorem to the statements in this circle.</li>
 </ul>
+<h3 id="proof">Proof:</h3>
+<p>If statement (1) is true, then <script type="math/tex; "> A^{-1}</script> works for <script type="math/tex; ">C</script> in (10), so <script type="math/tex; ">(1) \Rightarrow (10)</script>.</p>
+<p>Next, <script type="math/tex; ">(10) \Rightarrow (4)</script>.</p>
+<p>Also, <script type="math/tex; ">(4) \Rightarrow (3)</script>.</p>
+<p>If <script type="math/tex; ">A</script> is square and has <script type="math/tex; ">n</script> pivot positions, then the pivots must lie on the main diagonal, in which case the reduced echelon form of <script type="math/tex; ">A</script> is <script type="math/tex; ">I_n</script>. Thus <script type="math/tex; ">(3) \Rightarrow (2)</script>.</p>
+<p>Also, <script type="math/tex; ">(2) \Rightarrow (1)</script>.</p>
+<p>This completes the circle in the previous figure.</p>
+<p>Next, <script type="math/tex; ">(1) \Rightarrow (11) because </script>A^{-1}<script type="math/tex; "> works for </script>D<script type="math/tex; ">.
+
+Also, </script>(11) \Rightarrow (7)<script type="math/tex; "> and </script>(7) \Rightarrow (1)<script type="math/tex; ">.
+
+So, </script>(11)<script type="math/tex; "> and </script>(7)<script type="math/tex; "> are linked to the circle.
+
+Further, </script>(11), (8),<script type="math/tex; "> and </script>(9)<script type="math/tex; "> are equivalent for any matrix.
+
+Thus, </script>(8)<script type="math/tex; "> and </script>(9)<script type="math/tex; "> are linked through </script>(11)<script type="math/tex; "> to the circle.
+
+Since </script>(4)<script type="math/tex; "> is linked to the circle, so are </script>(5)<script type="math/tex; "> and </script>(6)<script type="math/tex; ">, because </script>(4)<script type="math/tex; ">, </script>(5)<script type="math/tex; ">, and </script>(6)<script type="math/tex; "> are all equivalent for any matrix </script>A<script type="math/tex; ">.
+
+Finalyy, </script>(1) \Rightarrow (12)<script type="math/tex; "> and </script>(12) \Rightarrow (1)<script type="math/tex; ">.
+
+This completes the proof. </script>\blacksquare<script type="math/tex; mode=display">
+
+![fig](./fig/la_02_03_01b.png)
+---
+
+**Theorem 8** could also be written as 
+
+**The equation </script>A\textbf{x} =\textbf{b}<script type="math/tex; "> has a unique solution for each </script>\textbf{b}<script type="math/tex; "> in </script>\mathbb{R}^n<script type="math/tex; ">.**
+
+* This statement implies (2) and hence implies that </script>A<script type="math/tex; "> is invertible.
+* The following fact follows from **Theorem 8**. Let </script>A<script type="math/tex; "> and </script>B<script type="math/tex; "> be square matrices. If </script>AB=I<script type="math/tex; ">, then </script>A<script type="math/tex; "> and </script>B<script type="math/tex; "> are both invertible, with </script>B=A^{-1}<script type="math/tex; "> and </script>A=B^{-1}<script type="math/tex; ">.
+* The **Invertible Matrix Theorem** divides the set of all </script>n \times n<script type="math/tex; "> matrices into two disjoint classes:
+  * the invertible (nonsingular) matrices, and
+  * the noninvertible (singular) matrices.
+* Each statement in the theorem describes a property of every </script>n \times n<script type="math/tex; "> invertible matrix.
+* The negation of a statement in the theorem describes a property of every </script>n \times n<script type="math/tex; "> singular matrix.
+* For instance, an </script>n \times n<script type="math/tex; "> singular matrix  
+  * is not row equivalent to </script>I_n<script type="math/tex; ">, 
+  * does not have </script>n<script type="math/tex; "> pivot position, and
+  * has linearly dependent columns.
+
+## Example 1:
+
+Use the Invertible Matrix Theorem to decide if </script>A<script type="math/tex; "> is invertible:
+
+</script>
+A=
+\begin{bmatrix}
+1 &amp; 0 &amp; -2 \
+3 &amp; 1 &amp; -2 \
+-5 &amp; -1 &amp; 9 
+\end{bmatrix}
+<script type="math/tex; mode=display">
+
+### Solution:
+
+</script>
+A \sim
+\begin{bmatrix}
+1 &amp; 0 &amp; -2 \
+0 &amp; 1 &amp; 4 \
+0 &amp; -1 &amp; -1 
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 &amp; 0 &amp; -2 \
+0 &amp; 1 &amp; 4 \
+0 &amp; 0 &amp; 3 
+\end{bmatrix}
+<script type="math/tex; mode=display">
+
+* So </script>A<script type="math/tex; "> has three pivot positions and hence is invertible, 
+  by the Invertible Matrix Theorem, statement (3).
+* The Invertible Matrix Theorem applies only to square matrices.
+* For example, 
+  if the columns of a </script>4 \times 3<script type="math/tex; "> matrix are **linearly independent**, 
+  we cannot use the Invertible Matrix Theorem 
+  to conclude anything about the existence or nonexistence 
+  of solutions of equation of the form </script>A\textbf{x}=\textbf{b}<script type="math/tex; ">.
+
+## Invertible Linear Transformations
+
+* **Matrix multiplication** corresponds to **composition of linear transformations**.
+* When a matrix </script>A<script type="math/tex; "> is invertible, 
+  the equation </script>A^{-1}A\textbf{x}=\textbf{x}<script type="math/tex; "> can be viewed as 
+  a statement about **linear transformations**. See the following figure.
+
+![fig](./fig/la_02_03_02.png)
+
+* A linear transformation </script>T: \mathbb{R}^n \rightarrow \mathbb{R}^n<script type="math/tex; "> is said to be invertible 
+  if there exists a function </script>S: \mathbb{R}^n \rightarrow \mathbb{R}^n<script type="math/tex; "> such that
+</script>
+S(T(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{1}\
+T(S(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{2}\
+<script type="math/tex; mode=display">
+
+---
+
+## Theorem 9: 
+
+Let </script>T: \mathbb{R}^n \rightarrow \mathbb{R}^n<script type="math/tex; "> be a linear transformation and 
+let </script>A<script type="math/tex; "> be the standard matrix for </script>T<script type="math/tex; ">. 
+Then </script>T<script type="math/tex; "> is invertible if and only if 
+</script>A<script type="math/tex; "> is an invertible matrix. 
+In that case, the linear transformation </script>S<script type="math/tex; "> given by 
+</script>S(\textbf{x})=A^{-1}\textbf{x}<script type="math/tex; "> is the **unique function** satisfying equation (1) and (2).
+
+### Proof :
+
+* Suppose that </script>T<script type="math/tex; "> is invertible.
+* Then (2) shows that </script>T<script type="math/tex; "> is onto </script>\mathbb{R}^n<script type="math/tex; ">, for if </script>\bf{b}<script type="math/tex; "> is in </script>\mathbb{R}^n<script type="math/tex; "> and
+  </script>\textbf{x}=S(\textbf{b})<script type="math/tex; ">, then </script>T(\textbf{x})=T(S(\textbf{b}))=\textbf{b}<script type="math/tex; ">,
+  so each </script>\textbf{b}<script type="math/tex; "> is in the range of </script>T<script type="math/tex; ">.
+* Thus </script>A<script type="math/tex; "> is invertible, by the Invertible Matrix Theorem, statement (9).
+* Conversely, suppose that </script>A<script type="math/tex; "> is invertible, and let </script>S(\textbf{x})=A^{-1}\textbf{x}<script type="math/tex; ">.
+* Then, </script>S<script type="math/tex; "> is a linear transformation, and </script>S<script type="math/tex; "> satisfies (1) and (2).
+* For instance, </script>S(T(\textbf{x})) = S(A\textbf{x})=A^{-1}(A\textbf{x})=\textbf{x}<script type="math/tex; ">.
+* Thus, </script>T$$ is invertible.</p>
 
                                 
                                 </section>
@@ -690,12 +772,12 @@ is given by
 
             
                 
-                <a href="la_01_09.html" class="navigation navigation-prev " aria-label="Previous page: 01 09 The Matrix of a Linear Transformation">
+                <a href="la_02_02.html" class="navigation navigation-prev " aria-label="Previous page: 02_02_Inverse_Matrix">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_02_01.html" class="navigation navigation-next " aria-label="Next page: 02_01_Matrix_Algebra">
+                <a href="la_05_01.html" class="navigation navigation-next " aria-label="Next page: 05_01">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -706,7 +788,7 @@ is given by
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"10_02 Difference Equation","level":"1.3.10","depth":2,"next":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},"previous":{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","mtime":"2019-08-20T12:30:49.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T03:33:13.020Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"0203","level":"1.3.13","depth":2,"next":{"title":"05_01","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_03.md","mtime":"2019-09-23T03:27:23.831Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T03:33:13.020Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
