@@ -619,13 +619,13 @@ That is, for a given <script type="math/tex; ">A</script>, the statements are ei
 <li><p>First, we need some notation.</p>
 </li>
 <li>If the truth of statement (1) always implies that statment (10) is true, we say that (1) implies (10) and write <script type="math/tex; ">(1) \Rightarrow (10)</script>.</li>
-<li>The proof will establish the &quot;circle&quot; of implications as shown in the following figure.</li>
-</ol>
+<li><p>The proof will establish the &quot;circle&quot; of implications as shown in the following figure.</p>
 <p><img src="fig/la_02_03_01.png" alt="fig"></p>
-<ul>
-<li>If any one of these five statements is true, then so are the others.</li>
+</li>
+<li><p>If any one of these five statements is true, then so are the others.</p>
+</li>
 <li>Finally, the proof will link the remaining statements of the theorem to the statements in this circle.</li>
-</ul>
+</ol>
 <h3 id="proof">Proof:</h3>
 <p>If statement (1) is true, then <script type="math/tex; "> A^{-1}</script> works for <script type="math/tex; ">C</script> in (10), so <script type="math/tex; ">(1) \Rightarrow (10)</script>.</p>
 <p>Next, <script type="math/tex; ">(10) \Rightarrow (4)</script>.</p>
@@ -641,7 +641,8 @@ That is, for a given <script type="math/tex; ">A</script>, the statements are ei
 <p>Since <script type="math/tex; ">(4)</script> is linked to the circle, so are <script type="math/tex; ">(5)</script> and <script type="math/tex; ">(6)</script>, because <script type="math/tex; ">(4)</script>, <script type="math/tex; ">(5)</script>, and <script type="math/tex; ">(6)</script> are all equivalent for any matrix <script type="math/tex; ">A</script>.</p>
 <p>Finalyy, <script type="math/tex; ">(1) \Rightarrow (12)</script> and <script type="math/tex; ">(12) \Rightarrow (1)</script>.</p>
 <p>This completes the proof. <script type="math/tex; ">\blacksquare</script></p>
-<h2 id=""><img src="fig/la_02_03_01b.png" alt="fig"></h2>
+<p> <img src="fig/la_02_03_01b.png" alt="fig"></p>
+<hr>
 <p><strong>Theorem 8</strong> could also be written as </p>
 <p><strong>The equation <script type="math/tex; ">A\textbf{x} =\textbf{b}</script> has a unique solution for each <script type="math/tex; ">\textbf{b}</script> in <script type="math/tex; ">\mathbb{R}^n</script>.</strong></p>
 <ul>
@@ -699,18 +700,18 @@ of solutions of equation of the form <script type="math/tex; ">A\textbf{x}=\text
 <h2 id="invertible-linear-transformations">Invertible Linear Transformations</h2>
 <ul>
 <li><strong>Matrix multiplication</strong> corresponds to <strong>composition of linear transformations</strong>.</li>
-<li>When a matrix <script type="math/tex; ">A</script> is invertible, 
+<li><p>When a matrix <script type="math/tex; ">A</script> is invertible, 
 the equation <script type="math/tex; ">A^{-1}A\textbf{x}=\textbf{x}</script> can be viewed as 
-a statement about <strong>linear transformations</strong>. See the following figure.</li>
-</ul>
+a statement about <strong>linear transformations</strong>. See the following figure.</p>
 <p><img src="fig/la_02_03_02.png" alt="fig"></p>
-<ul>
-<li>A linear transformation <script type="math/tex; ">T: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> is said to be invertible 
+</li>
+<li><p>A linear transformation <script type="math/tex; ">T: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> is said to be invertible 
 if there exists a function <script type="math/tex; ">S: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> such that
 <script type="math/tex; mode=display">
-S(T(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{1}\\
-T(S(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tags{2}\\
-</script></li>
+S(T(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tag{1}\\
+T(S(\textbf{x})) = \textbf{x} \text{for all }\textbf{x}\text{ in }\mathbb{R}^n \tag{2}\\
+</script></p>
+</li>
 </ul>
 <hr>
 <h2 id="theorem-9">Theorem 9:</h2>
@@ -775,7 +776,7 @@ so each <script type="math/tex; ">\textbf{b}</script> is in the range of <script
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"next":{"title":"05_01","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_03.md","mtime":"2019-09-23T03:46:51.732Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T03:46:57.040Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"next":{"title":"05_01","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_03.md","mtime":"2019-09-23T03:49:21.826Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-23T03:49:27.346Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
