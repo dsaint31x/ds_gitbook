@@ -612,6 +612,7 @@ B=BI=B(AC)=(BA)C=IC=C
 A^{-1}A=I \text{ and } AA^{-1}=I
 </script> </li>
 </ul>
+<hr>
 <h3 id="theorem-4">Theorem 4</h3>
 <p>Let <script type="math/tex; ">A=\begin{bmatrix}a & b \\ c & d \end{bmatrix}</script>. If <script type="math/tex; ">ad-bc \ne 0</script>, then <script type="math/tex; ">A</script> is invertible and</p>
 <p><script type="math/tex; mode=display">
@@ -622,6 +623,7 @@ A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d &-b \\ -c & a\end{bmatrix}
 <li>The quantity <script type="math/tex; ">ad-bc</script> is called the <strong>determinant</strong> of <script type="math/tex; ">A</script>, and we write <script type="math/tex; ">\text{det} A = ad-bc</script>.</li>
 <li>This theorem says that a <script type="math/tex; ">2\times 2</script> matrix <script type="math/tex; ">A</script> is invertible if and only if <script type="math/tex; ">\text{det} A \ne 0</script>.</li>
 </ul>
+<h2 id="--">---</h2>
 <h3 id="theorem-5">Theorem 5</h3>
 <p>If <script type="math/tex; ">A</script> is an invertible <script type="math/tex; ">n \times n</script> matrix, then for each <script type="math/tex; ">b</script> in <script type="math/tex; ">\mathbb{R}^n</script>, the equation <script type="math/tex; ">A\textbf{x}=\textbf{b}</script> has <strong>the unique solution <script type="math/tex; ">\textbf{x}=A^{-1}\textbf{b}</script></strong>.</p>
 <h4 id="proof">Proof:</h4>
@@ -630,8 +632,14 @@ A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d &-b \\ -c & a\end{bmatrix}
 <li>A solution exists because if <script type="math/tex; ">A^{-1}\textbf{b}</script> is substituted for <script type="math/tex; ">\textbf{x}</script>, then  <script type="math/tex; ">A\textbf{x}=A(A^{-1}\textbf{b})=(AA^{-1})\textbf{b}=I\textbf{b}=\textbf{b}</script>.</li>
 <li>So <script type="math/tex; ">A^{-1}\textbf{b}</script>  is a solution.</li>
 <li>To prove that <strong>the solution is unique</strong>, show that if <script type="math/tex; ">\textbf{u}</script> is any solution, then <script type="math/tex; ">\textbf{u}</script> must be <script type="math/tex; ">A^{-1}\textbf{b}</script>.</li>
-<li>If <script type="math/tex; ">A\textbf{u}=\textbf{b}</script> we can multiply both sides by <script type="math/tex; ">\textbf{A}^{-1}</script> and obtain <script type="math/tex; ">A^{-1}A\textbf{u}=A^{-1}\textbf{b},I\textbf{u}=A^{-1}\textbf{b}</script>, and <script type="math/tex; ">\textbf{u}=A^{-1}\textbf{b}</script>.</li>
+<li>If <script type="math/tex; ">A\textbf{u}=\textbf{b}</script> we can multiply both sides by <script type="math/tex; ">\textbf{A}^{-1}</script> and obtain 
+<script type="math/tex; mode=display">
+A^{-1}A\textbf{u}=A^{-1}\textbf{b}, \\
+I\textbf{u}=A^{-1}\textbf{b} \text{, and} \\ 
+\textbf{u}=A^{-1}\textbf{b} \blacksquare
+</script>.</li>
 </ul>
+<hr>
 <h3 id="theorem-6">Theorem 6</h3>
 <ol>
 <li>If <script type="math/tex; ">A</script> is an invertible matrix, then <script type="math/tex; ">A^{-1}</script> is invertible and 
@@ -663,7 +671,7 @@ A^{-1}C=I \text{ and } CA^{-1}=I
 <ul>
 <li>A similar calculation shows that <script type="math/tex; ">(B^{-1}A^{-1})(AB)=I</script>.</li>
 </ul>
-<p>For statement 3., use <a href="la_02_01.html#Theorem-3">Theorem 3(d)</a>, read from right to left,
+<p>For statement 3., use <a href="la_02_01.html#theorem-3">Theorem 3(4)</a>, read from right to left,
 <script type="math/tex; mode=display">
 (A^{-1})^TA^T = (AA^{-1})^T=I^T=I.
 </script></p>
@@ -671,83 +679,175 @@ A^{-1}C=I \text{ and } CA^{-1}=I
 <li>Similarly, <script type="math/tex; ">A^T(A^{-1})^T=I^T=I</script>.</li>
 <li>Hence <script type="math/tex; ">A^{T}</script> is invertible, and its inverse is <script type="math/tex; ">(A^{-1})^T</script>.</li>
 </ul>
+<hr>
+<p>The generalization of <a href="#theorem-6">Theorem 6(2)</a> is as follows: </p>
+<blockquote>
+<p>The product of <script type="math/tex; ">n \times n</script> invertible matrices is invertible, and the inverse is <strong>the product of their inverses in the reverse order</strong>.</p>
+</blockquote>
+<ul>
+<li>There is an <strong>important connection between invertible matrices and row operations</strong> that leads to a method for computing inverses.</li>
+<li>An invertible matrix <script type="math/tex; ">A</script> is <strong><a href="https://en.wikipedia.org/wiki/Row_equivalence" target="_blank">row equivalent</a></strong> to 
+an identity matrix, 
+and we can find <script type="math/tex; ">A^{-1}</script> 
+by <em>watching the <a href="la_01_02.html#Theorem-1-uniqueness-of-the-reduced-echelon-form">row reduction</a> of <script type="math/tex; ">A</script> to <script type="math/tex; ">I</script></em>.</li>
+</ul>
+<hr>
 <h2 id="elementary-matrices">Elementary Matrices</h2>
 <ul>
-<li>The generalization of Theorem 6(2) is as follows: <ul>
-<li>The product of <script type="math/tex; ">n \times n</script> invertible matrices is invertible, and the inverse is <strong>the product of their inverses in the reverse order</strong>.</li>
+<li>An <a href="https://en.wikipedia.org/wiki/Elementary_matrix" target="_blank"><strong>elementary matrix</strong></a> is one 
+that is obtained by performing a single <a href="la_01_01.html#elementary-row-operations">elementary row operation</a> 
+on an identity matrix.</li>
 </ul>
-</li>
-<li>An invertible matrix <script type="math/tex; ">A</script> is <strong><a href="https://en.wikipedia.org/wiki/Row_equivalence" target="_blank">row equivalent</a></strong> to an identity matrix, and we can find <script type="math/tex; ">A^{-1}</script> by watching the row reduction of <script type="math/tex; ">A</script> to <script type="math/tex; ">I</script>.</li>
-<li>An <a href="https://en.wikipedia.org/wiki/Elementary_matrix" target="_blank"><strong>elementary matrix</strong></a> is one that is obtained by performing a single elementary row operation on an identity matrix.</li>
-</ul>
+<blockquote>
+<p>Elementary Row Operations &#xC5D0; &#xB300;&#xD55C; &#xBCF5;&#xC2B5; &#xBC18;&#xB4DC;&#xC2DC; &#xD544;&#xC694;&#xD568;.
+<a href="la_01_01.html#elementary-row-operations">elementary row operation</a></p>
+</blockquote>
 <h3 id="example-5">Example 5</h3>
 <p>Let <script type="math/tex; "> E_1 = \begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ -4 & 0 & 1 \end{bmatrix} </script> , <script type="math/tex; "> E_2 = \begin{bmatrix}0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix} </script>, <script type="math/tex; "> E_3 = \begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 5 \end{bmatrix} </script>, <script type="math/tex; "> A = \begin{bmatrix}a & b & c \\ d & e & f \\ g & h & i \end{bmatrix}</script></p>
 <p>Compute <script type="math/tex; "> E_1A, E_2A </script>, and <script type="math/tex; ">E_3 A</script>, and describe how these prodcuts can be obtained by elementary row operations on <script type="math/tex; ">A</script>.</p>
 <h4 id="solution">Solution:</h4>
 <p>Verify that</p>
 <p><script type="math/tex; mode=display">
-E_1A = \begin{bmatrix} a & b & c \\ d & e & f \\ g-4a & h-4b & i-4c \end{bmatrix}, E_2A = \begin{bmatrix} d & e & f \\ a & b & c \\ g & h & i \end{bmatrix} , E_2 A = \begin{bmatrix} a & b & c \\ d & e & f \\ 5g & 5h & 5i \end{bmatrix}
+E_1A = 
+\begin{bmatrix} 
+a & b & c \\ 
+d & e & f \\ 
+g-4a & h-4b & i-4c 
+\end{bmatrix}, 
+E_2A = 
+\begin{bmatrix} 
+d & e & f \\ 
+a & b & c \\ 
+g & h & i 
+\end{bmatrix}, 
+E_2 A = 
+\begin{bmatrix} 
+a & b & c \\ 
+d & e & f \\ 
+5g & 5h & 5i 
+\end{bmatrix}
 </script></p>
 <ul>
-<li>Addition of -4 time row 1 of <script type="math/tex; ">A</script> to row 3 produces <script type="math/tex; ">E1_A</script>.</li>
-<li>An interchange of rows 1 and 2 of <script type="math/tex; ">A</script> produces <script type="math/tex; ">E_2,A</script>, and multiplication of row 3 of <script type="math/tex; ">A</script> by 5 produces <script type="math/tex; ">E_3A</script>.</li>
-<li>Left-multiplication (that is, multiplication on the left) by <script type="math/tex; ">E_1</script> in Example 1 has the same effect on any <script type="math/tex; ">3 \times n</script> matrix. </li>
-<li>Since <script type="math/tex; ">E_1 \cdot I = E_1</script>, we see that <script type="math/tex; ">E_1</script> itself is prodcued by this same row operation on the identity.</li>
+<li>Addition of -4 time row 1 of <script type="math/tex; ">A</script> to row 3 produces <script type="math/tex; ">E_1A</script> : <strong>Relplacement</strong>.</li>
+<li>An <strong>interchange</strong> of rows 1 and 2 of <script type="math/tex; ">A</script> produces <script type="math/tex; ">E_2 A</script>, and </li>
+<li>multiplication of row 3 of <script type="math/tex; ">A</script> by 5 produces <script type="math/tex; ">E_3A</script> : <strong>Scaling</strong>.</li>
+<li><strong>Left-multiplication (that is, multiplication on the left) by <script type="math/tex; ">E_1</script></strong> in Example 1 has <strong>the same effect on any <script type="math/tex; ">3 \times n</script> matrix</strong>. <blockquote>
+<p>&#xB9E4;&#xC6B0; &#xC911;&#xC694;&#xD568;. Elementary Matrix&#xB97C; &#xC6B0;&#xB9AC;&#xAC00; &#xBC30;&#xC6B0;&#xB294; &#xC774;&#xC720; &#xC911; &#xD558;&#xB098;&#xC784;. </p>
+</blockquote>
+</li>
+<li>Since <script type="math/tex; ">E_1 I = E_1</script>, we see that <script type="math/tex; ">E_1</script> itself is prodcued by this same row operation on the identity.<blockquote>
+<p>&#xB9E4;&#xC6B0; &#xC27D;&#xAC8C; Elementary Matrix&#xB97C; &#xAD6C;&#xD560; &#xC218; &#xC788;&#xC74C;. row operation&#xC744; product of matrix&#xB85C; &#xAD6C;&#xD604;&#xD560; &#xC218; &#xC788;&#xC74C;.</p>
+</blockquote>
+</li>
 </ul>
 <p>Example 5 illustrates the following general fact about elementary matrices.</p>
 <ul>
-<li>If an elementary row operation is performed on an <script type="math/tex; ">m \times n</script> matrix <script type="math/tex; ">A</script>, the resulting matrix can be written as <script type="math/tex; ">EA</script> where the matrix <script type="math/tex; ">E</script> is created by performing the same row operation on <script type="math/tex; ">I_m</script>.</li>
-<li>Each elementary matrix <script type="math/tex; ">E</script> is invertible. The inverse of <script type="math/tex; ">E</script> is the elementary matrix of the same type that transforms <script type="math/tex; ">E</script> back into <script type="math/tex; ">I</script>.</li>
+<li>If an elementary row operation is performed on an <script type="math/tex; ">m \times n</script> matrix <script type="math/tex; ">A</script>, 
+the <strong>resulting matrix can be written as <script type="math/tex; ">EA</script></strong><br>where the <script type="math/tex; ">m \times m</script> matrix <script type="math/tex; ">E</script> is created 
+by performing <strong>the same row operation on <script type="math/tex; ">I_m</script></strong>.</li>
+<li><strong>Each elementary matrix <script type="math/tex; ">E</script> is invertible</strong>. The inverse of <script type="math/tex; ">E</script> is <strong>the elementary matrix</strong> of the same type that transforms <script type="math/tex; ">E</script> back into <script type="math/tex; ">I</script>.</li>
 </ul>
+<hr>
 <h3 id="theorem-7">Theorem 7</h3>
 <p>An <script type="math/tex; ">n \times n</script> matrix <script type="math/tex; ">A</script> is invertible if and only if <script type="math/tex; ">A</script> is row equivalent to <script type="math/tex; ">I_n</script>, and in this case, any sequence of elementary row operations that reduces <script type="math/tex; ">A</script> to <script type="math/tex; ">I_n</script> also transforms <script type="math/tex; ">I_n</script> into <script type="math/tex; ">A^{-1}</script>.</p>
 <h4 id="proof">Proof:</h4>
 <ul>
 <li>Suppose that <script type="math/tex; ">A</script> is invertible.</li>
 <li>Then, since the equation <script type="math/tex; ">A\textbf{x}=\textbf{b}</script> has a solution for each <script type="math/tex; ">\textbf{b}</script>(Theorem 5), <script type="math/tex; ">A</script> <strong>has a pivot position in every row</strong>.</li>
-<li>Because <script type="math/tex; ">A</script> is square, the <script type="math/tex; ">n</script> pivot positions must be on the diagonal, which implies that the reduced echelon form of <script type="math/tex; ">A</script> is <script type="math/tex; ">I_n</script>. That is, <script type="math/tex; ">A \sim I_n</script>.</li>
-<li>Now suppose, conversely, that <script type="math/tex; ">A \sim I_n</script>.</li>
-<li>Then, since each step of the row reduction of <script type="math/tex; ">A</script> corresponds to left-multiplication by an elementary matrix, there exist elementary matrices <script type="math/tex; ">E_1, \cdots, E_p</script> such that <script type="math/tex; ">A \sim E_1A \sim E_2(E_1A) \sim \cdots E_p(E_{p-1}\cdots E_1 A)=I_n</script>.</li>
-<li>That is, 
+<li><p>Because <script type="math/tex; ">A</script> is square, the <script type="math/tex; ">n</script> pivot positions must be on the diagonal, which implies that the reduced echelon form of <script type="math/tex; ">A</script> is <script type="math/tex; ">I_n</script>. That is, <script type="math/tex; ">A \sim I_n</script>.</p>
+</li>
+<li><p>Now suppose, conversely, that <script type="math/tex; ">A \sim I_n</script>.</p>
+</li>
+<li>Then, since each step of the row reduction of <script type="math/tex; ">A</script> corresponds to left-multiplication by an elementary matrix, 
+there exist elementary matrices <script type="math/tex; ">E_1, \cdots, E_p</script> such that 
+<script type="math/tex; mode=display">
+A \sim E_1A \sim E_2(E_1A) \sim \cdots E_p(E_{p-1}\cdots E_1 A)=I_n
+</script>.</li>
+<li><p>That is, 
 <script type="math/tex; mode=display">
 E_p \cdots E_1 A = I_n \tag{1}
-</script></li>
-</ul>
-<p>Since the product <script type="math/tex; ">E_p \cdots E_1</script> of invertible matrices is invertible, (1) leads to
+</script></p>
+</li>
+<li><p>Since the product <script type="math/tex; ">E_p \cdots E_1</script> of invertible matrices is invertible, (1) leads to
 <script type="math/tex; mode=display">
 \begin {align}
 (E_p \cdots E_1)^{-1}(E_p \cdots E_1)A &= (E_p \cdots E_1)^{-1} I_n \\
 A&= (E_p \cdots E_1)^{-1}
 \end {align}
 </script></p>
+</li>
+<li><p>Thus <script type="math/tex; ">A</script> is invertible, as it is the inverse of an invertible matrix (<a href="#3-if-%3Cscript%20type=" math="" tex;="" "="">A-is-an-invertible-matrix&quot;&gt;Theorem 6</a>). Also, 
+<script type="math/tex; mode=display">
+A^{-1}= [ (E_p \cdots E_1)^{-1}]^{-1} = E_p \cdots E_1
+</script>.</p>
+</li>
+<li>Then <script type="math/tex; ">A^{-1} = E_p \cdots E_1 I_n</script>, 
+which says that <script type="math/tex; ">A^{-1}</script> results from 
+applying <script type="math/tex; ">E_p \cdots E_1</script> successively to <script type="math/tex; ">I_n</script>.</li>
+<li>This is the same sequence in (1) that reduced <script type="math/tex; ">A</script> to <script type="math/tex; ">I_n</script> <script type="math/tex; ">\blacksquare</script></li>
+</ul>
+<hr>
 <h3 id="algorithm-for-finding-a-to-the-negative-first-power">Algorithm for Finding A to the Negative First Power</h3>
 <ul>
-<li>Thus <script type="math/tex; ">A</script> is invertible, as it is the inverse of an invertible matrix (Theorem 6). Also, <script type="math/tex; ">A^{-1}= [ (E_p \cdots E_1)^{-1}]^{-1} = E_p \cdots E_1</script>.</li>
-<li>Then <script type="math/tex; ">A^{-1} = E_p \cdots E_1 \cdot I_n</script>, which says that <script type="math/tex; ">A^{-1}</script> results from applying <script type="math/tex; ">E_p \cdots E_1</script> successively to <script type="math/tex; ">I_n</script>.</li>
-<li>This is the same sequence in (1) that reduced <script type="math/tex; ">A</script> to <script type="math/tex; ">I_n</script></li>
-<li>Row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & I\end{bmatrix}</script>. If <script type="math/tex; ">A</script> is row equivalent to <script type="math/tex; ">I</script>, then <script type="math/tex; ">\begin{bmatrix}A & I\end{bmatrix}</script> is row equivalent to
-<script type="math/tex; ">\begin{bmatrix}I & A^{-1}\end{bmatrix}</script>. Otherwise, <script type="math/tex; ">A</script> does not have an inverse.</li>
+<li><strong>Row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & I\end{bmatrix}</script>.</strong> </li>
+<li>If <script type="math/tex; ">A</script> is row equivalent to <script type="math/tex; ">I</script>, 
+then <script type="math/tex; ">\begin{bmatrix}A & I\end{bmatrix}</script> is row equivalent to
+<script type="math/tex; ">\begin{bmatrix}I & A^{-1}\end{bmatrix}</script>. </li>
+<li>Otherwise, <script type="math/tex; ">A</script> does not have an inverse.</li>
 </ul>
 <h4 id="example-2">Example 2</h4>
-<p>Find the inverse of the matrix <script type="math/tex; ">A=\begin{bmatrix} 0 & 1 & 0 \\ 1 & 0 & 3 \\ 4 & -3 & 8 \end{bmatrix}</script>, if it exists.</p>
+<p>Find the inverse of the matrix <script type="math/tex; ">A=
+\begin{bmatrix} 
+0 & 1 & 2 \\ 
+1 & 0 & 3 \\ 
+4 & -3 & 8 
+\end{bmatrix}</script>, if it exists.</p>
 <h4 id="solution">Solution:</h4>
 <p><script type="math/tex; mode=display">
 \begin{align}
-\begin{bmatrix}A & I\end{bmatrix} &= \begin{bmatrix} 0 & 1 & 2 & 1 & 0 & 0 \\ 1 & 0 & 3 & 0 & 1 & 0 \\ 4 & -3 & 8 & 0 & 0 & 1 \end{bmatrix}
+\begin{bmatrix}A & I\end{bmatrix} &= 
+\begin{bmatrix} 
+0 & 1 & 2 & 1 & 0 & 0 \\ 
+1 & 0 & 3 & 0 & 1 & 0 \\ 
+4 & -3 & 8 & 0 & 0 & 1 
+\end{bmatrix}
 \sim
-\begin{bmatrix} 1 & 0 & 3 & 0 & 1 & 0 \\ 0 & 1 & 2 & 1 & 0 & 0 \\ 4 & -3 & 8 & 0 & 0 & 1 \end{bmatrix} \\
+\begin{bmatrix} 
+1 & 0 & 3 & 0 & 1 & 0 \\ 
+0 & 1 & 2 & 1 & 0 & 0 \\ 
+4 & -3 & 8 & 0 & 0 & 1 
+\end{bmatrix} \\
 & \sim
-\begin{bmatrix} 1 & 0 & 3 & 0 & 1 & 0 \\ 0 & 1 & 2 & 1 & 0 & 0 \\ 0 & -3 & -4 & 0 & -4 & 1 \end{bmatrix}
+\begin{bmatrix} 
+1 & 0 & 3 & 0 & 1 & 0 \\ 
+0 & 1 & 2 & 1 & 0 & 0 \\ 
+0 & -3 & -4 & 0 & -4 & 1 
+\end{bmatrix}
 \sim
-\begin{bmatrix} 1 & 0 & 3 & 0 & 1 & 0 \\ 0 & 1 & 2 & 1 & 0 & 0 \\ 0 & 0 & 2 & 3 & -4 & 1 \end{bmatrix} \\
+\begin{bmatrix} 
+1 & 0 & 3 & 0 & 1 & 0 \\ 
+0 & 1 & 2 & 1 & 0 & 0 \\ 
+0 & 0 & 2 & 3 & -4 & 1 
+\end{bmatrix} \\
 & \sim
-\begin{bmatrix} 1 & 0 & 3 & 0 & 1 & 0 \\ 0 & 1 & 2 & 1 & 0 & 0 \\ 0 & 0 & 1 & \frac{3}{2} & -2 & \frac{1}{2} \end{bmatrix} \\
+\begin{bmatrix} 
+1 & 0 & 3 & 0 & 1 & 0 \\ 
+0 & 1 & 2 & 1 & 0 & 0 \\ 
+0 & 0 & 1 & \frac{3}{2} & -2 & \frac{1}{2} 
+\end{bmatrix} \\
 & \sim
-\begin{bmatrix} 1 & 0 & 0 & -\frac{9}{2} & 7 & -\frac{3}{2} \\ 0 & 1 & 0 & -2 & 4 & -1 \\ 0 & 0 & 1 & \frac{3}{2} & -2 & \frac{1}{2} \end{bmatrix} 
+\begin{bmatrix} 
+1 & 0 & 0 & -\frac{9}{2} & 7 & -\frac{3}{2} \\ 
+0 & 1 & 0 & -2 & 4 & -1 \\ 
+0 & 0 & 1 & \frac{3}{2} & -2 & \frac{1}{2} 
+\end{bmatrix} 
 \end{align}
 </script></p>
 <ul>
-<li>Theorem 7 shows, since <script type="math/tex; "> A \sim I </script>, that <script type="math/tex; ">A</script> is invertible, and</li>
+<li>Theorem 7 shows, since <script type="math/tex; "> A \sim I </script>, that <script type="math/tex; ">A</script> is invertible, and<blockquote>
+<p><script type="math/tex; ">A</script> is row equivalent to <script type="math/tex; ">I_n</script>.</p>
+</blockquote>
+</li>
 </ul>
 <p><script type="math/tex; mode=display">
 A^{-1} = \begin{bmatrix} 
@@ -815,7 +915,7 @@ AA^{-1}=\begin{bmatrix} 0 & 1 & 2 \\ 1 & 0 & 3 \\ 4 & -3 & 8 \end{bmatrix}
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"next":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},"previous":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_02.md","mtime":"2019-09-24T02:19:26.830Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-24T02:19:36.248Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"next":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},"previous":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_02.md","mtime":"2019-09-24T04:11:21.859Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-24T04:11:27.688Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
