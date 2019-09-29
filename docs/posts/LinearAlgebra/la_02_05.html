@@ -637,8 +637,8 @@ it is more efficient to <strong>solve the <em>first equation</em> in the sequenc
 Thereafter the remaining equations in sequence(1) are solved with the <strong>LU factorization</strong>.</li>
 <li>At first, 
 assume that <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n </script> matrix 
-that can be <strong>row reduction</strong> to echelon form, 
-without row interchanges.</li>
+that can be <strong>row reduction</strong> to <strong>echelon form</strong>, 
+<strong>without row interchanges</strong>.</li>
 <li>Then <script type="math/tex; ">A</script> can be written in the form <script type="math/tex; ">A=LU</script>, where 
 <script type="math/tex; ">L</script> is an <script type="math/tex; ">m\times m</script> <strong>lower triangular matrix</strong> 
 with 1&apos;s on the diagonal and 
@@ -734,7 +734,7 @@ I & \textbf{y}
 <li>Then, for <script type="math/tex; ">U \textbf{x}=\textbf{y}</script>, 
 the <strong>&quot;backward&quot; phase of row reduction</strong> requires 4 divisions, 6 multiplications, and 6 additions.</li>
 <li>For instance, 
-creating the zeros in column 4 of <script type="math/tex; ">\begin{bmatrix} U & \textbf{y} \end{\bmatrix} </script> requires <strong>1 division in row 4</strong> and <strong>3 multiplication-addition pairs</strong> to <em>add multiples of row 4</em> to the rows above.</li>
+creating the zeros in column 4 of <script type="math/tex; ">\begin{bmatrix} U & \textbf{y} \end{bmatrix} </script> requires <strong>1 division in row 4</strong> and <strong>3 multiplication-addition pairs</strong> to <em>add multiples of row 4</em> to the rows above.</li>
 </ul>
 <p><script type="math/tex; mode=display">
 \begin{bmatrix}
@@ -798,14 +798,21 @@ This observation is the key to constructing <script type="math/tex; ">L</script>
 </ul>
 <h2 id="algorithm-for-an-l-u-factorization">Algorithm for an L U Factorization</h2>
 <ol>
-<li>Reduce <script type="math/tex; ">A</script> to an echelon form <script type="math/tex; ">U</script> 
+<li>Reduce <script type="math/tex; ">A</script> to <strong>an echelon form <script type="math/tex; ">U</script></strong> 
 by a sequence of row replacement operations, if possible.</li>
-<li><p>Place entries in <script type="math/tex; ">L</script> 
-such that the <em>same sequence of row operations</em> reduces <script type="math/tex; ">L</script> to <script type="math/tex; ">I</script>.</p>
+<li>Place entries in <script type="math/tex; ">L</script> 
+such that the <em>same sequence of row operations</em> reduces <script type="math/tex; ">L</script> to <script type="math/tex; ">I</script>.</li>
+</ol>
+<ul>
+<li><strong>Step 1 is not always possible</strong>, 
+but when it is, the argument above shows that an <script type="math/tex; ">L U</script> factorization exists.<blockquote>
+<p>square matrix&#xC774;&#xBA74;&#xC11C; interchange&#xC5C6;&#xC774; row reduction&#xC744; &#xC218;&#xD589;&#xD558;&#xC5EC; echelon form&#xC774; &#xB420; &#xC218; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBC18;&#xB4DC;&#xC2DC; LU Factorization&#xC774; &#xAC00;&#xB2A5;&#xD568; (&#xCDA9;&#xBD84;&#xC870;&#xAC74;&#xC73C;&#xB85C;, &#xC5ED;&#xC740; &#xC131;&#xB9BD;&#xD558;&#xC9C0; &#xC54A;&#xC74C;.).</p>
+<p>&#xC989;, interchage&#xB97C; &#xD574;&#xC57C;&#xB9CC; row echelon form&#xC774; &#xB418;&#xB354;&#xB77C;&#xB3C4; LU Factorization&#xC774; &#xB418;&#xB294; &#xACBD;&#xC6B0;&#xB3C4; &#xC874;&#xC7AC;&#xD568;.
+<script type="math/tex; "> A=\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 3 & 0 & 0 \end{bmatrix}=\begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 3 & 0 & 0 \end{bmatrix}\begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}= LU</script></p>
+</blockquote>
 </li>
-<li><p><strong>Step 1 is not always possible</strong>, 
-but when it is, the argument above shows that an <script type="math/tex; ">L U</script> factorization exists.</p>
-</li>
+</ul>
+<ul>
 <li>Example 2 will show how to implement step 2. 
 By construction, <script type="math/tex; ">L</script> will satisfy 
 <script type="math/tex; "> 
@@ -813,7 +820,7 @@ By construction, <script type="math/tex; ">L</script> will satisfy
 </script> 
 using the same <script type="math/tex; "> E_p, \cdots E_1 </script> as in equation (3). 
 Thus <script type="math/tex; ">L</script> will be invertible, by the invertible matrix theorem, with <script type="math/tex; "> (E_p \cdots E_1 ) = L^{-1} </script>. From (3), <script type="math/tex; "> L^{-1} A = U </script>, and <script type="math/tex; "> A = LU </script>. So step 2 will produce an acceptable <script type="math/tex; "> L </script>.</li>
-</ol>
+</ul>
 <h2 id="example-2">Example 2</h2>
 <p>Find an <script type="math/tex; ">LU</script> factorization of</p>
 <p><script type="math/tex; mode=display">
@@ -855,8 +862,14 @@ entries by the pivot and place the result onto <script type="math/tex; ">L</scri
 <p><img src="fig/la_02_05_e06.png" alt="eq6"></p>
 <ul>
 <li>An easy calculation verifies that this <script type="math/tex; ">L</script> and <script type="math/tex; ">U</script> satisfy <script type="math/tex; ">LU=A</script>
-<script type="math/tex; ">\blacksqare</script></li>
+<script type="math/tex; ">\blacksquare</script></li>
 </ul>
+<blockquote>
+<p>A &#xAC00; invertible &#xC774;&#xBA74;&#xC11C; LU factorizatoin&#xC774; &#xAC00;&#xB2A5;&#xD560; &#xACBD;&#xC6B0;,
+U(A&#xC758; row echelon form)&#xC758; diagonal entries&#xB294; &#xBAA8;&#xB450; 1&#xC774; &#xB420; &#xC218; &#xC788;&#xC73C;&#xBA70;, L&#xC758; diagonal entries&#xC5D0;&#xB294; 0&#xC774; &#xC874;&#xC7AC; &#xD558;&#xC9C0; &#xC54A;&#xC74C;(L&#xC774; triangular matrix&#xC774;&#xBA74;&#xC11C; invertible&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC784;.).
+L&#xB3C4; &#xBAA8;&#xB4E0; diagonal entries&#xB97C; 1&#xB85C; &#xB9CC;&#xB4E4;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; LU factorization&#xC744; &#xC870;&#xAE08; &#xBCC0;&#xD615;&#xD558;&#xC5EC; LDU factorization&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xB428;.
+LDU&#xC758; &#xACBD;&#xC6B0;, L&#xACFC; U&#xAC00; LU factorization&#xACFC; &#xB2EC;&#xB9AC; &#xC720;&#xC77C;&#xD558;&#xAC8C; &#xACB0;&#xC815;&#xB428;(&#xBB3C;&#xB860; D&#xB3C4; &#xC720;&#xC77C;).</p>
+</blockquote>
 
                                 
                                 </section>
@@ -884,7 +897,7 @@ entries by the pivot and place the result onto <script type="math/tex; ">L</scri
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"next":{"title":"05_01","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_05.md","mtime":"2019-09-29T11:34:57.173Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T11:35:06.349Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"next":{"title":"05_01","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_05.md","mtime":"2019-09-29T12:28:24.659Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T12:29:18.271Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
