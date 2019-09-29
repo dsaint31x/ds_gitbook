@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>02_06 · GitBook</title>
+        <title>02_06 The Leontief Input-Output Model · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -370,7 +370,7 @@
                 <a href="la_02_06.html">
             
                     
-                    02_06
+                    02_06 The Leontief Input-Output Model
             
                 </a>
             
@@ -614,7 +614,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >02_06</a>
+        <a href="../.." >02_06 The Leontief Input-Output Model</a>
     </h1>
 </div>
 
@@ -627,14 +627,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="ch02-matrix-algebra">Ch02. Matrix Algebra</h1>
-<h1 id="the-leontief-input-output-model">The Leontief Input-Output Model</h1>
+<h1 id="26-the-leontief-input-output-model">2.6 The Leontief Input-Output Model</h1>
 <p>Linear algebra played an essential role in the Nobel prize-winning work of Wassily Leontief.</p>
 <ul>
 <li>Suppose a nation&#x2019;s economy is divided into 
 <strong><script type="math/tex; ">n</script> sectors that produce goods or services</strong>, and let 
 <script type="math/tex; ">\textbf{x}</script> be a <strong>production vector</strong> in <script type="math/tex; ">\mathbb{R}^n</script> that lists the output of each sector for one year.</li>
 <li>Also, suppose another part of the economy 
-(called the <strong>open sector</strong>) does not produce goods or services but only consumes them, and let <script type="math/tex; ">d</script> be a <strong>final demand vector</strong> (or bill of final demands) that lists the values of the goods and services demanded from the various sectors by the <strong>nonproductive part of the economy</strong>.</li>
+(called the <strong>open sector</strong>) does not produce goods or services but only consumes them, and let <script type="math/tex; ">\textbf{d}</script> be a <strong>final demand vector</strong> (or bill of final demands) that lists the values of the goods and services demanded from the various sectors by the <strong>nonproductive part of the economy</strong>.</li>
 <li>As the various sectors produce goods to meet consumer demand,
 the producers themselves create additional <strong>intermediate demand</strong> for goods they need as inputs for their own production.</li>
 <li>Leontief asked if there is a production level <script type="math/tex; ">x</script> such that 
@@ -807,7 +807,7 @@ Manufacturing must produce approximately 226 units,
 agriculture 119 units, and services only 78 units.</li>
 </ul>
 <hr>
-<p>Theorem 11 : </p>
+<h2 id="theorem-11-">Theorem 11 :</h2>
 <p>Let <script type="math/tex; ">C</script> be the consumption matrix for an economy, and 
 let <script type="math/tex; ">d</script> be the final demand. 
 If <script type="math/tex; ">C</script> and <script type="math/tex; ">d</script> have nonnegative entries and 
@@ -824,6 +824,81 @@ has nonnegative entries and is the unique solution of
 <li>In the theorem, the term <strong>column sum</strong> denotes the sum of the entries in a column of a matrix. </li>
 <li>Under ordinary circumstances, the column sums of a consumption matrix are less than 1 because a sector should require less than
 one unit&#x2019;s worth of inputs to produce on unit of output.</li>
+</ul>
+<hr>
+<h2 id="a-formula-for-i-c-1">A Formula for <script type="math/tex; ">(I-C)^{-1}</script></h2>
+<ul>
+<li>Imagine that the demand represented by <script type="math/tex; ">\textbf{d}</script> is presented to the various industries at the beginning of the year, and the industries respond by setting their production levels at <script type="math/tex; ">\textbf{x} = \textbf{d}</script>, which will exactly meet the final demand. As the industries prepare to produce <script type="math/tex; ">\textbf{d}</script>, they send out orders for their raw materials and other inputs. This creates an intermediate demand of C<script type="math/tex; ">\textbf{d}</script> for inputs.</li>
+<li>To meet the additional demand of <script type="math/tex; ">C\textbf{d}</script>, the industries will need as additional inputs the amounts in <script type="math/tex; ">C(C\textbf{d})= C^2\textbf{d}</script>. Of course, this creates a second round of intermediate demand, and when the industries decide to produce even more to meet this new demand, they create a third round of demand, namely, <script type="math/tex; ">C(C^2\textbf{d}) = C^3\textbf{d}</script>. And so it goes.</li>
+<li>Theoretically, this process could continue indefinitely, although in real life it would not take place in such a rigid sequence of events. We can diagram this hypothetical situation as follows:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Demand That Must Be Met</th>
+<th>Inputs Needed to Meet This Demand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Final demand</td>
+<td><script type="math/tex; ">\textbf{d}</script></td>
+<td><script type="math/tex; ">C\textbf{d}</script></td>
+</tr>
+<tr>
+<td>Intermediate demand</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1st round</td>
+<td><script type="math/tex; ">C\textbf{d}</script></td>
+<td><script type="math/tex; ">C(C\textbf{d})=C^2\textbf{d}</script></td>
+</tr>
+<tr>
+<td>2st round</td>
+<td><script type="math/tex; ">C^2\textbf{d}</script></td>
+<td><script type="math/tex; ">C(C^2\textbf{d})=C^3\textbf{d}</script></td>
+</tr>
+<tr>
+<td>3rd round</td>
+<td><script type="math/tex; ">C^3\textbf{d}</script></td>
+<td><script type="math/tex; ">C(C^3\textbf{d})=C^4\textbf{d}</script></td>
+</tr>
+<tr>
+<td><script type="math/tex; ">\vdots</script></td>
+<td><script type="math/tex; ">\vdots</script></td>
+<td><script type="math/tex; ">\vdots</script></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The production level <script type="math/tex; ">\textbf{x}</script> that will meet all of this demand is</li>
+</ul>
+<p><script type="math/tex; ">
+\begin{align}
+\textbf{x} &= \textbf{d} + C\textbf{d} + C^2\textbf{d} + C^3\textbf{d} + \cdots \\
+&= (I+C+C^2+C^3+\cdots)\textbf{d}
+\end{align} \tag{6}
+</script></p>
+<ul>
+<li>To make sense of equation (6), consider the following algebraic identity:</li>
+</ul>
+<p><script type="math/tex; ">
+(I-C)(I+C+C^2+\cdots+C^m)=I-C^{m+1} \tag{7}
+</script></p>
+<p>It can be shown that if the column sums in <script type="math/tex; ">C</script> are all strictly less than 1, then <script type="math/tex; ">I-C</script> is invertible, <script type="math/tex; ">C^m</script> approaches the zero matrix as <script type="math/tex; ">m</script> gets arbitrarily large, and <script type="math/tex; ">I-C^{m+1} \rightarrow I</script>.(This fact is analogous to the fact that if a positive number <script type="math/tex; ">t</script> is less than 1, then <script type="math/tex; ">t^m \rightarrow 0</script> as <script type="math/tex; ">m</script> increases.) Using equation (7), write</p>
+<blockquote>
+<p><script type="math/tex; ">
+(I-C)^{-1} \approx I + C^2+C^3+\cdots+C^m
+</script></p>
+<p>when the column sums of <script type="math/tex; ">C</script> are less than 1. <script type="math/tex; ">\tag{8}</script></p>
+</blockquote>
+<ul>
+<li>The approximation in (8) means that the right side can be made as close to <script type="math/tex; ">(I-C)^{-1}</script> as desired by taking <script type="math/tex; ">m</script> sufficiently large.</li>
+<li><strong>In actual input&#x2013;output models, powers of the consumption matrix approach the zero matrix rather quickly.</strong> So <strong>(8) really provides a <em>practical way</em> to compute <script type="math/tex; ">(I-C)^{-1}</script></strong>.</li>
+<li>Likewise, for any <script type="math/tex; ">\textbf{d}</script>, <strong>the vectors <script type="math/tex; ">C^m\textbf{d}</script> approach the zero vector quickly</strong>, and **(6) is a practical way to solve (I-C)\textbf{x}= \textbf{d}<script type="math/tex; ">**. If the entries in </script>C<script type="math/tex; "> and </script>\textbf{d}<script type="math/tex; "> are nonnegative, then (6) shows that the entries in </script>\textbf{x}$$ are nonnegative, too.</li>
 </ul>
 
                                 
@@ -852,7 +927,7 @@ one unit&#x2019;s worth of inputs to produce on unit of output.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_06","level":"1.3.16","depth":2,"next":{"title":"05_01","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_06.md","mtime":"2019-09-29T13:51:06.699Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T13:51:13.023Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"next":{"title":"05_01","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_06.md","mtime":"2019-09-29T14:40:10.926Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T14:40:19.463Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
