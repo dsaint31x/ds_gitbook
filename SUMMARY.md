@@ -20,6 +20,7 @@
   * [02_02_Inverse_Matrix](posts/LinearAlgebra/la_02_02.md)
   * [02_03 Characterizations of Invertible Matrices](posts/LinearAlgebra/la_02_03.md)
   * [02_04 Partitioned Matrices](posts/LinearAlgebra/la_02_04.md)
+  * [02_05 Matrix Factorization](posts/LinearAlgebra/la_02_05.md)
   * [05_01](posts/LinearAlgebra/la_05_01.md)
   * [05_02](posts/LinearAlgebra/la_05_02.md)
   * [05_03](posts/LinearAlgebra/la_05_03.md)
