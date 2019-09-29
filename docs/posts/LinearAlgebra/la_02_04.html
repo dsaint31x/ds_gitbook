@@ -611,9 +611,9 @@
 <p>Partition : &#xBD84;&#xD560;. ~ to divide matrix into multiple blocks</p>
 <ul>
 <li>to simplify matrix.</li>
-<li>to focus on the impotant part of matrix.
-Factorization : &#xBD84;&#xD574;.</li>
+<li>to focus on the impotant part of matrix.</li>
 </ul>
+<p>Factorization : &#xBD84;&#xD574;.</p>
 </blockquote>
 <h3 id="example-1">Example 1:</h3>
 <p>The matrix </p>
@@ -645,7 +645,8 @@ A_{12}= \begin{bmatrix}
 0 & -3 
 \end{bmatrix},
 A_{13}= \begin{bmatrix} 
--2 & 1 
+-2 \\
+ 1 
 \end{bmatrix} \\
 A_{21} = \begin{bmatrix} 
 -8 & -6 & 3 
@@ -689,14 +690,15 @@ A_{11} & A_{12} \\
 A_{21} & A_{22} 
 \end{bmatrix}
 ,
-B= \begin{bmatix}
+B= \left[ 
+\begin{array}
 6 & 4 \\ 
 -2 & 1 \\
 -3 & 7 \\
 \hline
 -1 & 3 \\
 5 & 2
-\end {bmatrix}
+\end {array}
 =
 \begin{bmatrix}
 B_1 \\
@@ -729,7 +731,7 @@ A_{21}B_{1} + A_{22}B_{2}
 \begin{array} 
 -5 & 4 \\ 
 -6 & 2 \\ 
-hline 
+\hline 
 2 & 1 
 \end{array} 
 \right]
@@ -780,12 +782,12 @@ A_{11}B_1+A_{12}B_1 =
 \begin{bmatrix}
 15 & 12 \\ 
 2 & -5 
-\end{bmatirx}
+\end{bmatrix}
 +
 \begin{bmatrix}
 -20 & -8  \\
  -8 & 7 
-\end{bmatirx} 
+\end{bmatrix} 
 = 
 \begin{bmatrix} 
 -5 & 4 \\ 
@@ -807,7 +809,7 @@ AB &=
 \text{row}_n(B) 
 \end{bmatrix} \\
 &= 
-\text{col}_1(A)\text{row}_1(B) + \cdots + \text{col}_n(A) \text{row}_n(B) \tags{1}
+\text{col}_1(A)\text{row}_1(B) + \cdots + \text{col}_n(A) \text{row}_n(B) \tag{1}
 \end{array}
 </script></p>
 <h3 id="proof">Proof</h3>
@@ -849,7 +851,7 @@ B_{21} & B_{22}
 \begin{bmatrix} 
 I_p & 0 \\ 
 0 & I_q 
-\end{bmatrix} \tags{2}
+\end{bmatrix} \tag{2}
 </script></p>
 <ul>
 <li>This matrix equation provides four equations that will lead to the unknown blocks, 
@@ -861,10 +863,10 @@ in the identity matrix on the right.</li>
 </ul>
 <p><script type="math/tex; mode=display">
 \begin{align}
-A_{11}B_{11} + A_{12}B_{21} &= I_p \tags(3) \\ 
-A_{11}B_{11} + A_{12}B_{22} &= 0 \tags(4) \\ 
-A_{22}B_{21} &= 0 \tags(5) \\ 
-A_{22}B_{22} &= I_1 \tags(6)  
+A_{11}B_{11} + A_{12}B_{21} &= I_p \tag(3) \\ 
+A_{11}B_{11} + A_{12}B_{22} &= 0 \tag(4) \\ 
+A_{22}B_{21} &= 0 \tag(5) \\ 
+A_{22}B_{22} &= I_1 \tag(6)  
 \end{align}
 </script></p>
 <ul>
@@ -899,7 +901,7 @@ A_{11} & A_{12} \\
 \begin{bmatrix} 
 A_{11}^{-1} & -A_{11}^{-1}A_{12}A_{22}^{-1} \\ 
 0 & A_{22}^{-1} 
-\end {bmatrix} 
+\end {bmatrix} \\
 \blacksquare
 </script></p>
 <ul>
@@ -932,7 +934,7 @@ A_{11}^{-1} & -A_{11}^{-1}A_{12}A_{22}^{-1} \\
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"next":{"title":"05_01","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_04.md","mtime":"2019-09-29T08:30:16.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T08:38:16.454Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"next":{"title":"05_01","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_04.md","mtime":"2019-09-29T08:46:57.224Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T08:50:52.059Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
