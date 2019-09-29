@@ -836,40 +836,40 @@ one unit&#x2019;s worth of inputs to produce on unit of output.</li>
 <thead>
 <tr>
 <th></th>
-<th>Demand That Must Be Met</th>
-<th>Inputs Needed to Meet This Demand</th>
+<th style="text-align:center">Demand That Must Be Met</th>
+<th style="text-align:center">Inputs Needed to Meet This Demand</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Final demand</td>
-<td><script type="math/tex; ">\textbf{d}</script></td>
-<td><script type="math/tex; ">C\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">C\textbf{d}</script></td>
 </tr>
 <tr>
 <td>Intermediate demand</td>
-<td></td>
-<td></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
 </tr>
 <tr>
 <td>1st round</td>
-<td><script type="math/tex; ">C\textbf{d}</script></td>
-<td><script type="math/tex; ">C(C\textbf{d})=C^2\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">C\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">C(C\textbf{d})=C^2\textbf{d}</script></td>
 </tr>
 <tr>
 <td>2st round</td>
-<td><script type="math/tex; ">C^2\textbf{d}</script></td>
-<td><script type="math/tex; ">C(C^2\textbf{d})=C^3\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">C^2\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">C(C^2\textbf{d})=C^3\textbf{d}</script></td>
 </tr>
 <tr>
 <td>3rd round</td>
-<td><script type="math/tex; ">C^3\textbf{d}</script></td>
-<td><script type="math/tex; ">C(C^3\textbf{d})=C^4\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">C^3\textbf{d}</script></td>
+<td style="text-align:center"><script type="math/tex; ">C(C^3\textbf{d})=C^4\textbf{d}</script></td>
 </tr>
 <tr>
 <td><script type="math/tex; ">\vdots</script></td>
-<td><script type="math/tex; ">\vdots</script></td>
-<td><script type="math/tex; ">\vdots</script></td>
+<td style="text-align:center"><script type="math/tex; ">\vdots</script></td>
+<td style="text-align:center"><script type="math/tex; ">\vdots</script></td>
 </tr>
 </tbody>
 </table>
@@ -889,16 +889,14 @@ one unit&#x2019;s worth of inputs to produce on unit of output.</li>
 (I-C)(I+C+C^2+\cdots+C^m)=I-C^{m+1} \tag{7}
 </script></p>
 <p>It can be shown that if the column sums in <script type="math/tex; ">C</script> are all strictly less than 1, then <script type="math/tex; ">I-C</script> is invertible, <script type="math/tex; ">C^m</script> approaches the zero matrix as <script type="math/tex; ">m</script> gets arbitrarily large, and <script type="math/tex; ">I-C^{m+1} \rightarrow I</script>.(This fact is analogous to the fact that if a positive number <script type="math/tex; ">t</script> is less than 1, then <script type="math/tex; ">t^m \rightarrow 0</script> as <script type="math/tex; ">m</script> increases.) Using equation (7), write</p>
-<blockquote>
 <p><script type="math/tex; ">
-(I-C)^{-1} \approx I + C^2+C^3+\cdots+C^m
+(I-C)^{-1} \approx I + C^2+C^3+\cdots+C^m \tag{8}
 </script></p>
-<p>when the column sums of <script type="math/tex; ">C</script> are less than 1. <script type="math/tex; ">\tag{8}</script></p>
-</blockquote>
+<p>when the column sums of <script type="math/tex; ">C</script> are less than 1.</p>
 <ul>
 <li>The approximation in (8) means that the right side can be made as close to <script type="math/tex; ">(I-C)^{-1}</script> as desired by taking <script type="math/tex; ">m</script> sufficiently large.</li>
 <li><strong>In actual input&#x2013;output models, powers of the consumption matrix approach the zero matrix rather quickly.</strong> So <strong>(8) really provides a <em>practical way</em> to compute <script type="math/tex; ">(I-C)^{-1}</script></strong>.</li>
-<li>Likewise, for any <script type="math/tex; ">\textbf{d}</script>, <strong>the vectors <script type="math/tex; ">C^m\textbf{d}</script> approach the zero vector quickly</strong>, and **(6) is a practical way to solve (I-C)\textbf{x}= \textbf{d}<script type="math/tex; ">**. If the entries in </script>C<script type="math/tex; "> and </script>\textbf{d}<script type="math/tex; "> are nonnegative, then (6) shows that the entries in </script>\textbf{x}$$ are nonnegative, too.</li>
+<li>Likewise, for any <script type="math/tex; ">\textbf{d}</script>, <strong>the vectors <script type="math/tex; ">C^m\textbf{d}</script> approach the zero vector quickly</strong>, and <strong>(6) is a practical way to solve <script type="math/tex; ">(I-C)\textbf{x}= \textbf{d}</script></strong>. If the entries in <script type="math/tex; ">C</script> and <script type="math/tex; ">\textbf{d}</script> are nonnegative, then (6) shows that the entries in <script type="math/tex; ">\textbf{x}</script> are nonnegative, too.</li>
 </ul>
 
                                 
@@ -927,7 +925,7 @@ one unit&#x2019;s worth of inputs to produce on unit of output.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"next":{"title":"05_01","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_06.md","mtime":"2019-09-29T14:40:10.926Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T14:40:19.463Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"next":{"title":"05_01","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_06.md","mtime":"2019-09-29T14:43:14.983Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T14:43:24.925Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
