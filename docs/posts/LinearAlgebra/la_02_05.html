@@ -626,7 +626,7 @@ that expresses <script type="math/tex; ">A</script> as a product of two or more 
 <h2 id="the-lu-factorization">The LU Factorization</h2>
 <p>The <strong>LU Factorization</strong> is motivated by the fairly common industrial and business problem of solving a sequence of equations, all with the same coefficient matrix:</p>
 <p><script type="math/tex; mode=display">
-A\textbf{x}=\textbf{b}_1,A\textbf{x}=\textbf{b}_2 \cdots A\textbf{x}=\textbf{b}_p \tags{1}
+A\textbf{x}=\textbf{b}_1,A\textbf{x}=\textbf{b}_2 \cdots A\textbf{x}=\textbf{b}_p \tag{1}
 </script></p>
 <ul>
 <li>When <script type="math/tex; ">A</script> is invertible, 
@@ -642,233 +642,220 @@ without row interchanges.</li>
 <li>Then <script type="math/tex; ">A</script> can be written in the form <script type="math/tex; ">A=LU</script>, where 
 <script type="math/tex; ">L</script> is an <script type="math/tex; ">m\times m</script> <strong>lower triangular matrix</strong> 
 with 1&apos;s on the diagonal and 
-<script type="math/tex; ">U</script> is an <script type="math/tex; ">m \times n </script> **echelon form of (A<script type="math/tex; ">**.
-* For instance, see Fig. 1 below. 
-  Such a factorizaton is called an **LU factorization** of </script>A<script type="math/tex; ">. 
-  The matrix </script>L<script type="math/tex; "> is invertible and is called a **unit lower trinagular matrix**.
-
-
-* Before studying how to construct </script>L<script type="math/tex; "> and </script>U<script type="math/tex; ">, 
-  we shoudl look at **why they are so useful**. 
-  When </script>A=LU<script type="math/tex; ">, the equation </script>A\textbf{x}=\textbf{b}<script type="math/tex; "> 
-  can be written as </script>L(U\textbf{x})=\textbf{b}<script type="math/tex; ">.
-* Writing </script>\textbf{y}<script type="math/tex; "> for </script>U\textbf{x}<script type="math/tex; ">, 
-  we can find </script>\textbf{x}<script type="math/tex; "> by solving the pair of equations 
-
-</script>
-L\textbf{y}=\textbf{b} \
+<script type="math/tex; ">U</script> is an <script type="math/tex; ">m \times n </script> <strong>echelon form of <script type="math/tex; ">A</script></strong>.</li>
+<li>For instance, see Fig. 1 below. 
+Such a factorizaton is called an <strong>LU factorization</strong> of <script type="math/tex; ">A</script>. 
+The matrix <script type="math/tex; ">L</script> is invertible and is called a <strong>unit lower trinagular matrix</strong>.</li>
+</ul>
+<ul>
+<li>Before studying how to construct <script type="math/tex; ">L</script> and <script type="math/tex; ">U</script>, 
+we shoudl look at <strong>why they are so useful</strong>. 
+When <script type="math/tex; ">A=LU</script>, the equation <script type="math/tex; ">A\textbf{x}=\textbf{b}</script> 
+can be written as <script type="math/tex; ">L(U\textbf{x})=\textbf{b}</script>.</li>
+<li>Writing <script type="math/tex; ">\textbf{y}</script> for <script type="math/tex; ">U\textbf{x}</script>, 
+we can find <script type="math/tex; ">\textbf{x}</script> by solving the pair of equations </li>
+</ul>
+<p><script type="math/tex; mode=display">
+L\textbf{y}=\textbf{b} \\
 U\textbf{x}=\textbf{y} \tag{2}
-<script type="math/tex; mode=display">
 </script>
+<script type="math/tex; mode=display">
 A=\begin{bmatrix}
-1 &amp; 0 &amp; 0 &amp; 0 \</li>
-<li>&amp; 1 &amp; 0 &amp; 0 \</li>
-<li>&amp; * &amp; 1 &amp; 0 \</li>
-<li>&amp; <em> &amp; </em> &amp; 1
+1 & 0 & 0 & 0 \\
+* & 1 & 0 & 0 \\
+* & * & 1 & 0 \\
+* & * & * & 1
 \end{bmatrix}
 \begin{bmatrix}
-\blacksquare &amp; <em> &amp; </em> &amp; <em> &amp; </em> \
-0 &amp; \blacksquare &amp; <em> &amp; </em> &amp; <em> \
-0 &amp; 0 &amp; 0 &amp; \blacksquare &amp; </em> \
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\blacksquare & * & * & * & * \\
+0 & \blacksquare & * & * & * \\
+0 & 0 & 0 & \blacksquare & * \\
+0 & 0 & 0 & 0 & 0
 \end{bmatrix} 
-<script type="math/tex; mode=display">
-
-* First solve </script>L\textbf{y}=\textbf{b}<script type="math/tex; "> for </script>\textbf{y}<script type="math/tex; ">,  and then 
-* solve </script>U\textbf{x}=\textbf{y}<script type="math/tex; "> for </script>\textbf{x}<script type="math/tex; ">. 
-
-See Fig 2. Each equation is easy to solve because </script>L<script type="math/tex; "> and </script>U<script type="math/tex; "> are triangular.
-
-![Figure 2. Factorization](./fig/la_02_05_02.png)
-
-## Example 1
-
-It can be verified that
-
-</script>
+</script></p>
+<ul>
+<li>First solve <script type="math/tex; ">L\textbf{y}=\textbf{b}</script> for <script type="math/tex; ">\textbf{y}</script>,  and then </li>
+<li>solve <script type="math/tex; ">U\textbf{x}=\textbf{y}</script> for <script type="math/tex; ">\textbf{x}</script>. </li>
+</ul>
+<p>See Fig 2. Each equation is easy to solve because <script type="math/tex; ">L</script> and <script type="math/tex; ">U</script> are triangular.</p>
+<p><img src="fig/la_02_05_02.png" alt="Figure 2. Factorization"></p>
+<h2 id="example-1">Example 1</h2>
+<p>It can be verified that</p>
+<p><script type="math/tex; mode=display">
 A=\begin{bmatrix}
-3 &amp; -7 &amp; -2 &amp; 2 \
--3 &amp; 5 &amp; 1 &amp; 0 \ 
-6 &amp; -4 &amp; 0 &amp;-5 \
--9 &amp; 5 &amp; -5 &amp; 12 
+3 & -7 & -2 & 2 \\
+-3 & 5 & 1 & 0 \\ 
+6 & -4 & 0 &-5 \\
+-9 & 5 & -5 & 12 
 \end{bmatrix}=
 \begin{bmatrix} 
-1 &amp; 0 &amp; 0 &amp; 0 \ 
--1 &amp; 1 &amp; 0 &amp; 0 \ 
-2 &amp; -5 &amp; 1 &amp; 0 \ 
--3 &amp; 8 &amp; 3 &amp; 1 
+1 & 0 & 0 & 0 \\ 
+-1 & 1 & 0 & 0 \\ 
+2 & -5 & 1 & 0 \\ 
+-3 & 8 & 3 & 1 
 \end{bmatrix} 
 \begin{bmatrix} 
-3 &amp; -7 &amp; -2 &amp; 2 \ 
-0 &amp; -2 &amp; -1 &amp; 2 \ 
-0 &amp; 0 &amp; -1 &amp; 1 \ 
-0 &amp; 0 &amp; 0 &amp; -1 
+3 & -7 & -2 & 2 \\ 
+0 & -2 & -1 & 2 \\ 
+0 & 0 & -1 & 1 \\ 
+0 & 0 & 0 & -1 
 \end{bmatrix}
 =LU
+</script></p>
+<p>Use this factorization of <script type="math/tex; ">A</script> to solve <script type="math/tex; ">A\textbf{x}=\textbf{b}</script>, where 
 <script type="math/tex; mode=display">
-
-Use this factorization of </script>A<script type="math/tex; "> to solve </script>A\textbf{x}=\textbf{b}<script type="math/tex; ">, where 
-</script>
-\textbf{b}=\begin{bmatrix}-9 \ 5\ 7 \ 11 \end{bmatrix} 
-<script type="math/tex; ">.
-
-### Solution :
-
-The solution of </script>L\textbf{y}=\textbf{b}<script type="math/tex; "> needs only 6 multiplications and 6 additions, 
-because the arithmetic takes place only in column 5.
-
-</script>
+\textbf{b}=\begin{bmatrix}-9 \\ 5\\ 7 \\ 11 \end{bmatrix} 
+</script>.</p>
+<h3 id="solution-">Solution :</h3>
+<p>The solution of <script type="math/tex; ">L\textbf{y}=\textbf{b}</script> needs only 6 multiplications and 6 additions, 
+because the arithmetic takes place only in column 5.</p>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}
-L &amp; \textbf{b}
+L & \textbf{b}
 \end{bmatrix} = 
 \begin{bmatrix} 
-1 &amp; 0 &amp; 0 &amp; 0 &amp; -9 \ 
--1 &amp; 1 &amp; 0 &amp; 0 &amp; 5 \ 
-2 &amp; -5 &amp; 1 &amp; 0 &amp; 7 \ 
--3 &amp; 8 &amp; 3 &amp; 1 &amp; 11 
+1 & 0 & 0 & 0 & -9 \\ 
+-1 & 1 & 0 & 0 & 5 \\ 
+2 & -5 & 1 & 0 & 7 \\ 
+-3 & 8 & 3 & 1 & 11 
 \end{bmatrix}
 \sim
 \begin{bmatrix} 
-1 &amp; 0 &amp; 0 &amp; 0 &amp; -9 \ 
-0 &amp; 1 &amp; 0 &amp; 0 &amp; -4 \ 
-0 &amp; 0 &amp; 1 &amp; 0 &amp; 5 \ 
-0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 
+1 & 0 & 0 & 0 & -9 \\ 
+0 & 1 & 0 & 0 & -4 \\ 
+0 & 0 & 1 & 0 & 5 \\ 
+0 & 0 & 0 & 1 & 1 
 \end{bmatrix} = 
 \begin{bmatrix}
-I &amp; \textbf{y}
+I & \textbf{y}
 \end{bmatrix} 
-<script type="math/tex; mode=display">
-
-* Then, for </script>U \textbf{x}=\textbf{y}<script type="math/tex; ">, 
-  the **"backward" phase of row reduction** requires 4 divisions, 6 multiplications, and 6 additions.
-* For instance, 
-  creating the zeros in column 4 of </script>\begin{bmatrix} U &amp; \textbf{y} \end{\bmatrix} <script type="math/tex; "> requires **1 division in row 4** and **3 multiplication-addition pairs** to _add multiples of row 4_ to the rows above.
-
-</script>
+</script></p>
+<ul>
+<li>Then, for <script type="math/tex; ">U \textbf{x}=\textbf{y}</script>, 
+the <strong>&quot;backward&quot; phase of row reduction</strong> requires 4 divisions, 6 multiplications, and 6 additions.</li>
+<li>For instance, 
+creating the zeros in column 4 of <script type="math/tex; ">\begin{bmatrix} U & \textbf{y} \end{\bmatrix} </script> requires <strong>1 division in row 4</strong> and <strong>3 multiplication-addition pairs</strong> to <em>add multiples of row 4</em> to the rows above.</li>
+</ul>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}
-U &amp; \textbf{y}
+U & \textbf{y}
 \end{bmatrix} = 
 \begin{bmatrix} 
-3 &amp; -7 &amp; -2 &amp; 2 &amp; -9 \ 
-0 &amp; -2 &amp; -1 &amp; 2 &amp; -4 \ 
-0 &amp; 0 &amp; -1 &amp; 1 &amp; 5 \ 
-0 &amp; 0 &amp; 0 &amp; -1 &amp; 1 
+3 & -7 & -2 & 2 & -9 \\ 
+0 & -2 & -1 & 2 & -4 \\ 
+0 & 0 & -1 & 1 & 5 \\ 
+0 & 0 & 0 & -1 & 1 
 \end{bmatrix}
 \sim
 \begin{bmatrix} 
-1 &amp; 0 &amp; 0 &amp; 0 &amp; 3 \ 
-0 &amp; 1 &amp; 0 &amp; 0 &amp; 4 \ 
-0 &amp; 0 &amp; 1 &amp; 0 &amp; -6 \ 
-0 &amp; 0 &amp; 0 &amp; 1 &amp; -1 
+1 & 0 & 0 & 0 & 3 \\ 
+0 & 1 & 0 & 0 & 4 \\ 
+0 & 0 & 1 & 0 & -6 \\ 
+0 & 0 & 0 & 1 & -1 
 \end{bmatrix},
 \textbf{x}=
 \begin{bmatrix} 
-3 \ 4\-6 \ -1 
+3 \\ 4\\-6 \\ -1 
 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-* To find </script>\textbf{x}<script type="math/tex; "> requires 28 arithmetic operations, 
-  or "flops"(floating point operations), 
-  excluding the cost of finding </script>L<script type="math/tex; "> and </script>U<script type="math/tex; ">. 
-  In contrast, 
-  row reduction of </script>\begin{bmatrix} A &amp; \textbf{b} \end{bmatrix}<script type="math/tex; "> to </script>\begin{bmatrix} I \textbf{x} \end{bmatrix}<script type="math/tex; "> takes _62_ operations.
-
-## An LU Factorization Alogrithm
-
-* Suppose </script>A<script type="math/tex; "> can be reduced to an **echelon form </script>U<script type="math/tex; ">** 
-  using only row replacements that add a multiple of one row to another below it. (interchange없이 U로 축소시킴.)
-* In this case, 
-  there exist **unit lower triangular elementary matrices** </script> E_1 \cdots E_p <script type="math/tex; "> such that
-
-</script>
+</script></p>
+<ul>
+<li>To find <script type="math/tex; ">\textbf{x}</script> requires 28 arithmetic operations, 
+or &quot;flops&quot;(floating point operations), 
+excluding the cost of finding <script type="math/tex; ">L</script> and <script type="math/tex; ">U</script>. 
+In contrast, 
+row reduction of <script type="math/tex; ">\begin{bmatrix} A & \textbf{b} \end{bmatrix}</script> to <script type="math/tex; ">\begin{bmatrix} I \textbf{x} \end{bmatrix}</script> takes <em>62</em> operations.</li>
+</ul>
+<h2 id="an-lu-factorization-alogrithm">An LU Factorization Alogrithm</h2>
+<ul>
+<li>Suppose <script type="math/tex; ">A</script> can be reduced to an <strong>echelon form <script type="math/tex; ">U</script></strong> 
+using only row replacements that add a multiple of one row to another below it. (interchange&#xC5C6;&#xC774; U&#xB85C; &#xCD95;&#xC18C;&#xC2DC;&#xD0B4;.)</li>
+<li>In this case, 
+there exist <strong>unit lower triangular elementary matrices</strong> <script type="math/tex; "> E_1 \cdots E_p </script> such that</li>
+</ul>
+<p><script type="math/tex; mode=display">
 E_p \cdots E_1 A = U \tag{3}
-<script type="math/tex; mode=display">
-
-* Then
-
-</script>
+</script></p>
+<ul>
+<li>Then</li>
+</ul>
+<p><script type="math/tex; mode=display">
 A = (E_p \cdots E_1 )^{-1}U = LU
-<script type="math/tex; mode=display">
-
-* where
-
-</script>
+</script></p>
+<ul>
+<li>where</li>
+</ul>
+<p><script type="math/tex; mode=display">
 L = (E_p \cdots E_1) ^{-1} \tag{4}
-<script type="math/tex; mode=display">
-
-* It can be shown that **products and inverses of unit lower triangular matrices** are also **unit lower triangular**. 
-  Thus </script>L<script type="math/tex; "> is **unit lower triangular**.
-* Note that row operations in equation (3), 
-  which reduce </script>A<script type="math/tex; "> to </script>U<script type="math/tex; ">, 
-  also reduce the </script>L<script type="math/tex; "> in equation (4) to </script>I<script type="math/tex; ">, 
-  because </script> E_p \cdots E_1 L = (E_p \cdots E_1)(E_p \cdots E_1)^{-1}=I <script type="math/tex; ">. 
-  This observation is the key to constructing </script>L<script type="math/tex; ">.
-
-## Algorithm for an L U Factorization
-
-1. Reduce </script>A<script type="math/tex; "> to an echelon form </script>U<script type="math/tex; "> 
-   by a sequence of row replacement operations, if possible.
-2. Place entries in </script>L<script type="math/tex; "> 
-   such that the _same sequence of row operations_ reduces </script>L<script type="math/tex; "> to </script>I<script type="math/tex; ">.
-
-* **Step 1 is not always possible**, 
-  but when it is, the argument above shows that an </script>L U<script type="math/tex; "> factorization exists.
-* Example 2 will show how to implement step 2. 
-  By construction, </script>L<script type="math/tex; "> will satisfy 
-</script> 
-(E_p\cdots E_1)L = I
+</script></p>
+<ul>
+<li>It can be shown that <strong>products and inverses of unit lower triangular matrices</strong> are also <strong>unit lower triangular</strong>. 
+Thus <script type="math/tex; ">L</script> is <strong>unit lower triangular</strong>.</li>
+<li>Note that row operations in equation (3), 
+which reduce <script type="math/tex; ">A</script> to <script type="math/tex; ">U</script>, 
+also reduce the <script type="math/tex; ">L</script> in equation (4) to <script type="math/tex; ">I</script>, 
+because <script type="math/tex; "> E_p \cdots E_1 L = (E_p \cdots E_1)(E_p \cdots E_1)^{-1}=I </script>. 
+This observation is the key to constructing <script type="math/tex; ">L</script>.</li>
+</ul>
+<h2 id="algorithm-for-an-l-u-factorization">Algorithm for an L U Factorization</h2>
+<ol>
+<li>Reduce <script type="math/tex; ">A</script> to an echelon form <script type="math/tex; ">U</script> 
+by a sequence of row replacement operations, if possible.</li>
+<li><p>Place entries in <script type="math/tex; ">L</script> 
+such that the <em>same sequence of row operations</em> reduces <script type="math/tex; ">L</script> to <script type="math/tex; ">I</script>.</p>
+</li>
+<li><p><strong>Step 1 is not always possible</strong>, 
+but when it is, the argument above shows that an <script type="math/tex; ">L U</script> factorization exists.</p>
+</li>
+<li>Example 2 will show how to implement step 2. 
+By construction, <script type="math/tex; ">L</script> will satisfy 
 <script type="math/tex; "> 
-  using the same </script> E_p, \cdots E_1 <script type="math/tex; "> as in equation (3). 
-  Thus </script>L<script type="math/tex; "> will be invertible, by the invertible matrix theorem, with </script> (E_p \cdots E_1 ) = L^{-1} <script type="math/tex; ">. From (3), </script> L^{-1} A = U <script type="math/tex; ">, and </script> A = LU <script type="math/tex; ">. So step 2 will produce an acceptable </script> L <script type="math/tex; ">.
-
-## Example 2
-
-Find an </script>LU<script type="math/tex; "> factorization of
-
-</script>
+(E_p\cdots E_1)L = I
+</script> 
+using the same <script type="math/tex; "> E_p, \cdots E_1 </script> as in equation (3). 
+Thus <script type="math/tex; ">L</script> will be invertible, by the invertible matrix theorem, with <script type="math/tex; "> (E_p \cdots E_1 ) = L^{-1} </script>. From (3), <script type="math/tex; "> L^{-1} A = U </script>, and <script type="math/tex; "> A = LU </script>. So step 2 will produce an acceptable <script type="math/tex; "> L </script>.</li>
+</ol>
+<h2 id="example-2">Example 2</h2>
+<p>Find an <script type="math/tex; ">LU</script> factorization of</p>
+<p><script type="math/tex; mode=display">
 A =\begin{bmatrix} 
-2 &amp; 4 &amp; -1 &amp; 5 &amp; -2 \ 
--4 &amp; -5 &amp; 3 &amp; -8 &amp; 1 \ 
-2 &amp; -5 &amp; -4 &amp; 1 &amp; 8 \ 
--6 &amp; 0 &amp; 7 &amp; -3 &amp; 1 
+2 & 4 & -1 & 5 & -2 \\ 
+-4 & -5 & 3 & -8 & 1 \\ 
+2 & -5 & -4 & 1 & 8 \\ 
+-6 & 0 & 7 & -3 & 1 
 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-### Solution :
-
-Since </script>A<script type="math/tex; "> has four rows, </script>L<script type="math/tex; "> should be </script> 4 \times 4 <script type="math/tex; ">. 
-The first column of </script>L<script type="math/tex; "> is 
-the first column of </script>A<script type="math/tex; "> divided by the top pivot entry:
-
-</script>
+</script></p>
+<h3 id="solution-">Solution :</h3>
+<p>Since <script type="math/tex; ">A</script> has four rows, <script type="math/tex; ">L</script> should be <script type="math/tex; "> 4 \times 4 </script>. 
+The first column of <script type="math/tex; ">L</script> is 
+the first column of <script type="math/tex; ">A</script> divided by the top pivot entry:</p>
+<p><script type="math/tex; mode=display">
 L =\begin{bmatrix} 
-1 &amp; 0 &amp; 0 &amp; 0 \ 
--2 &amp; 1 &amp; 0 &amp; 0 \ 
-1 &amp;  &amp; 1 &amp; 0 \ 
--3 &amp;  &amp;  &amp; 1 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-* Compare the first columns of </script>A<script type="math/tex; "> and </script>L<script type="math/tex; ">. 
-  **The row operations that 
-  create zeros in the first column of </script>A<script type="math/tex; "> will also create zeros in the first column of </script>L<script type="math/tex; ">**.
-
-* To make this same correspondence of row operations on </script>A<script type="math/tex; mode=display">
-  hold for the rest of </script>L<script type="math/tex; ">, 
-  watch a row reduction of </script>A<script type="math/tex; "> to an echelon form </script>U<script type="math/tex; ">.
-  That is, highlight the entries in each matrix 
-  that are used to determine 
-  the sequence of row operations that transform </script>A<script type="math/tex; "> onto </script>U<script type="math/tex; ">.
-
-![eq5](./fig/la_02_05_e05.png)
-
-The highlighted entries above determine the row reduction
-of </script>A<script type="math/tex; "> to </script>U<script type="math/tex; ">. At each pivot column, divide the highlighted
-entries by the pivot and place the result onto </script>L<script type="math/tex; ">:
-
-![eq6](./fig/la_02_05_e06.png)
-
-* An easy calculation verifies that this </script>L<script type="math/tex; "> and </script>U<script type="math/tex; "> satisfy </script>LU=A<script type="math/tex; mode=display">
-</script>\blacksqare$$</li>
+1 & 0 & 0 & 0 \\ 
+-2 & 1 & 0 & 0 \\ 
+1 &  & 1 & 0 \\ 
+-3 &  &  & 1 \end{bmatrix}
+</script></p>
+<ul>
+<li><p>Compare the first columns of <script type="math/tex; ">A</script> and <script type="math/tex; ">L</script>. 
+<strong>The row operations that 
+create zeros in the first column of <script type="math/tex; ">A</script> will also create zeros in the first column of <script type="math/tex; ">L</script></strong>.</p>
+</li>
+<li><p>To make this same correspondence of row operations on <script type="math/tex; ">A</script>
+hold for the rest of <script type="math/tex; ">L</script>, 
+watch a row reduction of <script type="math/tex; ">A</script> to an echelon form <script type="math/tex; ">U</script>.
+That is, highlight the entries in each matrix 
+that are used to determine 
+the sequence of row operations that transform <script type="math/tex; ">A</script> onto <script type="math/tex; ">U</script>.</p>
+</li>
+</ul>
+<p><img src="fig/la_02_05_e05.png" alt="eq5"></p>
+<p>The highlighted entries above determine the row reduction
+of <script type="math/tex; ">A</script> to <script type="math/tex; ">U</script>. At each pivot column, divide the highlighted
+entries by the pivot and place the result onto <script type="math/tex; ">L</script>:</p>
+<p><img src="fig/la_02_05_e06.png" alt="eq6"></p>
+<ul>
+<li>An easy calculation verifies that this <script type="math/tex; ">L</script> and <script type="math/tex; ">U</script> satisfy <script type="math/tex; ">LU=A</script>
+<script type="math/tex; ">\blacksqare</script></li>
 </ul>
 
                                 
@@ -897,7 +884,7 @@ entries by the pivot and place the result onto </script>L<script type="math/tex;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"next":{"title":"05_01","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_05.md","mtime":"2019-09-29T11:32:00.109Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T11:32:20.827Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"next":{"title":"05_01","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{"maxIndexSize":1000000},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_05.md","mtime":"2019-09-29T11:34:57.173Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-29T11:35:06.349Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
