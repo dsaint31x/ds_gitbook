@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 05 Solution Sets of Linear Systems · GitBook</title>
+        <title>07_02 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_07.html" />
+    <link rel="next" href="la_07_03.html" />
     
     
-    <link rel="prev" href="la_01_04.html" />
+    <link rel="prev" href="la_07_01.html" />
     
 
     </head>
@@ -239,7 +239,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.6" data-path="la_01_05.html">
+        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
             
                 <a href="la_01_05.html">
             
@@ -486,7 +486,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.25" data-path="la_07_02.html">
+        <li class="chapter active" data-level="1.3.25" data-path="la_07_02.html">
             
                 <a href="la_07_02.html">
             
@@ -644,7 +644,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 05 Solution Sets of Linear Systems</a>
+        <a href="../.." >07_02</a>
     </h1>
 </div>
 
@@ -659,221 +659,211 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
-<h1 id="15-solution-sets-of-linear-systems">1.5 Solution Sets of Linear Systems</h1>
-<ul>
-<li>Solution sets of linear systems are important objects of study in linear algebra.</li>
-<li>This section uses vector notation to give exlicit and geometric descriptions of such solution set.</li>
-</ul>
-<h2 id="homogeneous-linear-systems">Homogeneous Linear Systems</h2>
-<p>A system of linear equations is said to be <strong>homogeneous</strong>
-if it can be written in the form <script type="math/tex; ">A\bf{x}=\bf{0}</script> 
-where <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix and <script type="math/tex; ">\bf{0}</script> is the zero vector in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
-<p>Such a system <script type="math/tex; ">A\bf{x}=\bf{0}</script> always has at least one solution, namely, <script type="math/tex; ">\bf{x}=\bf{0}</script> (the zero veoctor in <script type="math/tex; ">\mathbb{R}^n</script>).</p>
-<p>This zero solution is usually called the <strong>trivial solution</strong>.</p>
-<p>For a given homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script>, the important question is whether there exists a <strong>nontrivial solution</strong>, that is, a nonzero vector <script type="math/tex; ">\bf{x}</script> that satisfies <script type="math/tex; ">A\bf{x}=\bf{0}</script>.</p>
-<p>The <a href="la_01_02.html#theorem-2--existence-and-uniqueness-theorem">Existence and Unqueness Theorem in Section 1.2 (Theorem)</a> leads immediately to the following fact.</p>
-<blockquote>
-<p>The homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script> has a nontrivial solution if and only if the equation has at least one free variable.</p>
-</blockquote>
-<h2 id="example-1">Example 1:</h2>
-<p>Determine if the following homogeneous system has a nontrivial solution. 
-Then describe the solution set.</p>
+                                <h1 id="ch07-symmetric-matrices-and-quadratic-forms">Ch07 Symmetric Matrices and Quadratic Forms</h1>
+<h1 id="72-quadratic-forms">7.2 Quadratic Forms</h1>
+<p>A quadratic form on <script type="math/tex; ">\mathbb{R}^n</script> is a function <script type="math/tex; ">Q</script> defined on <script type="math/tex; ">\mathbb{R}^n</script> whose value at a vector <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\mathbb{R}^n</script> can be computed by an expression of the form <script type="math/tex; ">Q(\textbf{x}) =  \textbf{x}^T A \textbf{x}</script>, where <script type="math/tex; ">A</script> is an <script type="math/tex; ">n \times n</script> symmetric matrix. 
+The matrix <script type="math/tex; ">A</script> is called the <strong>matrix of the quadratic form</strong>.</p>
+<p>The simplest example of a nonzero quadratic form is <script type="math/tex; ">Q(\textbf{x}) =  \textbf{x}^T I \textbf{x} = ||\textbf{x}||^2</script>. 
+Examples 1 and 2 show the connection between any symmetric matrix <script type="math/tex; ">A</script> and the quadratic form <script type="math/tex; ">\textbf{x}^T A \textbf{x}</script>.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Let <script type="math/tex; ">\textbf{x}=\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</script>. 
+Compute <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> for the following matrices:</p>
+<p>a. <script type="math/tex; ">A=\begin{bmatrix} 4 & 0 \\ 0 & 3 \end{bmatrix}</script></p>
+<p>b. <script type="math/tex; ">A=\begin{bmatrix} 3 & -2 \\ -2 & 7 \end{bmatrix}</script></p>
+<h3 id="solution">Solution</h3>
+<p>omit</p>
+<p><script type="math/tex; ">\blacksquare</script></p>
+<p>The presence of <script type="math/tex; ">-4x_1x_2</script> in the quadratic form in Example 1(b) is due to -2 entries off the diagonal in the matrix <script type="math/tex; ">A</script>. 
+In contrast, the quadratic form associated with the diagonal matrix <script type="math/tex; ">A</script> in Example 1(a) has no <script type="math/tex; ">x_1 x_2</script> <em>cross-product</em> term.</p>
+<h2 id="example-2">Example 2</h2>
+<p>For <script type="math/tex; ">\textbf{x} \in \mathbb{R}^3</script>, let <script type="math/tex; ">Q(\textbf{x})=5x_1^2+3x_2^2+2x_3^2-x_1x_2+8x_2x_3</script>. Write this quadratic form as <script type="math/tex; ">x^TAx</script>.</p>
+<h3 id="solution">Solution</h3>
+<p>The coefficients of <script type="math/tex; ">x_1^2, x_2^2, x_3^2</script> go on the diagonal of <script type="math/tex; ">A</script>. 
+To make <script type="math/tex; ">A</script> symmetric, the coefficient of <script type="math/tex; ">x_ix_j</script> for <script type="math/tex; ">i \ne j</script> must be plit evenly between the <script type="math/tex; ">(i,j)</script>-and <script type="math/tex; ">(j,i)</script>-entries in <script type="math/tex; ">A</script>.
+The coeeficients of <script type="math/tex; ">x_1x_3</script> is 0. It is readily checked that</p>
 <p><script type="math/tex; mode=display">
-\begin{align}
-3x_1+5x_2-4x_3 &=0 \\
--3x_1-2x_2+4x_3 &=0 \\
-6x_1+x_2-8x_3 &=0 \\
-\end{align}
+Q(\textbf{x}) = 
+\textbf{x}^T A \textbf{x} =
+\begin{bmatrix}
+x_1 & x_2 & x_3
+\end{bmatrix}
+\begin{bmatrix}
+5 & -1/2 & 0 \\
+-1/2 & 3 & 4 \\
+0 & 4 & 2
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3
+\end{bmatrix}
+\blacksquare
 </script></p>
-<h3 id="solution-fo-example-1">Solution fo Example 1</h3>
-<p>Let <script type="math/tex; ">A</script> be the matrix of coefficients of the system and row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & \bf{0} \end{bmatrix}</script> to echelon form:</p>
+<h2 id="change-variable-in-a-quadratic-form">Change Variable in a Quadratic Form</h2>
+<p>If <script type="math/tex; ">\textbf{x}</script> represents a variable vector in <script type="math/tex; ">\mathbb{R}^n</script> , then a <strong>change of variable</strong> is an equation of the form</p>
 <p><script type="math/tex; mode=display">
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
--3 & -2 & 4 & 0 \\
-6 & 1 & -8 & 0 \\
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
-0 & 3 & 0 & 0 \\
-0 & -9 & 0 & 0 \\
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
-0 & 3 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-\end{bmatrix}
+\textbf{x} = P\textbf{y}, \text{ or equivalently, }\textbf{y} = P^{-1}\textbf{x} \tag{1}
 </script></p>
-<p>Since <script type="math/tex; ">x_3</script> is a free variable,
-has nontrivial solutions (one for each choice of <script type="math/tex; ">x_3</script>.)</p>
-<p>Continue the row reduction of <script type="math/tex; ">\begin{bmatrix} A & \bf{0} \end{bmatrix}</script> to reduced echelon form:</p>
+<p>where <script type="math/tex; ">P</script> is an invertible matrix and <script type="math/tex; ">\textbf{y}</script> is a new variable vector in <script type="math/tex; ">\mathbb{R}^n</script>. </p>
+<p>Here <script type="math/tex; ">\textbf{y}</script> is the coordinate vector of <script type="math/tex; ">\textbf{x}</script> relative to the basis of <script type="math/tex; ">\mathbb{R}^n</script> determined by the columns of <script type="math/tex; ">P</script>. (See Section 4.4.)</p>
+<p> If the change of variable (1) is made in a quadratic form <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script>, then </p>
 <p><script type="math/tex; mode=display">
-\begin{bmatrix}
-1 & 5/3 & -4/3 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-\end{bmatrix}
-\begin{align}
-x_1-\frac{4}{3}x_3 &= 0 \\
-x_2 &= 0\\
-0&=0\\
-\end{align}
-</script></p>
-<p>Solve for the basic variables <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> to obtain <script type="math/tex; ">x_1=\frac{4}{3}x_3, x_2=0</script>, with <script type="math/tex; ">x_3</script> free.</p>
-<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the form given below.</p>
-<p><script type="math/tex; mode=display">
-\textbf{x}=
-\begin{bmatrix}
-{x_1} \\
-{x_2} \\
-{x_3} \\ 
-\end{bmatrix}
+\textbf{x}^TA\textbf{x} = (P\textbf{y})^TA(P\textbf{y}) = \textbf{y}^TP^TAP\textbf{y}
 =
-\begin{bmatrix}
-\frac{4}{3}
-{x_3} \\
-0 \\
-{x_3} \\
-\end{bmatrix}
-=
-{x_3}
-\begin{bmatrix}
-\frac{4}{3} \\
-0 \\
-1 \\
-\end{bmatrix}
-= 
-{x_3} 
-\textbf{v}
+\textbf{y}^T(P^TAP)\textbf{y} \tag{2}
 </script></p>
-<p>where</p>
-<p><script type="math/tex; mode=display">
-\bf{v}= 
-\begin{bmatrix}
-4/3 \\ 0 \\ 1
-\end{bmatrix}
-</script></p>
-<p>Here <script type="math/tex; ">x_3</script> is factored out of the expression for the general solution vector.</p>
-<p>This shows that every solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> in this case is a scalar multiple of <script type="math/tex; ">\bf{v}</script>.</p>
-<p>The trivial solution is obtained by choosing <script type="math/tex; ">x_3=0</script></p>
-<p>Geometrically, the solution set is a line through <script type="math/tex; ">\bf{0}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
-<p>See Fig.1 below.</p>
-<p><img src="fig/la_01_05_01.png" alt="fig1">
-<script type="math/tex; ">\blacksquare</script></p>
-<h2 id="parametric-vector-form">Parametric Vector Form</h2>
-<p>The equation of the form <script type="math/tex; ">\textbf{x}= s \textbf{u} + t \textbf{v}</script> (<script type="math/tex; ">s,t</script> in <script type="math/tex; ">\mathbb{R}</script>) is called a <strong>parametric vector equation</strong> of the plane.</p>
-<p>In Example 1, the equation <script type="math/tex; ">\textbf{x} = x_3 \textbf{v} </script> (with <script type="math/tex; ">x_3</script> free), or <script type="math/tex; ">\textbf{x} = t \textbf{v} </script> (with <script type="math/tex; ">t</script> in <script type="math/tex; ">\mathbb{R}</script>),
-is a parametric vector equation of a line.</p>
-<p>Whenever a solution set is described explicitly
-with vectors as in Example 1, we say that the
-solution is in <strong>parametric vector form</strong>.</p>
-<h2 id="solutions-of-nonhomogeneous-systems">Solutions of Nonhomogeneous Systems</h2>
-<p> When a nonhomogeneous linear system has many solutions, the general solution can be 
-written in parametric vector form as one vector 
-plus an arbitrary linear combination of vectors that 
-satisfy the corresponding homogeneous system.</p>
-<h2 id="example-3">Example 3</h2>
-<p>Describe all solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script> where</p>
+<p>and the new <strong>matrix of the quadratic form</strong> is <script type="math/tex; ">P^T AP</script>. </p>
+<p>Since <script type="math/tex; ">A</script> is symmetric, <a href="la_07_01.html#Theorem-2">Theorem 2</a> guarantees that there is an <strong>orthogonal</strong> matrix <script type="math/tex; ">P</script> such that <script type="math/tex; ">P^T AP</script> is a diagonal matrix <script type="math/tex; ">D</script>,and the quadratic form in (2) becomes <script type="math/tex; ">\textbf{y}^T D\textbf{y}</script>. </p>
+<h2 id="example-4">Example 4</h2>
+<p>Make a <strong>change of variable</strong> that transforms the quadratic form <script type="math/tex; "> Q(\textbf{x})=x_1^2-8x_1x_2-5x_2^2</script> into a quadratic form with no cross-product term.</p>
+<h3 id="solution-of-example-4">Solution of Example 4</h3>
+<p>The matrix of the given quadratic form is</p>
 <p><script type="math/tex; mode=display">
 A = 
 \begin{bmatrix}
-3 & 5 & -4 \\
--3 & -2 & 4 \\
-6 & 1 & -8 
-\end{bmatrix}
-\text{ and }
-\bf{b} =
-\begin{bmatrix}
-7 \\
--1 \\
--4 
+1 & -4 \\
+-4 & -5
 \end{bmatrix}
 </script></p>
-<h3 id="solution-of-example-3">Solution of Example 3</h3>
-<p>Row operations on <script type="math/tex; ">\begin{bmatrix} A & \bf{b}\end{bmatrix} </script> produce</p>
+<p>The first step is to orthogonally diagonalize <script type="math/tex; ">A</script>
+Its eigenvalues turn out to be <script type="math/tex; ">\lambda=3</script> and <script type="math/tex; ">\lambda=-7</script>.
+Associated unit eigenvectors are</p>
 <p><script type="math/tex; mode=display">
+\lambda=3: \begin{bmatrix} 2/\sqrt{5} \\ -1/\sqrt{5} \end{bmatrix};
+\lambda=-7: \begin{bmatrix} 1/\sqrt{5} \\ 2/\sqrt{5} \end{bmatrix}
+</script></p>
+<p>These vectors are automatically orthogonal (because they correspond to distinct eigenvalues) and so provide an orthonormal basis for <script type="math/tex; ">\mathbb{R}^n</script>.
+Let
+<script type="math/tex; mode=display">
+P=
 \begin{bmatrix}
-3 & 5 & -4 &7 \\
--3 & -2 & 4&-1 \\
-6 & 1 & -8&-4 
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-1 & 0 & -4/3 &-1 \\
-0 & 1 & 0 & 2 \\
-0 & 0 & 0 & 0
+ 2/\sqrt{5} & 1/\sqrt{5} \\
+ -1/\sqrt{5} & 2/\sqrt{5} 
 \end{bmatrix},
-\begin{align}
-x_1-\frac{4}{3}x_3&=-1 \\
-x_2 &= 2 \\
-0 &= 0
-\end{align}
-</script></p>
-<p>Thus, <script type="math/tex; ">x_1 = -1 + \frac{4}{3}x_3, x_2=2</script>, and <script type="math/tex; ">x_3</script> is free.</p>
-<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> has the form</p>
-<p><img src="fig/la_01_05_e3.png" alt="fig_ex"></p>
-<p>The equation <script type="math/tex; ">\textbf{x}=\textbf{p}+x_3\textbf{v}</script>, or, writing t as a general parameter,</p>
-<p><script type="math/tex; mode=display">
-\textbf{x} = \textbf{p} + t \textbf{v} \quad ( {t} \text{ in } \mathbb{R})
-\tag{3}
-</script></p>
-<p>describes the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> in parametric vector form.</p>
-<p>The solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the parametric vector equation</p>
-<p><script type="math/tex; mode=display">
-\textbf{x} = t \textbf{v} \quad ( t \text{ in }  \mathbb{R}) \tag{4}
-</script></p>
-<p>[with the same <script type="math/tex; ">\bf{v}</script> that appears in (3)]. <script type="math/tex; ">\blacksquare</script></p>
-<p>Thus <strong>the solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> are obtained 
-by <strong>adding the vector <script type="math/tex; ">\bf{p}</script> to the solutions of <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong>.</p>
-<p>The vector <script type="math/tex; ">\bf{p}</script> itself is just one <strong>particular solution</strong> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> [corresponding to <script type="math/tex; ">t</script> = 0 in (3).]</p>
-<p>To describe the solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> geometrically, we can think of <strong>vector addition as a translation</strong>.</p>
-<p>Given <script type="math/tex; ">\bf{v}</script> and <script type="math/tex; ">\bf{p}</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script>, the effect of adding <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}</script> 
-is to move <script type="math/tex; ">\bf{v}</script> in a direction parallel to the line through <script type="math/tex; ">\bf{p}</script> and <script type="math/tex; ">\bf{0}</script>.</p>
-<p>We say that <strong><script type="math/tex; ">\bf{v}</script> is translated by <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}+\bf{p}</script></strong>. See the following figure.</p>
-<p><img src="fig/la_01_05_03.png" alt="fig3"></p>
-<p>If each point on a line <script type="math/tex; ">L</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script> is translated by 
-a vector <script type="math/tex; ">\bf{p}</script>, the result is a line parallel to <script type="math/tex; ">L</script>. 
-See the following figure.</p>
-<p><img src="fig/la_01_05_04.png" alt="fig4"></p>
-<p>Suppose <script type="math/tex; ">L</script> is the line through <script type="math/tex; ">\bf{0}</script> and <script type="math/tex; ">\bf{v}</script>, described by equation (4).</p>
-<p>Adding <script type="math/tex; ">\bf{p}</script> to each point on <script type="math/tex; ">L</script> produces the translated line described by equation (3).</p>
-<p>We call <strong>(3) the equation of the line through <script type="math/tex; ">\bf{p}</script> parallel to <script type="math/tex; ">\bf{v}</script></strong>.</p>
-<p>Thus <em>the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is a line through <script type="math/tex; ">\bf{p}</script> parallel to the solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script></em>.
-The figure below illustrates this case.</p>
-<p><img src="fig/la_01_05_05.png" alt="fig5"></p>
-<p><strong>The relation between the solution sets of <script type="math/tex; ">A\bf{x}=\bf{b}</script> and <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong> 
-shown in the figure above generalizes to <strong>any consistent equation <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> 
-,although <strong>the solution set will be larger than a line 
-when there are several free variables</strong>.</p>
-<hr>
-<h2 id="theorem-6">Theorem 6</h2>
-<p>Suppose the equation <script type="math/tex; ">A\bf{x}=\bf{b}</script> is <strong>consistent</strong> for some given <script type="math/tex; ">\bf{b}</script>, 
-and let <script type="math/tex; ">\bf{p}</script> be a solution (,it means that <script type="math/tex; ">\bf{p}</script> is a particular solution). </p>
-<p>Then the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is the <strong>set of all vectors of the form <script type="math/tex; ">\bf{w}=\bf{p}+\bf{v}_h</script></strong>, 
-where <strong><script type="math/tex; ">\bf{v}_h</script> is any solution of the homogeneous equation <script type="math/tex; ">A\textbf{x}=\textbf{0}</script></strong>.</p>
-<ul>
-<li>Theorem 6 says that if <script type="math/tex; ">A\bf{x}=\bf{b}</script> has a solution, then the solution set is obtained by translating the solution set of
-<script type="math/tex; ">A\bf{x}=\bf{0}</script> using any particular solution <script type="math/tex; ">\bf{p}</script> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> for the translation.</li>
-</ul>
-<h2 id="writing-a-solution-set-of-a-consistent-system-in-parametric-vector-form">Writing a Solution Set (of a Consistent System) in Parametric Vector Form</h2>
-<ol>
-<li>Row reduce the augmented matrix to <strong>reduced echelon form, RREF</strong>.</li>
-<li>Express each basic variable in terms of any free variables appearing in an equation.</li>
-<li>Write a typical solution <script type="math/tex; ">\bf{x}</script> as a vector whose entries depend on the free variables, if any.</li>
-<li>Decompose <script type="math/tex; ">\bf{x}</script> into a <strong>linear combination of vectors (with numeric entries)</strong> using the free variables as parameters.</li>
-</ol>
-<p><script type="math/tex; mode=display">
+D=
 \begin{bmatrix}
--1 \\ 2 \\ 0 
-\end{bmatrix} +
-x_3
-\begin{bmatrix}
-4/3 \\ 0 \\ 1
+ 3 & 0 \\
+ 0 & -7
 \end{bmatrix}
 </script></p>
+<p>Then <script type="math/tex; ">A=PDP^{-1}</script> and <script type="math/tex; ">D=P^{-1}AP=P^T AP</script>.</p>
+<p>A suitable change of variable is</p>
+<p><script type="math/tex; mode=display">
+\textbf{x}=P\textbf{y}, \text{ where }
+\textbf{x}=\begin{bmatrix} x_1 \\ x_2\end{bmatrix}
+\text{ and }
+\textbf{y}=\begin{bmatrix} y_1 \\ y_2\end{bmatrix}
+</script></p>
+<p>Then</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+x_1^2-8x_1x_2-5x_2^2 &= \textbf{x}^TA\textbf{x} = (P\textbf{y})^TA(P\textbf{y}) \\
+&= \textbf{y}^TP^T A P\textbf{y} = \textbf{y}^T D \textbf{y} \\
+&= 3y_1^2-7y_2^2 
+\end{align*}
+\blacksquare
+</script></p>
+<p> To illustrate the meaning of the equality of quadraticforms in Example 4, we can compute <script type="math/tex; ">Q(\textbf{x})</script> for <script type="math/tex; ">\textbf{x}=(2,-2)</script> using the new quadratic form.</p>
+<p>First, since <script type="math/tex; ">\textbf{x}=P\textbf{y}</script>,</p>
+<p><script type="math/tex; mode=display">
+\textbf{y}=P^{-1}\textbf{x}=P^T\textbf{x}
+</script></p>
+<p>so</p>
+<p><script type="math/tex; mode=display">
+\textbf{y}=
+\begin{bmatrix}
+ 2/\sqrt{5} & -11/\sqrt{5} \\
+ 1/\sqrt{5} & 2/\sqrt{5} 
+\end{bmatrix}
+\begin{bmatrix}
+2 \\ -2
+\end{bmatrix}
+=
+\begin{bmatrix}
+ 6/\sqrt{5}\\
+ -2/\sqrt{5}
+\end{bmatrix}
+</script></p>
+<p>Hence</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+3y_1^2-7y_2^2 &= 3(\frac{6}{\sqrt{5}})^2 - 7(\frac{-2}{\sqrt{5}})^2 \\
+&=3\frac{36}{5}-7\frac{4}{5} \\
+&=\frac{80}{5} \\
+&=16
+\end{align*}
+</script></p>
+<p>This is the value of <script type="math/tex; ">Q(\textbf{x})</script> when <script type="math/tex; ">\textbf{x}=(2,-2)</script>.</p>
+<p>See the fiqure below.</p>
+<p><img src="fig/la_07_02_01.png" alt="fig1"></p>
+<hr>
+<h2 id="theorem-4">Theorem 4</h2>
+<p><strong>The Pricipal Axes Theorem</strong></p>
+<p>Let <script type="math/tex; ">A</script> be an symmetric matrix. Then there is an orthogonal change of variable, <script type="math/tex; ">\textbf{x}=P\textbf{y}</script> that transforms the quadratic form <script type="math/tex; ">\textbf{x}^T A\textbf{x}</script> into a quadratic form <script type="math/tex; ">\textbf{y}^TD\textbf{y}</script> with no cross-product term.</p>
+<hr>
+<p>The columns of <script type="math/tex; ">P</script> in Theorem 4 are called the <strong>principal axes</strong> of the quadratic form <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script>. </p>
+<p>The vector <script type="math/tex; ">\textbf{y}</script> is the coordinate vector of <script type="math/tex; ">\textbf{x}</script> relative to the orthonormal basis of <script type="math/tex; ">\mathbb{R}^n</script> given by these principle axes.</p>
+<h2 id="a-geometric-view-of-pricipal-axes">A Geometric View of Pricipal Axes</h2>
+<p>Suppose <script type="math/tex; ">Q(\textbf{x})=\textbf{x}^TA\textbf{x}</script>, 
+where <script type="math/tex; ">A</script> is an invertible <script type="math/tex; ">2 \times 2</script> symmetric matrix, 
+and let <script type="math/tex; ">c</script> be a constant.</p>
+<p>It can be shown that 
+the set of all <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\mathbb{R}^2</script> that satisfy</p>
+<p><script type="math/tex; mode=display">
+\textbf{x}^TA\textbf{x}=c \tag{3}
+</script></p>
+<p>either corresponds to 
+an ellipse (or circle), 
+a hyperbola, 
+two intersecting lines, or 
+a single point,
+or contains no points at all.</p>
+<p>If <script type="math/tex; ">A</script> is a <strong>diagonal matrix</strong>, 
+the graph is in <em>standard position</em>, 
+such as in the figure below.</p>
+<p><img src="fig/la_07_02_02.png" alt="fig2"></p>
+<p>If <script type="math/tex; ">A</script> is not a diagonal matrix, the graph of equation (3) is rotated out of standard position, as in the figure below.</p>
+<p><img src="fig/la_07_02_03.png" alt="fig3"></p>
+<p>Finding the <em>principal axes</em> (determined by the eigenvectors of <script type="math/tex; ">A</script>) 
+amounts to 
+finding a new coordinate system 
+with respect to which the graph is in standard position.</p>
+<h2 id="classifying-quadratic-forms">Classifying Quadratic Forms</h2>
+<p>A quadratic form Q is:</p>
+<ol>
+<li>positive definite if <script type="math/tex; ">Q(\textbf{x}) > 0</script> for all <script type="math/tex; ">\textbf{x} \ne 0</script></li>
+<li>negative definite if <script type="math/tex; ">Q(\textbf{x}) < 0</script> for all <script type="math/tex; ">\textbf{x} \ne 0</script></li>
+<li>indefinite if <script type="math/tex; ">Q(\textbf{x})</script> assumes both positive and negative values.</li>
+</ol>
+<p>Also, <script type="math/tex; ">Q</script> is said to be <strong>positive semidefinite</strong> if <script type="math/tex; ">Q(\textbf{x}) \ge 0</script> for all <script type="math/tex; ">\textbf{x}</script>, and negative semidefinite if <script type="math/tex; ">Q(\textbf{x}) \le 0</script> for all <script type="math/tex; ">\textbf{x}</script>.</p>
+<h2 id="quadratic-forms-and-eigenvalues">Quadratic Forms and Eigenvalues</h2>
+<hr>
+<h2 id="theorem-5">Theorem 5</h2>
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">n \times n</script> symmetric matrix.
+Then a quadratic form <script type="math/tex; ">\textbf{x}^TA\textbf{x}</script> is:</p>
+<ol>
+<li>positive definite if and only if the eigenvalues of <script type="math/tex; ">A</script> are all positive,</li>
+<li>negative definite if and only if the eigenvalues of <script type="math/tex; ">A</script> are all negative, or</li>
+<li>indefinite if and only if <script type="math/tex; ">A</script> has both positive and negative eigenvalues.</li>
+</ol>
+<hr>
+<h3 id="proof">Proof</h3>
+<p>By the <strong>Principal Axes Theorem</strong>, 
+there exists an orthogonal change of variable <script type="math/tex; ">\textbf{x}=P\textbf{y}</script> 
+such that</p>
+<p><script type="math/tex; mode=display">
+Q(\textbf{x}) = \textbf{x}^T A \textbf{x} = \textbf{y}^T D \textbf{y} =
+\lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \tag{4}
+</script>
+where <script type="math/tex; ">\lambda_1, \cdots \lambda_n</script> are the eigenvalues of <script type="math/tex; ">A</script>.</p>
+<p>Since <script type="math/tex; ">P</script> is invertible, 
+there is a one-to-one correspondence between all nonzero <script type="math/tex; ">\textbf{x}</script> and all nonzero <script type="math/tex; ">\textbf{y}</script>.</p>
+<p>Thus the values of <script type="math/tex; ">Q(\textbf{x})</script> for <script type="math/tex; ">\textbf{x} \ne \textbf{0}</script> coincide with 
+the values of the expression on the right side of (4),
+which is controlled 
+by the <strong>signs of the eigenvalues</strong> <script type="math/tex; ">\lambda_1, \cdots, \lambda_n</script>,
+in three ways described in the theorem.
+<script type="math/tex; ">\blacksquare</script></p>
 
                                 
                                 </section>
@@ -901,12 +891,12 @@ x_3
 
             
                 
-                <a href="la_01_04.html" class="navigation navigation-prev " aria-label="Previous page: 01 04 Matrix Equation">
+                <a href="la_07_01.html" class="navigation navigation-prev " aria-label="Previous page: 07_01">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_07.html" class="navigation navigation-next " aria-label="Next page: 01 07 Linear Independence">
+                <a href="la_07_03.html" class="navigation navigation-next " aria-label="Next page: 07_03">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -917,7 +907,7 @@ x_3
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"next":{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},"previous":{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_05.md","mtime":"2019-09-10T11:05:15.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"07_02","level":"1.3.25","depth":2,"next":{"title":"07_03","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},"previous":{"title":"07_01","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_07_02.md","mtime":"2019-08-09T10:10:34.446Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

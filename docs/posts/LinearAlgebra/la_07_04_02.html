@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 05 Solution Sets of Linear Systems · GitBook</title>
+        <title>07_04_02 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_07.html" />
+    <link rel="next" href="../Etc/" />
     
     
-    <link rel="prev" href="la_01_04.html" />
+    <link rel="prev" href="la_07_04_01.html" />
     
 
     </head>
@@ -239,7 +239,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.6" data-path="la_01_05.html">
+        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
             
                 <a href="la_01_05.html">
             
@@ -525,7 +525,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.28" data-path="la_07_04_02.html">
+        <li class="chapter active" data-level="1.3.28" data-path="la_07_04_02.html">
             
                 <a href="la_07_04_02.html">
             
@@ -644,7 +644,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 05 Solution Sets of Linear Systems</a>
+        <a href="../.." >07_04_02</a>
     </h1>
 </div>
 
@@ -659,220 +659,148 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
-<h1 id="15-solution-sets-of-linear-systems">1.5 Solution Sets of Linear Systems</h1>
-<ul>
-<li>Solution sets of linear systems are important objects of study in linear algebra.</li>
-<li>This section uses vector notation to give exlicit and geometric descriptions of such solution set.</li>
-</ul>
-<h2 id="homogeneous-linear-systems">Homogeneous Linear Systems</h2>
-<p>A system of linear equations is said to be <strong>homogeneous</strong>
-if it can be written in the form <script type="math/tex; ">A\bf{x}=\bf{0}</script> 
-where <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix and <script type="math/tex; ">\bf{0}</script> is the zero vector in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
-<p>Such a system <script type="math/tex; ">A\bf{x}=\bf{0}</script> always has at least one solution, namely, <script type="math/tex; ">\bf{x}=\bf{0}</script> (the zero veoctor in <script type="math/tex; ">\mathbb{R}^n</script>).</p>
-<p>This zero solution is usually called the <strong>trivial solution</strong>.</p>
-<p>For a given homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script>, the important question is whether there exists a <strong>nontrivial solution</strong>, that is, a nonzero vector <script type="math/tex; ">\bf{x}</script> that satisfies <script type="math/tex; ">A\bf{x}=\bf{0}</script>.</p>
-<p>The <a href="la_01_02.html#theorem-2--existence-and-uniqueness-theorem">Existence and Unqueness Theorem in Section 1.2 (Theorem)</a> leads immediately to the following fact.</p>
-<blockquote>
-<p>The homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script> has a nontrivial solution if and only if the equation has at least one free variable.</p>
-</blockquote>
-<h2 id="example-1">Example 1:</h2>
-<p>Determine if the following homogeneous system has a nontrivial solution. 
-Then describe the solution set.</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-3x_1+5x_2-4x_3 &=0 \\
--3x_1-2x_2+4x_3 &=0 \\
-6x_1+x_2-8x_3 &=0 \\
-\end{align}
-</script></p>
-<h3 id="solution-fo-example-1">Solution fo Example 1</h3>
-<p>Let <script type="math/tex; ">A</script> be the matrix of coefficients of the system and row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & \bf{0} \end{bmatrix}</script> to echelon form:</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
--3 & -2 & 4 & 0 \\
-6 & 1 & -8 & 0 \\
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
-0 & 3 & 0 & 0 \\
-0 & -9 & 0 & 0 \\
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
-0 & 3 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-\end{bmatrix}
-</script></p>
-<p>Since <script type="math/tex; ">x_3</script> is a free variable,
-has nontrivial solutions (one for each choice of <script type="math/tex; ">x_3</script>.)</p>
-<p>Continue the row reduction of <script type="math/tex; ">\begin{bmatrix} A & \bf{0} \end{bmatrix}</script> to reduced echelon form:</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-1 & 5/3 & -4/3 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-\end{bmatrix}
-\begin{align}
-x_1-\frac{4}{3}x_3 &= 0 \\
-x_2 &= 0\\
-0&=0\\
-\end{align}
-</script></p>
-<p>Solve for the basic variables <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> to obtain <script type="math/tex; ">x_1=\frac{4}{3}x_3, x_2=0</script>, with <script type="math/tex; ">x_3</script> free.</p>
-<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the form given below.</p>
-<p><script type="math/tex; mode=display">
-\textbf{x}=
-\begin{bmatrix}
-{x_1} \\
-{x_2} \\
-{x_3} \\ 
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{4}{3}
-{x_3} \\
-0 \\
-{x_3} \\
-\end{bmatrix}
-=
-{x_3}
-\begin{bmatrix}
-\frac{4}{3} \\
-0 \\
-1 \\
-\end{bmatrix}
-= 
-{x_3} 
-\textbf{v}
-</script></p>
-<p>where</p>
-<p><script type="math/tex; mode=display">
-\bf{v}= 
-\begin{bmatrix}
-4/3 \\ 0 \\ 1
-\end{bmatrix}
-</script></p>
-<p>Here <script type="math/tex; ">x_3</script> is factored out of the expression for the general solution vector.</p>
-<p>This shows that every solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> in this case is a scalar multiple of <script type="math/tex; ">\bf{v}</script>.</p>
-<p>The trivial solution is obtained by choosing <script type="math/tex; ">x_3=0</script></p>
-<p>Geometrically, the solution set is a line through <script type="math/tex; ">\bf{0}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
-<p>See Fig.1 below.</p>
-<p><img src="fig/la_01_05_01.png" alt="fig1">
-<script type="math/tex; ">\blacksquare</script></p>
-<h2 id="parametric-vector-form">Parametric Vector Form</h2>
-<p>The equation of the form <script type="math/tex; ">\textbf{x}= s \textbf{u} + t \textbf{v}</script> (<script type="math/tex; ">s,t</script> in <script type="math/tex; ">\mathbb{R}</script>) is called a <strong>parametric vector equation</strong> of the plane.</p>
-<p>In Example 1, the equation <script type="math/tex; ">\textbf{x} = x_3 \textbf{v} </script> (with <script type="math/tex; ">x_3</script> free), or <script type="math/tex; ">\textbf{x} = t \textbf{v} </script> (with <script type="math/tex; ">t</script> in <script type="math/tex; ">\mathbb{R}</script>),
-is a parametric vector equation of a line.</p>
-<p>Whenever a solution set is described explicitly
-with vectors as in Example 1, we say that the
-solution is in <strong>parametric vector form</strong>.</p>
-<h2 id="solutions-of-nonhomogeneous-systems">Solutions of Nonhomogeneous Systems</h2>
-<p> When a nonhomogeneous linear system has many solutions, the general solution can be 
-written in parametric vector form as one vector 
-plus an arbitrary linear combination of vectors that 
-satisfy the corresponding homogeneous system.</p>
+                                <h1 id="ch-07-symmetric-matrices-and-quadratic-forms">Ch 07 Symmetric Matrices and Quadratic Forms</h1>
+<h1 id="74-the-singular-value-decomposition-2">7.4 The Singular Value Decomposition (2)</h1>
 <h2 id="example-3">Example 3</h2>
-<p>Describe all solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script> where</p>
-<p><script type="math/tex; mode=display">
-A = 
+<p>Use the results of Examples 1 and 2 to construct a singular value decomposition of <script type="math/tex; ">A=
 \begin{bmatrix}
-3 & 5 & -4 \\
--3 & -2 & 4 \\
-6 & 1 & -8 
-\end{bmatrix}
-\text{ and }
-\bf{b} =
-\begin{bmatrix}
-7 \\
--1 \\
--4 
+4 & 11 & 14 \\
+8 & 7 & -2 \\
 \end{bmatrix}
 </script></p>
 <h3 id="solution-of-example-3">Solution of Example 3</h3>
-<p>Row operations on <script type="math/tex; ">\begin{bmatrix} A & \bf{b}\end{bmatrix} </script> produce</p>
+<p>A construction can be divided into three steps.</p>
+<p><strong>Step 1. Find an orthogonal diagonalization of <script type="math/tex; ">A^TA</script>.</strong></p>
+<p>   That is, find the eigenvalues of <script type="math/tex; ">A^TA</script> and a corresponding orthonormal set of eigenvectors. If <script type="math/tex; ">A</script> had only two columns, the calculations could be done by hand. Larger matrices usually require a matrix program. However, for the matrix <script type="math/tex; ">A</script> here, the eigendata for <script type="math/tex; ">A^TA</script> are provided in Example 2.</p>
+<p><strong>Step 2. Set up <script type="math/tex; ">V</script> and <script type="math/tex; ">\Sigma</script>.</strong></p>
+<p>Arrange the eigenvalues of <script type="math/tex; ">A^TA</script> in decreasing order. 
+In Example 1, the eigenvalues are already listed in decreasing order: 360, 90, and 0. 
+The corresponding unit eigenvectors, <script type="math/tex; ">\textbf{v}_1, \textbf{v}_2, \text{ and}, \textbf{v}_3</script>, are the right singular vectors of <script type="math/tex; ">A</script>. 
+Using Example 1, construct</p>
 <p><script type="math/tex; mode=display">
-\begin{bmatrix}
-3 & 5 & -4 &7 \\
--3 & -2 & 4&-1 \\
-6 & 1 & -8&-4 
+\begin{align*}
+V &= \begin{bmatrix}
+\textbf{v}_1 & \textbf{v}_2 & \textbf{v}_3 
+\end{bmatrix} \\
+&=\begin{bmatrix}
+1/3 & -2/3 & 2/3 \\
+2/3 & -1/3 & -2/3 \\
+2/3 & 2/3 & 1/3 
 \end{bmatrix}
-\sim
-\begin{bmatrix}
-1 & 0 & -4/3 &-1 \\
-0 & 1 & 0 & 2 \\
-0 & 0 & 0 & 0
-\end{bmatrix},
-\begin{align}
-x_1-\frac{4}{3}x_3&=-1 \\
-x_2 &= 2 \\
-0 &= 0
-\end{align}
+\end{align*}
 </script></p>
-<p>Thus, <script type="math/tex; ">x_1 = -1 + \frac{4}{3}x_3, x_2=2</script>, and <script type="math/tex; ">x_3</script> is free.</p>
-<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> has the form</p>
-<p><img src="fig/la_01_05_e3.png" alt="fig_ex"></p>
-<p>The equation <script type="math/tex; ">\textbf{x}=\textbf{p}+x_3\textbf{v}</script>, or, writing t as a general parameter,</p>
+<p>The square roots of the eigenvalues are the singular values:</p>
 <p><script type="math/tex; mode=display">
-\textbf{x} = \textbf{p} + t \textbf{v} \quad ( {t} \text{ in } \mathbb{R})
-\tag{3}
+\sigma_1 = 6 \sqrt{10}, \\
+\sigma_2 = 3 \sqrt{10}, \\
+\sigma_3 = 0
 </script></p>
-<p>describes the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> in parametric vector form.</p>
-<p>The solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the parametric vector equation</p>
+<p>The nonzero singular values are the diagonal entries of <script type="math/tex; ">D</script>. </p>
+<p>The matrix <script type="math/tex; ">\Sigma</script> is the same size as <script type="math/tex; ">A</script>, 
+with <script type="math/tex; ">D</script> in its upper left corner and with 0&#x2019;s elsewhere.</p>
 <p><script type="math/tex; mode=display">
-\textbf{x} = t \textbf{v} \quad ( t \text{ in }  \mathbb{R}) \tag{4}
+\begin{align*}
+D &= \begin{bmatrix}
+6\sqrt{10} & 0 \\
+0 & 3\sqrt{10} \\
+\end{bmatrix}, \\
+\Sigma &= \begin{bmatrix}
+D & \textbf{0}
+\end{bmatrix} \\
+&= \begin{bmatrix}
+6\sqrt{10} & 0 & 0 \\ 
+0 & 3\sqrt{10} & 0
+\end{bmatrix} \\
+\end{align*}
 </script></p>
-<p>[with the same <script type="math/tex; ">\bf{v}</script> that appears in (3)]. <script type="math/tex; ">\blacksquare</script></p>
-<p>Thus <strong>the solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> are obtained 
-by <strong>adding the vector <script type="math/tex; ">\bf{p}</script> to the solutions of <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong>.</p>
-<p>The vector <script type="math/tex; ">\bf{p}</script> itself is just one <strong>particular solution</strong> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> [corresponding to <script type="math/tex; ">t</script> = 0 in (3).]</p>
-<p>To describe the solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> geometrically, we can think of <strong>vector addition as a translation</strong>.</p>
-<p>Given <script type="math/tex; ">\bf{v}</script> and <script type="math/tex; ">\bf{p}</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script>, the effect of adding <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}</script> 
-is to move <script type="math/tex; ">\bf{v}</script> in a direction parallel to the line through <script type="math/tex; ">\bf{p}</script> and <script type="math/tex; ">\bf{0}</script>.</p>
-<p>We say that <strong><script type="math/tex; ">\bf{v}</script> is translated by <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}+\bf{p}</script></strong>. See the following figure.</p>
-<p><img src="fig/la_01_05_03.png" alt="fig3"></p>
-<p>If each point on a line <script type="math/tex; ">L</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script> is translated by 
-a vector <script type="math/tex; ">\bf{p}</script>, the result is a line parallel to <script type="math/tex; ">L</script>. 
-See the following figure.</p>
-<p><img src="fig/la_01_05_04.png" alt="fig4"></p>
-<p>Suppose <script type="math/tex; ">L</script> is the line through <script type="math/tex; ">\bf{0}</script> and <script type="math/tex; ">\bf{v}</script>, described by equation (4).</p>
-<p>Adding <script type="math/tex; ">\bf{p}</script> to each point on <script type="math/tex; ">L</script> produces the translated line described by equation (3).</p>
-<p>We call <strong>(3) the equation of the line through <script type="math/tex; ">\bf{p}</script> parallel to <script type="math/tex; ">\bf{v}</script></strong>.</p>
-<p>Thus <em>the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is a line through <script type="math/tex; ">\bf{p}</script> parallel to the solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script></em>.
-The figure below illustrates this case.</p>
-<p><img src="fig/la_01_05_05.png" alt="fig5"></p>
-<p><strong>The relation between the solution sets of <script type="math/tex; ">A\bf{x}=\bf{b}</script> and <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong> 
-shown in the figure above generalizes to <strong>any consistent equation <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> 
-,although <strong>the solution set will be larger than a line 
-when there are several free variables</strong>.</p>
-<hr>
-<h2 id="theorem-6">Theorem 6</h2>
-<p>Suppose the equation <script type="math/tex; ">A\bf{x}=\bf{b}</script> is <strong>consistent</strong> for some given <script type="math/tex; ">\bf{b}</script>, 
-and let <script type="math/tex; ">\bf{p}</script> be a solution (,it means that <script type="math/tex; ">\bf{p}</script> is a particular solution). </p>
-<p>Then the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is the <strong>set of all vectors of the form <script type="math/tex; ">\bf{w}=\bf{p}+\bf{v}_h</script></strong>, 
-where <strong><script type="math/tex; ">\bf{v}_h</script> is any solution of the homogeneous equation <script type="math/tex; ">A\textbf{x}=\textbf{0}</script></strong>.</p>
-<ul>
-<li>Theorem 6 says that if <script type="math/tex; ">A\bf{x}=\bf{b}</script> has a solution, then the solution set is obtained by translating the solution set of
-<script type="math/tex; ">A\bf{x}=\bf{0}</script> using any particular solution <script type="math/tex; ">\bf{p}</script> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> for the translation.</li>
-</ul>
-<h2 id="writing-a-solution-set-of-a-consistent-system-in-parametric-vector-form">Writing a Solution Set (of a Consistent System) in Parametric Vector Form</h2>
-<ol>
-<li>Row reduce the augmented matrix to <strong>reduced echelon form, RREF</strong>.</li>
-<li>Express each basic variable in terms of any free variables appearing in an equation.</li>
-<li>Write a typical solution <script type="math/tex; ">\bf{x}</script> as a vector whose entries depend on the free variables, if any.</li>
-<li>Decompose <script type="math/tex; ">\bf{x}</script> into a <strong>linear combination of vectors (with numeric entries)</strong> using the free variables as parameters.</li>
-</ol>
+<p><strong>Step 3. Construct <script type="math/tex; ">U</script>.</strong> </p>
+<p>When <script type="math/tex; ">A</script> has rank <script type="math/tex; ">r</script>, the first <script type="math/tex; ">r</script> columns of <script type="math/tex; ">U</script> are the normalized vectors obtained from <script type="math/tex; ">A\textbf{v}_1 \cdots A\textbf{v}_r</script>.
+In this example, 
+<script type="math/tex; ">A</script> has two nonzero singular values, so <script type="math/tex; ">\text{rank }A=2</script>.
+Recall from equation (2) and the paragraph before Example 2 that <script type="math/tex; ">||A\textbf{v}_1||=\sigma_1</script> and <script type="math/tex; ">||A\textbf{v}_2||=\sigma_2</script>.
+Thus,</p>
 <p><script type="math/tex; mode=display">
+\textbf{u}_1=\frac{1}{\sigma_1}A\textbf{v}_1=\frac{1}{6\sqrt{10}}
 \begin{bmatrix}
--1 \\ 2 \\ 0 
-\end{bmatrix} +
-x_3
-\begin{bmatrix}
-4/3 \\ 0 \\ 1
+18\\
+6
 \end{bmatrix}
+=
+\begin{bmatrix}
+\frac{3}{\sqrt{10}}\\
+\frac{1}{\sqrt{10}}
+\end{bmatrix} \\
+\textbf{u}_2=\frac{1}{\sigma_2}A\textbf{v}_2=\frac{1}{3\sqrt{10}}
+\begin{bmatrix}
+3\\
+-9
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{10}}\\
+\frac{-3}{\sqrt{10}}
+\end{bmatrix}
+</script></p>
+<p>Note that 
+<script type="math/tex; ">\left\{\textbf{u}_1,\textbf{u}_2\right\}</script> is already a basis for <script type="math/tex; ">\mathbb{R}^2</script>.
+Thus no additional vectors are needed for <script type="math/tex; ">U</script>, and 
+<script type="math/tex; ">U = \begin{bmatrix}\textbf{u}_1 & \textbf{u}_2\end{bmatrix}</script>.</p>
+<p>The singular value decomposition of <script type="math/tex; ">A</script> is</p>
+<p><script type="math/tex; mode=display">
+A = 
+\begin{bmatrix}
+\frac{3}{\sqrt{10}} & \frac{1}{\sqrt{10}} \\
+\frac{1}{\sqrt{10}} & \frac{-3}{\sqrt{10}} \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{6}{\sqrt{10}} & 0 & 0 \\
+0 & \frac{3}{\sqrt{10}} & 0\\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{3} & \frac{2}{3} & \frac{2}{3} \\
+\frac{-2}{3} & \frac{-1}{3} & \frac{2}{3}\\
+\frac{2}{3} & \frac{-2}{3} & \frac{1}{3}
+\end{bmatrix}
+</script></p>
+<h2 id="theorem-the-invertible-matrix-theorem-concluded">Theorem: The Invertible Matrix Theorem (concluded)</h2>
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix. Then the following statements are each equivalent to the statement that <script type="math/tex; ">A</script> is an invertible matrix.</p>
+<p>u. <script type="math/tex; ">\left(\text{Col }A\right)^{\perp} = \left\{\textbf{0}\right\}</script></p>
+<p>v. <script type="math/tex; ">\left(\text{Nul }A\right)^{\perp} = \mathbb{R}^n</script></p>
+<p>w. <script type="math/tex; ">\text{Row }A = \mathbb{R}^n</script></p>
+<p>x. <script type="math/tex; ">A</script> has <script type="math/tex; ">n</script> nonzero singular values.</p>
+<h2 id="example-7">Example 7</h2>
+<p><strong>Reduced SVD</strong> and the <strong>Pseudoinverse of <script type="math/tex; ">A</script></strong>) </p>
+<p>When <script type="math/tex; ">\Sigma</script> contains rows or columns of zeros, 
+a more compact decomposition of <script type="math/tex; ">A</script> is possible. 
+Using the notation established above, 
+let <script type="math/tex; ">r = \text{rank }A</script>, and 
+partition <script type="math/tex; ">U</script> and <script type="math/tex; ">V</script> into submatrices
+whose first blocks contain <script type="math/tex; ">r</script> columns:</p>
+<p><script type="math/tex; mode=display">
+U = \begin{bmatrix} U_r & U_{m-r} \end{bmatrix}\quad ,\text{where } 
+U_r=\begin{bmatrix} \textbf{u}_1 & \cdots & \textbf{u}_r \end{bmatrix} \\
+V = \begin{bmatrix} V_r & V_{n-r} \end{bmatrix}\quad ,\text{where } 
+V_r=\begin{bmatrix} \textbf{v}_1 & \cdots & \textbf{v}_r \end{bmatrix} \\
+</script></p>
+<p>Then <script type="math/tex; ">U_r</script> is <script type="math/tex; ">m \times r</script> and <script type="math/tex; ">V_r</script> is <script type="math/tex; ">n\times r</script>.
+Then partitioned matrix multiplication shows that</p>
+<p><script type="math/tex; mode=display">
+A = \begin{bmatrix} U_r & U_{m-r} \end{bmatrix}
+\begin{bmatrix} 
+D & \mathbb{0} \\
+\mathbb{0} & \mathbb{0}
+\end{bmatrix}
+\begin{bmatrix} V_r^T \\ V_{m-r}^T \end{bmatrix}
+=
+U_r D V_r^T
+</script></p>
+<p>This factorization of <script type="math/tex; ">A</script> is called a <strong>reduced singular value decomposition</strong> of <script type="math/tex; ">A</script>. 
+Since the diagonal entries in <script type="math/tex; ">D</script> are nonzero, 
+<script type="math/tex; ">D</script> is invertible. </p>
+<p>The following matrix is called the <strong>pseudoinverse</strong> 
+(also, the <strong>Moore-Penrose inverse</strong>) of <script type="math/tex; ">A</script>:</p>
+<p><script type="math/tex; mode=display">
+A^+ = V_r D^{-1} U_r^T \tag{10}
 </script></p>
 
                                 
@@ -901,12 +829,12 @@ x_3
 
             
                 
-                <a href="la_01_04.html" class="navigation navigation-prev " aria-label="Previous page: 01 04 Matrix Equation">
+                <a href="la_07_04_01.html" class="navigation navigation-prev " aria-label="Previous page: 07_04_01">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_07.html" class="navigation navigation-next " aria-label="Next page: 01 07 Linear Independence">
+                <a href="../Etc/" class="navigation navigation-next " aria-label="Next page: Etc">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -917,7 +845,7 @@ x_3
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"next":{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},"previous":{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_05.md","mtime":"2019-09-10T11:05:15.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"07_04_02","level":"1.3.28","depth":2,"next":{"title":"Etc","level":"1.4","depth":1,"path":"posts/Etc/README.md","ref":"posts/Etc/README.md","articles":[{"title":"Install Gitbook","level":"1.4.1","depth":2,"path":"posts/Etc/install_gitbook.md","ref":"posts/Etc/install_gitbook.md","articles":[]},{"title":"Install uim","level":"1.4.2","depth":2,"path":"posts/Etc/install_uim.md","ref":"posts/Etc/install_uim.md","articles":[]},{"title":"Install virtualbox","level":"1.4.3","depth":2,"path":"posts/Etc/install_virtualbox.md","ref":"posts/Etc/install_virtualbox.md","articles":[]},{"title":"Video Test","level":"1.4.4","depth":2,"path":"posts/Etc/video.md","ref":"posts/Etc/video.md","articles":[]}]},"previous":{"title":"07_04_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_07_04_02.md","mtime":"2019-08-20T12:51:05.503Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Docker CMD Summary · GitBook</title>
+        <title>Etc · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="docker_hub.html" />
+    <link rel="next" href="install_gitbook.html" />
     
     
-    <link rel="prev" href="nvidia_docker.html" />
+    <link rel="prev" href="../LinearAlgebra/la_07_04_02.html" />
     
 
     </head>
@@ -102,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../Docker/">
             
-                <a href="./">
+                <a href="../Docker/">
             
                     
                     Docker
@@ -116,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="nvidia_docker.html">
+        <li class="chapter " data-level="1.2.1" data-path="../Docker/nvidia_docker.html">
             
-                <a href="nvidia_docker.html">
+                <a href="../Docker/nvidia_docker.html">
             
                     
                     Install Nvidia-Docker2
@@ -129,9 +129,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="docker_summary.html">
+        <li class="chapter " data-level="1.2.2" data-path="../Docker/docker_summary.html">
             
-                <a href="docker_summary.html">
+                <a href="../Docker/docker_summary.html">
             
                     
                     Docker CMD Summary
@@ -142,9 +142,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="docker_hub.html">
+        <li class="chapter " data-level="1.2.3" data-path="../Docker/docker_hub.html">
             
-                <a href="docker_hub.html">
+                <a href="../Docker/docker_hub.html">
             
                     
                     Docker Hub CMD Summary
@@ -543,9 +543,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Etc/">
+        <li class="chapter active" data-level="1.4" data-path="./">
             
-                <a href="../Etc/">
+                <a href="./">
             
                     
                     Etc
@@ -557,9 +557,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Etc/install_gitbook.html">
+        <li class="chapter " data-level="1.4.1" data-path="install_gitbook.html">
             
-                <a href="../Etc/install_gitbook.html">
+                <a href="install_gitbook.html">
             
                     
                     Install Gitbook
@@ -570,9 +570,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Etc/install_uim.html">
+        <li class="chapter " data-level="1.4.2" data-path="install_uim.html">
             
-                <a href="../Etc/install_uim.html">
+                <a href="install_uim.html">
             
                     
                     Install uim
@@ -583,9 +583,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Etc/install_virtualbox.html">
+        <li class="chapter " data-level="1.4.3" data-path="install_virtualbox.html">
             
-                <a href="../Etc/install_virtualbox.html">
+                <a href="install_virtualbox.html">
             
                     
                     Install virtualbox
@@ -596,9 +596,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../Etc/video.html">
+        <li class="chapter " data-level="1.4.4" data-path="video.html">
             
-                <a href="../Etc/video.html">
+                <a href="video.html">
             
                     
                     Video Test
@@ -644,7 +644,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Docker CMD Summary</a>
+        <a href="../.." >Etc</a>
     </h1>
 </div>
 
@@ -659,102 +659,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="docker-docker-&#xBA85;&#xB839;&#xC5B4;-&#xAC04;&#xB2E8;&#xC815;&#xB9AC;">[Docker] Docker &#xBA85;&#xB839;&#xC5B4; &#xAC04;&#xB2E8;&#xC815;&#xB9AC;</h1>
-<p>@(Docker)[#docker]</p>
-<h2 id="docker&#xC758;-image&#xB97C;-&#xD655;&#xC778;">Docker&#xC758; image&#xB97C; &#xD655;&#xC778;</h2>
-<p><code>docker images</code> </p>
-<ul>
-<li>&#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;&#xD55C; docker image&#xB4E4;&#xC744; &#xBCF4;&#xC5EC;&#xC90C;.</li>
-<li>&#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;&#xD558;&#xB2E4;&#xB294; &#xB73B;&#xC740; container&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xB294; image&#xB77C;&#xB294; &#xB73B;&#xC784;.<pre><code>REPOSITORY                                     TAG                            IMAGE ID            CREATED             SIZE
-cuda9.0/tf                                     180807                         f981fe10bc84        6 days ago          9.06GB
-nvidia/cuda                                    9.0-cudnn7-devel-ubuntu16.04   fde2f471fd51        2 weeks ago         2.61GB
-mw/ub16.04_caffe-cuda9.0-py2.7                 2018-03-15                     5037f7726030        5 months ago        4.21GB
-mw/ub16.04_caffe-cuda9.0-py2.7                 2018-03-14                     05a3d82542b2        5 months ago        4.14GB
-mw/ub16.04_digits5.0                           2018-01-03                     d111f5cac5e4        7 months ago        1.86GB
-mw/ub16.04_pytorch-cuda8.0-py3.5               2018-01-03                     0d06dda116e5        7 months ago        3.04GB
-mw/ub16.04_theano-cuda8.0-py2.7-py3.5          2018-01-03                     cc72b04307ef        7 months ago        9.68GB
-mw/ub16.04_tensorflow1.3-cuda8.0-py2.7-py3.5   2018-01-03                     63d663a6bc63        7 months ago        4.43GB
-mw/ub16.04_itorch-cuda8.0-py2.7                2018-01-03                     6b388d2e50cb        7 months ago        6.94GB
-mw/ub16.04_caffe2-cuda8.0-py2.7                2018-01-03                     45c6de7ee594        7 months ago        4.05GB
-mw/ub16.04_caffe-cuda8.0-py2.7                 2018-01-03                     4ae4b19f52a6        7 months ago        3.61GB
-</code></pre></li>
-</ul>
-<h2 id="docker&#xC5D0;&#xC11C;-image&#xB97C;-&#xC0AD;&#xC81C;">Docker&#xC5D0;&#xC11C; image&#xB97C; &#xC0AD;&#xC81C;</h2>
-<p><code>docker rmi IMAGE_ID</code></p>
-<ul>
-<li>&#xD604;&#xC7AC; docker&#xC758; image&#xB97C; &#xC0AD;&#xC81C;.</li>
-</ul>
-<h2 id="&#xD604;&#xC7AC;-&#xB3D9;&#xC791;&#xC911;&#xC778;-container&#xB97C;-&#xD655;&#xC778;">&#xD604;&#xC7AC; &#xB3D9;&#xC791;&#xC911;&#xC778; container&#xB97C; &#xD655;&#xC778;</h2>
-<p><code>docker ps (-a)</code></p>
-<ul>
-<li>&#xD604;&#xC7AC; container list&#xB97C; &#xD655;&#xC778;.</li>
-</ul>
-<h2 id="container-list&#xC5D0;&#xC11C;-&#xD2B9;&#xC815;-container&#xB97C;-&#xC0AD;&#xC81C;">container list&#xC5D0;&#xC11C; &#xD2B9;&#xC815; container&#xB97C; &#xC0AD;&#xC81C;.</h2>
-<p><code>docker rm REPOSITORY:TAG</code></p>
-<ul>
-<li>container &#xC0AD;&#xC81C;</li>
-<li>rmi &#xC77C; &#xACBD;&#xC6B0; image&#xC0AD;&#xC81C;.</li>
-</ul>
-<h2 id="docker&#xC758;-&#xD2B9;&#xC815;-image&#xB97C;-container&#xB85C;-&#xC218;&#xD589;">docker&#xC758; &#xD2B9;&#xC815; image&#xB97C; container&#xB85C; &#xC218;&#xD589;.</h2>
-<p><code>docker run -ti REPOSITORY:TAG bash</code></p>
-<ul>
-<li><code>docker</code> image &#xC2E4;&#xD589;.</li>
-<li><code>-v $HOME/home_dir:/docker_dir</code> &#xD638;&#xC2A4;&#xD2B8;&#xC758; &#xD2B9;&#xC815; &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; mount&#xD558;&#xB294; &#xC77C;&#xC885;&#xC758; &#xC5EC;&#xACF5;&#xC720; &#xD30C;&#xC77C;&#xC2DC;&#xC2A4;&#xD15C;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; docker container&#xC640; host&#xAC04;&#xC758; &#xD30C;&#xC77C;&#xC744; &#xAC04;&#xD3B8;&#xD558;&#xAC8C; &#xC804;&#xC1A1;&#xD560; &#xC218; &#xC788;&#xC74C;.</li>
-<li>&#xC544;&#xB798;&#xC758; &#xC608;&#xB294; &#xC708;&#xB3C4;&#xC6B0;&#xC758; <code>d:\MMMIL\Project</code> &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xB97C; docker&#xC5D0;&#xC11C; <code>/data</code>&#xB85C; &#xB9C8;&#xC6B4;&#xD305;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC90C;. <blockquote>
-<p>docker run -ti -v &quot;d:\MMMIL\Project&quot;:/data -p 8888:8888 dsaint31x/ds_debian:ml /bin/bash</p>
-</blockquote>
-</li>
-<li>&#xC704;&#xC5D0;&#xC11C; <code>-p</code>&#xC635;&#xC158;&#xC740; docker container&#xC758; &#xD3EC;&#xD2B8;&#xB97C; host&#xC758; &#xD3EC;&#xD2B8;&#xB85C; &#xC5F0;&#xACB0;&#xD558;&#xB294; &#xD3EC;&#xD2B8;&#xD3EC;&#xC6CC;&#xB529;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB428;.</li>
-</ul>
-<pre><code>docker run -ti -v /data1:/data1 nvidia/cuda bash
-</code></pre><h2 id="&#xD604;&#xC7AC;-&#xC2E4;&#xD589;-&#xC911;&#xC778;-container&#xC5D0;&#xC11C;-&#xD2B9;&#xC815;-&#xBA85;&#xB839;-&#xC218;&#xD589;">&#xD604;&#xC7AC; &#xC2E4;&#xD589; &#xC911;&#xC778; container&#xC5D0;&#xC11C; &#xD2B9;&#xC815; &#xBA85;&#xB839; &#xC218;&#xD589;.</h2>
-<p><code>docker exec -ti REPOSITORY:TAG /bin/bash</code></p>
-<ul>
-<li>&#xD604;&#xC7AC; &#xC2E4;&#xD589;&#xC911;&#xC778; &#xCEE8;&#xD14C;&#xC774;&#xB108;&#xC5D0;&#xC11C; &#xBA85;&#xB839;&#xC5B4;&#xB97C; &#xC218;&#xD589;&#xC2DC;&#xD0B4;.</li>
-<li><code>run</code>&#xACFC;&#xC758; &#xCC28;&#xC774;&#xB294; container&#xB97C; &#xC0C8;&#xB85C; &#xC2DC;&#xC791;&#xC2DC;&#xD0A4;&#xB294;&#xC9C0;&#xC758; &#xCC28;&#xC774;&#xC784;.<pre><code>docker exec -ti pedantic_fermi /bin/bash
-</code></pre></li>
-</ul>
-<h2 id="container&#xB97C;-image&#xB85C;-&#xC800;&#xC7A5;">container&#xB97C; image&#xB85C; &#xC800;&#xC7A5;.</h2>
-<p><code>docker commit</code></p>
-<ul>
-<li>container&#xB97C; image&#xB85C; &#xC800;&#xC7A5;.</li>
-<li>&#xC544;&#xB798;&#xC758; &#xACBD;&#xC6B0;, CONTAINER_ID&#xAC00; image&#xB85C; &#xC800;&#xC7A5;&#xB420; source&#xC784;.</li>
-<li>target&#xC758; REPOSITORY&#xC640; TAG&#xB97C; &#xC9C0;&#xC815;&#xD568;.<pre><code>docker commit CONTAINER_ID REPOSITORY:TAG
-</code></pre></li>
-<li>&#xC2E4;&#xC81C; &#xC608;<pre><code>docker commit c6e372556f8a cuda9.0/tf:180807
-</code></pre></li>
-<li>&#xC0C1;&#xC138;&#xC124;&#xBA85;<ul>
-<li>&#xC5EC;&#xAE30;&#xC11C; <code>cuda9.0</code>&#xC740; respository&#xBA85;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB428;.</li>
-<li>dockerhub&#xC5D0; push&#xD558;&#xC5EC; &#xAD00;&#xB9AC;&#xD558;&#xACE0;&#xC790; &#xD560; &#xACBD;&#xC6B0;&#xC5D0; repostiroy&#xBA85;&#xC774; &#xBCF8;&#xC778;&#xC758; &#xACC4;&#xC815;&#xBA85;&#xACFC; &#xC77C;&#xCE58;&#xD574;&#xC57C;&#xD568;.</li>
-<li>&#xB85C;&#xCEEC;&#xC5D0;&#xC11C;&#xB9CC; &#xC774;&#xC6A9;&#xD560; &#xACBD;&#xC6B0; &#xC5C6;&#xC5B4;&#xB3C4; &#xC0C1;&#xAD00;&#xC5C6;&#xC74C;.</li>
-<li><code>-m</code> &#xC635;&#xC158;&#xC744; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xBCC0;&#xACBD; &#xB0B4;&#xC5ED;&#xC5D0; &#xB300;&#xD574; &#xAE30;&#xB85D;&#xC744; &#xB0A8;&#xACA8;&#xB3C4; &#xB428;.</li>
-</ul>
-</li>
-</ul>
-<h2 id="&#xD2B9;&#xC815;-image&#xB97C;-docker-hub&#xC5D0;-upload">&#xD2B9;&#xC815; image&#xB97C; docker hub&#xC5D0; upload.</h2>
-<p><code>docker push dsaint31x/ds_debian:181010</code></p>
-<ul>
-<li>image&#xB97C; docker hub&#xC5D0; push&#xC2DC;&#xCF1C;&#xC11C; &#xC6D0;&#xACA9;&#xC9C0;&#xC5D0; &#xC62C;&#xB9BC;.</li>
-<li>&#xAC1C;&#xBC1C; &#xD658;&#xACBD;&#xC744; &#xAD6C;&#xCD95;&#xD558;&#xACE0; &#xD574;&#xB2F9; image&#xB97C; &#xC62C;&#xB824;&#xB450;&#xBA74; &#xC774;&#xD6C4; &#xBAA8;&#xB4E0; &#xC7A5;&#xBE44;&#xC5D0;&#xC11C; docker&#xB9CC; &#xC788;&#xB2E4;&#xBA74; &#xAC19;&#xC740; &#xD658;&#xACBD;&#xC744; &#xB9E4;&#xC6B0; &#xC27D;&#xAC8C; &#xC7AC; &#xAD6C;&#xCD95;&#xAC00;&#xB2A5;&#xD568;.</li>
-<li>1&#xAC1C;&#xC758; private&#xD55C; repository&#xB97C; docker hub&#xC5D0;&#xC120; &#xC81C;&#xACF5;&#xD558;&#xB2C8; &#xD558;&#xB098;&#xC815;&#xB3C4;&#xB294; &#xB9CC;&#xB4E4;&#xC5B4;&#xB450;&#xC5B4;&#xB3C4; &#xC88B;&#xC74C;. </li>
-</ul>
-<h2 id="example">Example</h2>
-<ol>
-<li>REPOSITORY&#xAC00; <code>nvidia/cuda</code>&#xC774;&#xACE0;, TAG&#xAC00; <code>9.2-cudnn7-devel-ubuntu16.04</code>&#xC778; image&#xB97C; pull.</li>
-<li><code>docker images</code>&#xB85C; &#xC774;&#xBBF8;&#xC9C0; &#xCD94;&#xAC00;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xD655;&#xC778;.</li>
-<li>&#xD574;&#xB2F9; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xB3D9;&#xC791;&#xC2DC;&#xD0B4;. <code>/data1/Brain_and_ML</code>&#xB97C; <code>/data1</code>&#xC73C;&#xB85C; &#xACF5;&#xC720;&#xD568;.</li>
-<li>container&#xC5D0;&#xC11C; &#xB098;&#xC640;&#xC11C;, &#xD574;&#xB2F9; <code>CONTAINER_ID</code>&#xD655;&#xC778;.</li>
-<li>&#xD655;&#xC778;&#xD55C; <code>CONTAINER_ID</code>&#xC758; container&#xB97C; image&#xB85C; &#xC800;&#xC7A5;.<pre><code>docker pull nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
-docker images
-docker run -ti -v /data1/Brain_and_ML:/data1 -v /home/brain/setup:/setup nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04 bash
-docker ps -a
-docker commit feb105c40144 tf/conda:tf19.0
-</code></pre></li>
-</ol>
-<h2 id="references">References</h2>
-<p>(<a href="https://ahribori.com/article/5912b3ee381ff41040995a40" target="_blank">https://ahribori.com/article/5912b3ee381ff41040995a40</a>)
-(<a href="https://help.ubuntu.com/community/EnvironmentVariables#A.2Fetc.2Fenvironment" target="_blank">https://help.ubuntu.com/community/EnvironmentVariables#A.2Fetc.2Fenvironment</a>)
-(<a href="https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart" target="_blank">https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart</a>)</p>
+                                <h1 id="test">Test</h1>
 
                                 
                                 </section>
@@ -782,12 +687,12 @@ docker commit feb105c40144 tf/conda:tf19.0
 
             
                 
-                <a href="nvidia_docker.html" class="navigation navigation-prev " aria-label="Previous page: Install Nvidia-Docker2">
+                <a href="../LinearAlgebra/la_07_04_02.html" class="navigation navigation-prev " aria-label="Previous page: 07_04_02">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="docker_hub.html" class="navigation navigation-next " aria-label="Next page: Docker Hub CMD Summary">
+                <a href="install_gitbook.html" class="navigation navigation-next " aria-label="Next page: Install Gitbook">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -798,7 +703,7 @@ docker commit feb105c40144 tf/conda:tf19.0
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Docker CMD Summary","level":"1.2.2","depth":2,"next":{"title":"Docker Hub CMD Summary","level":"1.2.3","depth":2,"path":"posts/Docker/docker_hub.md","ref":"posts/Docker/docker_hub.md","articles":[]},"previous":{"title":"Install Nvidia-Docker2","level":"1.2.1","depth":2,"path":"posts/Docker/nvidia_docker.md","ref":"posts/Docker/nvidia_docker.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/Docker/docker_summary.md","mtime":"2019-07-29T00:19:23.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Etc","level":"1.4","depth":1,"next":{"title":"Install Gitbook","level":"1.4.1","depth":2,"path":"posts/Etc/install_gitbook.md","ref":"posts/Etc/install_gitbook.md","articles":[]},"previous":{"title":"07_04_02","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/Etc/README.md","mtime":"2019-07-29T00:19:23.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 05 Solution Sets of Linear Systems · GitBook</title>
+        <title>05_01 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_07.html" />
+    <link rel="next" href="la_05_02.html" />
     
     
-    <link rel="prev" href="la_01_04.html" />
+    <link rel="prev" href="la_02_09.html" />
     
 
     </head>
@@ -239,7 +239,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.6" data-path="la_01_05.html">
+        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
             
                 <a href="la_01_05.html">
             
@@ -408,7 +408,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.19" data-path="la_05_01.html">
+        <li class="chapter active" data-level="1.3.19" data-path="la_05_01.html">
             
                 <a href="la_05_01.html">
             
@@ -644,7 +644,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 05 Solution Sets of Linear Systems</a>
+        <a href="../.." >05_01</a>
     </h1>
 </div>
 
@@ -659,221 +659,144 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
-<h1 id="15-solution-sets-of-linear-systems">1.5 Solution Sets of Linear Systems</h1>
-<ul>
-<li>Solution sets of linear systems are important objects of study in linear algebra.</li>
-<li>This section uses vector notation to give exlicit and geometric descriptions of such solution set.</li>
-</ul>
-<h2 id="homogeneous-linear-systems">Homogeneous Linear Systems</h2>
-<p>A system of linear equations is said to be <strong>homogeneous</strong>
-if it can be written in the form <script type="math/tex; ">A\bf{x}=\bf{0}</script> 
-where <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix and <script type="math/tex; ">\bf{0}</script> is the zero vector in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
-<p>Such a system <script type="math/tex; ">A\bf{x}=\bf{0}</script> always has at least one solution, namely, <script type="math/tex; ">\bf{x}=\bf{0}</script> (the zero veoctor in <script type="math/tex; ">\mathbb{R}^n</script>).</p>
-<p>This zero solution is usually called the <strong>trivial solution</strong>.</p>
-<p>For a given homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script>, the important question is whether there exists a <strong>nontrivial solution</strong>, that is, a nonzero vector <script type="math/tex; ">\bf{x}</script> that satisfies <script type="math/tex; ">A\bf{x}=\bf{0}</script>.</p>
-<p>The <a href="la_01_02.html#theorem-2--existence-and-uniqueness-theorem">Existence and Unqueness Theorem in Section 1.2 (Theorem)</a> leads immediately to the following fact.</p>
+                                <h1 id="ch05-eigenvectors-and-eigenvalues">Ch05. Eigenvectors and Eigenvalues</h1>
+<h1 id="51-eigenvectors-and-eigenvalues">5.1 Eigenvectors and Eigenvalues</h1>
 <blockquote>
-<p>The homogeneous equation <script type="math/tex; ">A\bf{x}=\bf{0}</script> has a nontrivial solution if and only if the equation has at least one free variable.</p>
+<p>We will study <strong>special vectors</strong> which are transformed by <script type="math/tex; ">A</script> into <strong>scalar multiples of themselves</strong>.</p>
 </blockquote>
-<h2 id="example-1">Example 1:</h2>
-<p>Determine if the following homogeneous system has a nontrivial solution. 
-Then describe the solution set.</p>
-<p><script type="math/tex; mode=display">
-\begin{align}
-3x_1+5x_2-4x_3 &=0 \\
--3x_1-2x_2+4x_3 &=0 \\
-6x_1+x_2-8x_3 &=0 \\
-\end{align}
-</script></p>
-<h3 id="solution-fo-example-1">Solution fo Example 1</h3>
-<p>Let <script type="math/tex; ">A</script> be the matrix of coefficients of the system and row reduce the augmented matrix <script type="math/tex; ">\begin{bmatrix}A & \bf{0} \end{bmatrix}</script> to echelon form:</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
--3 & -2 & 4 & 0 \\
-6 & 1 & -8 & 0 \\
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
-0 & 3 & 0 & 0 \\
-0 & -9 & 0 & 0 \\
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-3 & 5 & -4 & 0 \\
-0 & 3 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-\end{bmatrix}
-</script></p>
-<p>Since <script type="math/tex; ">x_3</script> is a free variable,
-has nontrivial solutions (one for each choice of <script type="math/tex; ">x_3</script>.)</p>
-<p>Continue the row reduction of <script type="math/tex; ">\begin{bmatrix} A & \bf{0} \end{bmatrix}</script> to reduced echelon form:</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-1 & 5/3 & -4/3 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 0 & 0 \\
-\end{bmatrix}
-\begin{align}
-x_1-\frac{4}{3}x_3 &= 0 \\
-x_2 &= 0\\
-0&=0\\
-\end{align}
-</script></p>
-<p>Solve for the basic variables <script type="math/tex; ">x_1</script> and <script type="math/tex; ">x_2</script> to obtain <script type="math/tex; ">x_1=\frac{4}{3}x_3, x_2=0</script>, with <script type="math/tex; ">x_3</script> free.</p>
-<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the form given below.</p>
-<p><script type="math/tex; mode=display">
-\textbf{x}=
-\begin{bmatrix}
-{x_1} \\
-{x_2} \\
-{x_3} \\ 
-\end{bmatrix}
-=
-\begin{bmatrix}
-\frac{4}{3}
-{x_3} \\
-0 \\
-{x_3} \\
-\end{bmatrix}
-=
-{x_3}
-\begin{bmatrix}
-\frac{4}{3} \\
-0 \\
-1 \\
-\end{bmatrix}
-= 
-{x_3} 
-\textbf{v}
-</script></p>
-<p>where</p>
-<p><script type="math/tex; mode=display">
-\bf{v}= 
-\begin{bmatrix}
-4/3 \\ 0 \\ 1
-\end{bmatrix}
-</script></p>
-<p>Here <script type="math/tex; ">x_3</script> is factored out of the expression for the general solution vector.</p>
-<p>This shows that every solution of <script type="math/tex; ">A\bf{x}=\bf{0}</script> in this case is a scalar multiple of <script type="math/tex; ">\bf{v}</script>.</p>
-<p>The trivial solution is obtained by choosing <script type="math/tex; ">x_3=0</script></p>
-<p>Geometrically, the solution set is a line through <script type="math/tex; ">\bf{0}</script> in <script type="math/tex; ">\mathbb{R}^3</script>.</p>
-<p>See Fig.1 below.</p>
-<p><img src="fig/la_01_05_01.png" alt="fig1">
-<script type="math/tex; ">\blacksquare</script></p>
-<h2 id="parametric-vector-form">Parametric Vector Form</h2>
-<p>The equation of the form <script type="math/tex; ">\textbf{x}= s \textbf{u} + t \textbf{v}</script> (<script type="math/tex; ">s,t</script> in <script type="math/tex; ">\mathbb{R}</script>) is called a <strong>parametric vector equation</strong> of the plane.</p>
-<p>In Example 1, the equation <script type="math/tex; ">\textbf{x} = x_3 \textbf{v} </script> (with <script type="math/tex; ">x_3</script> free), or <script type="math/tex; ">\textbf{x} = t \textbf{v} </script> (with <script type="math/tex; ">t</script> in <script type="math/tex; ">\mathbb{R}</script>),
-is a parametric vector equation of a line.</p>
-<p>Whenever a solution set is described explicitly
-with vectors as in Example 1, we say that the
-solution is in <strong>parametric vector form</strong>.</p>
-<h2 id="solutions-of-nonhomogeneous-systems">Solutions of Nonhomogeneous Systems</h2>
-<p> When a nonhomogeneous linear system has many solutions, the general solution can be 
-written in parametric vector form as one vector 
-plus an arbitrary linear combination of vectors that 
-satisfy the corresponding homogeneous system.</p>
-<h2 id="example-3">Example 3</h2>
-<p>Describe all solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script> where</p>
-<p><script type="math/tex; mode=display">
-A = 
-\begin{bmatrix}
-3 & 5 & -4 \\
--3 & -2 & 4 \\
-6 & 1 & -8 
-\end{bmatrix}
-\text{ and }
-\bf{b} =
-\begin{bmatrix}
-7 \\
--1 \\
--4 
-\end{bmatrix}
-</script></p>
-<h3 id="solution-of-example-3">Solution of Example 3</h3>
-<p>Row operations on <script type="math/tex; ">\begin{bmatrix} A & \bf{b}\end{bmatrix} </script> produce</p>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
-3 & 5 & -4 &7 \\
--3 & -2 & 4&-1 \\
-6 & 1 & -8&-4 
-\end{bmatrix}
-\sim
-\begin{bmatrix}
-1 & 0 & -4/3 &-1 \\
-0 & 1 & 0 & 2 \\
-0 & 0 & 0 & 0
-\end{bmatrix},
-\begin{align}
-x_1-\frac{4}{3}x_3&=-1 \\
-x_2 &= 2 \\
-0 &= 0
-\end{align}
-</script></p>
-<p>Thus, <script type="math/tex; ">x_1 = -1 + \frac{4}{3}x_3, x_2=2</script>, and <script type="math/tex; ">x_3</script> is free.</p>
-<p>As a vector, the general solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> has the form</p>
-<p><img src="fig/la_01_05_e3.png" alt="fig_ex"></p>
-<p>The equation <script type="math/tex; ">\textbf{x}=\textbf{p}+x_3\textbf{v}</script>, or, writing t as a general parameter,</p>
-<p><script type="math/tex; mode=display">
-\textbf{x} = \textbf{p} + t \textbf{v} \quad ( {t} \text{ in } \mathbb{R})
-\tag{3}
-</script></p>
-<p>describes the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> in parametric vector form.</p>
-<p>The solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script> has the parametric vector equation</p>
-<p><script type="math/tex; mode=display">
-\textbf{x} = t \textbf{v} \quad ( t \text{ in }  \mathbb{R}) \tag{4}
-</script></p>
-<p>[with the same <script type="math/tex; ">\bf{v}</script> that appears in (3)]. <script type="math/tex; ">\blacksquare</script></p>
-<p>Thus <strong>the solutions of <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> are obtained 
-by <strong>adding the vector <script type="math/tex; ">\bf{p}</script> to the solutions of <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong>.</p>
-<p>The vector <script type="math/tex; ">\bf{p}</script> itself is just one <strong>particular solution</strong> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> [corresponding to <script type="math/tex; ">t</script> = 0 in (3).]</p>
-<p>To describe the solution of <script type="math/tex; ">A\bf{x}=\bf{b}</script> geometrically, we can think of <strong>vector addition as a translation</strong>.</p>
-<p>Given <script type="math/tex; ">\bf{v}</script> and <script type="math/tex; ">\bf{p}</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script>, the effect of adding <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}</script> 
-is to move <script type="math/tex; ">\bf{v}</script> in a direction parallel to the line through <script type="math/tex; ">\bf{p}</script> and <script type="math/tex; ">\bf{0}</script>.</p>
-<p>We say that <strong><script type="math/tex; ">\bf{v}</script> is translated by <script type="math/tex; ">\bf{p}</script> to <script type="math/tex; ">\bf{v}+\bf{p}</script></strong>. See the following figure.</p>
-<p><img src="fig/la_01_05_03.png" alt="fig3"></p>
-<p>If each point on a line <script type="math/tex; ">L</script> in <script type="math/tex; ">\mathbb{R}^2</script> or <script type="math/tex; ">\mathbb{R}^3</script> is translated by 
-a vector <script type="math/tex; ">\bf{p}</script>, the result is a line parallel to <script type="math/tex; ">L</script>. 
-See the following figure.</p>
-<p><img src="fig/la_01_05_04.png" alt="fig4"></p>
-<p>Suppose <script type="math/tex; ">L</script> is the line through <script type="math/tex; ">\bf{0}</script> and <script type="math/tex; ">\bf{v}</script>, described by equation (4).</p>
-<p>Adding <script type="math/tex; ">\bf{p}</script> to each point on <script type="math/tex; ">L</script> produces the translated line described by equation (3).</p>
-<p>We call <strong>(3) the equation of the line through <script type="math/tex; ">\bf{p}</script> parallel to <script type="math/tex; ">\bf{v}</script></strong>.</p>
-<p>Thus <em>the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is a line through <script type="math/tex; ">\bf{p}</script> parallel to the solution set of <script type="math/tex; ">A\bf{x}=\bf{0}</script></em>.
-The figure below illustrates this case.</p>
-<p><img src="fig/la_01_05_05.png" alt="fig5"></p>
-<p><strong>The relation between the solution sets of <script type="math/tex; ">A\bf{x}=\bf{b}</script> and <script type="math/tex; ">A\bf{x}=\bf{0}</script></strong> 
-shown in the figure above generalizes to <strong>any consistent equation <script type="math/tex; ">A\bf{x}=\bf{b}</script></strong> 
-,although <strong>the solution set will be larger than a line 
-when there are several free variables</strong>.</p>
-<hr>
-<h2 id="theorem-6">Theorem 6</h2>
-<p>Suppose the equation <script type="math/tex; ">A\bf{x}=\bf{b}</script> is <strong>consistent</strong> for some given <script type="math/tex; ">\bf{b}</script>, 
-and let <script type="math/tex; ">\bf{p}</script> be a solution (,it means that <script type="math/tex; ">\bf{p}</script> is a particular solution). </p>
-<p>Then the solution set of <script type="math/tex; ">A\bf{x}=\bf{b}</script> is the <strong>set of all vectors of the form <script type="math/tex; ">\bf{w}=\bf{p}+\bf{v}_h</script></strong>, 
-where <strong><script type="math/tex; ">\bf{v}_h</script> is any solution of the homogeneous equation <script type="math/tex; ">A\textbf{x}=\textbf{0}</script></strong>.</p>
+<h2 id="definition">Definition</h2>
 <ul>
-<li>Theorem 6 says that if <script type="math/tex; ">A\bf{x}=\bf{b}</script> has a solution, then the solution set is obtained by translating the solution set of
-<script type="math/tex; ">A\bf{x}=\bf{0}</script> using any particular solution <script type="math/tex; ">\bf{p}</script> of <script type="math/tex; ">A\bf{x}=\bf{b}</script> for the translation.</li>
+<li>An <strong>eigenvector</strong> of an <script type="math/tex; ">n \times n </script> matrix <script type="math/tex; ">A</script> is a <strong>nonzero vector</strong> <script type="math/tex; ">\textbf{x}</script> such that <script type="math/tex; ">A\textbf{x}=\lambda \textbf{x}</script> for some scalar <script type="math/tex; ">\lambda</script>. </li>
+<li>A scalar <script type="math/tex; ">\lambda</script> is called an <strong>eigenvalue</strong> of <script type="math/tex; ">A</script> if there is a nontrivial solution <script type="math/tex; ">\textbf{x}</script> of <script type="math/tex; ">A\textbf{x}=\lambda \textbf{x}</script>; such an <script type="math/tex; ">\textbf{x}</script> is called an <em>eigenvector corresponding to <script type="math/tex; ">\lambda</script></em>.</li>
 </ul>
-<h2 id="writing-a-solution-set-of-a-consistent-system-in-parametric-vector-form">Writing a Solution Set (of a Consistent System) in Parametric Vector Form</h2>
-<ol>
-<li>Row reduce the augmented matrix to <strong>reduced echelon form, RREF</strong>.</li>
-<li>Express each basic variable in terms of any free variables appearing in an equation.</li>
-<li>Write a typical solution <script type="math/tex; ">\bf{x}</script> as a vector whose entries depend on the free variables, if any.</li>
-<li>Decompose <script type="math/tex; ">\bf{x}</script> into a <strong>linear combination of vectors (with numeric entries)</strong> using the free variables as parameters.</li>
-</ol>
-<p><script type="math/tex; mode=display">
-\begin{bmatrix}
--1 \\ 2 \\ 0 
-\end{bmatrix} +
-x_3
-\begin{bmatrix}
-4/3 \\ 0 \\ 1
-\end{bmatrix}
+<p> <script type="math/tex; ">\lambda</script> is an eigenvalue of an <script type="math/tex; ">n \times n</script> matrix <script type="math/tex; ">A</script> if and only if the equation <script type="math/tex; mode=display">
+(A-\lambda I)\textbf{x}=\textbf{0} \tag{3}
+</script>
+has a nontrivial solution (<script type="math/tex; ">\textbf{x} \ne \textbf{0}</script>).</p>
+<ul>
+<li>The set of all solutions of (3) is just the <strong>null space</strong> of the matrix <script type="math/tex; ">A-\lambda I</script>.</li>
+<li>So <strong>this set</strong> is <ul>
+<li>a subspace of <script type="math/tex; ">\mathbb{R}^n</script> and </li>
+<li>is called the <em><strong>eigenspace</strong> of <script type="math/tex; ">A</script> corresponding to <script type="math/tex; ">\lambda</script></em>.</li>
+</ul>
+</li>
+<li>The eigenspace consists of the <strong>zero vector</strong> and <strong>all
+the eigenvectors corresponding to <script type="math/tex; ">\lambda</script></strong>.</li>
+</ul>
+<blockquote>
+<ul>
+<li>Eigen vector</li>
+<li>Eigen value</li>
+<li>Eigen space!</li>
+</ul>
+</blockquote>
+<h2 id="example-3">Example 3</h2>
+<p>Show that 7 is an eigenvalue of matrix <script type="math/tex; ">A=\begin{bmatrix} 1 & 6 \\ 5 & 2 \end{bmatrix}</script> and find the corresponding eigenveoctors.</p>
+<h3 id="solution">Solution:</h3>
+<p>The scalar 7 is an eigenvalue of <script type="math/tex; ">A</script> if and only if the equation <script type="math/tex; mode=display">
+A\textbf{x}=7\textbf{x} \tag{1}
+</script>
+has a nontrivial solution.</p>
+<ul>
+<li>But (1) is equivalent to <script type="math/tex; ">A\textbf{x}-7\textbf{x}=\textbf{0}</script>, or <script type="math/tex; mode=display">
+(A-7I)\textbf{x}=\textbf{0} \tag{2}
+</script></li>
+<li>To solve this homogeneous equation, form the matrix <script type="math/tex; mode=display">
+(A-7I)=\begin{bmatrix} 1 & 6 \\ 5 & 2 \end{bmatrix} - \begin{bmatrix} 7 & 0 \\ 0 & 7 \end{bmatrix} =
+\begin{bmatrix} -6 & 6 \\ 5 & -5 \end{bmatrix}
+</script></li>
+<li>The columns of <script type="math/tex; ">(A-7I)</script> are obviously linearly dependent, so (2) has nontrivial solutions.</li>
+</ul>
+<p>To find the corresponding eigenvectors, use row operations: <script type="math/tex; mode=display">
+\begin{bmatrix} -6 & 6 & 0\\ 5 & -5 & 0\end{bmatrix} \sim
+\begin{bmatrix} 1 & -1 & 0\\ 0 & 0 & 0\end{bmatrix}
 </script></p>
+<ul>
+<li>The general solution has the form <script type="math/tex; ">x_2 \begin{bmatrix} 1 \\ 1 \end{bmatrix}</script>.</li>
+<li>Each vector of this form with <script type="math/tex; ">x_2 \ne 0</script> is an eigenvector corresponding to <script type="math/tex; ">\lambda=7</script>.</li>
+</ul>
+<h2 id="example-4">Example 4</h2>
+<p>Let <script type="math/tex; ">A=\begin{bmatrix}4&-1&6\\2&1&6\\2&-1&8\end{bmatrix}</script>. An eigenvalue of <script type="math/tex; ">A</script> is 2. Find a basis for the corresponding
+eigenspace.</p>
+<h3 id="solution">Solution:</h3>
+<p>Form <script type="math/tex; mode=display">
+A-2I = \begin{bmatrix}4&-1&6\\2&1&6\\2&-1&8\end{bmatrix}
+-\begin{bmatrix}2&0&0\\0&2&0\\0&0&2\end{bmatrix}
+=\begin{bmatrix}2&-1&6\\2&-1&6\\2&-1&6\end{bmatrix}
+</script> 
+and row reduce the augmented matrix for <script type="math/tex; ">(A-2I)\textbf{x}=\textbf{0}</script>.
+<script type="math/tex; mode=display">
+\begin{bmatrix}2&-1&6&0\\2&-1&6&0\\2&-1&6&0\end{bmatrix}
+\sim
+\begin{bmatrix}2&-1&6&0\\0&0&0&0\\0&0&0&0\end{bmatrix}
+</script></p>
+<ul>
+<li>At this point, it is clear that 2 is indeed an eigenvalue of <script type="math/tex; ">A</script> because the equation <script type="math/tex; ">(A-2I)\textbf{x}=\textbf{0}</script> has free variables.</li>
+<li>The general solution is <script type="math/tex; ">\begin{bmatrix}x_1 \\ x_2 \\ x_3 \end{bmatrix} = x_2 \begin{bmatrix} \frac{1}{2} \\1 \\0 \end{bmatrix} +x_3 \begin{bmatrix} -3 \\ 0 \\ 1 \end{bmatrix} </script>, <script type="math/tex; ">x_2, \text{ and } x_3</script> free.</li>
+</ul>
+<p>The eigenspace, shown in the following figure, is a two-dimensional subspace of <script type="math/tex; ">\mathbb{R}^3</script>. A basis is
+<script type="math/tex; mode=display">
+\left \{ \left[\begin{matrix} 1 \\ 2\\ 0 \end{matrix}\right] , \left[\begin{matrix} -3 \\ 0\\ 1 \end{matrix}\right] \right \}
+</script></p>
+<p><img src="fig/la_05_01_03.png" alt="fig5"></p>
+<blockquote>
+<p>Example 4 shows a good method for manual computation of eigenvectors in simple cases when an eigenvalue is known. Using a matrix program and row reduction to find an eigenspace (for a specified eigenvalue) usually works, too, but this is not entirely reliable. <strong>Roundoff error</strong> can lead occasionally to a reduced
+echelon form with the wrong number of pivots. <strong>The best computer programs compute approximations for eigenvalues and eigenvectors simultaneously, to any desired degree of accuracy, for matrices that are not too large.</strong> The size of matrices that can be analyzed increases each year as computing power and software improve.</p>
+</blockquote>
+<p>The following theorem describes one of the few special cases in which eigenvalues can be found precisely.</p>
+<h2 id="theorem-1">Theorem 1</h2>
+<p>The eigenvalues of a <strong>triangular matrix</strong> are the entries on its main diagonal.</p>
+<h3 id="proof">Proof</h3>
+<p>For simplicity, consider the <script type="math/tex; ">3 \times 3</script> case.</p>
+<ul>
+<li>If <script type="math/tex; ">A</script> is upper tirangular, the <script type="math/tex; ">A-\lambda I</script> ahs the form <script type="math/tex; mode=display">
+\begin {align}
+A-\lambda I & = \begin{bmatrix} a_{11} & a_{12} & a_{13} \\ 0 & a_{22} & a_{23} \\ 0 & 0 & a_{33} \end{bmatrix} - \begin{bmatrix} \lambda & 0 & 0 \\ 0 & \lambda & 0 \\ 0 & 0 & \lambda \end{bmatrix} \\
+&= \begin{bmatrix} a_{11} - \lambda & a_{12} & a_{13} \\ 0 & a_{22}- \lambda & a_{23} \\ 0 & 0 & a_{33}- \lambda \end{bmatrix}
+\end {align}
+</script></li>
+<li>The scalar <script type="math/tex; ">\lambda</script> is an eigenvalue of <script type="math/tex; ">A</script> if and only if the equation <script type="math/tex; ">(A-\lambda I)\textbf{x}=\textbf{0}</script> has a nontrivial solution, that is, if and only if the equation has a free variable.</li>
+<li>Because of the zero entries in <script type="math/tex; ">A-\lambda I</script>, it is easy to see that <script type="math/tex; ">(A-\lambda I)\textbf{x}=\textbf{0}</script> has a free variable if and only if at least one of the entries on the diagonal of <script type="math/tex; ">A-\lambda I</script> is zero.</li>
+<li>This happens if and only if <script type="math/tex; ">\lambda</script> equals one of the entries <script type="math/tex; ">a_{11}, a_{22}, a_{33}</script> in <script type="math/tex; ">A</script>.</li>
+</ul>
+<h2 id="theorem-2">Theorem 2</h2>
+<p>If <script type="math/tex; ">\textbf{v}_1,\cdots,\textbf{v}_r</script> are eigenvectors that correspond to distinct eigenvalues <script type="math/tex; ">\lambda_1, \cdots \lambda_r</script> of an <script type="math/tex; ">n \times n</script> matrix <script type="math/tex; ">A</script>, then the set <script type="math/tex; ">\left\{\textbf{v}_1,\cdots,\textbf{v}_r\right\}</script> is linearly independent.</p>
+<h3 id="proof">Proof</h3>
+<p>Suppose <script type="math/tex; ">\left\{\textbf{v}_1,\cdots,\textbf{v}_r\right\}</script> is linearly dependent.</p>
+<ul>
+<li>Since <script type="math/tex; ">\textbf{v}_1</script> is nonzero, Theorem 7 in Section 1.7 syas that one of the vectors in the set is a linear combination of the preceding vectors.</li>
+<li>Let <script type="math/tex; ">p</script> be the least index such that <script type="math/tex; ">\textbf{v}_{p+1}</script> is a linear combination of the preceding (linearly independent) vectors.</li>
+<li>Then there exist scalars <script type="math/tex; ">c_1 \cdots c_p</script> such that <script type="math/tex; mode=display">
+c_1 \textbf{v}_1 + \cdots + c_p \textbf{v}_p = \textbf{v}_{p+1} \tag{5}
+</script></li>
+<li>Multiplying both sides of (5) by <script type="math/tex; ">A</script> and using the fact that <script type="math/tex; ">A\textbf{v}_k = \lambda_k\textbf{v}_k</script> for each <script type="math/tex; ">k</script>, we obtain <script type="math/tex; mode=display">
+c_1 A \textbf{v}_1 + \cdots + c_p A \textbf{v}_p = A \textbf{v}_{p+1} \\
+c_1 \lambda_1 \textbf{v}_1 + \cdots + c_p \lambda_p \textbf{v}_p = \lambda_{p+1} \textbf{v}_{p+1} \tag{6}
+</script></li>
+<li>Multiplying both sides of (5) by <script type="math/tex; ">\lambda_{p+1}</script> and subtracting the result from (6), we have <script type="math/tex; mode=display">
+c_1 (\lambda_1-\lambda_{p+1}) \textbf{v}_1 + \cdots + c_p (\lambda_p-\lambda_{p+1}) \textbf{v}_p = \textbf{0} \tag{7}
+</script></li>
+<li>Since <script type="math/tex; ">\left\{\textbf{v}_1,\cdots,\textbf{v}_p\right\}</script> is linearly independent, the weidhts in (7) are all zero.</li>
+<li>But none of the factors <script type="math/tex; ">\lambda_i-\lambda_{p+1}</script> are zero, because the eigenvalues are distinct.</li>
+<li>Hence <script type="math/tex; ">c_i=0</script> for <script type="math/tex; ">i=1,\cdots,p</script>.</li>
+<li>But then (5) says that <script type="math/tex; ">\textbf{v}_{p+1}=\textbf{0}</script>, which is impossible.</li>
+<li>Hence <script type="math/tex; ">\left\{\textbf{v}_1,\cdots,\textbf{v}_p\right\}</script> cannot be linearly dependent and therefore must be linearly independent.</li>
+</ul>
+<h2 id="eigenvectors-and-difference-equations">Eigenvectors and Difference Equations</h2>
+<p>There is a <strong>difference equation</strong></p>
+<p><script type="math/tex; mode=display">
+\textbf{x}_{k+1} = A \textbf{x}_k \tag{8}
+</script></p>
+<ul>
+<li>If <script type="math/tex; ">A</script> is an <script type="math/tex; "> n \times n</script> matrix, then (8) is a recursive description of a sequence <script type="math/tex; ">\left\{ \textbf{x}_k\right\}</script> in <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+<li>A solution of (8) is an explicit description of <script type="math/tex; ">\left\{ \textbf{x}_k\right\}</script> whose formula for each <script type="math/tex; ">\textbf{x}_k</script> does not depend directly on <script type="math/tex; ">A</script> or on the preceding terms in the sequence other than the initial term <script type="math/tex; ">\textbf{x}_0</script>.</li>
+<li>The simplest way to build a solution of (8) is to take an eigenvector <script type="math/tex; ">\textbf{x}_0</script> and its corresponding eigenvalue <script type="math/tex; ">\lambda</script> and let <script type="math/tex; mode=display">
+\textbf{x}_k = \lambda^k\textbf{x}_0 (k=1,2,\cdots) \tag{9}
+</script></li>
+<li>This sequence is a solution because <script type="math/tex; mode=display">
+A\textbf{x}_k = A (\lambda^k \textbf{x}_0) = \lambda^k (A \textbf{x}_0) = \lambda^k (\lambda \textbf{x}_0) = \lambda^{k+1}\textbf{x}_0 = \textbf{x}_{k+1}
+</script></li>
+</ul>
 
                                 
                                 </section>
@@ -901,12 +824,12 @@ x_3
 
             
                 
-                <a href="la_01_04.html" class="navigation navigation-prev " aria-label="Previous page: 01 04 Matrix Equation">
+                <a href="la_02_09.html" class="navigation navigation-prev " aria-label="Previous page: 02_09">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_07.html" class="navigation navigation-next " aria-label="Next page: 01 07 Linear Independence">
+                <a href="la_05_02.html" class="navigation navigation-next " aria-label="Next page: 05_02">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -917,7 +840,7 @@ x_3
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"next":{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},"previous":{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_05.md","mtime":"2019-09-10T11:05:15.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"05_01","level":"1.3.19","depth":2,"next":{"title":"05_02","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},"previous":{"title":"02_09","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_05_01.md","mtime":"2019-07-29T00:19:23.238Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
