@@ -709,111 +709,122 @@ Determine if <script type="math/tex; ">\bf{x}</script> is in <script type="math/
 c_1 \begin{bmatrix}
 3\\
 6\\
-2 \end{bmatrix} + c_2 = \begin{bmatrix}
--1 \\ 0 \\ 1 \end{bmatrix} = \being{bmatrix}
-3 \\ 12 \\ 7 \end{bmatrix}
+2 
+\end{bmatrix} + c_2 = 
+\begin{bmatrix}
+-1 \\ 0 \\ 1 
+\end{bmatrix} = 
+\begin{bmatrix}
+3 \\ 12 \\ 7 
+\end{bmatrix}
 </script></p>
 <ul>
 <li>The scalars <script type="math/tex; ">c_1</script> and <script type="math/tex; ">c_2</script>, if they exist, are the <script type="math/tex; ">B</script>-coordinates 
-of <script type="math/tex; ">\textbf{x}. Row operations show that
-
-</script>
+of <script type="math/tex; ">\textbf{x}</script>. Row operations show that</li>
+</ul>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}
-3 &amp; -1 &amp; 3 \
-6 &amp; 0 &amp; 12 \
-2 &amp; 1 &amp; 7
+3 & -1 & 3 \\
+6 & 0 & 12 \\
+2 & 1 & 7
 \end{bmatrix}
 \sim
 \begin{bmatrix}
-1 &amp; 0 &amp; 2 \
-0 &amp; 1 &amp; 3 \
-0 &amp; 0 &amp; 0
+1 & 0 & 2 \\
+0 & 1 & 3 \\
+0 & 0 & 0
 \end{bmatrix}
-<script type="math/tex; mode=display">
-
-* Thus </script>c_1=2, c_2=3<script type="math/tex; "> and </script>[\textbf{x}]_B= \begin{bmatrix}2 \3 \end{bmatrix}<script type="math/tex; ">. 
-* The basis </script>B<script type="math/tex; "> determines a “coordinate system” on </script>H<script type="math/tex; ">, which can
-  be visualized by the grid shown in Fig. 1 below.
-
-![fig1]()
-
-## Definition: Dimension
-
-The **dimension** of a nonzero subspace </script>H<script type="math/tex; ">, denoted by dim </script>H<script type="math/tex; ">, 
-is the number of vectors in any basis for </script>H<script type="math/tex; ">. 
-The dimension of the zero subspace </script>{\textbf{0} }<script type="math/tex; "> is defined to be zero.
-
-## Definition: Rank
-
-The **rank** of a matrix </script>A<script type="math/tex; ">, denoted by rank </script>A<script type="math/tex; ">,
-is the dimension of the column space of </script>A<script type="math/tex; ">.
-
-## Example 3 :
-Determine the rank of the matrix
-
-</script>
+</script></p>
+<ul>
+<li>Thus <script type="math/tex; ">c_1=2, c_2=3</script> and <script type="math/tex; ">[\textbf{x}]_B= \begin{bmatrix}2 \\3 \end{bmatrix}</script>. </li>
+<li>The basis <script type="math/tex; ">B</script> determines a &#x201C;coordinate system&#x201D; on <script type="math/tex; ">H</script>, which can
+be visualized by the grid shown in Fig. 1 below.</li>
+</ul>
+<p><img src="." alt="fig1"></p>
+<h2 id="definition-dimension">Definition: Dimension</h2>
+<p>The <strong>dimension</strong> of a nonzero subspace <script type="math/tex; ">H</script>, denoted by dim <script type="math/tex; ">H</script>, 
+is the number of vectors in any basis for <script type="math/tex; ">H</script>. 
+The dimension of the zero subspace <script type="math/tex; ">{\textbf{0} }</script> is defined to be zero.</p>
+<h2 id="definition-rank">Definition: Rank</h2>
+<p>The <strong>rank</strong> of a matrix <script type="math/tex; ">A</script>, denoted by rank <script type="math/tex; ">A</script>,
+is the dimension of the column space of <script type="math/tex; ">A</script>.</p>
+<h2 id="example-3-">Example 3 :</h2>
+<p>Determine the rank of the matrix</p>
+<p><script type="math/tex; mode=display">
 A \sim 
 \begin{bmatrix}
-2 &amp; 5 &amp; -3 &amp; -4 &amp; 8 \
-0 &amp; -3 &amp; 2 &amp; 5 &amp; -7 \
-0 &amp; -6 &amp; 4 &amp; 14 &amp; -20 \
-0 &amp; -9 &amp; 6 &amp; 5 &amp; -6
+2 & 5 & -3 & -4 & 8 \\
+0 & -3 & 2 & 5 & -7 \\
+0 & -6 & 4 & 14 & -20 \\
+0 & -9 & 6 & 5 & -6
 \end{bmatrix}
+</script></p>
+<h3 id="solution-">Solution :</h3>
+<p>Reduce <script type="math/tex; ">A</script> to echelon form :</p>
+<ul>
+<li>The matrix <script type="math/tex; ">A</script> has 3 pivot columns, so rank <script type="math/tex; ">A</script> = 3.</li>
+</ul>
+<h2 id="theorem-14-">Theorem 14 :</h2>
+<p>If a matrix <script type="math/tex; ">A</script> has <script type="math/tex; ">n</script> columns, then rank <script type="math/tex; ">A</script> + dim <script type="math/tex; ">\text{Nul }A = n</script>.</p>
+<h2 id="theorme-15-">Theorme 15 :</h2>
+<p>Let <script type="math/tex; ">H</script> be a <script type="math/tex; ">p</script>-dimensional subspace of <script type="math/tex; ">\mathbb{R}^n</script>.
+Any linearly independent set of exactly <script type="math/tex; ">p</script> elements in
+<script type="math/tex; ">H</script> is automatically a basis for <script type="math/tex; ">H</script>. 
+Also, any set of <script type="math/tex; ">p</script> elements of <script type="math/tex; ">H</script> that spans <script type="math/tex; ">H</script> is automatically a basis
+for <script type="math/tex; ">H</script>.</p>
+<h2 id="theorem--the-invertible-theorem-continued-">Theorem : The Invertible Theorem (continued) :</h2>
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">n \times n</script> square matrix. 
+Then the following statements are each equivalent to the statement that <script type="math/tex; ">A</script> is an invertible
+matrix.</p>
+<ul>
+<li><ol>
+<li>The columns of <script type="math/tex; ">A</script> form a basis of <script type="math/tex; ">\mathbb{R}^n</script></li>
+</ol>
+</li>
+<li><ol>
+<li><script type="math/tex; ">\text{Col }A = \mathbb{R}^n</script></li>
+</ol>
+</li>
+<li><ol>
+<li>dim <script type="math/tex; ">\text{Col }A = n</script></li>
+</ol>
+</li>
+<li><ol>
+<li>rank <script type="math/tex; ">A = n</script></li>
+</ol>
+</li>
+<li><ol>
+<li><script type="math/tex; ">\text{Nul }A = \left\{\textbf{0}\right\}</script></li>
+</ol>
+</li>
+<li><ol>
+<li>dim <script type="math/tex; ">\text{Nul }A = 0</script></li>
+</ol>
+</li>
+</ul>
+<h3 id="proof">Proof</h3>
+<ul>
+<li>Statement (13) is logically equivalent to
+statements (5) and (8) 
+regarding linear independence and spanning. </li>
+<li>The other five statements are linked to the earlier ones of the theorem 
+by the following chain of almost trivial implications:
 <script type="math/tex; mode=display">
-
-### Solution : 
-Reduce </script>A<script type="math/tex; "> to echelon form :
-
-* The matrix </script>A<script type="math/tex; "> has 3 pivot columns, so rank </script>A<script type="math/tex; "> = 3.
-
-## Theorem 14 :
-
-If a matrix </script>A<script type="math/tex; "> has </script>n<script type="math/tex; "> columns, then rank </script>A<script type="math/tex; "> + dim </script>\text{Nul }A = n<script type="math/tex; ">.
-
-## Theorme 15 :
-
-Let </script>H<script type="math/tex; "> be a </script>p<script type="math/tex; ">-dimensional subspace of </script>\mathbb{R}^n<script type="math/tex; ">.
-Any linearly independent set of exactly </script>p<script type="math/tex; "> elements in
-</script>H<script type="math/tex; "> is automatically a basis for </script>H<script type="math/tex; ">. 
-Also, any set of </script>p<script type="math/tex; "> elements of </script>H<script type="math/tex; "> that spans </script>H<script type="math/tex; "> is automatically a basis
-for </script>H<script type="math/tex; ">.
-
-## Theorem : The Invertible Theorem (continued) :
-
-Let </script>A<script type="math/tex; "> be an </script>n \times n<script type="math/tex; "> square matrix. 
-Then the following statements are each equivalent to the statement that </script>A<script type="math/tex; "> is an invertible
-matrix.
-
-* 13. The columns of </script>A<script type="math/tex; "> form a basis of </script>\mathbb{R}^n<script type="math/tex; mode=display">
-* 14. </script>\text{Col }A = \mathbb{R}^n<script type="math/tex; mode=display">
-* 15. dim </script>\text{Col }A = n<script type="math/tex; mode=display">
-* 16. rank </script>A = n<script type="math/tex; mode=display">
-* 17. </script>\text{Nul }A = \left{\textbf{0}\right}<script type="math/tex; mode=display">
-* 17. dim </script>\text{Nul }A = 0<script type="math/tex; mode=display">
-
-### Proof
-
-* Statement (13) is logically equivalent to
-  statements (5) and (8) 
-  regarding linear independence and spanning. 
-* The other five statements are linked to the earlier ones of the theorem 
-  by the following chain of almost trivial implications:
-</script>
 (7) \Rightarrow (14) \Rightarrow (15) \Rightarrow (16) \Rightarrow (18) \Rightarrow (17) \Rightarrow (4)
-<script type="math/tex; mode=display">
-* Statement (7), which says that the equation </script>A\textbf{x}=\textbf{b}<script type="math/tex; mode=display">
-  has at least one solution for each </script>\bf{b}<script type="math/tex; "> in </script>\mathbb{R}^n<script type="math/tex; ">, 
-  implies statement (14), because </script>\text{Col }A<script type="math/tex; "> is precisely the set of all 
-  </script>\textbf{b}<script type="math/tex; "> such that the equation </script>A\textbf{x}=\textbf{b}<script type="math/tex; "> is consistent.
-* The implications </script>(14) \Rightarrow (15) \Rightarrow (16)<script type="math/tex; "> follow from the definitions of dimension and rank.
-* If the rank of </script>A<script type="math/tex; "> is </script>n<script type="math/tex; ">, the number of columns of </script>A<script type="math/tex; ">, then
-  dim </script>\text{Nul }A = 0<script type="math/tex; ">, by the **Rank Theorem**, and 
-  so </script>\text{Nul }A= \left{\textbf{0}\right}<script type="math/tex; ">.
-  Thus </script>(16) \Rightarrow (18) \Rightarrow (17)<script type="math/tex; ">.
-* Also, statement (17) implies that the equation </script>A\textbf{x}=\textbf{0}<script type="math/tex; mode=display">
-  has only the trivial solution, which is statement (4).
-* Since statements (4) and (7) are already known to be equivalent to the 
-  statement that </script>A$$ is invertible, the proof is complete.</li>
+</script></li>
+<li>Statement (7), which says that the equation <script type="math/tex; ">A\textbf{x}=\textbf{b}</script>
+has at least one solution for each <script type="math/tex; ">\bf{b}</script> in <script type="math/tex; ">\mathbb{R}^n</script>, 
+implies statement (14), because <script type="math/tex; ">\text{Col }A</script> is precisely the set of all 
+<script type="math/tex; ">\textbf{b}</script> such that the equation <script type="math/tex; ">A\textbf{x}=\textbf{b}</script> is consistent.</li>
+<li>The implications <script type="math/tex; ">(14) \Rightarrow (15) \Rightarrow (16)</script> follow from the definitions of dimension and rank.</li>
+<li>If the rank of <script type="math/tex; ">A</script> is <script type="math/tex; ">n</script>, the number of columns of <script type="math/tex; ">A</script>, then
+dim <script type="math/tex; ">\text{Nul }A = 0</script>, by the <strong>Rank Theorem</strong>, and 
+so <script type="math/tex; ">\text{Nul }A= \left\{\textbf{0}\right\}</script>.
+Thus <script type="math/tex; ">(16) \Rightarrow (18) \Rightarrow (17)</script>.</li>
+<li>Also, statement (17) implies that the equation <script type="math/tex; ">A\textbf{x}=\textbf{0}</script>
+has only the trivial solution, which is statement (4).</li>
+<li>Since statements (4) and (7) are already known to be equivalent to the 
+statement that <script type="math/tex; ">A</script> is invertible, the proof is complete.</li>
 </ul>
 
                                 
@@ -858,7 +869,7 @@ matrix.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_09","level":"1.3.18","depth":2,"next":{"title":"05_01","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_08","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_09.md","mtime":"2019-10-01T10:19:34.171Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:22:52.194Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_09","level":"1.3.18","depth":2,"next":{"title":"05_01","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_08","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_09.md","mtime":"2019-10-01T10:25:37.442Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-01T10:26:17.636Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
