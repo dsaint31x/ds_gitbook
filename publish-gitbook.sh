@@ -5,13 +5,11 @@ rm -rf _book
 rm -rf docs
 
 # gitbook init
-#gitbook install && gitbook build
-gitbook build
+gitbook install && gitbook build
 
 # build pages
 mkdir docs
 cp -R _book/* docs/
-#cp -R ds_temp/* docs/
 
 # delete things
 git clean -fx _book
