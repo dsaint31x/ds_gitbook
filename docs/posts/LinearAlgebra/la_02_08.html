@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>02_08 · GitBook</title>
+        <title>02_08 Subspaces of $$R^n$$ · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -387,7 +387,7 @@
                 <a href="la_02_08.html">
             
                     
-                    02_08
+                    02_08 Subspaces of $$R^n$$
             
                 </a>
             
@@ -657,7 +657,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >02_08</a>
+        <a href="../.." >02_08 Subspaces of $$R^n$$</a>
     </h1>
 </div>
 
@@ -673,12 +673,12 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="ch02-matrix-algebra">Ch02. Matrix Algebra</h1>
-<h1 id="28-subspaces-or-r-to-the-power-n">2.8 Subspaces or R to the Power n</h1>
+<h1 id="28-subspaces-of-r-to-the-power-n">2.8 Subspaces of R to the Power n</h1>
 <hr>
-<h2 id="definition--subspace">Definition : Subspace</h2>
-<p>A <strong>subspace</strong> of <script type="math/tex; ">\mathbb{R}^n</script> is any set <script type="math/tex; ">H(\ne \phi)</script> in <script type="math/tex; ">\mathbb{R}^n</script> that has three properties:</p>
+<h2 id="definition--subspace-of-rn">Definition : Subspace of <script type="math/tex; ">R^n</script></h2>
+<p>A <strong>subspace</strong> of <script type="math/tex; ">\mathbb{R}^n</script> is any set <script type="math/tex; ">H</script> in <script type="math/tex; ">\mathbb{R}^n</script> that has three properties:</p>
 <ol>
-<li>The zero vector in in <script type="math/tex; ">H</script>.</li>
+<li>The zero vector is in <script type="math/tex; ">H</script>.</li>
 <li>For each <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script> in <script type="math/tex; ">H</script>, the sum <script type="math/tex; ">\textbf{u}+\textbf{v}</script> is in <script type="math/tex; ">H</script>. : <strong>Addition</strong></li>
 <li>For each <script type="math/tex; ">\textbf{u}</script> in <script type="math/tex; ">H</script> and each scalar <script type="math/tex; ">c</script>, the vector <script type="math/tex; ">c\textbf{u}</script> is in <script type="math/tex; ">H</script>. : <strong>Scalar Multiple</strong></li>
 </ol>
@@ -686,11 +686,8 @@
 <p>&#xAC04;&#xB2E8;&#xD788;&#xB294; vector space&#xC758; &#xBD80;&#xBD84;&#xC9D1;&#xD569;&#xC774;&#xB77C;&#xACE0; &#xBCFC; &#xC218; &#xC788;&#xC74C;.</p>
 </blockquote>
 <hr>
-<p>A plane through the origin is the standard way to visualization the subspace in Example 1 below. See Fig. 1 below:</p>
+<p>A plane through the origin is the standard way to visualization the subspace in <script type="math/tex; ">R^3</script>. See Fig. 1 below:</p>
 <p><img src="fig/la_02_08_01.png" alt="Fig1"></p>
-<ul>
-<li>Span <script type="math/tex; ">\left\{\textbf{v}_1, \textbf{v}_2\right\}</script> as a plane through the origin.</li>
-</ul>
 <h2 id="example-1-">Example 1 :</h2>
 <blockquote>
 <p>If <script type="math/tex; ">\textbf{v}_1</script> and <script type="math/tex; ">\textbf{v}_2</script> are in <script type="math/tex; ">\mathbb{R}^n</script> and <script type="math/tex; ">H=\text{Span}\left\{ \textbf{v}_1, \textbf{v}_2 \right\}</script>, then <script type="math/tex; ">H</script> is a subspace of <script type="math/tex; ">\mathbb{R}^n</script>. </p>
@@ -719,7 +716,7 @@ and
 <p>The <strong>column space</strong> of a matrix <script type="math/tex; ">A</script> is the
 set <script type="math/tex; ">\text{Col }A</script> of all linear combinations of the columns of <script type="math/tex; ">A</script>.</p>
 <ul>
-<li>If <script type="math/tex; ">A=\begin{bmatrix} \textbf{a}_1 \cdots \textbf{a}_n \end{bmatrix}</script> with the columns of <script type="math/tex; ">\mathbb{R}^n</script>, then <script type="math/tex; ">\text{Col }A</script> is the same as <script type="math/tex; ">\text{Span }\left\{\textbf{a}_1, \cdots, \textbf{a}_n \right\}</script>. Example 4 shows that the <strong>Column space of an <script type="math/tex; ">m \times n</script> matrix is a subspace of <script type="math/tex; ">\mathbb{R}^n</script></strong>.</li>
+<li>If <script type="math/tex; ">A=\begin{bmatrix} \textbf{a}_1 \cdots \textbf{a}_n \end{bmatrix}</script> with the columns of <script type="math/tex; ">\mathbb{R}^m</script>, then <script type="math/tex; ">\text{Col }A</script> is the same as <script type="math/tex; ">\text{Span }\left\{\textbf{a}_1, \cdots, \textbf{a}_n \right\}</script>. Example 4 shows that the <strong>Column space of an <script type="math/tex; ">m \times n</script> matrix is a subspace of <script type="math/tex; ">\mathbb{R}^m</script></strong>.</li>
 </ul>
 <h2 id="example-4">Example 4:</h2>
 <p>Let <script type="math/tex; ">A=\begin{bmatrix}
@@ -849,7 +846,7 @@ See Fig. 3 below.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_08","level":"1.3.17","depth":2,"next":{"title":"02_09","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},"previous":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_08.md","mtime":"2019-10-05T03:23:43.556Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-05T07:02:56.754Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_08 Subspaces of $$R^n$$","level":"1.3.17","depth":2,"next":{"title":"02_09","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},"previous":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_08.md","mtime":"2019-10-05T07:28:05.590Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-05T09:24:34.297Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

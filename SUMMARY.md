@@ -22,7 +22,7 @@
   * [02_04 Partitioned Matrices](posts/LinearAlgebra/la_02_04.md)
   * [02_05 Matrix Factorization](posts/LinearAlgebra/la_02_05.md)
   * [02_06 The Leontief Input-Output Model](posts/LinearAlgebra/la_02_06.md)
-  * [02_08](posts/LinearAlgebra/la_02_08.md)
+  * [02_08 Subspaces of $$R^n$$](posts/LinearAlgebra/la_02_08.md)
   * [02_09](posts/LinearAlgebra/la_02_09.md)
   * [04_01](posts/LinearAlgebra/la_04_01.md)
   * [05_01](posts/LinearAlgebra/la_05_01.md)
