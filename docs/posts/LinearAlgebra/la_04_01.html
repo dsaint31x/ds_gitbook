@@ -692,7 +692,7 @@
 <li>The scalar multiple of <script type="math/tex; ">\textbf{u}</script> by <script type="math/tex; ">c</script>, denoted by <script type="math/tex; ">c\textbf{u}</script>, is in <script type="math/tex; ">V</script>.</li>
 <li><script type="math/tex; ">c(\textbf{u}+\textbf{v}) = c\textbf{u} + c\textbf{v}</script>. :distributive</li>
 <li><script type="math/tex; ">(c+d)\textbf{u} = c\textbf{u} + d\textbf{u}</script> :distributive</li>
-<li><script type="math/tex; ">c(d\textbf{u}) = (cd)\textbf(u}</script>. : associative</li>
+<li><script type="math/tex; ">c(d\textbf{u}) = (cd)\textbf{u}</script>. : associative</li>
 <li><script type="math/tex; ">1\textbf{u} = \textbf{u}</script></li>
 </ol>
 <blockquote>
@@ -701,7 +701,7 @@
 <p>Using these axioms, we can show that </p>
 <ul>
 <li>the <strong>zero vector</strong> in Axiom 4 is unique, and 
-<em>the vector <script type="math/tex; ">-\textbf{u}</script>, called the <strong>negative of <script type="math/tex; ">\textbf{u}</script>, in Axiom 5 is </strong>unique*</em> for each <script type="math/tex; ">\textbf{u</script> in <script type="math/tex; ">V</script>.</li>
+<em>the vector <script type="math/tex; ">-\textbf{u}</script>, called the <strong>negative of <script type="math/tex; ">\textbf{u}</script>, in Axiom 5 is </strong>unique*</em> for each <script type="math/tex; ">\textbf{u}</script> in <script type="math/tex; ">V</script>.</li>
 </ul>
 <p>For each <script type="math/tex; ">\textbf{u}</script> in <script type="math/tex; ">V</script> and scalar <script type="math/tex; ">c</script>,</p>
 <p><script type="math/tex; mode=display">
@@ -713,7 +713,7 @@ c\textbf{0} = \textbf{0} \tag{2} \\
 <p>Let <script type="math/tex; ">V</script> be the set of all arrows (directed line segments) in three-dimensional space, 
 with two arrows regarded as equal if they have the same length and point in the same direction. 
 Define addition by the parallelogram rule, and for each <script type="math/tex; ">\textbf{v}</script> in <script type="math/tex; ">V</script>, 
-define <script type="math/tex; ">c\textbf{v}</script> to be the arrow whose length is <script type="math/tex; ">\lvbar c \rvbar</script> times the length of <script type="math/tex; ">\textbf{v}</script>, 
+define <script type="math/tex; ">c\textbf{v}</script> to be the arrow whose length is <script type="math/tex; ">\lvert c \rvert</script> times the length of <script type="math/tex; ">\textbf{v}</script>, 
 pointing in the same direction as <script type="math/tex; ">\textbf{v}</script> if <script type="math/tex; ">c \ge 0</script> and 
 otherwise pointing in the opposite direction.</p>
 <p>See the following figure below. Show that <script type="math/tex; ">V</script> is a <strong>vector space</strong>.</p>
@@ -731,7 +731,7 @@ otherwise pointing in the opposite direction.</p>
 <p>A subspace of a vector space <script type="math/tex; ">V</script> is a subset <script type="math/tex; ">H</script> of <script type="math/tex; ">V</script> that has three properties:</p>
 <ol>
 <li>The zero vector of <script type="math/tex; ">V</script> is in <script type="math/tex; ">H</script>.</li>
-<li><script type="math/tex; ">H</script> is closed under vector addtion. That is, for each <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> in <script type="math/tex; ">H</script>, the sum <script type="math/tex; ">\textbf{u}+\textbf{v]</script> is in <script type="math/tex; ">H</script>.</li>
+<li><script type="math/tex; ">H</script> is closed under vector addtion. That is, for each <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> in <script type="math/tex; ">H</script>, the sum <script type="math/tex; ">\textbf{u}+\textbf{v}</script> is in <script type="math/tex; ">H</script>.</li>
 <li><script type="math/tex; ">H</script> is closed under multiplication by scalars. That is, for each <script type="math/tex; ">\bf{u}</script> in <script type="math/tex; ">H</script> and each scalar <script type="math/tex; ">c</script>, the vector <script type="math/tex; ">c\textbf{u}</script> is in <script type="math/tex; ">H</script>.</li>
 </ol>
 <ul>
@@ -741,47 +741,43 @@ under the vector space operations already defined in <script type="math/tex; ">V
 <li>Conversely, every vector space is a subspace (of itself and possibly of other larger spaces).</li>
 </ul>
 <h2 id="a-subspace-spanned-by-a-set">A Subspace Spanned by a Set</h2>
-<p>The set consisting of <strong>only the zero vector</strong> in a vector space <script type="math/tex; ">V</script> is a subspace of <script type="math/tex; ">V</script>, called the <script type="math/tex; ">zero subspace** and written as </script>\left{\textbf{0}\right}<script type="math/tex; ">.
-
-As the term **liniear combination** refers to *any sum of scalar multiples of vectors*, and </script>\text{Span }\left{ \textbf{v}_1,\cdots,\textbf{v}_p\right}<script type="math/tex; "> denotes the set of all vectors that can be written as linear combinations of </script>\textbf{v}_1, \cdots, \textbf{v}_p<script type="math/tex; ">.
-
-## Example 10:
-
-Given </script>\bf{v}_1<script type="math/tex; "> and </script>bf{v}_2<script type="math/tex; "> in a vector space </script>V<script type="math/tex; ">, let </script>H=\text{Span }\left{\textbf{v}_1, \textbf{v}_2 \rifht}<script type="math/tex; ">. Show that </script>H<script type="math/tex; "> is a subspace of </script>V<script type="math/tex; ">.
-
-### Solution:
-
-* The zero vector is in </script>H<script type="math/tex; ">, since </script>\textbf{0} = 0\textbf{v}_1 + 0\textbf{v}_2<script type="math/tex; ">.
-* To show that </script>H<script type="math/tex; "> is closed uncer vector addition, take two arbitrary vectors in </script>H<script type="math/tex; ">, say,
-
-</script>
-\textbf{u} = s_1 \textbf{v}_1 + s_2 \textbf{v}_2 \text{ and } \textbf{w} = t_1 \textbf{v}_1 + t_2 \textbf{v}_2<script type="math/tex; ">.
-</script></p>
+<p>The set consisting of <strong>only the zero vector</strong> in a vector space <script type="math/tex; ">V</script> is a subspace of <script type="math/tex; ">V</script>, called the <strong>zero subspace</strong> and written as <script type="math/tex; ">\left\{\textbf{0}\right\}</script>.</p>
+<p>As the term <strong>liniear combination</strong> refers to <em>any sum of scalar multiples of vectors</em>, and <script type="math/tex; ">\text{Span }\left\{ \textbf{v}_1,\cdots,\textbf{v}_p\right\}</script> denotes the set of all vectors that can be written as linear combinations of <script type="math/tex; ">\textbf{v}_1, \cdots, \textbf{v}_p</script>.</p>
+<h2 id="example-10">Example 10:</h2>
+<p>Given <script type="math/tex; ">\bf{v}_1</script> and <script type="math/tex; ">bf{v}_2</script> in a vector space <script type="math/tex; ">V</script>, let <script type="math/tex; ">H=\text{Span }\left\{\textbf{v}_1, \textbf{v}_2 \rifht\}</script>. Show that <script type="math/tex; ">H</script> is a subspace of <script type="math/tex; ">V</script>.</p>
+<h3 id="solution">Solution:</h3>
 <ul>
-<li>By Axioms 2,3, and 8 for the vector space <script type="math/tex; ">V</script>,</li>
+<li>The zero vector is in <script type="math/tex; ">H</script>, since <script type="math/tex; ">\textbf{0} = 0\textbf{v}_1 + 0\textbf{v}_2</script>.</li>
+<li>To show that <script type="math/tex; ">H</script> is closed uncer vector addition, take two arbitrary vectors in <script type="math/tex; ">H</script>, say,</li>
 </ul>
 <p><script type="math/tex; mode=display">
-\begin{align}
-\textbf{u}+\textbf{w} &= (s_1 \textbf{v}_1 +s_2 \textbf{v}_2) + (t_1 \textbf{v}_1 + t_2 \textbf{v}_2) \\
-&= (s_1 +t_1)\textbf{v}_1 + (s_2+t_2)\textbf{v}_2
-\end{align}
-</script></p>
-<ul>
-<li>So <script type="math/tex; ">\textbf{u}+\textbf{v}</script> is in <script type="math/tex; ">H</script>.</li>
-<li>Furthermore, if <script type="math/tex; ">c</script> is any scalar, then by Axioms 7 and 9, 
+\textbf{u} = s_1 \textbf{v}_1 + s_2 \textbf{v}_2 \text{ and } \textbf{w} = t_1 \textbf{v}_1 + t_2 \textbf{v}_2</script>.
 <script type="math/tex; mode=display">
+
+* By Axioms 2,3, and 8 for the vector space </script>V<script type="math/tex; ">,
+
+</script>
 \begin{align}
-c\textbf{u} &= c(s_1 \textbf{v}_1 + s_2 \textbf{v}_2)
-&=(cs_1)\textbf{v}_1 + (cs_2)\textbf{v}_2
+\textbf{u}+\textbf{w} &amp;= (s_1 \textbf{v}_1 +s_2 \textbf{v}_2) + (t_1 \textbf{v}_1 + t_2 \textbf{v}_2) \
+&amp;= (s_1 +t_1)\textbf{v}_1 + (s_2+t_2)\textbf{v}_2
 \end{align}
+<script type="math/tex; mode=display">
+
+* So </script>\textbf{u}+\textbf{v}<script type="math/tex; "> is in </script>H<script type="math/tex; ">.
+* Furthermore, if </script>c<script type="math/tex; "> is any scalar, then by Axioms 7 and 9, 
+</script>
+\begin{align}
+c\textbf{u} &amp;= c(s_1 \textbf{v}_1 + s_2 \textbf{v}_2) \
+&amp;=(cs_1)\textbf{v}_1 + (cs_2)\textbf{v}_2
+\end{align}
+<script type="math/tex; mode=display">
   which shows that </script>c\textbf{u}<script type="math/tex; "> is in </script>H<script type="math/tex; "> and </script>H<script type="math/tex; "> is closed under scalar multiplication.
 
 * Thus </script>H<script type="math/tex; "> is a subspace of </script>V<script type="math/tex; ">.
 
 ## Theorem 1:
 
-If </script>\textbf{v}_1, \cdots, \textbf{v}_p<script type="math/tex; "> are in a vector space </script>V<script type="math/tex; ">, then </script>\text{Span }\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right} is a subspace of <script type="math/tex; ">V</script>.</li>
-</ul>
+If </script>\textbf{v}_1, \cdots, \textbf{v}_p<script type="math/tex; "> are in a vector space </script>V<script type="math/tex; ">, then </script>\text{Span }\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right} is a subspace of <script type="math/tex; ">V</script>.</p>
 <p>We call <script type="math/tex; ">\text{Span }\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\} **the subspace spanned** (or **generated) by </script>\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right}<script type="math/tex; ">.
 
 Give any subspace </script>H<script type="math/tex; "> and </script>V<script type="math/tex; ">, a **spanning** (or **generating**) set for </script>H<script type="math/tex; "> is a set </script>\left{ \textbf{v}_1, \cdots, \textbf{v}_p \right}<script type="math/tex; "> in </script>H<script type="math/tex; "> such that
@@ -832,7 +828,7 @@ H = \text{Span }\left{ \textbf{v}_1, \cdots \textbf{v}_p \right}</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_01","level":"1.3.19","depth":2,"next":{"title":"05_01","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_09 Dimension and Rank","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_01.md","mtime":"2019-10-05T04:30:53.538Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-06T14:51:26.289Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_01","level":"1.3.19","depth":2,"next":{"title":"05_01","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"02_09 Dimension and Rank","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_01.md","mtime":"2019-10-06T15:06:55.353Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-06T15:07:01.828Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
