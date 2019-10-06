@@ -689,7 +689,7 @@ the amounts produced (or &#x201C;supplied&#x201D;) will exactly balance the <str
 <p><script type="math/tex; ">
 \left\{ \begin{matrix} \text{amount produced}\\ \textbf{x} \end{matrix}\right\}
 =
-\left\{ \text{intermediate demand} \right\}
+\left\{ \begin{matrix} \text{intermediate} \\ \text{demand} \end{matrix} \right\}
 +
 \left\{ \begin{matrix} \text{final demand}\\ \textbf{d} \end{matrix} \right\}
 \tag{1}
@@ -701,22 +701,17 @@ there is a <strong>unit consumption vector</strong> in that lists the inputs nee
 <li>As a simple example, suppose the economy consists of 
 <strong>three sectors(<script type="math/tex; ">n=3</script>)</strong>&#x2014;manufacturing, agriculture, and services&#x2014;with unit consumption vectors <script type="math/tex; ">\textbf{c}_1, \textbf{c}_2,</script> and <script type="math/tex; ">\textbf{c}_3</script> as shown in the table that follows.</li>
 </ul>
+<h3 id="inputs-consumed-per-unit-of-output">Inputs Consumed per Unit of Output</h3>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Inputs Consumed per Unit of Output</th>
-<th></th>
-<th></th>
+<th>Purchased from:<script type="math/tex; ">\downarrow</script></th>
+<th>Manufacturing</th>
+<th>Agriculture</th>
+<th>Services</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Purchased from:</td>
-<td>Manufacturing</td>
-<td>Agriculture</td>
-<td>Services</td>
-</tr>
 <tr>
 <td>Manufacturing</td>
 <td>.5</td>
@@ -765,7 +760,7 @@ the planed outputs of the agriculture and services sectors,
 given by
 <script type="math/tex; ">
 \begin{align}
-\left\{\text{intermediate demand}\right\} &= x_1\textbf{c}_1+x_2\textbf{c}_2+x_3\textbf{c}_3 \\
+\left\{ \begin{matrix}\text{intermediate} \text{demand} \end{matrix}\right\} &= x_1\textbf{c}_1+x_2\textbf{c}_2+x_3\textbf{c}_3 \\
 &= C\textbf{x} 
 \end{align}
 \tag{2}
@@ -989,7 +984,7 @@ to produce one unit of output.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"next":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"previous":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_06.md","mtime":"2019-10-06T14:39:19.340Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-06T14:39:25.490Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"next":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"previous":{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_06.md","mtime":"2019-10-06T14:51:19.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-06T14:51:26.289Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
