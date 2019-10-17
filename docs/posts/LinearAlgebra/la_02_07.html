@@ -892,6 +892,48 @@ A=\begin{bmatrix}
 \end{bmatrix}
 </script></p>
 <h2 id="perspective-projections">Perspective Projections</h2>
+<p>A three-dimensional object is represented on the two-dimensional computer screen by projecting the object onto a viewing plane. 
+(We ignore other important steps, such as selecting the portion of the viewing plane to display on the screen.) </p>
+<p>For simplicity, let </p>
+<ul>
+<li>the <script type="math/tex; ">xy</script>-plane represent the computer screen, and imagine that </li>
+<li>the eye of a viewer is along the positive <script type="math/tex; ">z</script>-axis, at a point <script type="math/tex; ">(0,0,z)</script>. </li>
+</ul>
+<p>A <em>perspective projection</em> maps each point <script type="math/tex; ">(x, y, z)</script> onto an image point <script type="math/tex; ">(x^*,y^*,0)</script> 
+so that the two points and the eye position,
+called the <em>center of projection</em>, are on a line. See Figure 6(a).</p>
+<p><img src="fig/la_02_07_06.png" alt="fig6"></p>
+<p>The triangle in the <script type="math/tex; ">xz</script>-plane in Figure 6(a) is redrawn in part (b) showing the lengths
+of line segments. Similar triangles show that</p>
+<p><script type="math/tex; mode=display">
+\frac{x^*}{d}=\frac{x}{d-z} \\
+x^* = \frac{dx}{d-z}=\frac{x}{1-z/d}
+</script></p>
+<p>Similarly,</p>
+<p><script type="math/tex; mode=display">
+y^*=\frac{y}{1-z/d}
+</script></p>
+<p>Using homogeneous coordinates, we can represent the perspective projection by a matrix, say, <script type="math/tex; ">P</script>. 
+We want <script type="math/tex; ">(x,y,z,1)</script> to map into <script type="math/tex; ">\left( \frac{x}{1-z/d},\frac{y}{1-z/d},0,1\right). 
+Scaling these coordinates by </script>1-z/d<script type="math/tex; ">, we can also use </script>(x,y,0,1-z/d) as homogeneous coordinates for the images.
+Now it is easy to display <script type="math/tex; ">P</script>. In fact,</p>
+<p><script type="math/tex; mode=display">
+P
+\begin{bmatrix}
+x \\y \\ z \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 &0 &0 \\0&1&0&0 \\ 0&0&0&0 \\ 0&0&-1/d&1
+\end{bmatrix}
+\begin{bmatrix}
+x \\y \\ z \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+x \\y \\ 0 \\ 1-z/d
+\end{bmatrix}
+</script></p>
 
                                 
                                 </section>
@@ -935,7 +977,7 @@ A=\begin{bmatrix}
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_07","level":"1.3.17","depth":2,"next":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"previous":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_07.md","mtime":"2019-10-17T13:22:27.432Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T13:22:33.268Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_07","level":"1.3.17","depth":2,"next":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"previous":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_07.md","mtime":"2019-10-17T14:33:18.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T14:33:32.865Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
