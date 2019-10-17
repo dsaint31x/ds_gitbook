@@ -1,0 +1,922 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>02_01_Matrix_Algebra · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="la_02_02.html" />
+    
+    
+    <link rel="prev" href="la_01_10_02_Difference_Equation.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Docker/nvidia_docker.html">
+            
+                <a href="../Docker/nvidia_docker.html">
+            
+                    
+                    Install Nvidia-Docker2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Docker/docker_summary.html">
+            
+                <a href="../Docker/docker_summary.html">
+            
+                    
+                    Docker CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Docker/docker_hub.html">
+            
+                <a href="../Docker/docker_hub.html">
+            
+                    
+                    Docker Hub CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linear Algebra
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+            
+                <a href="01_hello_linear_algebra.html">
+            
+                    
+                    01 Hello Linear Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="la_01_01.html">
+            
+                <a href="la_01_01.html">
+            
+                    
+                    01 01 Systems of Linear Eq.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="la_01_02.html">
+            
+                <a href="la_01_02.html">
+            
+                    
+                    01 02 Row Reduction and Echelon Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="la_01_03.html">
+            
+                <a href="la_01_03.html">
+            
+                    
+                    01 03 Vector Equations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="la_01_04.html">
+            
+                <a href="la_01_04.html">
+            
+                    
+                    01 04 Matrix Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
+            
+                <a href="la_01_05.html">
+            
+                    
+                    01 05 Solution Sets of Linear Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="la_01_07.html">
+            
+                <a href="la_01_07.html">
+            
+                    
+                    01 07 Linear Independence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="la_01_08.html">
+            
+                <a href="la_01_08.html">
+            
+                    
+                    01 08 Introduction to Linear Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="la_01_09.html">
+            
+                <a href="la_01_09.html">
+            
+                    
+                    01 09 The Matrix of a Linear Transformation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
+            
+                <a href="la_01_10_02_Difference_Equation.html">
+            
+                    
+                    01_02 Difference Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.11" data-path="la_02_01.html">
+            
+                <a href="la_02_01.html">
+            
+                    
+                    02_01_Matrix_Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="la_02_02.html">
+            
+                <a href="la_02_02.html">
+            
+                    
+                    02_02_Inverse_Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="la_02_03.html">
+            
+                <a href="la_02_03.html">
+            
+                    
+                    02_03 Characterizations of Invertible Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="la_02_04.html">
+            
+                <a href="la_02_04.html">
+            
+                    
+                    02_04 Partitioned Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="la_02_05.html">
+            
+                <a href="la_02_05.html">
+            
+                    
+                    02_05 Matrix Factorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="la_02_06.html">
+            
+                <a href="la_02_06.html">
+            
+                    
+                    02_06 The Leontief Input-Output Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="la_02_07.html">
+            
+                <a href="la_02_07.html">
+            
+                    
+                    02_07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="la_02_08.html">
+            
+                <a href="la_02_08.html">
+            
+                    
+                    02_08 Subspaces of R to the Power n
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="la_02_09.html">
+            
+                <a href="la_02_09.html">
+            
+                    
+                    02_09 Dimension and Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="la_04_01.html">
+            
+                <a href="la_04_01.html">
+            
+                    
+                    04_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="la_04_02.html">
+            
+                <a href="la_04_02.html">
+            
+                    
+                    04_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="la_05_01.html">
+            
+                <a href="la_05_01.html">
+            
+                    
+                    05_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="la_05_02.html">
+            
+                <a href="la_05_02.html">
+            
+                    
+                    05_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="la_05_03.html">
+            
+                <a href="la_05_03.html">
+            
+                    
+                    05_03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="la_05_04.html">
+            
+                <a href="la_05_04.html">
+            
+                    
+                    05_04
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="la_06_01.html">
+            
+                <a href="la_06_01.html">
+            
+                    
+                    06_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="la_07_01.html">
+            
+                <a href="la_07_01.html">
+            
+                    
+                    07_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="la_07_02.html">
+            
+                <a href="la_07_02.html">
+            
+                    
+                    07_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="la_07_03.html">
+            
+                <a href="la_07_03.html">
+            
+                    
+                    07_03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30" data-path="la_07_04_01.html">
+            
+                <a href="la_07_04_01.html">
+            
+                    
+                    07_04_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.31" data-path="la_07_04_02.html">
+            
+                <a href="la_07_04_02.html">
+            
+                    
+                    07_04_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Etc/">
+            
+                <a href="../Etc/">
+            
+                    
+                    Etc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Etc/install_gitbook.html">
+            
+                <a href="../Etc/install_gitbook.html">
+            
+                    
+                    Install Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Etc/install_uim.html">
+            
+                <a href="../Etc/install_uim.html">
+            
+                    
+                    Install uim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Etc/install_virtualbox.html">
+            
+                <a href="../Etc/install_virtualbox.html">
+            
+                    
+                    Install virtualbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Etc/video.html">
+            
+                <a href="../Etc/video.html">
+            
+                    
+                    Video Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >02_01_Matrix_Algebra</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ch02-matrix-algebra">Ch02. Matrix Algebra</h1>
+<h2 id="matrix-operations">Matrix Operations</h2>
+<ul>
+<li>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix&#x2014;that is, a matrix with <script type="math/tex; ">m</script> rows and <script type="math/tex; ">n</script> columns&#x2014;then the scalar entry in the <script type="math/tex; ">i</script>th row and <script type="math/tex; ">j</script>th column of <script type="math/tex; ">A</script> is denoted by <script type="math/tex; ">a_{ij}</script> and is called the <script type="math/tex; ">(i,j)</script>-entry of <script type="math/tex; ">A</script>.</li>
+<li>Each column of <script type="math/tex; ">A</script> is a list of <script type="math/tex; ">m</script> real numbers, which identifies a vector in <script type="math/tex; ">\mathbb{R}^m</script>.</li>
+<li>The columns are denoted by <script type="math/tex; ">\textbf{a}_1, \cdots, \textbf{a}_n</script>, and the matrix <script type="math/tex; ">A</script> is written as </li>
+</ul>
+<p><script type="math/tex; ">A=\begin{bmatrix}\textbf{a}_1 & \textbf{a}_2&\cdots&\textbf{a}_n \end{bmatrix}</script></p>
+<ul>
+<li>The number <script type="math/tex; ">a_{ij}</script> is the <script type="math/tex; ">i</script>th entry (from the top) of the <script type="math/tex; ">j</script>th column vector <script type="math/tex; ">\textbf{a}_j</script>.</li>
+<li>The <strong>diagonal entries</strong> in an <script type="math/tex; ">m\times n</script> matrix <script type="math/tex; ">A=[a_{ij}]</script> are <script type="math/tex; ">a_{11},a_{22},\cdots,</script> and they form the <strong>main diagonal</strong> of <script type="math/tex; ">A</script>.</li>
+<li>A <strong>diagonal matrix</strong> is a square <script type="math/tex; ">n \times n</script> matrix whose nondiagonal entries are zero.</li>
+<li>An example is the <script type="math/tex; ">n\times n </script> <strong>identity matrix</strong>, <script type="math/tex; ">I_n</script>.</li>
+<li>An <script type="math/tex; ">m\times n </script> matrix whose entires are all zero is a <strong>zero matrix</strong> and is writeen as <script type="math/tex; ">0</script>.</li>
+<li>The two matrices are <strong>equal</strong> if they have the same size (i.e., the same number of rows and the same number of columns) an if their corresponding columns are equal, which amounts to saying that their corresponding entires are equal.</li>
+</ul>
+<h2 id="sums-and-scalar-multiples">Sums and Scalar Multiples</h2>
+<h3 id="sum-of-matrices">Sum of Matrices</h3>
+<ul>
+<li>If <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are <script type="math/tex; ">m\times n</script> matrices, then the <strong>sum</strong> <script type="math/tex; ">A+B</script> is the <script type="math/tex; ">m \times n</script> matrix whose columns are the sums of the corresponding columns in <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script>.</li>
+<li>Since vector addition of the columns is done entrywise, each entry in <script type="math/tex; ">A+B</script> is the sum of the corresponding entries in <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script>.</li>
+<li>The sum <script type="math/tex; ">A+B</script> is defined only when <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are the same size.</li>
+</ul>
+<h3 id="example-1">Example 1</h3>
+<p>Let <script type="math/tex; ">A=\begin{bmatrix} 4 & 0 & 5 \\ -1 & 3 & 2 \end{bmatrix}, B=\begin{bmatrix} 1 & 1 & 1 \\ 3 & 5 & 7 \end{bmatrix}</script>, and <script type="math/tex; ">C=\begin{bmatrix} 2 & -3 \\ 0 & 1 \end{bmatrix}</script>. Find <script type="math/tex; ">A+B</script> and <script type="math/tex; ">A+C</script>.</p>
+<h4 id="solution">Solution:</h4>
+<ul>
+<li><script type="math/tex; ">A+B=\begin{bmatrix} 5 & 1 & 6 \\ 2 & 8 & 9 \end{bmatrix}</script> but <script type="math/tex; ">A+C</script> is not defined because <script type="math/tex; ">A</script> and <script type="math/tex; ">C</script> have different sizes.</li>
+</ul>
+<h3 id="scalar-multiple-of-matrix">Scalar Multiple of Matrix</h3>
+<ul>
+<li>If <script type="math/tex; ">r</script> is a scalar and <script type="math/tex; ">A</script> is a matrix, then the <strong>scalar multiple</strong> <script type="math/tex; ">r A</script> is the matrix whose columns are <script type="math/tex; ">r</script> times the corresponding columns in <script type="math/tex; ">A</script>.</li>
+</ul>
+<h3 id="theorem-1-let-a-b-and-c-be-matrices-of-the-same-size-and-let-r-and-s-be-scalars">Theorem 1: Let <script type="math/tex; ">A</script>, <script type="math/tex; ">B</script>, and <script type="math/tex; ">C</script> be matrices of the same size, and let <script type="math/tex; ">r</script> and <script type="math/tex; ">s</script> be scalars.</h3>
+<ol>
+<li><script type="math/tex; ">A+B=B+A</script></li>
+<li><script type="math/tex; ">(A+B)+C=A+(B+C)</script></li>
+<li><script type="math/tex; ">A+0=A</script></li>
+<li><script type="math/tex; ">r(A+B)=rA+rB</script></li>
+<li><script type="math/tex; ">(r+s)A=rA+sA</script></li>
+<li><script type="math/tex; ">r(sA)=(rs)A</script></li>
+</ol>
+<ul>
+<li>Each quantity in Theorem 1 is verified by showing that the matrix on the left side has the same size as the matrix on the right and that corresponding columns are equal.</li>
+</ul>
+<h2 id="matrix-multiplication">Matrix Multiplication</h2>
+<ul>
+<li>When a matrix <script type="math/tex; ">B</script> multiplies a vector <script type="math/tex; ">\textbf{x}</script>, it transforms <script type="math/tex; ">\textbf{x}</script> 
+into the vector <script type="math/tex; ">B \textbf{x}</script>.</li>
+<li>If this vector is then multiplied in turn by a matrix <script type="math/tex; ">A</script>, 
+the resulting vector is <script type="math/tex; ">A(B\textbf{x})</script>. See the Fig. 2 below.</li>
+</ul>
+<p><img src="fig/la_02_01_02.png" alt="Fig2.Multiplication"></p>
+<ul>
+<li>If <script type="math/tex; ">A</script> is <script type="math/tex; ">m\times n</script>, <script type="math/tex; ">B</script> is <script type="math/tex; ">n\times p</script>, and <script type="math/tex; ">\textbf{x}</script> is in <script type="math/tex; ">\mathbb{R}^p</script>, denote the columns of <script type="math/tex; ">B</script> by <script type="math/tex; ">\textbf{b}_1,\cdots,\textbf{b}_p</script> and the entries in <script type="math/tex; ">\textbf{x}</script> by <script type="math/tex; ">x_1,\cdots,x_p</script>.</li>
+<li>Then <script type="math/tex; ">B\textbf{x}=x_1\textbf{b}_1+\cdots+x_p\textbf{b}_p</script>.</li>
+<li>By the linearity of multiplication by <script type="math/tex; ">A</script>,
+<script type="math/tex; mode=display">
+\begin{align}
+A(B\textbf{x})&=A(x_1\textbf{b}_1)+\cdots+A(x_p\textbf{b}_p) \\
+&=x_1A\textbf{b}_1+\cdots+x_pA\textbf{b}_p
+\end{align}
+</script></li>
+<li>The vector <script type="math/tex; ">A(B\textbf{x})</script> is a linear combination of the vectors <script type="math/tex; ">A\textbf{b}_1,\cdots,A\textbf{b}_p</script>, 
+using the entries in <script type="math/tex; ">\textbf{x}</script> as weights.</li>
+<li>In matrix notation, this linear combination is written as
+<script type="math/tex; mode=display">
+A(B\textbf{x})=\begin{bmatrix} A\textbf{b}_1 & A\textbf{b}_2 & \cdots & A\textbf{b}_p \end{bmatrix} \textbf{x}
+</script></li>
+<li>Thus multiplication by <script type="math/tex; ">\begin{bmatrix}A\textbf{b}_1 & A\textbf{b}_2 & \cdots & A\textbf{b}_p \end{bmatrix}</script> transforms <script type="math/tex; ">\textbf{x}</script> into <script type="math/tex; ">A(B\textbf{x})</script>.</li>
+</ul>
+<h3 id="definition">Definition</h3>
+<p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, and if <script type="math/tex; ">B</script> is an <script type="math/tex; ">n \times p</script> matrix with columns <script type="math/tex; "> \textbf{b}_1,\cdots,\textbf{b}_p</script>, then the product <script type="math/tex; ">A B</script> is the <script type="math/tex; ">m \times p</script> matrix whose columns are <script type="math/tex; ">A \textbf{b}_1, \cdots, A \textbf{b}_p</script>.</p>
+<p>That is,
+<script type="math/tex; ">AB = A\begin{bmatrix}\textbf{b}_1 &\cdots & \textbf{b}_p \end{bmatrix} =\begin{bmatrix} A \textbf{b}_1 &\cdots & A \textbf{b}_p\end{bmatrix}</script></p>
+<p><strong>Multiplication of matrices corresponds to composition of linear transformations.</strong></p>
+<h3 id="example-3">Example 3</h3>
+<p>Compute <script type="math/tex; ">A B</script>, where <script type="math/tex; ">A=\begin{bmatrix}2&3\\1&-5\end{bmatrix}</script> and <script type="math/tex; ">B=\begin{bmatrix}4&3&6\\1&-2&3\end{bmatrix}</script>.</p>
+<h4 id="solution">Solution:</h4>
+<p>Write <script type="math/tex; ">B=\begin{bmatrix}\textbf{b}_1,\textbf{b}_2,\textbf{b}_3\end{bmatrix}</script>, and, compute:
+<img src="fig/la_02_01_add01.png" alt=""></p>
+<ul>
+<li>Each column of <script type="math/tex; ">A B</script> is a <strong>linear combination of the columns of <script type="math/tex; ">A</script></strong> using weights from the corresponding column of <script type="math/tex; ">B</script>.</li>
+</ul>
+<h3 id="row&#x2014;column-rule-for-computing-a-b">Row&#x2014;column rule for computing A B</h3>
+<p>If a product <script type="math/tex; ">A B</script> is defined, then the entry in row <script type="math/tex; ">i</script> and column <script type="math/tex; ">j</script> of <script type="math/tex; ">A B</script> is the sum of the products of corresponding entries from row <script type="math/tex; ">i</script> of <script type="math/tex; ">A</script> and column <script type="math/tex; ">j</script> of <script type="math/tex; ">B</script>. If <script type="math/tex; ">(AB)_{ij}</script> denotes the <script type="math/tex; ">(i, j)</script>-entry in <script type="math/tex; ">A B</script>, and if <script type="math/tex; ">A</script> is an <script type="math/tex; ">m \times n</script> matrix, then
+<script type="math/tex; mode=display">
+(AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}
+</script></p>
+<h3 id="properties-of-matrix-multiplication">Properties of Matrix Multiplication</h3>
+<h4 id="theorem-2">Theorem 2:</h4>
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix, and let <script type="math/tex; ">B</script> and <script type="math/tex; ">C</script> have sizes for which the indicated sums and products are defined.</p>
+<ol>
+<li><script type="math/tex; ">A(BC)=(AB)C</script> (associative law of multiplication)</li>
+<li><script type="math/tex; ">A(B+C)=AB+AC</script> (left distributive law)</li>
+<li><script type="math/tex; ">(B+C)A=BA+CA</script> (right distributive law)</li>
+<li><script type="math/tex; ">r(AB)=(rA)B =A(rB)</script> for any scalar <script type="math/tex; ">r</script>.</li>
+<li><script type="math/tex; ">I_mA=A=AI_n</script> (identity for matrix multiplication)</li>
+</ol>
+<h3 id="warnings">Warnings:</h3>
+<ol>
+<li>In general, <script type="math/tex; ">AB \ne BA</script>.</li>
+<li><strong>The cancellation laws do not hold for matrix multiplication</strong>. That is, if <script type="math/tex; ">AB=AC</script>, then it is not true in general that <script type="math/tex; ">B=C</script>.</li>
+<li>If a product <script type="math/tex; ">A B</script> is the zero matrix, you cannot conclude in general that either <script type="math/tex; ">A = 0</script> or <script type="math/tex; ">B = 0</script>.</li>
+</ol>
+<h2 id="powers-of-a-matrix">Powers of a Matrix</h2>
+<ul>
+<li><p>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">n \times n</script> matrix and if <script type="math/tex; ">k</script> is a positive integer, then <script type="math/tex; ">A^k</script> denotes the product of <script type="math/tex; ">k</script> copies of <script type="math/tex; ">A</script>:
+<script type="math/tex; mode=display">
+A^k = \underbrace{ A \cdots A }_{k}
+</script></p>
+</li>
+<li><p>If <script type="math/tex; ">A</script> is nonzero and if <script type="math/tex; ">\textbf{x}</script> is in <script type="math/tex; ">\mathbb{R}^n</script>, then <script type="math/tex; ">A^k \textbf{x}</script> is the result of left-multiplying <script type="math/tex; ">\textbf{x}</script> by <script type="math/tex; ">A</script> repeatedly <script type="math/tex; ">k</script> times.</p>
+</li>
+<li>If <script type="math/tex; ">k = 0</script>, then <script type="math/tex; ">A^0\textbf{x}</script> should be <script type="math/tex; ">\textbf{x}</script> itself.</li>
+<li>Thus <script type="math/tex; ">A^0</script> is interpreted as the identity matrix.</li>
+</ul>
+<h2 id="the-transpose-of-a-matrix">The Transpose of a Matrix</h2>
+<ul>
+<li>Given an <script type="math/tex; ">m \times n</script> matrix <script type="math/tex; ">A</script>, the <strong>transpose</strong> of <script type="math/tex; ">A</script> is the <script type="math/tex; ">n \times m</script> matrix, denoted by <script type="math/tex; ">A^T</script> whose columns are formed from the corresponding rows of <script type="math/tex; ">A</script>.</li>
+</ul>
+<h3 id="theorem-3">Theorem 3:</h3>
+<p>Let <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> denote matrices whose sizes are appropriate for the following sums and products.</p>
+<ol>
+<li><script type="math/tex; ">(A^T)^T=A</script></li>
+<li><script type="math/tex; ">(A+B)^T = A^T+B^T</script></li>
+<li>For an scalar <script type="math/tex; ">r</script>, <script type="math/tex; ">(rA)^T=rA^T</script></li>
+<li><strong><script type="math/tex; ">(AB)^T =B^T A^T</script></strong></li>
+</ol>
+<p>The <strong>transpose of a product</strong> of metrices equals the product of their transposes in the reverse order.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="la_01_10_02_Difference_Equation.html" class="navigation navigation-prev " aria-label="Previous page: 01_02 Difference Equation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="la_02_02.html" class="navigation navigation-next " aria-label="Next page: 02_02_Inverse_Matrix">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"next":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"previous":{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_01.md","mtime":"2019-09-23T02:35:26.499Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T13:15:11.853Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-adsense/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
