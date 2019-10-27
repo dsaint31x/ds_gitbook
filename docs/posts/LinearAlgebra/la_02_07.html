@@ -740,7 +740,7 @@ describe the effect of the shear transformation
 <h3 id="solution">Solution</h3>
 <p>By definition of matrix multiplication, the columns of the product AD
 contain the images of the vertices of the letter N.</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 \displaystyle AD = \left[\begin{matrix}0 & 0.5 & 2.105 & 6 & 8.0 & 7.5 & 5.895 & 2.0\\0 & 0 & 6.42 & 0 & 8 & 8 & 1.58 & 8\end{matrix}\right]
 </script></p>
 <p>The transformed vertices are plotted in Figure 2, along with connecting line segments
@@ -764,7 +764,7 @@ that lies one unit above the <script type="math/tex; ">xy</script>-plane. </p>
 but they can be transformed via multiplication by <script type="math/tex; ">3 \times  3</script> matrices.</p>
 <h3 id="translation">Translation</h3>
 <p>In homogeneous coordiantes, the translation can be computed via matrix multiplication:</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 \left[\begin{matrix}1 & 0 & h\\0 & 1 & k\\0 & 0 & 1\end{matrix}\right]
 \begin{bmatrix}x \\y \\ 1\end{bmatrix} = 
 \begin{bmatrix}x+h \\y+k \\ 1\end{bmatrix} 
@@ -792,7 +792,7 @@ adds (5, 2) to each point of a figure.</p>
 have</p>
 <p><img src="fig/la_02_07_ex6.png" alt="fig"></p>
 <p>The matrix for the composite transformation is</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 \begin{align}
 \begin{bmatrix}
 1 & 0 & -.5 \\
@@ -833,7 +833,7 @@ have</p>
 the point <script type="math/tex; ">(x, y, z)</script> in <script type="math/tex; ">\mathbb{R}^3</script>.
 In general, <script type="math/tex; ">(X, Y, Z, H)</script> are homogeneous coordinates for <script type="math/tex; ">(x, y, z)</script>
 if <script type="math/tex; ">H \ne 0</script> and</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 \begin {align}
 x &= \frac{X}{H}\\
 y &= \frac{Y}{H}\\
@@ -865,7 +865,7 @@ coordinates for (5,-3,7).</li>
 <li><script type="math/tex; ">\textbf{e}_3</script> on the <script type="math/tex; ">z</script>-axis rotates down toward the positive <script type="math/tex; ">x</script>-axis, stopping at <script type="math/tex; ">(\sin{30^\circ},0,\cos{30^\circ}) = (.5,0,\sqrt{3}/2)</script>.</li>
 <li>See Figure 5. From Section 1.9, the stardard matrix for this rotation is </li>
 </ul>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 \begin{bmatrix}
 \sqrt{3}/2 & 0 & .5 \\
 0 & 1 & 0 \\
@@ -873,7 +873,7 @@ coordinates for (5,-3,7).</li>
 \end{bmatrix}
 </script></p>
 <p>So the rotation matrix for homogeneous coordinates is</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 A=\begin{bmatrix}
 \sqrt{3}/2 & 0 & .5 &0\\
 0 & 1 & 0 &0\\
@@ -883,7 +883,7 @@ A=\begin{bmatrix}
 </script></p>
 <h4 id="b">b.</h4>
 <p>We want <script type="math/tex; ">(x, y, z, 1)</script> to map to <script type="math/tex; ">(x-6, y+4, z+5, 1)</script>. The matrix that does this is</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 \begin{bmatrix}
 1 & 0 & 0 &-6 \\
 0 & 1 & 0 & 4 \\
@@ -905,21 +905,21 @@ called the <em>center of projection</em></strong>, are on a line. See Figure 6(a
 <p><img src="fig/la_02_07_06.png" alt="fig6"></p>
 <p>The triangle in the <script type="math/tex; ">xz</script>-plane in Figure 6(a) is redrawn in part (b) showing the lengths
 of line segments. Similar triangles show that</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 \begin{align}
 \frac{x^*}{d}&=\frac{x}{d-z} \\
 x^* &= \frac{dx}{d-z}=\frac{x}{1-z/d}
 \end{align}
 </script></p>
 <p>Similarly,</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 y^*=\frac{y}{1-z/d}
 </script></p>
 <p>Using homogeneous coordinates, we can represent the perspective projection by a matrix, say, <script type="math/tex; ">P</script>. 
 We want <script type="math/tex; ">(x,y,z,1)</script> to map into <script type="math/tex; ">\left( \frac{x}{1-z/d},\frac{y}{1-z/d},0,1\right)</script>. 
 Scaling these coordinates by <script type="math/tex; ">1-z/d</script>, we can also use <script type="math/tex; ">(x,y,0,1-z/d)</script> as homogeneous coordinates for the images.
 Now it is easy to display <script type="math/tex; ">P</script>. In fact,</p>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; ">
 P
 \begin{bmatrix}
 x \\y \\ z \\ 1
@@ -979,7 +979,7 @@ x \\y \\ 0 \\ 1-z/d
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"02_07","level":"1.3.17","depth":2,"next":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"previous":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_07.md","mtime":"2019-10-17T14:42:23.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-17T14:42:31.670Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_07","level":"1.3.17","depth":2,"next":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"previous":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_07.md","mtime":"2019-10-27T10:04:28.271Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-27T12:08:30.894Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
