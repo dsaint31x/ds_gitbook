@@ -784,7 +784,7 @@ matrix, <script type="math/tex; ">I_n</script>.</p>
 is called the
 <strong>standard basis</strong> for <script type="math/tex; ">\mathbb{R}^n</script>.</p>
 <p>See the following figure.</p>
-<p><img src="." alt="fig"></p>
+<p><img src="fig/la_04_03_01.png" alt="fig"></p>
 <h2 id="theormrem-5-the-spanning-set-theorem">Theormrem 5: The Spanning Set Theorem</h2>
 <p>Let <script type="math/tex; ">S=\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\}</script>
 be a set in <script type="math/tex; ">V</script>, and let <script type="math/tex; ">H=\text{Span }\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\}</script>.</p>
@@ -883,77 +883,77 @@ B &= \begin{bmatrix} \textbf{b}_1, \textbf{b}_2, \cdots, \textbf{b}_5 \end{bmatr
 0 & 0 & 0 & 0 & 0 
 \end{bmatrix}
 \end{align}
-
-### Solution
-
-* Each nonpivot column of </script>B<script type="math/tex; "> is a linear combination of the pivot columns.
-* In fact, </script>\textbf{b}_2 = 4 \textbf{b}_1<script type="math/tex; "> and </script>\textbf{b}_4 = 2 \textbf{b}_1-\textbf{b}_3<script type="math/tex; ">. 
-* By the Spanning Set Theorem, we may discard </script>\textbf{b}_2<script type="math/tex; "> and </script>\textbf{b}_4<script type="math/tex; ">, 
-  and </script>\left{ \textbf{b}_1, \textbf{b}_3, \textbf{b}_5 \right}<script type="math/tex; "> will still span Col </script>B<script type="math/tex; ">.
-* Let
-
-</script>
+</script></p>
+<h3 id="solution">Solution</h3>
+<ul>
+<li>Each nonpivot column of <script type="math/tex; ">B</script> is a linear combination of the pivot columns.</li>
+<li>In fact, <script type="math/tex; ">\textbf{b}_2 = 4 \textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_4 = 2 \textbf{b}_1-\textbf{b}_3</script>. </li>
+<li>By the Spanning Set Theorem, we may discard <script type="math/tex; ">\textbf{b}_2</script> and <script type="math/tex; ">\textbf{b}_4</script>, 
+and <script type="math/tex; ">\left\{ \textbf{b}_1, \textbf{b}_3, \textbf{b}_5 \right\}</script> will still span Col <script type="math/tex; ">B</script>.</li>
+<li>Let</li>
+</ul>
+<p><script type="math/tex; mode=display">
 \begin{align}
-S &amp;= \left{ \textbf{b}_1, \textbf{b}_3, \textbf{b}_5 \right} \
-&amp;= \left{ \begin{bmatrix} 1 \ 0 \ 0 \ 0 \end{bmatrix} ,
- \begin{bmatrix} 0 \ 1 \ 0 \ 0 \end{bmatrix} ,
- \begin{bmatrix} 0 \ 0 \ 1 \ 0 \end{bmatrix} \right}
+S &= \left\{ \textbf{b}_1, \textbf{b}_3, \textbf{b}_5 \right\} \\
+&= \left\{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} ,
+ \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix} ,
+ \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix} \right\}
 \end{align} 
-<script type="math/tex; mode=display">
-
-* Since </script>\textbf{b}_1 \ne \textbf{0}<script type="math/tex; mode=display">
-  and no vector in </script>S<script type="math/tex; "> is a linear combination of the vectors 
-  that precede it, </script>S<script type="math/tex; "> is linearly independent. (Theorem 4).
-* Thus </script>S<script type="math/tex; "> is a basis for Col </script>B<script type="math/tex; ">.
-
-## Theorem 6:
-
-The pivot columns of a matrix </script>A<script type="math/tex; "> form a basis for Col </script>A<script type="math/tex; ">.
-
-### Proof: 
-
-* Let </script>B<script type="math/tex; "> be the reduced echelon form of </script>A<script type="math/tex; ">.
-* The set of pivot columns of </script>B<script type="math/tex; "> is linearly independent, 
-  for no vector in the set is a linear combination of the
-  vectors that precede it.
-* Since </script>A<script type="math/tex; "> is row equivalent to </script>B<script type="math/tex; ">, the pivot columns of </script>A<script type="math/tex; mode=display">
-  are linearly independent as well, because any linear
-  dependence relation among the columns of </script>A<script type="math/tex; mode=display">
-  corresponds to a linear dependence relation among the
-  columns of </script>B<script type="math/tex; ">.
-* For this reason, every nonpivot column of </script>A<script type="math/tex; "> is a linear
-  combination of the pivot columns of </script>A<script type="math/tex; ">.
-* Thus the nonpivot columns of </script>A<script type="math/tex; "> may be discarded from
-  the spanning set for Col </script>A<script type="math/tex; ">, by **the Spanning Set Theorem**.
-* This leaves the pivot columns of </script>A<script type="math/tex; "> as a basis for Col </script>A<script type="math/tex; ">.
-
-### Warning: 
-* The pivot columns of a matrix </script>A<script type="math/tex; "> are evident
-  when </script>A<script type="math/tex; "> has been reduced only to echelon form.
-* But, be careful to use the pivot columns of </script>A<script type="math/tex; "> itself for
-  the basis of Col </script>A<script type="math/tex; ">.
-* **Row operations can change the column space of a matrix**.
-* The columns of an echelon form </script>B<script type="math/tex; "> of </script>A<script type="math/tex; "> are often not 
-  in the column space of </script>A<script type="math/tex; ">.
-
-## Two Views of a Basis
-
-* When the Spanning Set Theorem is used, 
-  the deletion of vectors from a spanning set must stop 
-  when the set becomes linearly independent.
-* If an additional vector is deleted, 
-  it will not be a linear combination of the remaining vectors, 
-  and hence the smaller set will no longer span </script>V<script type="math/tex; ">.
-* Thus a **basis** is a **spanning set that is as small as
-  possible**.
-* A basis is also a linearly independent set that is as
-  large as possible.
-* If </script>S<script type="math/tex; "> is a basis for </script>V<script type="math/tex; ">, and if </script>S<script type="math/tex; "> is enlarged by one vector
-  —say,</script>\textbf{w}<script type="math/tex; ">—fro$V</script>, 
+</script></p>
+<ul>
+<li>Since <script type="math/tex; ">\textbf{b}_1 \ne \textbf{0}</script>
+and no vector in <script type="math/tex; ">S</script> is a linear combination of the vectors 
+that precede it, <script type="math/tex; ">S</script> is linearly independent. (Theorem 4).</li>
+<li>Thus <script type="math/tex; ">S</script> is a basis for Col <script type="math/tex; ">B</script>.</li>
+</ul>
+<h2 id="theorem-6">Theorem 6:</h2>
+<p>The pivot columns of a matrix <script type="math/tex; ">A</script> form a basis for Col <script type="math/tex; ">A</script>.</p>
+<h3 id="proof">Proof:</h3>
+<ul>
+<li>Let <script type="math/tex; ">B</script> be the reduced echelon form of <script type="math/tex; ">A</script>.</li>
+<li>The set of pivot columns of <script type="math/tex; ">B</script> is linearly independent, 
+for no vector in the set is a linear combination of the
+vectors that precede it.</li>
+<li>Since <script type="math/tex; ">A</script> is row equivalent to <script type="math/tex; ">B</script>, the pivot columns of <script type="math/tex; ">A</script>
+are linearly independent as well, because any linear
+dependence relation among the columns of <script type="math/tex; ">A</script>
+corresponds to a linear dependence relation among the
+columns of <script type="math/tex; ">B</script>.</li>
+<li>For this reason, every nonpivot column of <script type="math/tex; ">A</script> is a linear
+combination of the pivot columns of <script type="math/tex; ">A</script>.</li>
+<li>Thus the nonpivot columns of <script type="math/tex; ">A</script> may be discarded from
+the spanning set for Col <script type="math/tex; ">A</script>, by <strong>the Spanning Set Theorem</strong>.</li>
+<li>This leaves the pivot columns of <script type="math/tex; ">A</script> as a basis for Col <script type="math/tex; ">A</script>.</li>
+</ul>
+<h3 id="warning">Warning:</h3>
+<ul>
+<li>The pivot columns of a matrix <script type="math/tex; ">A</script> are evident
+when <script type="math/tex; ">A</script> has been reduced only to echelon form.</li>
+<li>But, be careful to use the pivot columns of <script type="math/tex; ">A</script> itself for
+the basis of Col <script type="math/tex; ">A</script>.</li>
+<li><strong>Row operations can change the column space of a matrix</strong>.</li>
+<li>The columns of an echelon form <script type="math/tex; ">B</script> of <script type="math/tex; ">A</script> are often not 
+in the column space of <script type="math/tex; ">A</script>.</li>
+</ul>
+<h2 id="two-views-of-a-basis">Two Views of a Basis</h2>
+<ul>
+<li>When the Spanning Set Theorem is used, 
+the deletion of vectors from a spanning set must stop 
+when the set becomes linearly independent.</li>
+<li>If an additional vector is deleted, 
+it will not be a linear combination of the remaining vectors, 
+and hence the smaller set will no longer span <script type="math/tex; ">V</script>.</li>
+<li>Thus a <strong>basis</strong> is a <strong>spanning set that is as small as
+possible</strong>.</li>
+<li>A basis is also a linearly independent set that is as
+large as possible.</li>
+<li>If <script type="math/tex; ">S</script> is a basis for <script type="math/tex; ">V</script>, and if <script type="math/tex; ">S</script> is enlarged by one vector
+&#x2014;say,<script type="math/tex; ">\textbf{w}</script>&#x2014;fro$V<script type="math/tex; ">, 
   then the new set cannot be linearly independent, 
-  because <script type="math/tex; ">S</script> spans <script type="math/tex; ">V</script>, and
-  <script type="math/tex; ">\textbf{w}</script> is therefore a linear combination of the elements
-  in <script type="math/tex; ">S</script>.</p>
+  because </script>S<script type="math/tex; "> spans </script>V<script type="math/tex; ">, and
+  </script>\textbf{w}<script type="math/tex; "> is therefore a linear combination of the elements
+  in </script>S$$.</li>
+</ul>
 
                                 
                                 </section>
@@ -997,7 +997,7 @@ The pivot columns of a matrix </script>A<script type="math/tex; "> form a basis 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_03","level":"1.3.22","depth":2,"next":{"title":"04_04","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},"previous":{"title":"04_02","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_03.md","mtime":"2019-10-27T12:16:12.349Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-27T12:16:20.779Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_03","level":"1.3.22","depth":2,"next":{"title":"04_04","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},"previous":{"title":"04_02","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_03.md","mtime":"2019-10-27T12:21:15.054Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-27T12:21:27.477Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
