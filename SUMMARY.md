@@ -27,6 +27,8 @@
   * [02_09 Dimension and Rank](posts/LinearAlgebra/la_02_09.md)
   * [04_01](posts/LinearAlgebra/la_04_01.md)
   * [04_02](posts/LinearAlgebra/la_04_02.md)
+  * [04_03](posts/LinearAlgebra/la_04_03.md)
+  * [04_04](posts/LinearAlgebra/la_04_04.md)
   * [05_01](posts/LinearAlgebra/la_05_01.md)
   * [05_02](posts/LinearAlgebra/la_05_02.md)
   * [05_03](posts/LinearAlgebra/la_05_03.md)
