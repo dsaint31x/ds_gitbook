@@ -31,6 +31,7 @@
   * [04_04 Coordinate Systems](posts/LinearAlgebra/la_04_04.md)
   * [04_05 The Dimension of a Vector Space](posts/LinearAlgebra/la_04_05.md)
   * [04_06 Rank](posts/LinearAlgebra/la_04_06.md)
+  * [04_07](posts/LinearAlgebra/la_04_07.md)
   * [05_01](posts/LinearAlgebra/la_05_01.md)
   * [05_02](posts/LinearAlgebra/la_05_02.md)
   * [05_03](posts/LinearAlgebra/la_05_03.md)
