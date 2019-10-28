@@ -761,7 +761,7 @@ is a basis for <script type="math/tex; ">V</script> and <script type="math/tex; 
 <li><strong>The coordinates of <script type="math/tex; ">\textbf{x}</script> relative to the basis <script type="math/tex; ">B</script></strong> 
 (or the <strong><script type="math/tex; ">B</script>-coordinate of <script type="math/tex; ">\textbf{x}</script></strong> ) are the weights 
 <script type="math/tex; ">c_1, \cdots, c_n</script> such that <script type="math/tex; ">\textbf{x} = c_1\textbf{b}_1 + \cdots + c_n \textbf{b}_n</script>.</li>
-<li>If <script type="math/tex; ">c_1, \cdots,c_n</script> are the <strong>B-coordinates of <script type="math/tex; ">\textbf{x}</script></strong>, 
+<li>If <script type="math/tex; ">c_1, \cdots,c_n</script> are the <script type="math/tex; ">B</script><strong>-coordinates of</strong> <script type="math/tex; ">\textbf{x}</script>, 
 then the vector in <script type="math/tex; ">\mathbb{R}^n</script></li>
 </ul>
 <p><script type="math/tex; mode=display">
@@ -779,9 +779,9 @@ is easily found, as in the example below.</p>
 </li>
 </ul>
 <h2 id="example-1">Example 1:</h2>
-<p>Let <script type="math/tex; ">\textbf{b}_1 = \begin {bmatrix} 2 \\ 1 \end{bmatrix}, 
-\textbf{b}_2 = \begin{bmatrix} -1 \\ 1 \end{bmatrix},
-\textbf{x} = \begin{bmatrix} 4 \\ 5 \end{bmatrix}</script>, and <script type="math/tex; ">B=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script>.
+<p>Let <script type="math/tex; ">\textbf{b}_1 = \begin {bmatrix} 1 \\ 0 \end{bmatrix}, 
+\textbf{b}_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix},
+\textbf{x} = \begin{bmatrix} 1 \\ 6 \end{bmatrix}</script>, and <script type="math/tex; ">B=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script>.
 Find the coordinate vector <script type="math/tex; ">[\textbf{x}]_B</script> 
 of <script type="math/tex; ">\textbf{x}</script>
 relative to <script type="math/tex; ">B</script>.</p>
@@ -791,19 +791,19 @@ relative to <script type="math/tex; ">B</script>.</p>
 </ul>
 <p><script type="math/tex; mode=display">
 \begin {align}
-c_1 \begin{bmatrix}  2 \\ 1 \end{bmatrix} + 
-c_2 \begin{bmatrix} -1 \\ 1 \end{bmatrix} &= 
-\begin{bmatrix} 4 \\ 5 \end{bmatrix} \\
+c_1 \begin{bmatrix}  1 \\ 0 \end{bmatrix} + 
+c_2 \begin{bmatrix} 1 \\ 2 \end{bmatrix} &= 
+\begin{bmatrix} 1 \\ 6 \end{bmatrix} \\
 c_1 \textbf{b}_1 + c_2 \textbf{b}_2 &= \textbf{x}
 \end {align}
 </script></p>
-<p>or</p>
-<p><script type="math/tex; mode=display">
+<pre><code>or
+</code></pre><p><script type="math/tex; mode=display">
 \begin {align}
-\begin{bmatrix} 2 & -1 \\ 1 & 1 \end{bmatrix}
+\begin{bmatrix} 1 & 1 \\ 0 & 2 \end{bmatrix}
 \begin{bmatrix} c_1    \\ c_2   \end{bmatrix} &=
-\begin{bmatrix}      4 \\ 5     \end{bmatrix} \\ 
-\begin{bmatrix}\textbf{b}_1 & \textbf{b}_2 \end{bmatrix} &= \textbf{x}
+\begin{bmatrix}      1 \\ 6     \end{bmatrix} \\ 
+\begin{bmatrix}\textbf{b}_1 & \textbf{b}_2 \end{bmatrix} [\textbf{x}]_B &= \textbf{x}
 \end {align}  \tag{3}
 </script></p>
 <ul>
@@ -811,13 +811,13 @@ c_1 \textbf{b}_1 + c_2 \textbf{b}_2 &= \textbf{x}
 augmented matrix or by using the inverse of the matrix
 on the left.</p>
 </li>
-<li><p>In any case, the solution is <script type="math/tex; ">c_1=3, c_2=2</script>.</p>
+<li><p>In any case, the solution is <script type="math/tex; ">c_1=-2, c_2=3</script>.</p>
 </li>
-<li><p>Thus <script type="math/tex; ">\textbf{x}=3\textbf{b}_1+2\textbf{b}_2</script> and </p>
+<li><p>Thus <script type="math/tex; ">\textbf{x}=-2\textbf{b}_1+3\textbf{b}_2</script> and </p>
 </li>
 </ul>
 <p><script type="math/tex; mode=display">
-[\textbf{x}\_B = \begin{bmatrix} c_1 \\ c_2 \end{bmatrix} = \begin{bmatrix} 3 \\ 2 \end{bmatrix} </script></p>
+[\textbf{x}]_B = \begin{bmatrix} c_1 \\ c_2 \end{bmatrix} = \begin{bmatrix} -2 \\ 3 \end{bmatrix} </script></p>
 <ul>
 <li>See the follwing figure.</li>
 </ul>
@@ -875,36 +875,48 @@ by the Invertible Matrix Theorem.</p>
 <h2 id="theorem-8-">Theorem 8 :</h2>
 <p>Let <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script> be a basis for a vector space <script type="math/tex; ">V</script>. 
 Then the coordinate mapping <script type="math/tex; ">\textbf{x} \mapsto [\textbf{x}]_B</script>, 
-is a one-to-one linear transformation from <script type="math/tex; ">V</script> onto <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+is a <strong>one-to-one</strong> linear transformation from <script type="math/tex; ">V</script> <strong>onto</strong> <script type="math/tex; ">\mathbb{R}^n</script>.</p>
 <h3 id="proof-">Proof :</h3>
-<p>Take two typical vectors in <script type="math/tex; ">V</script>,
-say,</p>
+<ul>
+<li>Take two typical vectors in <script type="math/tex; ">V</script>,
+say,</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \textbf{u} = c_1 \textbf{b}_1 + \cdots + c_n \textbf{b}_n \\
 \textbf{w} = d_1 \textbf{b}_1 + \cdots + d_n \textbf{b}_n 
 </script></p>
-<p>Then, using vector operations,</p>
+<ul>
+<li>Then, using vector operations,</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \textbf{u}+\textbf{w} = (c_1+d_1) \textbf{b}_1 + \cdots + (c_n+d_n) \textbf{b}_n 
 </script></p>
-<p>It follows that</p>
+<ul>
+<li>It follows that</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \begin{align}
 [ \textbf{u} + \textbf{w} ]_B &=\begin{bmatrix} c_1+d_1 \\ \vdots \\ c_n+d_n \end{bmatrix} \\
 &=\begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} +
-\begin{bmatrix} d_1 \\ \vdots \\ d_n \end{bmatrix}
+\begin{bmatrix} d_1 \\ \vdots \\ d_n \end{bmatrix} \\
 &= [\textbf{u}]_B + [\textbf{w}]_B
 \end{align}
 </script></p>
-<p>So the coordinate mapping preserves addition.</p>
-<p>If <script type="math/tex; ">r</script> is any scalar, then</p>
+<ul>
+<li><p>So <strong>the coordinate mapping preserves <em>addition</em></strong>.</p>
+</li>
+<li><p>If <script type="math/tex; ">r</script> is any scalar, then</p>
+</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \begin{align}
 r\textbf{u} &= r (c_1 \textbf{b}_1 + \cdots + c_n \textbf{b}_n) \\
 &= (rc_1)\textbf{b}_1 + \cdots + (rc_n) \textbf{b}_n
 \end{align}
 </script></p>
-<p>So</p>
+<ul>
+<li>So</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \begin{align}
 [r\textbf{u}]_B &= \begin{bmatrix} rc_1 \\ \vdots \\ rc_n \end{bmatrix} \\
@@ -912,10 +924,14 @@ r\textbf{u} &= r (c_1 \textbf{b}_1 + \cdots + c_n \textbf{b}_n) \\
 &= r [\textbf{u}]_B
 \end{align}
 </script></p>
-<p>Thus the coordinate mapping also preserves scalar
-multiplication and hence is a linear transformation.</p>
-<p>The linearity of the coordinate mapping extends to
-linear combinations.</p>
+<ul>
+<li>Thus <strong>the coordinate mapping also preserves <em>scalar multiplication</em></strong> and </li>
+<li><p>hence is a <strong>linear transformation</strong>.</p>
+</li>
+<li><p><strong>one-to-one</strong> and <strong>onto</strong> &#xC99D;&#xBA85;&#xC740; &#xC219;&#xC81C;. <script type="math/tex; ">\blacksquare</script></p>
+</li>
+</ul>
+<p>The linearity of the coordinate mapping can extend to <strong>linear combinations</strong>.</p>
 <p>If <script type="math/tex; ">\textbf{u}_1, \cdots, \textbf{u}_p</script> 
 are in <script type="math/tex; ">V</script> and if <script type="math/tex; ">c_1, \cdots, c_p</script> 
 are scalars, then</p>
@@ -923,32 +939,31 @@ are scalars, then</p>
 [c_1 \textbf{u}_1 + \cdots + c_p \textbf{u}_p ] = c_1[\textbf{u}_1]_B +\cdots+ c_p[\textbf{u}_p]_B \tag{5}
 </script></p>
 <ul>
-<li><p>In words, (5) says that the <script type="math/tex; ">B</script>-coordinate vector of a
+<li>In words, (5) says that the <script type="math/tex; ">B</script>-coordinate vector of a
 linear combination of <script type="math/tex; ">\textbf{u}_1, \cdots, \textbf{u}_p</script> 
-is the same linear combination of their coordinate vectors.</p>
-</li>
-<li><p>The coordinate mapping in Theorem 8 is an important example of 
-an <strong>isomorphism</strong> from <script type="math/tex; ">V</script> onto <script type="math/tex; ">\mathbb{R}^n</script>.</p>
-</li>
-<li><p>In general, a one-to-one linear transformation from a
-vector space <script type="math/tex; ">V</script> onto a vector space <script type="math/tex; ">W</script> is called an
-isomorphism from <script type="math/tex; ">V</script> onto <script type="math/tex; ">W</script>.</p>
-</li>
-<li><p>The notation and terminology for <script type="math/tex; ">V</script> and <script type="math/tex; ">W</script> may differ,
-but the two spaces are indistinguishable as vector
-spaces.</p>
-</li>
-<li><p>Every vector space calculation in <script type="math/tex; ">V</script> is accurately
-reproduced in <script type="math/tex; ">W</script>, and vice versa.</p>
-</li>
-<li><p>In particular, any real vector space with a basis of <script type="math/tex; ">n</script>
-vectors is indistinguishable from <script type="math/tex; ">\mathbb{R}^n</script>.</p>
-</li>
+is <strong>the same linear combination of their <em>coordinate vectors</em></strong>.</li>
 </ul>
+<h2 id="isomorphism-&#xB3D9;&#xD615;&#xC0AC;&#xC0C1;">Isomorphism (&#xB3D9;&#xD615;&#xC0AC;&#xC0C1;)</h2>
+<p>The <em>coordinate mapping in Theorem 8</em> is an important example of 
+an <strong>isomorphism</strong> from <script type="math/tex; ">V</script> onto <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<ul>
+<li>In general, 
+a one-to-one linear transformation 
+from a vector space <script type="math/tex; ">V</script> onto a vector space <script type="math/tex; ">W</script> 
+is called an
+<strong>isomorphism from <script type="math/tex; ">V</script> onto <script type="math/tex; ">W</script>.</strong></li>
+<li>The notation and terminology for <script type="math/tex; ">V</script> and <script type="math/tex; ">W</script> may differ,
+but the two spaces are indistinguishable as vector spaces.</li>
+<li>Every vector space calculation in <script type="math/tex; ">V</script> 
+is accurately reproduced in <script type="math/tex; ">W</script>, and vice versa.</li>
+<li>In particular, any real vector space with a basis of <script type="math/tex; ">n</script>
+vectors is indistinguishable from <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+</ul>
+<h2 id="example-5">Example 5:</h2>
 <h2 id="example-7">Example 7:</h2>
 <p>Let <script type="math/tex; ">\textbf{v}_1=\begin{bmatrix} 3 \\ 6 \\ 2 \end{bmatrix},
-$\textbf{v}_2=\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix},
-$\textbf{x}=\begin{bmatrix} 3 \\ 12 \\ 7 \end{bmatrix}
+\textbf{v}_2=\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix},
+\textbf{x}=\begin{bmatrix} 3 \\ 12 \\ 7 \end{bmatrix}
 </script>, and <script type="math/tex; ">B=\left\{ \textbf{v}_1, \textbf{v}_2 \right\}</script>.</p>
 <p>Then <script type="math/tex; ">B</script> is a basis for <script type="math/tex; ">H= \text{Span }\left\{ \textbf{v}_1, \textbf{v}_2 \right\}</script>.</p>
 <p>Determine if <script type="math/tex; ">\bf{x}</script> is in <script type="math/tex; ">H</script>, and if it is, find the coordinate
@@ -1033,7 +1048,7 @@ coordinates of <script type="math/tex; ">\textbf{x}</script>.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_04","level":"1.3.23","depth":2,"next":{"title":"05_01","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_03","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_04.md","mtime":"2019-10-27T13:23:23.577Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-27T13:49:59.073Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_04","level":"1.3.23","depth":2,"next":{"title":"05_01","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_03","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_04.md","mtime":"2019-10-28T02:48:56.865Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-28T04:37:10.710Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
