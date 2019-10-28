@@ -765,84 +765,223 @@
                                 
                                 <h1 id="vector-spaces">Vector Spaces</h1>
 <h1 id="47-chage-of-basis">4.7 Chage of Basis</h1>
-<h2 id="example-2">Example 2</h2>
-<p>Let <script type="math/tex; ">\textbf{b}_1 = \begin{bmatrix}-9 \\ 1 \end{bmatrix}, 
-\textbf{b}_2 = \begin{bmatrix}-5 \\ -1 \end{bmatrix}, 
-\textbf{c}_1 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}, 
-\textbf{c}_2 = \begin{bmatrix} 3 \\ -5 \end{bmatrix}</script>
-and consider the bases for <script type="math/tex; ">\mathbb{R}^2</script> 
-given by <script type="math/tex; ">B=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script>
-and <script type="math/tex; ">C=\left\{ \textbf{c}_1, \textbf{c}_2 \}</script>.</p>
-<p>Find the change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script>.</p>
+<h2 id="example-1">Example 1</h2>
+<p>Consider two bases <script type="math/tex; ">B=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script> 
+and <script type="math/tex; ">C=\left\{ \textbf{c}_1, \textbf{c}_2 \right\}</script> 
+for a vector space <script type="math/tex; ">V</script>, such that
+<script type="math/tex; mode=display">
+\textbf{b}_1 = 4\textbf{c}_1 +\textbf{c}_2 \text{ and }
+\textbf{b}_2 = -6\textbf{c}_1 +\textbf{c}_2 \tag{1}
+</script></p>
+<p>Suppose
+<script type="math/tex; mode=display">
+\textbf{x} = 3 \textbf{b}_1 +\textbf{b}_2 \tag{2}
+</script></p>
+<p>That is, suppose <script type="math/tex; ">[\textbf{x}]_B = \begin{bmatrix}3 \\ 1 \end{bmatrix}</script>.</p>
+<p>Find <script type="math/tex; ">[\textbf{x}]_C</script>.</p>
 <h3 id="solution">Solution</h3>
 <ul>
-<li>The matrix <script type="math/tex; ">B \xleftarrow[p] C</script> involves the <script type="math/tex; ">C</script>-coordinate vectors of <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>. Let <script type="math/tex; ">[\textbf{b}_1]_c = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</script> and <script type="math/tex; ">[\textbf{b}_2]_c = \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}</script>.</li>
-<li>Then by defintion,
-<script type="math/tex; mode=display">
-\begin{bmatrix}
-c_1 & c_2
+<li>Apply the coordinate mapping determined by <script type="math/tex; ">C</script> to <script type="math/tex; ">\textbf{x}</script> in (2). 
+Since the coordinate mapping is a linear transformation,</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{align}
+[\textbf{x}]_C &= [3\textbf{b}_1 +\textbf{b}_2]_C \\
+&= 3[\textbf{b}_1]_C +[\textbf{b}_2]_C
+\end{align}
+</script></p>
+<ul>
+<li>We can write the vector equation as a matrix equation, 
+using the vectors in the linear combination 
+as the columns of a matrix:</li>
+</ul>
+<p><script type="math/tex; mode=display">
+[\textbf{x}]_C = \begin{bmatrix}
+[\textbf{b}_1]_C & [\textbf{b}_2]_C \\
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\ x_2
+3 \\ 1
+\end{bmatrix}
+\tag{3}
+</script></p>
+<ul>
+<li>This formula gives <script type="math/tex; ">[\textbf{x}]_C</script>,
+once we know the columns of the matrix. From (1),</li>
+</ul>
+<p><script type="math/tex; mode=display">
+[\textbf{b}_1]_C = 
+\begin{bmatrix}
+4 \\ 1
+\end{bmatrix}
+\text{ and }
+[\textbf{b}_2]_C = 
+\begin{bmatrix}
+-6 \\ 1
+\end{bmatrix}
+</script></p>
+<ul>
+<li>Thus, (3) provides the solution:</li>
+</ul>
+<p><script type="math/tex; mode=display">
+[\textbf{x}]_C = 
+\begin{bmatrix}
+4 & -6 \\ 1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+3 \\ 1
+\end{bmatrix}
+= 
+\begin{bmatrix}
+6 \\ 4
+\end{bmatrix}
+</script></p>
+<ul>
+<li>The <script type="math/tex; ">C</script>-coordinates of <script type="math/tex; ">\textbf{x}</script> match those of the <script type="math/tex; ">\textbf{x}</script> in Fig.1, as seen on the below.</li>
+</ul>
+<p><img src="fig/la_04_07_01.png" alt="fig.1"></p>
+<h2 id="theorem-15">Theorem 15:</h2>
+<p>Let <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script> and
+<script type="math/tex; ">C=\left\{ \textbf{c}_1, \cdots, \textbf{c}_n \right\}</script>
+for a vector space <script type="math/tex; ">V</script>. Then there is a unique <script type="math/tex; ">n \times n</script>
+matrix <script type="math/tex; ">C \xleftarrow[P]{} B</script>
+such that</p>
+<p><script type="math/tex; mode=display">
+[\textbf{x}]_C = C \xleftarrow[P]{} B[\textbf{x}]_B \tag{4}
+</script></p>
+<p>The columns of <script type="math/tex; ">C \xleftarrow[P]{} B</script>
+are the <script type="math/tex; ">C</script>-coordinate vectors
+of the vectors in the basis <script type="math/tex; ">B</script>. That is,</p>
+<p><script type="math/tex; mode=display">
+C \xleftarrow[P]{} B
+=
+\begin{bmatrix}
+[\textbf{b}_1]_C & [\textbf{b}_2]_C & \cdots &[\textbf{b}_n]_C 
+\end{bmatrix} \tag{5}
+</script></p>
+<p>The matrix <script type="math/tex; ">C \xleftarrow[P]{} B</script>
+in Theorem 15 is called the <strong>change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script></strong>. 
+Multiplication by <script type="math/tex; ">C \xleftarrow[P]{} B</script>
+converts <script type="math/tex; ">B</script>-coordinates into <script type="math/tex; ">C</script>-coordinates.</p>
+<p>Figure 2 below illustrates the change-of-coordinates
+equation (4).</p>
+<p><img src="fig/la_04_07_02.png" alt="fig2"></p>
+<p>The columns of <script type="math/tex; ">C \xleftarrow[P]{} B</script> are linearly independent 
+because they are the coordinate vectors of the linearly independent
+set <script type="math/tex; ">B</script>.</p>
+<p>Since <script type="math/tex; ">C \xleftarrow[P]{} B</script> is square, it must be invertible, 
+by the Invertible Matrix Theorem. Left-multiplying both sides of equation (4)
+by <script type="math/tex; ">\left(C \xleftarrow[P]{} B\right)^{-1}</script> yields</p>
+<p><script type="math/tex; mode=display">
+\left(C \xleftarrow[P]{} B\right)^{-1} [\textbf{x}\_C = [\textbf{x}r]_B
+</script></p>
+<p>Thus <script type="math/tex; ">\left(C \xleftarrow[P]{} B\right)^{-1}</script>
+is the matrix that converts <script type="math/tex; ">C</script>-coordinates
+into <script type="math/tex; ">B</script>-coordinates. That is,</p>
+<p><script type="math/tex; mode=display">
+\left(C \xleftarrow[P]{} B\right)^{-1} = B \xleftarrow[P]{} C \tag{6}
+</script></p>
+<p>If <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\} </script>
+and <script type="math/tex; ">\epsilon</script> is the standard basis <script type="math/tex; ">\left\{ \textbf{e}_1, \cdots, \textbf{e}_n \right\}</script> 
+in <script type="math/tex; ">\mathbb{R}^n</script>, 
+then <script type="math/tex; ">[\textbf{b}_1]_\epsilon = \textbf{b}_1</script>, 
+and likewise for the other vectors
+in <script type="math/tex; ">B</script>. In this case, <script type="math/tex; ">\epsilon \xleftarrow[P]{} B</script>
+is the same as the change-of-coordinates matrix <script type="math/tex; ">P_B</script>
+introduced in Section 4.4,
+namely,
+<script type="math/tex; mode=display">
+P_B = \begin{bmatrix} \textbf{b}_1 & \textbf{b}_2 & \cdots & \textbf{b}_n \end{bmatrix}</script>.
+<script type="math/tex; mode=display">
+
+To change coordinates between two nonstandard
+bases in </script>\mathbb{R}^n<script type="math/tex; ">,
+we need Theorem 15. The theorem
+shows that to solve the change-of-basis problem,
+we need the coordinate vectors of the old basis
+relative to the new basis.
+
+## Example 2
+
+Let </script>\textbf{b}_1 = \begin{bmatrix}-9 \ 1 \end{bmatrix}, 
+\textbf{b}_2 = \begin{bmatrix}-5 \ -1 \end{bmatrix}, 
+\textbf{c}_1 = \begin{bmatrix} 1 \ -4 \end{bmatrix}, 
+\textbf{c}_2 = \begin{bmatrix} 3 \ -5 \end{bmatrix}<script type="math/tex; mode=display">
+and consider the bases for </script>\mathbb{R}^2<script type="math/tex; "> 
+given by </script>B=\left{ \textbf{b}_1, \textbf{b}_2 \right}<script type="math/tex; mode=display">
+and </script>C=\left{ \textbf{c}_1, \textbf{c}_2 \right}<script type="math/tex; ">.
+
+Find the change-of-coordinates matrix from </script>B<script type="math/tex; "> to </script>C<script type="math/tex; ">.
+
+### Solution 
+
+* The matrix </script>B \xleftarrow[p]{} C<script type="math/tex; "> involves 
+  the </script>C<script type="math/tex; ">-coordinate vectors of </script>\textbf{b}_1<script type="math/tex; "> and </script>\textbf{b}_2<script type="math/tex; ">. 
+  Let </script>[\textbf{b}_1]_C = \begin{bmatrix} x_1 \ x_2 \end{bmatrix}<script type="math/tex; "> and 
+  </script>[\textbf{b}_2]_C = \begin{bmatrix} y_1 \ y_2 \end{bmatrix}<script type="math/tex; ">.
+* Then by defintion,
+</script>
+\begin{bmatrix}
+c_1 &amp; c_2
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \ x_2
 \end{bmatrix} 
 =
 \textbf{b}_1
 \text{ and }
 \begin{bmatrix}
-c_1 & c_2
+c_1 &amp; c_2
 \end{bmatrix}
 \begin{bmatrix}
-y_1 \\ y_2
+y_1 \ y_2
 \end{bmatrix} 
 =
 \textbf{b}_2
-</script></li>
-<li>To solve both systems simultaneously, augment the coefficient matrix with <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>, and row reduce:</li>
-</ul>
-<p><script type="math/tex; mode=display">
+<script type="math/tex; mode=display">
+* To solve both systems simultaneously, augment the coefficient matrix with </script>\textbf{b}_1<script type="math/tex; "> and </script>\textbf{b}_2<script type="math/tex; ">, and row reduce:
+
+</script>
 \left[
 \begin{array}{cc:cc}
-c_1 & c_2 & b_1 & b_2
+c_1 &amp; c_2 &amp; b_1 &amp; b_2 \
 \end{array}
 \right]
 =
 \left[
 \begin{array}{cc:cc}
-1 & 3 & -9 & -5 \\ 
--4 & -5 & 1 & -1  
-\end{array}
+1 &amp; 3 &amp; -9 &amp; -5 \ 
+-4 &amp; -5 &amp; 1 &amp; -1<br>\end{array}
 \right]
 \sim
 \left[
 \begin{array}{cc:cc}
-1 & 0 & 6 & 4 \\ 
-0 & 1 & -5 & -3  
-\end{array}
+1 &amp; 0 &amp; 6 &amp; 4 \ 
+0 &amp; 1 &amp; -5 &amp; -3<br>\end{array}
 \right]
 \tag{7}
-</script></p>
-<ul>
-<li>Thus</li>
-</ul>
-<p><script type="math/tex; mode=display">
-[\textbf{b}_1]_C = \begin{bmatrix} 6 \\-5 \end{bmatrix}
+<script type="math/tex; mode=display">
+
+* Thus
+
+</script>
+[\textbf{b}_1]_C = \begin{bmatrix} 6 \-5 \end{bmatrix}
 \text{ and }
-[\textbf{b}_2]_C = \begin{bmatrix} 4 \\-3 \end{bmatrix}
-</script></p>
-<ul>
-<li>The desired change-of-coordinates matrix is therefore</li>
-</ul>
-<p><script type="math/tex; mode=display">
-C \xleftarrow[P] B =
+[\textbf{b}_2]_C = \begin{bmatrix} 4 \-3 \end{bmatrix}
+<script type="math/tex; mode=display">
+
+* The desired change-of-coordinates matrix is therefore
+
+</script>
+C \xleftarrow[P]{} B =
 \begin{bmatrix}
-[\textbf{b}_1]_C  & [\textbf{b}_2]_C
+[\textbf{b}_1]_C  &amp; [\textbf{b}_2]_C
 \end{bmatrix}
 =
 \begin{bmatrix}
-6 & 4 \\
--5 & -3 
-\end{bmatrix}
-</script></p>
+6 &amp; 4 \
+-5 &amp; -3 
+\end{bmatrix}</p>
+<p>$$</p>
 
                                 
                                 </section>
@@ -886,7 +1025,7 @@ C \xleftarrow[P] B =
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_07","level":"1.3.26","depth":2,"next":{"title":"05_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_07.md","mtime":"2019-10-28T05:11:36.052Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-28T05:12:07.472Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_07","level":"1.3.26","depth":2,"next":{"title":"05_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_07.md","mtime":"2019-10-28T05:42:33.823Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-28T05:45:02.841Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
