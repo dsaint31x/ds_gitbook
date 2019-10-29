@@ -842,7 +842,7 @@ once we know the columns of the matrix. From (1),</li>
 <h2 id="theorem-15">Theorem 15:</h2>
 <p>Let <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script> and
 <script type="math/tex; ">C=\left\{ \textbf{c}_1, \cdots, \textbf{c}_n \right\}</script>
-for a vector space <script type="math/tex; ">V</script>. Then there is a unique <script type="math/tex; ">n \times n</script>
+be bases of a vector space <script type="math/tex; ">V</script>. Then there is a unique <script type="math/tex; ">n \times n</script>
 matrix <script type="math/tex; ">C \xleftarrow{P} B</script>
 such that</p>
 <p><script type="math/tex; mode=display">
@@ -852,40 +852,40 @@ such that</p>
 are the <script type="math/tex; ">C</script>-coordinate vectors
 of the vectors in the basis <script type="math/tex; ">B</script>. That is,</p>
 <p><script type="math/tex; mode=display">
-C \xleftarrow{P} B
+P_{C\leftarrow B}
 =
 \begin{bmatrix}
 [\textbf{b}_1]_C & [\textbf{b}_2]_C & \cdots &[\textbf{b}_n]_C 
 \end{bmatrix} \tag{5}
 </script></p>
-<p>The matrix <script type="math/tex; ">C \xleftarrow{P} B</script>
+<p>The matrix <script type="math/tex; ">P_{C \leftarrow B}</script>
 in Theorem 15 is called the <strong>change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script></strong>. 
-Multiplication by <script type="math/tex; ">C \xleftarrow{P} B</script>
+Multiplication by <script type="math/tex; ">P_{C \leftarrow B}</script>
 converts <script type="math/tex; ">B</script>-coordinates into <script type="math/tex; ">C</script>-coordinates.</p>
 <p>Figure 2 below illustrates the change-of-coordinates
 equation (4).</p>
 <p><img src="fig/la_04_07_02.png" alt="fig2"></p>
-<p>The columns of <script type="math/tex; ">C \xleftarrow{P} B</script> are linearly independent 
+<p>The columns of <script type="math/tex; ">P_{C \leftarrow B}</script> are linearly independent 
 because they are the coordinate vectors of the linearly independent
 set <script type="math/tex; ">B</script>.</p>
-<p>Since <script type="math/tex; ">C \xleftarrow{P} B</script> is square, it must be invertible, 
+<p>Since <script type="math/tex; ">P_{C \leftarrow B}</script> is square, it must be invertible, 
 by the Invertible Matrix Theorem. Left-multiplying both sides of equation (4)
-by <script type="math/tex; ">\left(C \xleftarrow{P} B\right)^{-1}</script> yields</p>
+by <script type="math/tex; ">\left(P_{C \leftarrow B}\right)^{-1}</script> yields</p>
 <p><script type="math/tex; mode=display">
-\left(C \xleftarrow{P} B\right)^{-1} [\textbf{x}\_C = [\textbf{x}r]_B
+\left(P_{C \leftarrow B}\right)^{-1} [\textbf{x}]_C = [\textbf{x}]_B
 </script></p>
-<p>Thus <script type="math/tex; ">\left(C \xleftarrow{P} B\right)^{-1}</script>
+<p>Thus <script type="math/tex; ">\left(P_{C \leftarrow B}\right)^{-1}</script>
 is the matrix that converts <script type="math/tex; ">C</script>-coordinates
 into <script type="math/tex; ">B</script>-coordinates. That is,</p>
 <p><script type="math/tex; mode=display">
-\left(C \xleftarrow{P} B\right)^{-1} = B \xleftarrow{P} C \tag{6}
+\left( P_{C \leftarrow B}\right)^{-1} = P_{B \leftarrow C} \tag{6}
 </script></p>
 <p>If <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\} </script>
 and <script type="math/tex; ">\epsilon</script> is the standard basis <script type="math/tex; ">\left\{ \textbf{e}_1, \cdots, \textbf{e}_n \right\}</script> 
 in <script type="math/tex; ">\mathbb{R}^n</script>, 
 then <script type="math/tex; ">[\textbf{b}_1]_\epsilon = \textbf{b}_1</script>, 
 and likewise for the other vectors
-in <script type="math/tex; ">B</script>. In this case, <script type="math/tex; ">\epsilon \xleftarrow{P} B</script>
+in <script type="math/tex; ">B</script>. In this case, <script type="math/tex; ">P_{\epsilon \leftarrow B}</script>
 is the same as the change-of-coordinates matrix <script type="math/tex; ">P_B</script>
 introduced in Section 4.4,
 namely,</p>
@@ -909,7 +909,7 @@ and <script type="math/tex; ">C=\left\{ \textbf{c}_1, \textbf{c}_2 \right\}</scr
 <p>Find the change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script>.</p>
 <h3 id="solution">Solution</h3>
 <ul>
-<li>The matrix <script type="math/tex; ">B \xleftarrow{P} C</script> involves 
+<li>The matrix <script type="math/tex; ">P_{B \leftarrow C}</script> involves 
 the <script type="math/tex; ">C</script>-coordinate vectors of <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>. 
 Let <script type="math/tex; ">[\textbf{b}_1]_C = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</script> and 
 <script type="math/tex; ">[\textbf{b}_2]_C = \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}</script>.</li>
@@ -969,7 +969,7 @@ c_1 & c_2 & b_1 & b_2 \\
 <li>The desired change-of-coordinates matrix is therefore</li>
 </ul>
 <p><script type="math/tex; mode=display">
-C \xleftarrow{P} B =
+P_{C \leftarrow B} =
 \begin{bmatrix}
 [\textbf{b}_1]_C  & [\textbf{b}_2]_C
 \end{bmatrix}
@@ -1022,7 +1022,7 @@ C \xleftarrow{P} B =
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_07","level":"1.3.26","depth":2,"next":{"title":"05_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_07.md","mtime":"2019-10-28T05:54:30.356Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-28T05:54:36.459Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_07","level":"1.3.26","depth":2,"next":{"title":"05_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_07.md","mtime":"2019-10-29T06:03:33.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-29T06:03:48.654Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
