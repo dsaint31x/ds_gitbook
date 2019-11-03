@@ -858,25 +858,28 @@ P_{C\leftarrow B}
 [\textbf{b}_1]_C & [\textbf{b}_2]_C & \cdots &[\textbf{b}_n]_C 
 \end{bmatrix} \tag{5}
 </script></p>
-<p>The matrix <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
-in Theorem 15 is called the <strong>change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script></strong>. 
-Multiplication by <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
-converts <script type="math/tex; ">B</script>-coordinates into <script type="math/tex; ">C</script>-coordinates.</p>
-<p>Figure 2 below illustrates the change-of-coordinates
-equation (4).</p>
+<ul>
+<li>The matrix <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
+in Theorem 15 is called the <strong>change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script></strong>. </li>
+<li>Multiplication by <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
+converts <script type="math/tex; ">B</script>-coordinates into <script type="math/tex; ">C</script>-coordinates.</li>
+<li>Figure 2 below illustrates the <strong>change-of-coordinates equation (4)</strong>.</li>
+</ul>
 <p><img src="fig/la_04_07_02.png" alt="fig2"></p>
-<p>The columns of <script type="math/tex; ">\underset{C \leftarrow B}{P}</script> are linearly independent 
-because they are the coordinate vectors of the linearly independent
-set <script type="math/tex; ">B</script>.</p>
-<p>Since <script type="math/tex; ">\underset{C \leftarrow B}{P}</script> is square, it must be invertible, 
-by the Invertible Matrix Theorem. Left-multiplying both sides of equation (4)
-by <script type="math/tex; ">\left(\underset{C \leftarrow B}{P}\right)^{-1}</script> yields</p>
+<ul>
+<li>The columns of <script type="math/tex; ">\underset{C \leftarrow B}{P}</script> are <strong>linearly independent</strong> 
+because they are <strong>the coordinate vectors of the linearly independent set <script type="math/tex; ">B</script></strong>.</li>
+<li>Since <script type="math/tex; ">\underset{C \leftarrow B}{P}</script> is square, it must be invertible, by the Invertible Matrix Theorem. </li>
+<li>Left-multiplying both sides of equation (4) by <script type="math/tex; ">\left(\underset{C \leftarrow B}{P}\right)^{-1}</script> yields</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \left(\underset{C \leftarrow B}{P}\right)^{-1} [\textbf{x}]_C = [\textbf{x}]_B
 </script></p>
-<p>Thus <script type="math/tex; ">\left(\underset{C \leftarrow B}{P}\right)^{-1}</script>
+<ul>
+<li>Thus <script type="math/tex; ">\left(\underset{C \leftarrow B}{P}\right)^{-1}</script>
 is the matrix that converts <script type="math/tex; ">C</script>-coordinates
-into <script type="math/tex; ">B</script>-coordinates. That is,</p>
+into <script type="math/tex; ">B</script>-coordinates. That is,</li>
+</ul>
 <p><script type="math/tex; mode=display">
 \left( \underset{C \leftarrow B}{P}\right)^{-1} = \underset{B \leftarrow C}{P} \tag{6}
 </script></p>
@@ -918,10 +921,11 @@ and <script type="math/tex; ">C=\left\{ \textbf{c}_1, \textbf{c}_2 \right\}</scr
 the <script type="math/tex; ">C</script>-coordinate vectors of <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>. 
 Let <script type="math/tex; ">[\textbf{b}_1]_C = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</script> and 
 <script type="math/tex; ">[\textbf{b}_2]_C = \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}</script>.</li>
-<li>Then by defintion,
-<script type="math/tex; mode=display">
+<li>Then by defintion,</li>
+</ul>
+<p><script type="math/tex; mode=display">
 \begin{bmatrix}
-c_1 & c_2
+c_1 & c_2 \\
 \end{bmatrix}
 \begin{bmatrix}
 x_1 \\ x_2
@@ -930,14 +934,15 @@ x_1 \\ x_2
 \textbf{b}_1
 \text{ and }
 \begin{bmatrix}
-c_1 & c_2
+c_1 & c_2 \\
 \end{bmatrix}
 \begin{bmatrix}
-y_1 \\ y_2
+y_1 \\ y_2 \\
 \end{bmatrix} 
 =
 \textbf{b}_2
-</script></li>
+</script></p>
+<ul>
 <li>To solve both systems simultaneously, augment the coefficient matrix with <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>, and row reduce:</li>
 </ul>
 <p><script type="math/tex; mode=display">
@@ -1027,7 +1032,7 @@ P_{C \leftarrow B} =
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_07","level":"1.3.26","depth":2,"next":{"title":"05_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_07.md","mtime":"2019-11-03T13:47:58.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-03T13:49:38.290Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_07","level":"1.3.26","depth":2,"next":{"title":"05_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_07.md","mtime":"2019-11-03T14:06:43.957Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-03T14:06:52.729Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
