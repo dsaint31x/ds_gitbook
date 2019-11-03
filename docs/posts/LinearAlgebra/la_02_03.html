@@ -1,0 +1,1014 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>02_03 Characterizations of Invertible Matrices · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="la_02_04.html" />
+    
+    
+    <link rel="prev" href="la_02_02.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Docker/nvidia_docker.html">
+            
+                <a href="../Docker/nvidia_docker.html">
+            
+                    
+                    Install Nvidia-Docker2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Docker/docker_summary.html">
+            
+                <a href="../Docker/docker_summary.html">
+            
+                    
+                    Docker CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Docker/docker_hub.html">
+            
+                <a href="../Docker/docker_hub.html">
+            
+                    
+                    Docker Hub CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linear Algebra
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+            
+                <a href="01_hello_linear_algebra.html">
+            
+                    
+                    01 Hello Linear Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="la_01_01.html">
+            
+                <a href="la_01_01.html">
+            
+                    
+                    01 01 Systems of Linear Eq.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="la_01_02.html">
+            
+                <a href="la_01_02.html">
+            
+                    
+                    01 02 Row Reduction and Echelon Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="la_01_03.html">
+            
+                <a href="la_01_03.html">
+            
+                    
+                    01 03 Vector Equations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="la_01_04.html">
+            
+                <a href="la_01_04.html">
+            
+                    
+                    01 04 Matrix Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
+            
+                <a href="la_01_05.html">
+            
+                    
+                    01 05 Solution Sets of Linear Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="la_01_07.html">
+            
+                <a href="la_01_07.html">
+            
+                    
+                    01 07 Linear Independence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="la_01_08.html">
+            
+                <a href="la_01_08.html">
+            
+                    
+                    01 08 Introduction to Linear Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="la_01_09.html">
+            
+                <a href="la_01_09.html">
+            
+                    
+                    01 09 The Matrix of a Linear Transformation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
+            
+                <a href="la_01_10_02_Difference_Equation.html">
+            
+                    
+                    01_02 Difference Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="la_02_01.html">
+            
+                <a href="la_02_01.html">
+            
+                    
+                    02_01_Matrix_Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="la_02_02.html">
+            
+                <a href="la_02_02.html">
+            
+                    
+                    02_02_Inverse_Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.13" data-path="la_02_03.html">
+            
+                <a href="la_02_03.html">
+            
+                    
+                    02_03 Characterizations of Invertible Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="la_02_04.html">
+            
+                <a href="la_02_04.html">
+            
+                    
+                    02_04 Partitioned Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="la_02_05.html">
+            
+                <a href="la_02_05.html">
+            
+                    
+                    02_05 Matrix Factorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="la_02_06.html">
+            
+                <a href="la_02_06.html">
+            
+                    
+                    02_06 The Leontief Input-Output Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="la_02_07.html">
+            
+                <a href="la_02_07.html">
+            
+                    
+                    02_07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="la_02_08.html">
+            
+                <a href="la_02_08.html">
+            
+                    
+                    02_08 Subspaces of R to the Power n
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="la_02_09.html">
+            
+                <a href="la_02_09.html">
+            
+                    
+                    02_09 Dimension and Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="la_04_01.html">
+            
+                <a href="la_04_01.html">
+            
+                    
+                    04_01 Vector Spaces and Subspaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="la_04_02.html">
+            
+                <a href="la_04_02.html">
+            
+                    
+                    04_02 Null Spaces, Column Spaces, and Linear Trnasformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="la_04_03.html">
+            
+                <a href="la_04_03.html">
+            
+                    
+                    04_03 Linearly Independent Sets; Bases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="la_04_04.html">
+            
+                <a href="la_04_04.html">
+            
+                    
+                    04_04 Coordinate Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="la_04_05.html">
+            
+                <a href="la_04_05.html">
+            
+                    
+                    04_05 The Dimension of a Vector Space
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="la_04_06.html">
+            
+                <a href="la_04_06.html">
+            
+                    
+                    04_06 Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="la_04_07.html">
+            
+                <a href="la_04_07.html">
+            
+                    
+                    04_07
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="la_05_01.html">
+            
+                <a href="la_05_01.html">
+            
+                    
+                    05_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="la_05_02.html">
+            
+                <a href="la_05_02.html">
+            
+                    
+                    05_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="la_05_03.html">
+            
+                <a href="la_05_03.html">
+            
+                    
+                    05_03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30" data-path="la_05_04.html">
+            
+                <a href="la_05_04.html">
+            
+                    
+                    05_04
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.31" data-path="la_06_01.html">
+            
+                <a href="la_06_01.html">
+            
+                    
+                    06_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.32" data-path="la_07_01.html">
+            
+                <a href="la_07_01.html">
+            
+                    
+                    07_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.33" data-path="la_07_02.html">
+            
+                <a href="la_07_02.html">
+            
+                    
+                    07_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.34" data-path="la_07_03.html">
+            
+                <a href="la_07_03.html">
+            
+                    
+                    07_03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.35" data-path="la_07_04_01.html">
+            
+                <a href="la_07_04_01.html">
+            
+                    
+                    07_04_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.36" data-path="la_07_04_02.html">
+            
+                <a href="la_07_04_02.html">
+            
+                    
+                    07_04_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Etc/">
+            
+                <a href="../Etc/">
+            
+                    
+                    Etc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Etc/install_gitbook.html">
+            
+                <a href="../Etc/install_gitbook.html">
+            
+                    
+                    Install Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Etc/install_uim.html">
+            
+                <a href="../Etc/install_uim.html">
+            
+                    
+                    Install uim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Etc/install_virtualbox.html">
+            
+                <a href="../Etc/install_virtualbox.html">
+            
+                    
+                    Install virtualbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Etc/video.html">
+            
+                <a href="../Etc/video.html">
+            
+                    
+                    Video Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >02_03 Characterizations of Invertible Matrices</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ch02-matrix-algebra">Ch02. Matrix Algebra</h1>
+<h1 id="23-characterizations-of-invertible-matrices">2.3 Characterizations of Invertible Matrices</h1>
+<h2 id="the-invertible-matrix-theorem">The Invertible Matrix Theorem</h2>
+<h2 id="theorem-8---the-invertible-matrix-theorem">Theorem 8 :  The Invertible Matrix Theorem</h2>
+<p>Let <script type="math/tex; ">A</script> be a square <script type="math/tex; "> n \times n </script> matrix. 
+Then the following statements are <strong>equivalent</strong>. 
+That is, for a given <script type="math/tex; ">A</script>, the statements are either all true or all false.</p>
+<ul>
+<li>(1). <script type="math/tex; ">A</script> is an <strong>invertible matrix</strong>.</li>
+<li>(2). <script type="math/tex; ">A</script> is row equivalent to the identity matrix.</li>
+<li>(3). <script type="math/tex; ">A</script> has <script type="math/tex; ">n</script> pivot positions.</li>
+<li>(4). The equation <script type="math/tex; ">A \textbf{x}=\textbf{0}</script> has only the trivial solution.</li>
+<li>(5). The columns of <script type="math/tex; ">A</script> form <strong>a linearly independent set</strong>.</li>
+<li>(6). The linear transformation <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> is one-to-one.</li>
+<li>(7). The equation <script type="math/tex; ">A \textbf{x}=\textbf{b}</script> has at least one solution for each <script type="math/tex; ">\textbf{b}</script> in <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+<li>(8). The columns of <script type="math/tex; ">A</script> span <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+<li>(9). The linear transformation <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> maps <script type="math/tex; ">\mathbb{R}^n</script> onto <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+<li>(10). There is an <script type="math/tex; ">n \times n</script> matrix <script type="math/tex; ">C</script> such that <script type="math/tex; "> CA=I</script>.</li>
+<li>(11). There is an <script type="math/tex; ">n \times n</script> matrix <script type="math/tex; ">D</script> such that <script type="math/tex; "> AD=I</script>.</li>
+<li>(12). <script type="math/tex; ">A^T</script> is an invertible matrix.</li>
+</ul>
+<ul>
+<li>First, we need some notation.</li>
+<li>If the truth of statement (1) always implies that statment (10) is true, we say that (1) implies (10) and write <script type="math/tex; ">(1) \Rightarrow (10)</script>.</li>
+<li>The proof will establish the &quot;circle&quot; of implications as shown in the following figure.</li>
+</ul>
+<p><img src="fig/fig_la_02_03_01.png" alt="fig"></p>
+<ul>
+<li>If any one of these five statements is true, then so are the others.</li>
+<li>Finally, the proof will link the remaining statements of the theorem to the statements in this circle.
+<img src="fig/la_02_03_01_b.png" alt="fig">
+<img src="fig/la_02_03_01_c.png" alt="fig"></li>
+</ul>
+<h3 id="proof">Proof:</h3>
+<ul>
+<li>If statement (1) is true, then <script type="math/tex; "> A^{-1}</script> works for <script type="math/tex; ">C</script> in (10), so <script type="math/tex; ">(1) \Rightarrow (10)</script>.</li>
+<li>Next, <script type="math/tex; ">(10) \Rightarrow (4)</script>.</li>
+<li>Also, <script type="math/tex; ">(4) \Rightarrow (3)</script>.</li>
+<li>If <script type="math/tex; ">A</script> is square and has <script type="math/tex; ">n</script> pivot positions, then the
+pivots must lie on the main diagonal, in which case the reduced echelon form of <script type="math/tex; ">A</script> is <script type="math/tex; ">I_n</script>. Thus <script type="math/tex; ">(3) \Rightarrow (2)</script>.</li>
+<li>Also, <script type="math/tex; ">(2) \Rightarrow (1)</script>.</li>
+<li>This completes the circle in the previous figure.</li>
+</ul>
+<p><img src="fig/fig_la_02_03_01.png" alt="fig"></p>
+<ul>
+<li>Next, <script type="math/tex; ">(1) \Rightarrow (11)</script> because <script type="math/tex; ">A^{-1}</script> works for <script type="math/tex; ">D</script>.</li>
+<li>Also, <script type="math/tex; ">(11) \Rightarrow (7)</script> and <script type="math/tex; ">(7) \Rightarrow (1)</script>.</li>
+<li>So, <script type="math/tex; ">(11)</script> and <script type="math/tex; ">(7)</script> are linked to the circle.</li>
+</ul>
+<p><img src="fig/la_02_03_01_b.png" alt="fig"></p>
+<ul>
+<li>Further, <script type="math/tex; ">(7), (8),</script> and <script type="math/tex; ">(9)</script> are equivalent for any matrix.</li>
+<li>Thus, <script type="math/tex; ">(8)</script> and <script type="math/tex; ">(9)</script> are linked through <script type="math/tex; ">(11)</script> to the circle.</li>
+<li>Since <script type="math/tex; ">(4)</script> is linked to the circle, so are <script type="math/tex; ">(5)</script> and <script type="math/tex; ">(6)</script>, because <script type="math/tex; ">(4)</script>, <script type="math/tex; ">(5)</script>, and <script type="math/tex; ">(6)</script> are all equivalent for any matrix <script type="math/tex; ">A</script>.</li>
+<li>Finally, <script type="math/tex; ">(1) \Rightarrow (12)</script> and <script type="math/tex; ">(12) \Rightarrow (1)</script>.</li>
+</ul>
+<p><img src="fig/la_02_03_01_c.png" alt="fig"></p>
+<p>This completes the proof. <script type="math/tex; ">\blacksquare</script></p>
+<hr>
+<p>Because of <a href="la_02_02#theorem-5">Theorem 5</a>, <strong>Theorem 8 (7)</strong> could also be written as <strong>The equation <script type="math/tex; ">A\textbf{x} =\textbf{b}</script> has <em>a unique solution</em> for each <script type="math/tex; ">\textbf{b}</script> in <script type="math/tex; ">\mathbb{R}^n</script>.</strong></p>
+<ul>
+<li>This statement implies (2) and 
+hence implies that <strong><script type="math/tex; ">A</script> is invertible</strong>.</li>
+</ul>
+<blockquote>
+<p>The following fact follows from <strong>Theorem 8</strong>. Let <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> be <em>square matrices</em>. If <script type="math/tex; ">AB=I</script>, then <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are both invertible, with <script type="math/tex; ">B=A^{-1}</script> and <script type="math/tex; ">A=B^{-1}</script>.</p>
+</blockquote>
+<ul>
+<li>The <strong>Invertible Matrix Theorem</strong> divides the set of all <script type="math/tex; ">n \times n</script> matrices into two disjoint classes:<ul>
+<li>the invertible (nonsingular) matrices, and</li>
+<li>the noninvertible (singular) matrices.</li>
+</ul>
+</li>
+<li>Each statement in the theorem describes a property of every <script type="math/tex; ">n \times n</script> invertible matrix.</li>
+</ul>
+<ul>
+<li>The <em>negation(&#xBD80;&#xC815;)</em> of a statement in the theorem describes a property of every <script type="math/tex; ">n \times n</script> singular matrix.</li>
+<li>For instance, an <script type="math/tex; ">n \times n</script> singular matrix  <ul>
+<li>is not row equivalent to <script type="math/tex; ">I_n</script>, </li>
+<li>does not have <script type="math/tex; ">n</script> pivot position, and</li>
+<li>has linearly dependent columns.</li>
+</ul>
+</li>
+</ul>
+<h2 id="example-1">Example 1:</h2>
+<p>Use the Invertible Matrix Theorem to decide if <script type="math/tex; ">A</script> is invertible:</p>
+<p><script type="math/tex; mode=display">
+A=
+\begin{bmatrix}
+1 & 0 & -2 \\
+3 & 1 & -2 \\
+-5 & -1 & 9 
+\end{bmatrix}
+</script></p>
+<h3 id="solution">Solution:</h3>
+<p><script type="math/tex; mode=display">
+A \sim
+\begin{bmatrix}
+1 & 0 & -2 \\
+0 & 1 & 4 \\
+0 & -1 & -1 
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 0 & -2 \\
+0 & 1 & 4 \\
+0 & 0 & 3 
+\end{bmatrix}
+</script></p>
+<ul>
+<li>So <script type="math/tex; ">A</script> has three pivot positions and hence is invertible, 
+by the Invertible Matrix Theorem, statement (3).</li>
+<li><strong>The Invertible Matrix Theorem</strong> <em>applies only to square matrices</em>.</li>
+<li>For example, 
+if the columns of a <script type="math/tex; ">4 \times 3</script> matrix are <strong>linearly independent</strong>, 
+we cannot use the Invertible Matrix Theorem 
+to conclude anything about the existence or nonexistence 
+of solutions of equation of the form <script type="math/tex; ">A\textbf{x}=\textbf{b}</script>.</li>
+<li>The next theorem shows that if such an <script type="math/tex; ">S</script> exists, 
+it is <strong>unique</strong> and must be a <strong>linear transformation</strong>. We call <script type="math/tex; ">S</script> the inverse of <script type="math/tex; ">T</script> and write it as <script type="math/tex; ">T^{-1}</script></li>
+</ul>
+<h2 id="invertible-linear-transformations">Invertible Linear Transformations</h2>
+<ul>
+<li><strong>Matrix multiplication</strong> corresponds to <strong>composition of linear transformations</strong>.</li>
+<li><p>When a matrix <script type="math/tex; ">A</script> is invertible, 
+the equation <script type="math/tex; ">A^{-1}A\textbf{x}=\textbf{x}</script> can be viewed as 
+a statement about <strong>linear transformations</strong>. See the following figure.</p>
+<p><img src="fig/la_02_03_02.png" alt="fig"></p>
+</li>
+<li><p>A linear transformation <script type="math/tex; ">T: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> is said to be invertible 
+if there exists a function <script type="math/tex; ">S: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> such that</p>
+<ul>
+<li><script type="math/tex; ">S(T(\textbf{x})) = \textbf{x}</script> for all <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\mathbb{R}^n</script>. (1)</li>
+<li><script type="math/tex; ">T(S(\textbf{x})) = \textbf{x}</script> for all <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\mathbb{R}^n</script>. (2)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="theorem-9">Theorem 9:</h2>
+<p>Let <script type="math/tex; ">T: \mathbb{R}^n \rightarrow \mathbb{R}^n</script> be a <strong>linear transformation</strong> and 
+let <script type="math/tex; ">A</script> be the <strong>standard matrix</strong> for <script type="math/tex; ">T</script>. 
+Then <script type="math/tex; ">T</script> is <em>invertible</em> if and only if 
+<script type="math/tex; ">A</script> is an <em>invertible matrix</em>. 
+In that case, the <strong>linear transformation <script type="math/tex; ">S</script></strong> given by 
+<script type="math/tex; ">S(\textbf{x})=A^{-1}\textbf{x}</script> is the <strong>unique function</strong> satisfying equation (1) and (2).</p>
+<h3 id="proof-">Proof :</h3>
+<ul>
+<li>Suppose that <script type="math/tex; ">T</script> is invertible.</li>
+<li>Then (2) shows that <script type="math/tex; ">T</script> is onto <script type="math/tex; ">\mathbb{R}^n</script>, for if <script type="math/tex; ">\bf{b}</script> is in <script type="math/tex; ">\mathbb{R}^n</script> and
+<script type="math/tex; ">\textbf{x}=S(\textbf{b})</script>, then <script type="math/tex; ">T(\textbf{x})=T(S(\textbf{b}))=\textbf{b}</script>,
+so each <script type="math/tex; ">\textbf{b}</script> is in the range of <script type="math/tex; ">T</script>.</li>
+<li>Thus <script type="math/tex; ">A</script> is invertible, by the Invertible Matrix Theorem, statement (9).</li>
+<li>Conversely, suppose that <script type="math/tex; ">A</script> is invertible, and let <script type="math/tex; ">S(\textbf{x})=A^{-1}\textbf{x}</script>.</li>
+<li>Then, <script type="math/tex; ">S</script> is a linear transformation, and <script type="math/tex; ">S</script> satisfies (1) and (2).</li>
+<li>For instance, <script type="math/tex; ">S(T(\textbf{x})) = S(A\textbf{x})=A^{-1}(A\textbf{x})=\textbf{x}</script>.</li>
+<li>Thus, <script type="math/tex; ">T</script> is invertible.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="la_02_02.html" class="navigation navigation-prev " aria-label="Previous page: 02_02_Inverse_Matrix">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="la_02_04.html" class="navigation navigation-next " aria-label="Next page: 02_04 Partitioned Matrices">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"next":{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},"previous":{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_03.md","mtime":"2019-10-05T09:29:23.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-03T15:08:18.590Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-adsense/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
