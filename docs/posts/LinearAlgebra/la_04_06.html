@@ -774,7 +774,7 @@ and thus can be identified with a vector in <script type="math/tex; ">\mathbb{R}
 called the <strong>row space</strong> of <script type="math/tex; ">A</script> and is denoted by <strong>Row</strong> <script type="math/tex; ">A</script>.</li>
 <li>Each row has <script type="math/tex; ">n</script> entries, so <strong>Row</strong> <script type="math/tex; ">A</script> is a subspace of <script type="math/tex; ">\mathbb{R}^n</script>.</li>
 <li>Since the rows of <script type="math/tex; ">A</script> are identified with the columns of <script type="math/tex; ">A^T</script>,
-we could also write <strong>Col</strong> <script type="math/tex; ">A^T</script> in place of <em>Row*</em> <script type="math/tex; ">A</script>.</li>
+we could also write <strong>Col</strong> <script type="math/tex; ">A^T</script> in place of <strong>Row</strong> <script type="math/tex; ">A</script>.</li>
 </ul>
 <h2 id="theorem-13">Theorem 13:</h2>
 <p>If two matrices <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are row equivalent, then their row spaces are the same. 
@@ -832,7 +832,7 @@ A \sim B =
 \text{Basis for Col }A:=\left\{ 
 \begin{bmatrix} -2 \\ 1 \\ 3 \\1 \end{bmatrix},
 \begin{bmatrix} -5 \\ 3 \\11 \\7 \end{bmatrix},
-\begin{bmatrix}  0 \\ 1 \\ 7 \\5 \end{bmatrix},
+\begin{bmatrix}  0 \\ 1 \\ 7 \\5 \end{bmatrix}
 \right\}
 </script></p>
 </li>
@@ -857,9 +857,9 @@ that is,</li>
 </ul>
 <p><script type="math/tex; mode=display">
 \begin{align}
-x_1+x_3+x_5 & = 0 \\
-x_2-2x_3+3x_5 &= 0 \\
-x_4-5x_5 &=0
+x_1 &   &+ x_3&   &+ x_5 & = 0 \\
+    &x_2&-2x_3&   &+3x_5 &= 0 \\
+    &   &     &x_4&-5x_5 &=0
 \end{align}
 </script></p>
 <ul>
@@ -869,7 +869,7 @@ x_4-5x_5 &=0
 <p><script type="math/tex; mode=display">
 \text{Basis for Nul }A:\left\{ 
 \begin{bmatrix} -1 \\ 2  \\ 1 \\ 0 \\ 0  \end{bmatrix},
-\begin{bmatrix} -1 \\ -3 \\ 0 \\ 5 \\ 1  \end{bmatrix},
+\begin{bmatrix} -1 \\ -3 \\ 0 \\ 5 \\ 1  \end{bmatrix}
 \right\}
 </script></p>
 <ul>
@@ -881,6 +881,9 @@ the bases for Row <script type="math/tex; ">A</script> and Nul <script type="mat
 Since Row <script type="math/tex; ">A</script> is the same as Col <script type="math/tex; ">A^T</script>, 
 the dimension of row space of <script type="math/tex; ">A</script> is the rank of <script type="math/tex; ">A^T</script>.
 The dimension of the null space is sometimes called <strong>the nullity of</strong> <script type="math/tex; ">A</script>.</p>
+<blockquote>
+<p>&#xB4A4;&#xC5D0; &#xB098;&#xC624;&#xC9C0;&#xB9CC;, rank A&#xB294; Col A&#xC640; Row A&#xC758; dimension&#xC774;&#xB2E4;. &#xC989;, dim Col A = dim Row A &#xC784;.</p>
+</blockquote>
 <h2 id="theorem-14-rank-theorem">Theorem 14: Rank Theorem</h2>
 <p>The dimensions of the column space and the row space of an <script type="math/tex; ">m \times n</script> matrix A are equal.
 This common dimension, the rank of <script type="math/tex; ">A</script>, 
@@ -891,7 +894,7 @@ and satisfies the equation</p>
 </script></p>
 <h3 id="proof">Proof:</h3>
 <ul>
-<li>By Theorem 6, rank <script type="math/tex; ">A</script> is the number of pivot columns in <script type="math/tex; ">A</script>.</li>
+<li>By <a href="la_04_03.html#theorem-6">Theorem 6</a>, rank <script type="math/tex; ">A</script> is the number of pivot columns in <script type="math/tex; ">A</script>.</li>
 <li>Equivalently, rank <script type="math/tex; ">A</script> is the number of pivot positions in an echelon form <script type="math/tex; ">B</script> of <script type="math/tex; ">A</script>.</li>
 <li>Since <script type="math/tex; ">B</script> has a nonzero row for each pivot, 
 and since these rows form a basis for the row space of <script type="math/tex; ">A</script>, 
@@ -928,7 +931,7 @@ and hence rank <script type="math/tex; ">A</script>=7.</li>
 it would have to have rank 7, by the Rank Theorem.</li>
 <li>But the columns of <script type="math/tex; ">B</script> are vectors in <script type="math/tex; ">\mathbb{R}^6</script>,
 and so the dimension of Col <script type="math/tex; ">B</script> cannot exceed 6; 
-that is, rank i<script type="math/tex; ">B</script> cannot exceed 6.</li>
+that is, rank <script type="math/tex; ">B</script> cannot exceed 6.</li>
 </ul>
 <h2 id="theorem-the-invertible-matrix-theorem-continued">Theorem: The Invertible Matrix Theorem (continued)</h2>
 <p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">n \times n</script> matrix. 
@@ -1013,7 +1016,7 @@ the proof is complete.</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_06 Rank","level":"1.3.25","depth":2,"next":{"title":"04_07","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},"previous":{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_06.md","mtime":"2019-10-28T04:44:46.081Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-28T05:54:36.459Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_06 Rank","level":"1.3.25","depth":2,"next":{"title":"04_07","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},"previous":{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_06.md","mtime":"2019-10-29T05:31:18.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-29T06:30:57.840Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
