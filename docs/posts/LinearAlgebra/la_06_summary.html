@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>04_07 Change of Basis · GitBook</title>
+        <title>06_summary · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_05_01.html" />
+    <link rel="next" href="la_07_01.html" />
     
     
-    <link rel="prev" href="la_04_06.html" />
+    <link rel="prev" href="la_06_01.html" />
     
 
     </head>
@@ -499,7 +499,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.26" data-path="la_04_07.html">
+        <li class="chapter " data-level="1.3.26" data-path="la_04_07.html">
             
                 <a href="la_04_07.html">
             
@@ -577,7 +577,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.32" data-path="la_06_summary.html">
+        <li class="chapter active" data-level="1.3.32" data-path="la_06_summary.html">
             
                 <a href="la_06_summary.html">
             
@@ -761,7 +761,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >04_07 Change of Basis</a>
+        <a href="../.." >06_summary</a>
     </h1>
 </div>
 
@@ -776,224 +776,163 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="vector-spaces">Vector Spaces</h1>
-<h1 id="47-chage-of-basis">4.7 Chage of Basis</h1>
-<h2 id="example-1">Example 1</h2>
-<p>Consider two bases <script type="math/tex; ">B=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script> 
-and <script type="math/tex; ">C=\left\{ \textbf{c}_1, \textbf{c}_2 \right\}</script> 
-for a vector space <script type="math/tex; ">V</script>, such that
-<script type="math/tex; mode=display">
-\textbf{b}_1 = 4\textbf{c}_1 +\textbf{c}_2 \text{ and }
-\textbf{b}_2 = -6\textbf{c}_1 +\textbf{c}_2 \tag{1}
-</script></p>
-<p>Suppose
-<script type="math/tex; mode=display">
-\textbf{x} = 3 \textbf{b}_1 +\textbf{b}_2 \tag{2}
-</script></p>
-<p>That is, suppose <script type="math/tex; ">[\textbf{x}]_B = \begin{bmatrix}3 \\ 1 \end{bmatrix}</script>.</p>
-<p>Find <script type="math/tex; ">[\textbf{x}]_C</script>.</p>
-<h3 id="solution">Solution</h3>
+                                <h1 id="least-squares">Least Squares</h1>
+<p>@(LinearAlgebra)</p>
+<h1 id="summary">Summary</h1>
+<h2 id="motivations-for-least-squares">Motivations for Least Squares</h2>
 <ul>
-<li>Apply the coordinate mapping determined by <script type="math/tex; ">C</script> to <script type="math/tex; ">\textbf{x}</script> in (2). 
-Since the coordinate mapping is a linear transformation,</li>
+<li>Commonly, in the <strong>over-determined system</strong>,  there is no solution.</li>
+<li>Even if no solution exists, we want to <strong>approximately obtain the solution</strong> for the over-determined system.</li>
+<li><strong>Least Squares</strong> provides the approximiation of the solution for the over-determined system.</li>
 </ul>
-<p><script type="math/tex; mode=display">
-\begin{align}
-[\textbf{x}]_C &= [3\textbf{b}_1 +\textbf{b}_2]_C \\
-&= 3[\textbf{b}_1]_C +[\textbf{b}_2]_C
-\end{align}
-</script></p>
+<h2 id="what-is-least-squares-problem">What is Least Squares Problem</h2>
+<p>Given an over-determined system <script type="math/tex; ">A\textbf{x} \simeq \textbf{b}</script> where <script type="math/tex; ">A \in \mathbb{R}^{m\times n}, \textbf{b} in \mathbb{R}^n</script>, and <script type="math/tex; ">m \gg n</script>, a least square solution <script type="math/tex; ">\hat{\textbf{x}}</script> is defined as
+<script type="math/tex; ">
+\hat{\textbf{x}}= \text{arg } \underset{\textbf{x}} { \text{min }} \Vert \textbf{b}-A\textbf{x}
+\Vert 
+ </script></p>
 <ul>
-<li>We can write the vector equation as a matrix equation, 
-using the vectors in the linear combination 
-as the columns of a matrix:</li>
+<li>The most import aspect of the least-square problem is that no matter what <script type="math/tex; ">\textbf{x}</script> is selected, the vector <script type="math/tex; ">A\textbf{x}</script> will necessarily be in the column space Col <script type="math/tex; ">A</script>.</li>
+<li>Thus, the least square seeks for <script type="math/tex; ">\textbf{x}</script> that makes <script type="math/tex; ">A\textbf{x}</script> as the closet point in Col <script type="math/tex; ">A</script> to <script type="math/tex; ">\textbf{b}</script>.</li>
 </ul>
-<p><script type="math/tex; mode=display">
-[\textbf{x}]_C = \begin{bmatrix}
-[\textbf{b}_1]_C & [\textbf{b}_2]_C \\
-\end{bmatrix}
-\begin{bmatrix}
-3 \\ 1
-\end{bmatrix}
-\tag{3}
-</script></p>
+<h2 id="geometric-interpretation-of-least-squares">Geometric Interpretation of Least Squares</h2>
 <ul>
-<li>This formula gives <script type="math/tex; ">[\textbf{x}]_C</script>,
-once we know the columns of the matrix. From (1),</li>
+<li>Consider <script type="math/tex; ">\hat{\textbf{x}}</script> such that <script type="math/tex; ">\hat{\textbf{b}} = A\hat{\textbf{x}}</script> is the closet point to <script type="math/tex; ">\textbf{b}</script> among all vectors in Col <script type="math/tex; ">A</script>.</li>
+<li>That is, <script type="math/tex; ">\textbf{b}</script> is closer to <script type="math/tex; ">\hat{\textbf{b}}</script> than  <script type="math/tex; ">A\textbf{x}</script> for any other <script type="math/tex; ">\textbf{x}</script>.</li>
+<li>To satisfy this, the vector <script type="math/tex; ">\textbf{b}-A\hat{\textbf{x}}</script> should be orthogonal to Col <script type="math/tex; ">A</script>.</li>
 </ul>
-<p><script type="math/tex; mode=display">
-[\textbf{b}_1]_C = 
-\begin{bmatrix}
-4 \\ 1
-\end{bmatrix}
-\text{ and }
-[\textbf{b}_2]_C = 
-\begin{bmatrix}
--6 \\ 1
-\end{bmatrix}
-</script></p>
+<p><img src="1572784230644.png" alt="Alt text"></p>
 <ul>
-<li>Thus, (3) provides the solution:</li>
+<li><p>This means <script type="math/tex; ">\textbf{b}-A\hat{\textbf{x}}</script> should be orthogonal to any vector in Col <script type="math/tex; ">A</script>:
+<script type="math/tex; ">
+\textbf{b}-A\hat{\textbf{x}} \perp (x_1 \textbf{a}_1 + x_2 \textbf{a}_2 + \cdots +x_n \textbf{a}_n  ) \text{ for any vector }\textbf{x}
+</script></p>
+</li>
+<li><p>Or equivalently,</p>
+</li>
 </ul>
-<p><script type="math/tex; mode=display">
-[\textbf{x}]_C = 
-\begin{bmatrix}
-4 & -6 \\ 1 & 1
-\end{bmatrix}
-\begin{bmatrix}
-3 \\ 1
-\end{bmatrix}
-= 
-\begin{bmatrix}
-6 \\ 4
-\end{bmatrix}
+<p><script type="math/tex; ">
+\begin{matrix}
+\begin{matrix}
+(\textbf{b}-A\hat{\textbf{x}}) \perp \textbf{a}_1 \\
+(\textbf{b}-A\hat{\textbf{x}}) \perp \textbf{a}_2 \\
+\vdots\\
+(\textbf{b}-A\hat{\textbf{x}}) \perp \textbf{a}_m \\
+\end{matrix}
+\Rightarrow
+\begin{matrix}
+{\textbf{a}_1}^T (\textbf{b}-A\hat{\textbf{x}}) \\
+{\textbf{a}_2}^T (\textbf{b}-A\hat{\textbf{x}}) \\
+\vdots \\
+{\textbf{a}_m}^T (\textbf{b}-A\hat{\textbf{x}})  \\
+\end{matrix}
+\Rightarrow
+A^T(\textbf{b}-A\hat{\textbf{x}})=\textbf{0}
+\Rightarrow
+A^TA\hat{\textbf{x}})=A^T\textbf{b}
+\end{matrix}
 </script></p>
 <ul>
-<li>The <script type="math/tex; ">C</script>-coordinates of <script type="math/tex; ">\textbf{x}</script> match those of the <script type="math/tex; ">\textbf{x}</script> in Fig.1, as seen on the below.</li>
+<li>Finally, given a least squares problem, <script type="math/tex; ">𝐴\textbf{𝐱} \simeq \textbf{b}</script>, we obtain
+<script type="math/tex; ">
+A^TA\hat{\textbf{x}}=A^T\textbf{b}
+</script><ul>
+<li>which is called a normal equation.</li>
 </ul>
-<p><img src="fig/la_04_07_01.png" alt="fig.1"></p>
-<h2 id="theorem-15">Theorem 15:</h2>
-<p>Let <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script> and
-<script type="math/tex; ">C=\left\{ \textbf{c}_1, \cdots, \textbf{c}_n \right\}</script>
-be bases of a vector space <script type="math/tex; ">V</script>. Then there is a unique <script type="math/tex; ">n \times n</script>
-matrix <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
-such that</p>
-<p><script type="math/tex; mode=display">
-[\textbf{x}]_C = \underset{C \leftarrow B}{P}[\textbf{x}]_B \tag{4}
-</script></p>
-<p>The columns of <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
-are the <script type="math/tex; ">C</script>-coordinate vectors
-of the vectors in the basis <script type="math/tex; ">B</script>. That is,</p>
-<p><script type="math/tex; mode=display">
-P_{C\leftarrow B}
-=
-\begin{bmatrix}
-[\textbf{b}_1]_C & [\textbf{b}_2]_C & \cdots &[\textbf{b}_n]_C 
-\end{bmatrix} \tag{5}
-</script></p>
-<ul>
-<li>The matrix <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
-in Theorem 15 is called the <strong>change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script></strong>. </li>
-<li>Multiplication by <script type="math/tex; ">\underset{C \leftarrow B}{P}</script>
-converts <script type="math/tex; ">B</script>-coordinates into <script type="math/tex; ">C</script>-coordinates.</li>
-<li>Figure 2 below illustrates the <strong>change-of-coordinates equation (4)</strong>.</li>
+</li>
+<li>This can be viewed as a new linear system, <script type="math/tex; ">C\textbf{x}=\textbf{d}</script>,
+where a square matrix <script type="math/tex; ">C=A^TA \in \mathbb{R}^{n\times n}</script>, and <script type="math/tex; ">d=A^T\textbf{b} \in \mathbb{R}^n</script>.</li>
+<li>If <script type="math/tex; ">C = A^TA</script> is invertible, then the solution is computed as
+<script type="math/tex; ">
+\hat{\textbf{x}} = (A^TA)^{-1}A^T\textbf{b}
+</script></li>
 </ul>
-<p><img src="fig/la_04_07_02.png" alt="fig2"></p>
-<ul>
-<li>The columns of <script type="math/tex; ">\underset{C \leftarrow B}{P}</script> are <strong>linearly independent</strong> 
-because they are <strong>the coordinate vectors of the linearly independent set <script type="math/tex; ">B</script></strong>.</li>
-<li>Since <script type="math/tex; ">\underset{C \leftarrow B}{P}</script> is square, it must be invertible, by the Invertible Matrix Theorem. </li>
-<li>Left-multiplying both sides of equation (4) by <script type="math/tex; ">\left(\underset{C \leftarrow B}{P}\right)^{-1}</script> yields</li>
-</ul>
-<p><script type="math/tex; mode=display">
-\left(\underset{C \leftarrow B}{P}\right)^{-1} [\textbf{x}]_C = [\textbf{x}]_B
+<h2 id="another-derivation-of-normal-equation">Another Derivation of Normal Equation.</h2>
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{\textbf{x}} &= \text{arg } \underset{\text{x}}{\text{min}} \Vert \textbf{b}-A\textbf{x} \Vert\\
+&=\text{arg } \underset{\text{x}}{\text{min} } \Vert \textbf{b}-A\textbf{x} \Vert ^2\\
+&=\text{arg } \underset{\text{x}}{\text{min} } (\textbf{b}-A\textbf{x} )^T(\textbf{b}-A\textbf{x})\\
+&= \textbf{b}^T\textbf{b} - \textbf{x}^T A^T \textbf{b} - \textbf{b}^T A \textbf{x} + \textbf{x}^T A^T A \textbf{x}
+\end{align*}
 </script></p>
 <ul>
-<li>Thus <script type="math/tex; ">\left(\underset{C \leftarrow B}{P}\right)^{-1}</script>
-is the matrix that converts <script type="math/tex; ">C</script>-coordinates
-into <script type="math/tex; ">B</script>-coordinates. That is,</li>
-</ul>
-<p><script type="math/tex; mode=display">
-\left( \underset{C \leftarrow B}{P}\right)^{-1} = \underset{B \leftarrow C}{P} \tag{6}
+<li>Computing derivatives with regard to <script type="math/tex; ">\textbf{x}</script>, we obtain
+<script type="math/tex; ">
+- A^T \textbf{b} - A^T \textbf{b} + 2 A^T A \textbf{x} =\textbf{0} \Leftrightarrow A^T A \textbf{x} = A^T \textbf{b}
+</script></li>
+<li><p>Thus, if <script type="math/tex; ">C=A^TA</script> is invertible, then the solution is computed as
+<script type="math/tex; ">
+\textbf{x} = (A^T A)^{-1} A^T \textbf{b}
 </script></p>
-<h2 id="change-of-basis-in-mathbbrn">Change of Basis in <script type="math/tex; ">\mathbb{R}^n</script></h2>
-<ul>
-<li>If <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\} </script>
-and <script type="math/tex; ">\epsilon</script> is the standard basis <script type="math/tex; ">\left\{ \textbf{e}_1, \cdots, \textbf{e}_n \right\}</script> 
-in <script type="math/tex; ">\mathbb{R}^n</script>, 
-then <script type="math/tex; ">[\textbf{b}_1]_\epsilon = \textbf{b}_1</script>, 
-and likewise for the other vectors
-in <script type="math/tex; ">B</script>. In this case, <script type="math/tex; ">\underset{\epsilon \leftarrow B}{P}</script>
-is the same as the change-of-coordinates matrix <script type="math/tex; ">P_B</script>
-introduced in Section 4.4,
-namely,</li>
+</li>
+<li><p><script type="math/tex; ">C=A^TA</script> is always invertible! So, we can always approximate the solution, <script type="math/tex; ">\hat{x}</script>.</p>
+</li>
 </ul>
-<p><script type="math/tex; mode=display">
-P_B = \begin{bmatrix} \textbf{b}_1 & \textbf{b}_2 & \cdots & \textbf{b}_n \end{bmatrix}.
-</script></p>
+<blockquote>
 <ul>
-<li>To change coordinates between two nonstandard
-bases in <script type="math/tex; ">\mathbb{R}^n</script>,
-we need Theorem 15. The theorem
-shows that <strong>to solve the change-of-basis problem</strong>,
-we need <strong>the coordinate vectors of the old basis
-relative to the new basis</strong>.</li>
+<li><script type="math/tex; ">n</script>&#xCC28; &#xBC29;&#xC815;&#xC2DD;&#xC774; &#xD56D;&#xC0C1; <script type="math/tex; ">n</script>&#xAC1C;&#xC758; complex solution &#xAC00;&#xC9D0;.</li>
+<li><script type="math/tex; ">n</script> dimensional square matrix has <script type="math/tex; ">n</script> eigen values.<ul>
+<li>&#xC911;&#xBCF5;&#xB41C; eigen value&#xB97C; &#xAC1C;&#xBCC4;&#xB85C; &#xC140; &#xACBD;&#xC6B0;&#xC784;.</li>
 </ul>
-<h2 id="example-2">Example 2</h2>
-<p>Let <script type="math/tex; ">\textbf{b}_1 = \begin{bmatrix}-9 \\ 1 \end{bmatrix}, 
-\textbf{b}_2 = \begin{bmatrix}-5 \\ -1 \end{bmatrix}, 
-\textbf{c}_1 = \begin{bmatrix} 1 \\ -4 \end{bmatrix}, 
-\textbf{c}_2 = \begin{bmatrix} 3 \\ -5 \end{bmatrix}</script>
-and consider the bases for <script type="math/tex; ">\mathbb{R}^2</script> 
-given by <script type="math/tex; ">B=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script>
-and <script type="math/tex; ">C=\left\{ \textbf{c}_1, \textbf{c}_2 \right\}</script>.</p>
-<p>Find the change-of-coordinates matrix from <script type="math/tex; ">B</script> to <script type="math/tex; ">C</script>.</p>
-<h3 id="solution">Solution</h3>
+</li>
+<li>Matrix&#xC758; eigen vector&#xB4E4;&#xC774; &#xBAA8;&#xB450; linear independent&#xC77C; &#xACBD;&#xC6B0;, invertible &#xC774;&#xBA70; diagonalizable&#xC784;.</li>
+<li>Diagonalizable matrix&#xC758; eigen value&#xC5D0; 0&#xC778; &#xACBD;&#xC6B0;&#xAC00; &#xC5C6;&#xC744;&#xC2DC; &#xD56D;&#xC0C1; invertible.</li>
+<li>Symmetric matrix&#xC758; &#xACBD;&#xC6B0;, eigne value&#xB294; real number&#xC774;&#xBA70;, eigen vector&#xB4E4;&#xC740; &#xBAA8;&#xB450; orthgonal&#xC784;. </li>
+<li>Symmetric matrix&#xC758; &#xACBD;&#xC6B0;, &#xD56D;&#xC0C1; diagonalizable&#xC784;.</li>
+<li><script type="math/tex; ">A^T A</script>&#xB294; &#xD56D;&#xC0C1; symmetric matrix&#xC784;.</li>
+<li><script type="math/tex; ">A^T A</script>&#xB294; &#xCD5C;&#xC18C;&#xD55C; positive semi-definite&#xC774;&#xBA70;, &#xB9CC;&#xC77C; 0&#xC778; eigen value&#xAC00; &#xC5C6;&#xC744;&#xC2DC; positive definite&#xC784;.</li>
+<li>Symmetric matrix&#xAC00; positive definite&#xC778; &#xACBD;&#xC6B0;, eigen value&#xB4E4;&#xC740; &#xBAA8;&#xB450; &#xC591;&#xC218;&#xC784;. &#xC989; invertible&#xD558;&#xB2E4;.</li>
+<li>Symmetric matrix&#xAC00; positive semi-definite&#xC778; &#xACBD;&#xC6B0;, eigen value&#xB4E4;&#xC740; 0&#xB610;&#xB294; &#xC591;&#xC218;&#xC784;.</li>
+</ul>
+</blockquote>
+<h2 id="orthogonal-projection-perspective">Orthogonal Projection Perspective</h2>
 <ul>
-<li>The matrix <script type="math/tex; ">P_{B \leftarrow C}</script> involves 
-the <script type="math/tex; ">C</script>-coordinate vectors of <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>. 
-Let <script type="math/tex; ">[\textbf{b}_1]_C = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}</script> and 
-<script type="math/tex; ">[\textbf{b}_2]_C = \begin{bmatrix} y_1 \\ y_2 \end{bmatrix}</script>.</li>
-<li>Then by defintion,</li>
+<li>In the case of invertible <script type="math/tex; ">C=A^TA</script>, consider the orthogonal projecton of <script type="math/tex; ">\textbf{b}</script> onto Col <script type="math/tex; ">A</script> as</li>
 </ul>
-<p><script type="math/tex; mode=display">
-\left[\begin{matrix} c_1 & c_2 \\ \end{matrix} \right]
-\left[\begin{matrix} x_1 \\ x_2 \\ \end{matrix} \right]
-=
-\textbf{b}_1  \text{ and }
-</script> 
-<script type="math/tex; mode=display">
-\left[\begin{matrix} c_1 & c_2 \\ \end{matrix} \right]
-\left[\begin{matrix} y_1 \\ y_2 \\ \end{matrix} \right] 
-=
-\textbf{b}_2
+<p><script type="math/tex; ">
+\hat{\textbf{b}}=f(\textbf{b})=A\hat{\textbf{x}}= A (A^TA)^{-1}A^T \textbf{b}
 </script></p>
 <ul>
-<li>To solve both systems simultaneously, augment the coefficient matrix with <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>, and row reduce:</li>
+<li>Suppose that Col <script type="math/tex; ">A</script> is a  2-dimensional subspace , consider a transformation of orthogonal projection <script type="math/tex; ">\hat{\textbf{b}}</script> of <script type="math/tex; ">\textbf{b}</script>, given <strong>orthonomal</strong> basis <script type="math/tex; ">\left\{ \textbf{u}_1,\textbf{u}_2 \right\}</script> of Col <script type="math/tex; ">A</script>:</li>
 </ul>
-<p><script type="math/tex; mode=display">
-\left[
-\begin{array}{cc:cc}
-c_1 & c_2 & b_1 & b_2 \\
-\end{array}
-\right]
-=
-\left[
-\begin{array}{cc:cc}
-1 & 3 & -9 & -5 \\ 
--4 & -5 & 1 & -1  
-\end{array}
-\right]
-\sim
-\left[
-\begin{array}{cc:cc}
-1 & 0 & 6 & 4 \\ 
-0 & 1 & -5 & -3  
-\end{array}
-\right]
-\tag{7}
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{\textbf{b}} &= f(\textbf{b}) \\
+&=A\hat{\textbf{x}} \\
+&= A (A^TA)^{-1}A^T \textbf{b} \\
+&= (\textbf{b} \cdot \textbf{u}_1)\textbf{u}_1 + (\textbf{b} \cdot \textbf{u}_2)\textbf{u}_2 \\
+&= (\textbf{u}_1^T\textbf{b})\textbf{u}_1 + (\textbf{u}_2^T\textbf{b})\textbf{u}_2 \\
+&= \textbf{u}_1(\textbf{u}_1^T\textbf{b}) + \textbf{u}_2(\textbf{u}_2^T\textbf{b}) \\
+&= (\textbf{u}_1\textbf{u}_1^T)\textbf{b} + (\textbf{u}_2\textbf{u}_2^T)\textbf{b} \\
+&= (\textbf{u}_1\textbf{u}_1^T + \textbf{u}_2\textbf{u}_2^T)\textbf{b} \\
+&= \begin{bmatrix} \textbf{u}_1 & \textbf{u}
+_2\end{bmatrix}\begin{bmatrix} \textbf{u}_1^T \\ \textbf{u}
+_2^T\end{bmatrix} \textbf{b} \\
+&=UU^T \textbf{b} \Rightarrow \text{linear transformation} 
+\end{align*}
 </script></p>
 <ul>
-<li>Thus</li>
-</ul>
-<p><script type="math/tex; mode=display">
-[\textbf{b}_1]_C = \begin{bmatrix} 6 \\-5 \end{bmatrix}
-\text{ and }
-[\textbf{b}_2]_C = \begin{bmatrix} 4 \\-3 \end{bmatrix}
+<li><p>When <script type="math/tex; ">A=U=\begin{bmatrix} \textbf{u}_1 & \textbf{u}
+_2\end{bmatrix}</script> has orthonomal columns:
+<script type="math/tex; ">
+C=A^TA=\begin{bmatrix} \textbf{u}_1^T \\ \textbf{u}
+_2^T\end{bmatrix} \begin{bmatrix} \textbf{u}_1 & \textbf{u}
+_2\end{bmatrix}=I
 </script></p>
-<ul>
-<li>The desired change-of-coordinates matrix is therefore</li>
+</li>
+<li><p>Thus,</p>
+</li>
 </ul>
-<p><script type="math/tex; mode=display">
-P_{C \leftarrow B} =
-\begin{bmatrix}
-[\textbf{b}_1]_C  & [\textbf{b}_2]_C
-\end{bmatrix}
-=
-\begin{bmatrix}
-6 & 4 \\
--5 & -3 
-\end{bmatrix}
+<p><script type="math/tex; ">
+\begin{align*}
+\hat{\textbf{b}} &= f(\textbf{b}) \\
+&=A\hat{\textbf{x}} \\
+&= A (A^TA)^{-1}A^T \textbf{b} \\
+&= A (I)^{-1}A^T \textbf{b} \\
+&= A A^T \textbf{b} \\
+&= U U^T \textbf{b} \\
+\end{align*}
 </script></p>
 
                                 
@@ -1022,12 +961,12 @@ P_{C \leftarrow B} =
 
             
                 
-                <a href="la_04_06.html" class="navigation navigation-prev " aria-label="Previous page: 04_06 Rank">
+                <a href="la_06_01.html" class="navigation navigation-prev " aria-label="Previous page: 06_01">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_05_01.html" class="navigation navigation-next " aria-label="Next page: 05_01">
+                <a href="la_07_01.html" class="navigation navigation-next " aria-label="Next page: 07_01">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1038,7 +977,7 @@ P_{C \leftarrow B} =
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"next":{"title":"05_01","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"previous":{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_07.md","mtime":"2019-11-03T14:22:19.900Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-09T03:23:01.465Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"06_summary","date":"2018-03-29T20:47:59.000Z","author":"dsaint31","categories":"Linear_Algebra","use_math":true,"tags":null,"level":"1.3.32","depth":2,"next":{"title":"07_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},"previous":{"title":"06_01","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_06_summary.md","mtime":"2019-11-09T03:21:27.640Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-09T03:23:01.465Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

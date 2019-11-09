@@ -37,6 +37,7 @@
   * [05_03](posts/LinearAlgebra/la_05_03.md)
   * [05_04](posts/LinearAlgebra/la_05_04.md)
   * [06_01](posts/LinearAlgebra/la_06_01.md)
+  * [06_summary](posts/LinearAlgebra/la_06_summary.md)
   * [07_01](posts/LinearAlgebra/la_07_01.md)
   * [07_02](posts/LinearAlgebra/la_07_02.md)
   * [07_03](posts/LinearAlgebra/la_07_03.md)
