@@ -1,0 +1,1264 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>01 01 Systems of Linear Eq. · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="la_01_02.html" />
+    
+    
+    <link rel="prev" href="01_hello_linear_algebra.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Docker/nvidia_docker.html">
+            
+                <a href="../Docker/nvidia_docker.html">
+            
+                    
+                    Install Nvidia-Docker2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Docker/docker_summary.html">
+            
+                <a href="../Docker/docker_summary.html">
+            
+                    
+                    Docker CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Docker/docker_hub.html">
+            
+                <a href="../Docker/docker_hub.html">
+            
+                    
+                    Docker Hub CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linear Algebra
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+            
+                <a href="01_hello_linear_algebra.html">
+            
+                    
+                    01 Hello Linear Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="la_01_01.html">
+            
+                <a href="la_01_01.html">
+            
+                    
+                    01 01 Systems of Linear Eq.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="la_01_02.html">
+            
+                <a href="la_01_02.html">
+            
+                    
+                    01 02 Row Reduction and Echelon Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="la_01_03.html">
+            
+                <a href="la_01_03.html">
+            
+                    
+                    01 03 Vector Equations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="la_01_04.html">
+            
+                <a href="la_01_04.html">
+            
+                    
+                    01 04 Matrix Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
+            
+                <a href="la_01_05.html">
+            
+                    
+                    01 05 Solution Sets of Linear Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="la_01_07.html">
+            
+                <a href="la_01_07.html">
+            
+                    
+                    01 07 Linear Independence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="la_01_08.html">
+            
+                <a href="la_01_08.html">
+            
+                    
+                    01 08 Introduction to Linear Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="la_01_09.html">
+            
+                <a href="la_01_09.html">
+            
+                    
+                    01 09 The Matrix of a Linear Transformation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
+            
+                <a href="la_01_10_02_Difference_Equation.html">
+            
+                    
+                    01_02 Difference Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="la_02_01.html">
+            
+                <a href="la_02_01.html">
+            
+                    
+                    02_01_Matrix_Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="la_02_02.html">
+            
+                <a href="la_02_02.html">
+            
+                    
+                    02_02_Inverse_Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="la_02_03.html">
+            
+                <a href="la_02_03.html">
+            
+                    
+                    02_03 Characterizations of Invertible Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="la_02_04.html">
+            
+                <a href="la_02_04.html">
+            
+                    
+                    02_04 Partitioned Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="la_02_05.html">
+            
+                <a href="la_02_05.html">
+            
+                    
+                    02_05 Matrix Factorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="la_02_06.html">
+            
+                <a href="la_02_06.html">
+            
+                    
+                    02_06 The Leontief Input-Output Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="la_02_07.html">
+            
+                <a href="la_02_07.html">
+            
+                    
+                    02_07 Applications to Computer Graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="la_02_08.html">
+            
+                <a href="la_02_08.html">
+            
+                    
+                    02_08 Subspaces of R to the Power n
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="la_02_09.html">
+            
+                <a href="la_02_09.html">
+            
+                    
+                    02_09 Dimension and Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="la_04_01.html">
+            
+                <a href="la_04_01.html">
+            
+                    
+                    04_01 Vector Spaces and Subspaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="la_04_02.html">
+            
+                <a href="la_04_02.html">
+            
+                    
+                    04_02 Null Spaces, Column Spaces, and Linear Trnasformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="la_04_03.html">
+            
+                <a href="la_04_03.html">
+            
+                    
+                    04_03 Linearly Independent Sets; Bases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="la_04_04.html">
+            
+                <a href="la_04_04.html">
+            
+                    
+                    04_04 Coordinate Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="la_04_05.html">
+            
+                <a href="la_04_05.html">
+            
+                    
+                    04_05 The Dimension of a Vector Space
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="la_04_06.html">
+            
+                <a href="la_04_06.html">
+            
+                    
+                    04_06 Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="la_04_07.html">
+            
+                <a href="la_04_07.html">
+            
+                    
+                    04_07 Change of Basis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="la_05_01.html">
+            
+                <a href="la_05_01.html">
+            
+                    
+                    05_01 Eigenvectors and Eigenvalues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="la_05_02.html">
+            
+                <a href="la_05_02.html">
+            
+                    
+                    05_02 The Characteristic Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="la_05_03.html">
+            
+                <a href="la_05_03.html">
+            
+                    
+                    05_03 Diagonalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.30" data-path="la_05_04.html">
+            
+                <a href="la_05_04.html">
+            
+                    
+                    05_04 Eigenvectors and Linear Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.31" data-path="la_05_05.html">
+            
+                <a href="la_05_05.html">
+            
+                    
+                    05_05
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.32" data-path="la_05_06.html">
+            
+                <a href="la_05_06.html">
+            
+                    
+                    05_06
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.33" data-path="la_06_01.html">
+            
+                <a href="la_06_01.html">
+            
+                    
+                    06_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.34" data-path="la_06_summary.html">
+            
+                <a href="la_06_summary.html">
+            
+                    
+                    06_summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.35" data-path="la_07_01.html">
+            
+                <a href="la_07_01.html">
+            
+                    
+                    07_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.36" data-path="la_07_02.html">
+            
+                <a href="la_07_02.html">
+            
+                    
+                    07_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.37" data-path="la_07_03.html">
+            
+                <a href="la_07_03.html">
+            
+                    
+                    07_03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.38" data-path="la_07_04_01.html">
+            
+                <a href="la_07_04_01.html">
+            
+                    
+                    07_04_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.39" data-path="la_07_04_02.html">
+            
+                <a href="la_07_04_02.html">
+            
+                    
+                    07_04_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Etc/">
+            
+                <a href="../Etc/">
+            
+                    
+                    Etc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Etc/install_gitbook.html">
+            
+                <a href="../Etc/install_gitbook.html">
+            
+                    
+                    Install Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Etc/install_uim.html">
+            
+                <a href="../Etc/install_uim.html">
+            
+                    
+                    Install uim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Etc/install_virtualbox.html">
+            
+                <a href="../Etc/install_virtualbox.html">
+            
+                    
+                    Install virtualbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Etc/video.html">
+            
+                <a href="../Etc/video.html">
+            
+                    
+                    Video Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >01 01 Systems of Linear Eq.</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="linear-equations-in-linear-algebra">Linear Equations in Linear Algebra</h1>
+<h1 id="11-systems-of-linear-equations-&#xC120;&#xD615;&#xBC29;&#xC815;&#xC2DD;&#xACC4;&#xC5F0;&#xB9BD;&#xC77C;&#xCC28;&#xBC29;&#xC815;&#xC2DD;">1.1 Systems of Linear Equations (&#xC120;&#xD615;&#xBC29;&#xC815;&#xC2DD;&#xACC4;,&#xC5F0;&#xB9BD;&#xC77C;&#xCC28;&#xBC29;&#xC815;&#xC2DD;)</h1>
+<h2 id="linear-equation">Linear Equation</h2>
+<p> A <strong>linear equation</strong> in the variables <script type="math/tex; ">x_1, \cdots, x_n</script> 
+is an equation that can be represented in the form</p>
+<p><script type="math/tex; mode=display">
+a_1x_1+a_2x_2+\cdots+a_nx_n = b \tag{1}
+</script></p>
+<p>where <script type="math/tex; ">b</script> and the coefficients <script type="math/tex; ">a_1, \cdots, a_n</script> are real or complex numbers, usually known in addvance.</p>
+<p> A <strong>system of linear equations</strong> (or a <strong>linear system</strong>)
+is a collection of one or more linear equations
+involving the same variables -- say, <script type="math/tex; ">x_1, \cdots, x_n</script>.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+2x_1 -x_2 +1.5x_3 &= 8 \\
+x_1 -4x_3 = -7 \tag{2}
+\end{align}
+</script></p>
+<p> A <strong>solution</strong> of the system is 
+a list <script type="math/tex; ">\left(s_1,s_2,\cdots,s_n\right)</script> of numbers 
+that makes each equation a true statement 
+when the values <script type="math/tex; ">\left(s_1,\cdots,s_n\right)</script> are substituted
+for <script type="math/tex; ">x_1, \cdots, x_n</script> respectively.
+ The <em>set of all possible solutions</em> is called 
+the <strong>solution set</strong> of the linear system.</p>
+<p> Two linear systems are called <strong>equivalent</strong> 
+if they have <strong>the same solution set</strong>.</p>
+<p> <strong>A system of linear equations has</strong></p>
+<ol>
+<li>no solution, or</li>
+<li>exactly one solution, or</li>
+<li>infinitely many solutions.</li>
+</ol>
+<p> A system of linear equations is said to be <strong>consistent</strong> 
+if it has either </p>
+<ul>
+<li><strong>one solution</strong> or </li>
+<li><strong>infinitely many solutions</strong>.</li>
+</ul>
+<p> A system is <strong>inconsistent</strong> if it has </p>
+<ul>
+<li>no solution.</li>
+</ul>
+<blockquote>
+<ul>
+<li>linear equation, </li>
+<li>system of linear equations, linear system</li>
+<li>solution(&#xD574;)</li>
+<li>equivalent(&#xB3D9;&#xCE58;)</li>
+<li>no solution, (one solution,  infinitely many solution) </li>
+<li>consistent system, inconsistent system</li>
+</ul>
+</blockquote>
+<h2 id="matrix-notation">Matrix Notation</h2>
+<p> The essential information of a linear system can be 
+recorded compactly in a rectangular array called a <strong>matrix</strong>.
+Given the system,</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+x_1-2x_2+x_3 &= 0 \\
+2x_2-8x_3 &= 8 \\
+-4x_1+5x_2+9x_3 &= -9 \\
+\end{align*} \tag{3}
+</script>,</p>
+<p>with the coefficients of each variable aligned in columns, 
+the matrix</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+1 & -2 & 1 \\
+0 & 2 & -8 \\
+-4 & 5 & 9 
+\end{bmatrix} 
+</script></p>
+<p>is called the <strong>coefficient matrix</strong> (or <strong>matrix of coefficients</strong>) of
+the system.</p>
+<p> An <strong>augmented matrix</strong> of a system 
+consists of 
+the coefficient matrix 
+with an added column containing
+the constants from the right sides of the equations. </p>
+<p>For the given system of equations,</p>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+1 & -2 & 1 &0\\
+0 & 2 & -8 &8\\
+-4 & 5 & 9 &-9
+\end{bmatrix} \tag{4}
+</script></p>
+<p>is called the <strong>augmented matrix</strong> of the system.</p>
+<blockquote>
+<ul>
+<li>matrix</li>
+<li>coefficient matrix (&#xACC4;&#xC218;&#xD589;&#xB82C;)</li>
+<li>augmented matrix (&#xCCA8;&#xAC00;&#xD589;&#xB82C;)</li>
+</ul>
+</blockquote>
+<h2 id="matrix-size">Matrix Size</h2>
+<p> The size of a matrix tells how many rows and
+columns it has. If <script type="math/tex; ">m</script> and <script type="math/tex; ">n</script> are positive integers, 
+an <strong><script type="math/tex; ">m \times n</script> matrix</strong> is a rectangular array of numbers 
+with <script type="math/tex; ">m</script> rows and <script type="math/tex; ">n</script> columns. 
+(The number of rows always comes first.)</p>
+<h2 id="solving-a-linear-system">Solving a Linear System</h2>
+<p> The basic strategy for solving a linear system is 
+<em>to replace one system with an <strong>equivalent</strong> system 
+(i.e., one with the same solution set) 
+that is easier to solve.</em></p>
+<h2 id="example-1">Example 1</h2>
+<p>Solve the given system of equations.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+x_1-2x_2+x_3 &= 0 \tag{1}\\
+2x_2-8x_3 &= 8 \tag{2}\\
+-4x_1+5x_2+9x_3 &= -9 \tag{3}\\
+\end{align}
+</script>,</p>
+<h3 id="solution-of-example-1">Solution of Example 1</h3>
+<p> The elimination procedure is shown here 
+with and without matrix notation, and 
+the results are placed side by side for comparison.</p>
+<p><script type="math/tex; mode=display">
+\begin{matrix}
+\begin{align*}
+x_1-2x_2+x_3 &= 0 \\
+2x_2-8x_3 &= 8 \\
+-4x_1+5x_2+9x_3 &= -9 
+\end{align*}
+&
+\begin{bmatrix}
+1 & -2 & 1 &0\\
+0 & 2 & -8 &8\\
+-4 & 5 & 9 &-9
+\end{bmatrix}
+\end{matrix}
+</script></p>
+<p>Keep <script type="math/tex; ">x_1</script> in the first equation and eliminate it from the other equations. 
+To do so, add 4 times equation 1 to equation 3.</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+4x_1-8x_2+4x_3 &= 0 \\
+-4x_1+5x_2+9x_3 &= -9 \\
+\hline
+-3x_2+13x_3 &= -9 
+\end{align*}
+</script></p>
+<p>The result of this calculation is written in place of 
+the original third equation:</p>
+<p><script type="math/tex; mode=display">
+\begin{matrix}
+\begin{align*}
+x_1-2x_2+x_3 &= 0 \\
+2x_2-8x_3 &= 8 \\
+-3x_2+13x_3 &= -9 
+\end{align*}
+&
+\begin{bmatrix}
+1 & -2 & 1 &0\\
+0 & 2 & -8 &8\\
+0 & -3 & 13 &-9
+\end{bmatrix}
+\end{matrix}
+</script></p>
+<p>Now, multiply equation 2 by <script type="math/tex; ">\frac{1}{2}</script> 
+in order to obtain 1 as the coefficient for <script type="math/tex; ">x_2</script></p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+x_1-2x_2+x_3 &= 0 \\
+x_2-4x_3 &= 4 \\
+-3x_2+13x_3 &= -9 
+\end{matrix}
+& &
+\begin{bmatrix}
+1 & -2 & 1 &0\\
+0 & 1 & -4 &4\\
+0 & -3 & 13 &-9
+\end{bmatrix}
+\end{align}
+</script></p>
+<p>Use the <script type="math/tex; ">x_2</script> in equation 2 
+to eliminate the <script type="math/tex; ">-3x_2</script> in equation 3.</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+3x_2-12x_3 &= 12 \\
+-3x_2+13x_3 &= -9 \\
+\hline
+x_3 &= 3 
+\end{align*}
+</script></p>
+<p>The new system has a <strong>triangular</strong> form.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+x_1-2x_2+x_3 &= 0 \\
+x_2-4x_3 &= 4 \\
+x_3 &= 3 
+\end{matrix}
+& &
+\begin{bmatrix}
+1 & -2 & 1 & 0\\
+0 & 1 & -4 & 4\\
+0 & 0 & 1 & 3
+\end{bmatrix}
+\end{align}
+</script></p>
+<p>Eventually, you want to eliminate <script type="math/tex; ">-2x_2</script> the term from equation 1, 
+but it is more efficient to use the <script type="math/tex; ">x_3</script> term in equation 3 
+first to eliminate 
+the <script type="math/tex; ">-4x_3</script> and <script type="math/tex; ">x_3</script> terms in equations 2 and 1.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+&&4x_3 &= 12 \\
+&x_2&-4x_3 &= 4 \\
+\hline
+&x_2& &= 16 
+\end{matrix}
+& &
+\begin{matrix}
+&&-x_3 &= -3 \\
+x_1&-2x_2&+x_3 &= 0 \\ 
+\hline
+x_1&-2x_2& &= -3 
+\end{matrix}
+\end{align}
+</script></p>
+<p>Now, combine the results of these two operations.</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+x_1-2x_2 &= -3 \\
+x_2 &= 16 \\
+x_3 &= 3 
+\end{matrix}
+& &
+\begin{bmatrix}
+1 & -2 & 0 & -3\\
+0 & 1 & 0 & 16\\
+0 & 0 & 1 & 3
+\end{bmatrix}
+\end{align}
+</script></p>
+<p>Move back to the <script type="math/tex; ">x_2</script> in equation 2, 
+and use it to eliminate the <script type="math/tex; ">-2x_2</script> above it. 
+Because of the previous work with <script type="math/tex; ">x_3</script>, 
+there is now no arithmetic involving <script type="math/tex; ">x_3</script> terms. 
+Add 2 times equation 2 to equation 1 and obtain the system:</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\begin{matrix}
+x_1 &= 29 \\
+x_2 &= 16 \\
+x_3 &= 3 
+\end{matrix}
+& &
+\begin{bmatrix}
+1 & 0 & 0 & 29\\
+0 & 1 & 0 & 16\\
+0 & 0 & 1 & 3
+\end{bmatrix}
+\end{align}
+</script></p>
+<p>Thus, the only solution of the original system is
+(29,16,3). To verify that (29,16,3) is a solution,
+substitute these values into the left side of the
+original system, and compute.</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+(29)-2(16)+(3)     &= 29-32+3 &= 0 \\
+2(16)-8(3)         &= 32-24   &= 8 \\
+-4(29)+5(16)+9(3)  &= -116+80+27 &= -9
+\end{align*}
+</script></p>
+<p>The results agree with the right side(&#xC6B0;&#xBCC0;) of the original 
+system, so (29,16,3) is a solution of the system. <script type="math/tex; ">\blacksquare</script></p>
+<h2 id="elementary-row-operations">Elementary Row Operations</h2>
+<p>Three basic operations are used to simplify a linear system.</p>
+<p>These <strong>Elementary row operations</strong> include the following:</p>
+<ol>
+<li>(Replacement) Replace one row by the sum of itself and a multiple of another row.
+= Add to one row a multiple of another row.</li>
+<li>(Interchange) Interchange two rows.</li>
+<li>(Scaling) Multiply all entries in a row by a nonzero constant.</li>
+</ol>
+<p> Two matrices are called <strong>row equivalent</strong> if there is 
+a sequence of elementary row operations that 
+transforms one matrix into the other.</p>
+<p> It is important to note that row operations are <strong>reversible</strong>.</p>
+<blockquote>
+<p>If the augmented matrices of two linear systems are <strong>row equivalent</strong>, 
+then the two systems have the <strong>same solution set</strong>.</p>
+<ul>
+<li>elementary row operations (RIS)</li>
+<li>row equivalent</li>
+<li>row operations are reversible.</li>
+</ul>
+</blockquote>
+<h2 id="existence-and-uniqueness-of-system-of-equations">Existence and Uniqueness of System of Equations</h2>
+<p>Two fundamental questions about a linear system are as follows:</p>
+<ol>
+<li>Is the system <strong>consistent</strong>; that is, does at least one solution exist?</li>
+<li>If a solution exists, is it the only one; that is, is the solution <strong>unique</strong>?</li>
+</ol>
+<h2 id="example-3">Example 3:</h2>
+<p>Determine if the following system is consistent:</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+x_2-4x_3 &= 8 \\
+2x_1-3x_2+2x_3 &= 1 \\
+5x_1-8x_2+7x_3 &= 1
+\end{align} \tag{5}
+</script></p>
+<h3 id="solution">Solution:</h3>
+<ul>
+<li>The augmented matrix is</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+0 & 1 & -4 & 8 \\
+2 & -3 & 2 & 1 \\
+5 & -8 & 7 & 1 
+\end{bmatrix}
+</script></p>
+<ul>
+<li>To obtain an <script type="math/tex; ">x_1</script> in the first equation, interchange rows 1 and 2:</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+2 & -3 & 2 & 1 \\
+0 & 1 & -4 & 8 \\
+5 & -8 & 7 & 1 
+\end{bmatrix}
+</script></p>
+<ul>
+<li>To eliminate the <script type="math/tex; ">5x_1</script> term in the third equation, add <script type="math/tex; ">\frac{-5}{2}</script> times row 1 to row 3.</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+2 & -3 & 2 & 1 \\
+0 & 1 & -4 & 8 \\
+0 & \frac{-1}{2} & 2 & \frac{-3}{2} 
+\end{bmatrix} \tag{6}
+</script></p>
+<ul>
+<li>Next, use the <script type="math/tex; ">x_2</script> term in the second equation to eliminate the <script type="math/tex; ">-\frac{1}{2}x_2</script> term from the third equaton. Add <script type="math/tex; ">\frac{1}{2}</script> times row 2 to row 3.</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+2 & -3 & 2 & 1 \\
+0 & 1 & -4 & 8 \\
+0 & 0 & 0 & \frac{5}{2} 
+\end{bmatrix} \tag{7}
+</script></p>
+<ul>
+<li>The augmented matrix is now in triangular form. To interpret it correctly, go back to equation notation.</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{align}
+2x_1-3x_2+2x_3 &= 1 \\
+x_2-4x_3 &= 8 \\
+0 &= \frac{5}{2}
+\end{align} \tag{8}
+</script></p>
+<ul>
+<li>The equation <script type="math/tex; ">0=\frac{5}{2}</script> is a short form of <script type="math/tex; ">0x_1+0x_2+0x_3=\frac{5}{2}</script>.</li>
+<li>There are no values of <script type="math/tex; ">x_1,x_2,x_3</script> that satisfy (8) because the equation <script type="math/tex; ">0=\frac{5}{2}</script> is never true.</li>
+<li>Since (8) and (5) have the same solution set, the original system is <strong>inconsistent</strong> (i.e., has no solution).</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_hello_linear_algebra.html" class="navigation navigation-prev " aria-label="Previous page: 01 Hello Linear Algebra">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="la_01_02.html" class="navigation navigation-next " aria-label="Next page: 01 02 Row Reduction and Echelon Forms">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"next":{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},"previous":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_01.md","mtime":"2019-09-02T03:50:24.366Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-19T04:58:58.896Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-adsense/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

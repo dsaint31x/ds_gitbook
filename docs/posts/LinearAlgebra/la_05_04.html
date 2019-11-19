@@ -1,0 +1,1025 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>05_04 Eigenvectors and Linear Transformations · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="la_05_05.html" />
+    
+    
+    <link rel="prev" href="la_05_03.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Docker/">
+            
+                <a href="../Docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Docker/nvidia_docker.html">
+            
+                <a href="../Docker/nvidia_docker.html">
+            
+                    
+                    Install Nvidia-Docker2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Docker/docker_summary.html">
+            
+                <a href="../Docker/docker_summary.html">
+            
+                    
+                    Docker CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Docker/docker_hub.html">
+            
+                <a href="../Docker/docker_hub.html">
+            
+                    
+                    Docker Hub CMD Summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Linear Algebra
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+            
+                <a href="01_hello_linear_algebra.html">
+            
+                    
+                    01 Hello Linear Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="la_01_01.html">
+            
+                <a href="la_01_01.html">
+            
+                    
+                    01 01 Systems of Linear Eq.
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="la_01_02.html">
+            
+                <a href="la_01_02.html">
+            
+                    
+                    01 02 Row Reduction and Echelon Forms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="la_01_03.html">
+            
+                <a href="la_01_03.html">
+            
+                    
+                    01 03 Vector Equations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="la_01_04.html">
+            
+                <a href="la_01_04.html">
+            
+                    
+                    01 04 Matrix Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="la_01_05.html">
+            
+                <a href="la_01_05.html">
+            
+                    
+                    01 05 Solution Sets of Linear Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="la_01_07.html">
+            
+                <a href="la_01_07.html">
+            
+                    
+                    01 07 Linear Independence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="la_01_08.html">
+            
+                <a href="la_01_08.html">
+            
+                    
+                    01 08 Introduction to Linear Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="la_01_09.html">
+            
+                <a href="la_01_09.html">
+            
+                    
+                    01 09 The Matrix of a Linear Transformation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
+            
+                <a href="la_01_10_02_Difference_Equation.html">
+            
+                    
+                    01_02 Difference Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="la_02_01.html">
+            
+                <a href="la_02_01.html">
+            
+                    
+                    02_01_Matrix_Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="la_02_02.html">
+            
+                <a href="la_02_02.html">
+            
+                    
+                    02_02_Inverse_Matrix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="la_02_03.html">
+            
+                <a href="la_02_03.html">
+            
+                    
+                    02_03 Characterizations of Invertible Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="la_02_04.html">
+            
+                <a href="la_02_04.html">
+            
+                    
+                    02_04 Partitioned Matrices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="la_02_05.html">
+            
+                <a href="la_02_05.html">
+            
+                    
+                    02_05 Matrix Factorization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="la_02_06.html">
+            
+                <a href="la_02_06.html">
+            
+                    
+                    02_06 The Leontief Input-Output Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="la_02_07.html">
+            
+                <a href="la_02_07.html">
+            
+                    
+                    02_07 Applications to Computer Graphics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="la_02_08.html">
+            
+                <a href="la_02_08.html">
+            
+                    
+                    02_08 Subspaces of R to the Power n
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="la_02_09.html">
+            
+                <a href="la_02_09.html">
+            
+                    
+                    02_09 Dimension and Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="la_04_01.html">
+            
+                <a href="la_04_01.html">
+            
+                    
+                    04_01 Vector Spaces and Subspaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="la_04_02.html">
+            
+                <a href="la_04_02.html">
+            
+                    
+                    04_02 Null Spaces, Column Spaces, and Linear Trnasformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="la_04_03.html">
+            
+                <a href="la_04_03.html">
+            
+                    
+                    04_03 Linearly Independent Sets; Bases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="la_04_04.html">
+            
+                <a href="la_04_04.html">
+            
+                    
+                    04_04 Coordinate Systems
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="la_04_05.html">
+            
+                <a href="la_04_05.html">
+            
+                    
+                    04_05 The Dimension of a Vector Space
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="la_04_06.html">
+            
+                <a href="la_04_06.html">
+            
+                    
+                    04_06 Rank
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="la_04_07.html">
+            
+                <a href="la_04_07.html">
+            
+                    
+                    04_07 Change of Basis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.27" data-path="la_05_01.html">
+            
+                <a href="la_05_01.html">
+            
+                    
+                    05_01 Eigenvectors and Eigenvalues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.28" data-path="la_05_02.html">
+            
+                <a href="la_05_02.html">
+            
+                    
+                    05_02 The Characteristic Equation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.29" data-path="la_05_03.html">
+            
+                <a href="la_05_03.html">
+            
+                    
+                    05_03 Diagonalization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.30" data-path="la_05_04.html">
+            
+                <a href="la_05_04.html">
+            
+                    
+                    05_04 Eigenvectors and Linear Transformations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.31" data-path="la_05_05.html">
+            
+                <a href="la_05_05.html">
+            
+                    
+                    05_05
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.32" data-path="la_05_06.html">
+            
+                <a href="la_05_06.html">
+            
+                    
+                    05_06
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.33" data-path="la_06_01.html">
+            
+                <a href="la_06_01.html">
+            
+                    
+                    06_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.34" data-path="la_06_summary.html">
+            
+                <a href="la_06_summary.html">
+            
+                    
+                    06_summary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.35" data-path="la_07_01.html">
+            
+                <a href="la_07_01.html">
+            
+                    
+                    07_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.36" data-path="la_07_02.html">
+            
+                <a href="la_07_02.html">
+            
+                    
+                    07_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.37" data-path="la_07_03.html">
+            
+                <a href="la_07_03.html">
+            
+                    
+                    07_03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.38" data-path="la_07_04_01.html">
+            
+                <a href="la_07_04_01.html">
+            
+                    
+                    07_04_01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.39" data-path="la_07_04_02.html">
+            
+                <a href="la_07_04_02.html">
+            
+                    
+                    07_04_02
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Etc/">
+            
+                <a href="../Etc/">
+            
+                    
+                    Etc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Etc/install_gitbook.html">
+            
+                <a href="../Etc/install_gitbook.html">
+            
+                    
+                    Install Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Etc/install_uim.html">
+            
+                <a href="../Etc/install_uim.html">
+            
+                    
+                    Install uim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Etc/install_virtualbox.html">
+            
+                <a href="../Etc/install_virtualbox.html">
+            
+                    
+                    Install virtualbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Etc/video.html">
+            
+                <a href="../Etc/video.html">
+            
+                    
+                    Video Test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >05_04 Eigenvectors and Linear Transformations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ch05-eigenvalues-and-eigenvectors">Ch05. Eigenvalues and Eigenvectors</h1>
+<h1 id="54-eigenvectors-and-linear-transformations">5.4 Eigenvectors and Linear Transformations</h1>
+<h2 id="the-matrix-of-a-linear-transformation">The Matrix of a Linear Transformation</h2>
+<ul>
+<li><p>Given any <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">\text{V}</script>, the coordinate vector <script type="math/tex; ">[\textbf{x}]_\mathcal{B}</script> is in <script type="math/tex; ">\mathbb{R}^n</script> and the coordinate vector of its image, <script type="math/tex; ">[T(\textbf{x})]_\mathcal{C}</script>, is in <script type="math/tex; ">\mathbb{R}^m</script>, as shown in Fig. 1. below.
+<img src="fig/la_05_04_01.png" alt="Fig1"></p>
+</li>
+<li><p>The connection between <script type="math/tex; ">[\textbf{x}]_\mathcal{B}</script> and <script type="math/tex; ">[T(\textbf{x})]_\mathcal{C}</script> is easy to find.</p>
+</li>
+<li><p>Let <script type="math/tex; ">\left\{ \textbf{b}_1, \cdots , \textbf{b}_n \right\}</script> be the basis <script type="math/tex; ">\mathcal{B}</script> for<script type="math/tex; ">V</script>. If <script type="math/tex; ">\textbf{x}=r_1\textbf{b}_1+\cdots+r_n\textbf{b}_n</script> then, 
+<script type="math/tex; mode=display">
+[\textbf{x}]_\mathcal{B} = \begin{bmatrix}r_1 \\ \vdots \\ r_n \end{bmatrix}
+</script></p>
+</li>
+<li><p>And <script type="math/tex; mode=display">
+T(\textbf{x}) = T(r_1\textbf{b}_1+\cdots+r_n\textbf{b}_n)=r_1T(\textbf{b}_1)+\cdots+r_nT(\textbf{b}_n) \tag{1}
+</script> because <script type="math/tex; ">T</script> is linear.</p>
+</li>
+<li><p>Now, since the coordinate mapping from <script type="math/tex; ">W</script> to <script type="math/tex; ">\mathbb{R}^m</script> is linear, equation (1) leads to
+<script type="math/tex; mode=display">
+[T(\textbf{x})]_\mathcal{C} = r_1[T(\textbf{b}_1)]_\mathcal{C}+\cdots+r_n[T(\textbf{b}_n)]_\mathcal{C} \tag{2}
+</script></p>
+</li>
+<li>Since <script type="math/tex; ">\mathcal{C}</script>-coordinate vectors are in <script type="math/tex; ">\mathbb{R}^m</script>, the vector equation (2) can be written as a matrix equation, namely,
+<script type="math/tex; mode=display">
+[T(\textbf{x})]_\mathcal{C} = M [\textbf{x}]_\mathcal{B} \tag{3}
+</script>
+where
+<script type="math/tex; mode=display">
+M = \begin{bmatrix} [T(\textbf{b}_1)]_\mathcal{C} & [T(\textbf{b}_2)]_\mathcal{C} & \cdots & [T(\textbf{b}_n)]_\mathcal{C} \end{bmatrix} \tag{4}
+</script></li>
+<li>The matrix <script type="math/tex; ">M</script> is a <strong>matrix representation of <script type="math/tex; ">T</script></strong>, called the <strong>matrix for <script type="math/tex; ">T</script> relative to the bases <script type="math/tex; ">\mathcal{B}</script> and <script type="math/tex; ">C</script></strong>. See Fig. 2 below:</li>
+</ul>
+<p><img src="fig/la_05_04_02.png" alt="Fig2"></p>
+<blockquote>
+<p><script type="math/tex; ">M</script> &#xC774; &#xC2E4;&#xC81C;&#xB85C; coordinate vector&#xB97C; linear transform&#xD558;&#xC5EC; &#xBAA9;&#xD45C;&#xB85C;&#xD558;&#xB294; basis&#xC758; coordinate vector&#xB85C; mapping</p>
+</blockquote>
+<h2 id="example-1">Example 1</h2>
+<p>Suppose <script type="math/tex; ">\mathcal{B}=\left\{\textbf{b}_1, \textbf{b}_2 \right\}</script> is a basis for <script type="math/tex; ">V</script> and <script type="math/tex; ">\mathcal{C}=\left\{\textbf{c}_1,\textbf{c}_2,\textbf{c}_3\right\}</script> is a basis for <script type="math/tex; ">W</script>. Let <script type="math/tex; ">T: V \rightarrow W</script> be a linear transformation with the property that</p>
+<p><script type="math/tex; mode=display">
+T(\textbf{b}_1)=3\textbf{c}_1-2\textbf{c}_2+5\textbf{c}_3
+\text{ and }
+T(\textbf{b}_2)=4\textbf{c}_1+ 7\textbf{c}_2-\textbf{c}_3
+</script></p>
+<p>Find the matrix <script type="math/tex; ">M</script> for <script type="math/tex; ">T</script> relative to <script type="math/tex; ">\mathcal{B}</script> and <script type="math/tex; ">\mathcal{C}</script>.</p>
+<h3 id="solution">Solution</h3>
+<p>The <script type="math/tex; ">C</script>-coordinate vectors of the images of <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script> are
+<script type="math/tex; mode=display">
+[T(\textbf{b}_1)]_\mathcal{C} = \begin{bmatrix} 3 \\ -2 \\ 5 \end{bmatrix} 
+\text{ and } 
+[T(\textbf{b}_2)]_\mathcal{C} = \begin{bmatrix} 4 \\ 7 \\ -1 \end{bmatrix}  
+</script></p>
+<ul>
+<li>Hence
+<script type="math/tex; mode=display">
+M=\begin{bmatrix} 3 & 4 \\ -2 & 7 \\ 5 & -1 \end{bmatrix}
+</script></li>
+</ul>
+<p>If <script type="math/tex; ">\mathcal{B}</script> and <script type="math/tex; ">\mathcal{C}</script> are bases for the same space <script type="math/tex; ">V</script> and if <script type="math/tex; ">T</script> is the identity transformation <script type="math/tex; ">T(\textbf{x})=\textbf{x}</script> for <script type="math/tex; ">\textbf{x} \in V </script>, then Matrix <script type="math/tex; ">M</script> in (4) is <strong>just a change-of-coordinates matrix</strong>.</p>
+<blockquote>
+<p>4.7&#xC808; &#xCC38;&#xACE0;</p>
+</blockquote>
+<h2 id="linear-transformations-from-v-into-v">Linear Transformations from V into V</h2>
+<ul>
+<li>In the common case where <script type="math/tex; ">W</script> is the same as <script type="math/tex; ">V</script> and the basis <script type="math/tex; ">\mathcal{C}</script> is the same as <script type="math/tex; ">\mathcal{B}</script>, the matrix <script type="math/tex; ">M</script> in (4) is called <strong>the matrix for <script type="math/tex; ">T</script> relative to <script type="math/tex; ">\mathcal{B}</script></strong>, or simply the <strong><script type="math/tex; ">\mathcal{B}</script>-matrix for <script type="math/tex; ">T</script></strong>, and is denoted by <script type="math/tex; ">[T]_\mathcal{B}</script>.</li>
+</ul>
+<p><img src="fig/la_05_04_03.png" alt="Fig3"></p>
+<h2 id="example2">Example2</h2>
+<p>The mapping <script type="math/tex; "> T: \mathbb{P}_2 \rightarrow \mathbb{P}_2 </script> defined by 
+<script type="math/tex; mode=display">
+T(a_0+a_1t +a_2t^2) = a_1 +2a_2 t
+</script>
+is a linear transformation.</p>
+<ol>
+<li>Find the <script type="math/tex; ">\mathcal{B}</script>-matrix for <script type="math/tex; ">T</script>, when <script type="math/tex; ">\mathcal{B}</script> is the basis <script type="math/tex; ">\left\{ 1, t, t^2 \right\}</script></li>
+<li>Verify that <script type="math/tex; ">[T(\textbf{p})]_\mathcal{B} = [T]_\mathcal{B}[\textbf{p}]_\mathcal{B}</script></li>
+</ol>
+<h3 id="solution">Solution</h3>
+<ol>
+<li><p>Compute the images of the basis vectors:
+<script type="math/tex; mode=display">
+T(1) = 0 \\
+T(t) = 1 \\
+T(t^2) = 2t 
+</script></p>
+</li>
+<li><p>Then write the <script type="math/tex; ">\mathcal{B}</script>-coordinate vector of <script type="math/tex; ">T(1), T(t)</script>, and <script type="math/tex; ">T(t^2)</script> and place them together as the <script type="math/tex; ">\mathcal{B}</script>-matrix for <script type="math/tex; ">T</script>:
+<script type="math/tex; mode=display">
+[T(1)]_\mathcal{B} = \begin{bmatrix}0 \\ 0 \\ 0 \end{bmatrix},
+[T(t)]_\mathcal{B} = \begin{bmatrix}1 \\ 0 \\ 0 \end{bmatrix},
+[T(t^2)]_\mathcal{B} = \begin{bmatrix}0 \\ 2 \\ 0 \end{bmatrix} \\
+[T]_\mathcal{B} = \begin{bmatrix}0 & 1 & 0\\ 0& 0 &2 \\ 0& 0& 0 \end{bmatrix}
+</script></p>
+</li>
+<li><p>For a general <script type="math/tex; ">\textbf{p}(t)= a_0+a_1t+a_2t^2</script>,
+<script type="math/tex; mode=display">
+\begin{align}
+[T(\textbf{p})]_\mathcal{B}&=[a_1 + 2a_2 t]_\mathcal{B} = \begin{bmatrix} a_1 \\ 2a_2 \\ 0 \end{bmatrix}\\
+&=\begin{bmatrix}0 & 1 & 0\\ 0& 0 &2 \\ 0& 0& 0 \end{bmatrix}\begin{bmatrix} a_0 \\ a_1 \\ a_2 \end{bmatrix} = [T]_\mathcal{B}[\textbf{p}]_\mathcal{B}
+\end{align}
+</script></p>
+</li>
+<li>SeeFig. 4 below
+<img src="fig/la_05_04_04.png" alt="Fig4"></li>
+</ol>
+<h2 id="linear-transformations-on-r-to-the-n-power">Linear Transformations on R to the n Power</h2>
+<blockquote>
+<p>A&#xAC00; &#xB300;&#xAC01;&#xD654;&#xAC00; &#xAC00;&#xB2A5;&#xD55C; &#xACBD;&#xC6B0;, <script type="math/tex; ">A</script>&#xC758; eigenvector&#xB4E4;&#xB85C; &#xAD6C;&#xC131;&#xB41C; basis <script type="math/tex; ">\mathcal{B}</script>&#xC774; &#xC874;&#xC7AC;&#xD558;&#xBA70;, Linear Transform <script type="math/tex; ">T</script>&#xC5D0; &#xB300;&#xD55C; <script type="math/tex; ">\mathcal{B}</script>-matrix for <script type="math/tex; ">T</script>&#xB294; diagonal matrix&#xC784;. 
+&#xC544;&#xB798;&#xC758; Theorem 8&#xC740; &#xC774; &#xC0AC;&#xC2E4;&#xC744; &#xBCF4;&#xC5EC;&#xC90C;.</p>
+</blockquote>
+<h2 id="theorem-8">Theorem 8:</h2>
+<p>Suppose <script type="math/tex; ">A=PDP^{-1}</script> where <script type="math/tex; ">D</script> is a diagonal <script type="math/tex; ">n \times n</script> matrix. If <script type="math/tex; ">\mathcal{B}</script> is the basis for <script type="math/tex; ">\mathbb{R}^n</script> formed from the columns of <script type="math/tex; ">P</script>, then <script type="math/tex; ">D</script> is the <script type="math/tex; ">\mathcal{B}</script>-matrix for the transformation <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script>.</p>
+<h3 id="proof">Proof</h3>
+<p>Denote the columns of <script type="math/tex; ">P</script> by <script type="math/tex; ">\textbf{b}_1,\cdots,\textbf{b}_n</script>, so that <script type="math/tex; ">\mathcal{B}=\left\{\textbf{b}_1,\cdots,\textbf{b}_n\right\}</script> and <script type="math/tex; ">P=\begin{bmatrix}\textbf{b}_1 \cdots \textbf{b}_n\end{bmatrix}</script>. In this case, <script type="math/tex; ">P</script> is the change-of-coordinates matrix <script type="math/tex; ">P_\mathcal{B}</script> discussed in Section 4.4, where</p>
+<p><script type="math/tex; mode=display">
+P[\textbf{x}]_\mathcal{B}=\textbf{x} \text{ and } [\textbf{x}]_\mathcal{B} = P^{-1} \textbf{x}
+</script></p>
+<p>If <script type="math/tex; ">T(\textbf{x})=A\textbf{x}</script> for <script type="math/tex; ">\textbf{x} \in \mathbb{R}^n</script>, then 
+<img src="fig/la_05_04_e06.png" alt="e06"></p>
+<p>Since <script type="math/tex; ">A=PDP^{-1}</script>, we have <script type="math/tex; ">[T]_\mathcal{B} = P^{-1}AP = D</script>.</p>
+<h2 id="example3">Example3</h2>
+<p>Define <script type="math/tex; ">T: \mathbb{R}^2 \rightarrow \mathbb{R}^2 </script> by <script type="math/tex; ">T(\textbf{x})=A\textbf{x}</script>, where <script type="math/tex; ">A=\begin{bmatrix} 7 & 2 \\ -4 & 1 \end{bmatrix}</script>. Find a basis <script type="math/tex; ">\mathcal{B}</script> for <script type="math/tex; ">\mathbb{R}^2</script> with the property that the <script type="math/tex; ">\mathcal{B}</script>-matrix for <script type="math/tex; ">T</script> is a diagonal matrix.</p>
+<h3 id="solution">Solution</h3>
+<p>From <a href="la_05_03.html#example-2">Example 2 in section 5.3</a> we know that <script type="math/tex; ">A=PDP^{-1}</script>, where <script type="math/tex; mode=display">
+P=\begin{bmatrix}1 & 1 \\ -1 & -2 \end{bmatrix} \text{ and } D=\begin{bmatrix}5 & 0 \\ 0 & 3 \end{bmatrix}
+</script></p>
+<ul>
+<li>The columns of <script type="math/tex; ">P</script>, call them <script type="math/tex; ">\textbf{b}_1</script> and <script type="math/tex; ">\textbf{b}_2</script>, are eigenvectors of <script type="math/tex; ">A</script>. By <a href="#theorem-8">Theorem 8</a>, <script type="math/tex; ">D</script> is the <script type="math/tex; ">\mathcal{B}</script>-matrix for <script type="math/tex; ">T</script> when <script type="math/tex; ">\mathcal{B}=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script>. The mappings <script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> and <script type="math/tex; ">\textbf{u} \mapsto D\textbf{u}</script> describe the same linear transformation, relative to different bases. <script type="math/tex; ">\blacksquare</script></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="la_05_03.html" class="navigation navigation-prev " aria-label="Previous page: 05_03 Diagonalization">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="la_05_05.html" class="navigation navigation-next " aria-label="Next page: 05_05">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"next":{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},"previous":{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_05_04.md","mtime":"2019-07-29T00:19:23.238Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-19T04:58:58.896Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-adsense/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
