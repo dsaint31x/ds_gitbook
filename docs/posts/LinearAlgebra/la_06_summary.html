@@ -851,11 +851,11 @@
 <li><strong>Least Squares</strong> provides the approximiation of the solution for the over-determined system.</li>
 </ul>
 <h2 id="what-is-least-squares-problem">What is Least Squares Problem</h2>
-<p>Given an over-determined system <script type="math/tex; ">A\textbf{x} \simeq \textbf{b}</script> where <script type="math/tex; ">A \in \mathbb{R}^{m\times n}, \textbf{b} in \mathbb{R}^n</script>, and <script type="math/tex; ">m \gg n</script>, a least square solution <script type="math/tex; ">\hat{\textbf{x}}</script> is defined as
-<script type="math/tex; ">
+<p>Given an over-determined system <script type="math/tex; ">A\textbf{x} \simeq \textbf{b}</script> where <script type="math/tex; ">A \in \mathbb{R}^{m\times n}, \textbf{b} in \mathbb{R}^n</script>, and <script type="math/tex; ">m \gg n</script>, a least square solution <script type="math/tex; ">\hat{\textbf{x}}</script> is defined as</p>
+<p><script type="math/tex; ">
 \hat{\textbf{x}}= \text{arg } \underset{\textbf{x}} { \text{min }} \Vert \textbf{b}-A\textbf{x}
 \Vert 
- </script></p>
+</script></p>
 <ul>
 <li>The most import aspect of the least-square problem is that no matter what <script type="math/tex; ">\textbf{x}</script> is selected, the vector <script type="math/tex; ">A\textbf{x}</script> will necessarily be in the column space Col <script type="math/tex; ">A</script>.</li>
 <li>Thus, the least square seeks for <script type="math/tex; ">\textbf{x}</script> that makes <script type="math/tex; ">A\textbf{x}</script> as the closet point in Col <script type="math/tex; ">A</script> to <script type="math/tex; ">\textbf{b}</script>.</li>
@@ -868,13 +868,13 @@
 </ul>
 <p><img src="fig/la_06_summary_01.png" alt="Alt text"></p>
 <ul>
-<li><p>This means <script type="math/tex; ">\textbf{b}-A\hat{\textbf{x}}</script> should be orthogonal to any vector in Col <script type="math/tex; ">A</script>:
-<script type="math/tex; ">
+<li>This means <script type="math/tex; ">\textbf{b}-A\hat{\textbf{x}}</script> should be orthogonal to any vector in Col <script type="math/tex; ">A</script>:</li>
+</ul>
+<p><script type="math/tex; ">
 \textbf{b}-A\hat{\textbf{x}} \perp (x_1 \textbf{a}_1 + x_2 \textbf{a}_2 + \cdots +x_n \textbf{a}_n  ) \text{ for any vector }\textbf{x}
 </script></p>
-</li>
-<li><p>Or equivalently,</p>
-</li>
+<ul>
+<li>Or equivalently,</li>
 </ul>
 <p><script type="math/tex; ">
 \begin{matrix}
@@ -898,20 +898,22 @@ A^TA\hat{\textbf{x}})=A^T\textbf{b}
 \end{matrix}
 </script></p>
 <ul>
-<li>Finally, given a least squares problem, <script type="math/tex; ">𝐴\textbf{𝐱} \simeq \textbf{b}</script>, we obtain
-<script type="math/tex; ">
+<li>Finally, given a least squares problem, <script type="math/tex; ">𝐴\textbf{𝐱} \simeq \textbf{b}</script>, we obtain</li>
+</ul>
+<p><script type="math/tex; ">
 A^TA\hat{\textbf{x}}=A^T\textbf{b}
-</script><ul>
+</script></p>
+<ul>
 <li>which is called a normal equation.</li>
 </ul>
-</li>
+<ul>
 <li>This can be viewed as a new linear system, <script type="math/tex; ">C\textbf{x}=\textbf{d}</script>,
 where a square matrix <script type="math/tex; ">C=A^TA \in \mathbb{R}^{n\times n}</script>, and <script type="math/tex; ">d=A^T\textbf{b} \in \mathbb{R}^n</script>.</li>
-<li>If <script type="math/tex; ">C = A^TA</script> is invertible, then the solution is computed as
-<script type="math/tex; ">
-\hat{\textbf{x}} = (A^TA)^{-1}A^T\textbf{b}
-</script></li>
+<li>If <script type="math/tex; ">C = A^TA</script> is invertible, then the solution is computed as</li>
 </ul>
+<p><script type="math/tex; ">
+\hat{\textbf{x}} = (A^TA)^{-1}A^T\textbf{b}
+</script></p>
 <h2 id="another-derivation-of-normal-equation">Another Derivation of Normal Equation.</h2>
 <p><script type="math/tex; ">
 \begin{align*}
@@ -922,17 +924,19 @@ where a square matrix <script type="math/tex; ">C=A^TA \in \mathbb{R}^{n\times n
 \end{align*}
 </script></p>
 <ul>
-<li>Computing derivatives with regard to <script type="math/tex; ">\textbf{x}</script>, we obtain
-<script type="math/tex; ">
+<li>Computing derivatives with regard to <script type="math/tex; ">\textbf{x}</script>, we obtain</li>
+</ul>
+<p><script type="math/tex; ">
 - A^T \textbf{b} - A^T \textbf{b} + 2 A^T A \textbf{x} =\textbf{0} \Leftrightarrow A^T A \textbf{x} = A^T \textbf{b}
-</script></li>
-<li><p>Thus, if <script type="math/tex; ">C=A^TA</script> is invertible, then the solution is computed as
-<script type="math/tex; ">
+</script></p>
+<ul>
+<li>Thus, if <script type="math/tex; ">C=A^TA</script> is invertible, then the solution is computed as</li>
+</ul>
+<p><script type="math/tex; ">
 \textbf{x} = (A^T A)^{-1} A^T \textbf{b}
 </script></p>
-</li>
-<li><p><script type="math/tex; ">C=A^TA</script> is always invertible! So, we can always approximate the solution, <script type="math/tex; ">\hat{x}</script>.</p>
-</li>
+<ul>
+<li><script type="math/tex; ">C=A^TA</script> is always invertible! So, we can always approximate the solution, <script type="math/tex; ">\hat{x}</script>.</li>
 </ul>
 <blockquote>
 <ul>
@@ -962,7 +966,7 @@ where a square matrix <script type="math/tex; ">C=A^TA \in \mathbb{R}^{n\times n
 <li>Suppose that Col <script type="math/tex; ">A</script> is a  2-dimensional subspace , consider a transformation of orthogonal projection <script type="math/tex; ">\hat{\textbf{b}}</script> of <script type="math/tex; ">\textbf{b}</script>, given <strong>orthonomal</strong> basis <script type="math/tex; ">\left\{ \textbf{u}_1,\textbf{u}_2 \right\}</script> of Col <script type="math/tex; ">A</script>:</li>
 </ul>
 <p><script type="math/tex; ">
-\begin{align*}
+\begin{align *}
 \hat{\textbf{b}} &= f(\textbf{b}) \\
 &=A\hat{\textbf{x}} \\
 &= A (A^TA)^{-1}A^T \textbf{b} \\
@@ -975,29 +979,29 @@ where a square matrix <script type="math/tex; ">C=A^TA \in \mathbb{R}^{n\times n
 _2\end{bmatrix}\begin{bmatrix} \textbf{u}_1^T \\ \textbf{u}
 _2^T\end{bmatrix} \textbf{b} \\
 &=UU^T \textbf{b} \Rightarrow \text{linear transformation} 
-\end{align*}
+\end{align *}
 </script></p>
 <ul>
-<li><p>When <script type="math/tex; ">A=U=\begin{bmatrix} \textbf{u}_1 & \textbf{u}
-_2\end{bmatrix}</script> has orthonomal columns:
-<script type="math/tex; ">
+<li>When <script type="math/tex; ">A=U=\begin{bmatrix} \textbf{u}_1 & \textbf{u}
+_2\end{bmatrix}</script> has orthonomal columns:</li>
+</ul>
+<p><script type="math/tex; ">
 C=A^TA=\begin{bmatrix} \textbf{u}_1^T \\ \textbf{u}
 _2^T\end{bmatrix} \begin{bmatrix} \textbf{u}_1 & \textbf{u}
 _2\end{bmatrix}=I
 </script></p>
-</li>
-<li><p>Thus,</p>
-</li>
+<ul>
+<li>Thus,</li>
 </ul>
 <p><script type="math/tex; ">
-\begin{align*}
+\begin{align *}
 \hat{\textbf{b}} &= f(\textbf{b}) \\
 &=A\hat{\textbf{x}} \\
 &= A (A^TA)^{-1}A^T \textbf{b} \\
 &= A (I)^{-1}A^T \textbf{b} \\
 &= A A^T \textbf{b} \\
 &= U U^T \textbf{b} \\
-\end{align*}
+\end{align *}
 </script></p>
 
                                 
@@ -1042,7 +1046,7 @@ _2\end{bmatrix}=I
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"layout":"post","title":"06_summary","date":"2018-03-29T20:47:59.000Z","author":"dsaint31","categories":"Linear_Algebra","use_math":true,"tags":null,"level":"1.3.34","depth":2,"next":{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},"previous":{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_06_summary.md","mtime":"2019-12-03T04:34:17.377Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T04:47:14.691Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"layout":"post","title":"06_summary","date":"2018-03-29T20:47:59.000Z","author":"dsaint31","categories":"Linear_Algebra","use_math":true,"tags":null,"level":"1.3.34","depth":2,"next":{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},"previous":{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_06_summary.md","mtime":"2019-12-03T04:52:40.434Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-03T04:52:47.334Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

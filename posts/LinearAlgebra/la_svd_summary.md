@@ -30,7 +30,7 @@ $$
 A = U \Sigma V^T = \sum^n_{i=1} \sigma_i \textbf{u}_i\textbf{v}_i^T \text{,  where } \sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_n
 $$
 
-![02](./fig/la_svd_summary_02png)
+![02](./fig/la_svd_summary_02.png)
 
 ## Reduced Form of SVD
 
