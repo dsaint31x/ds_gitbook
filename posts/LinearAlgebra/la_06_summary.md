@@ -21,9 +21,7 @@ tags:
 
 ## What is Least Squares Problem
 
-Given an over-determined system $$A\textbf{x} \simeq \textbf{b}$$ where $$A \in \mathbb{R}^{m\times n}, \textbf{b} in \mathbb{R}^n$$, and $$m \gg n$$, a least square solution $$\hat{\textbf{x}}$$ is defined as
-
-$$
+Given an over-determined system $$A\textbf{x} \simeq \textbf{b}$$ where $$A \in \mathbb{R}^{m\times n}, \textbf{b} in \mathbb{R}^n$$, and $$m \gg n$$, a least square solution $$\hat{\textbf{x}}$$ is defined as $$
 \hat{\textbf{x}}= \text{arg } \underset{\textbf{x}} { \text{min }} \Vert \textbf{b}-A\textbf{x}
 \Vert 
 $$
@@ -39,15 +37,11 @@ $$
 
 ![Alt text](./fig/la_06_summary_01.png)
 
-* This means $$\textbf{b}-A\hat{\textbf{x}}$$ should be orthogonal to any vector in Col $$A$$:
-
-$$
+* This means $$\textbf{b}-A\hat{\textbf{x}}$$ should be orthogonal to any vector in Col $$A$$: $$
 \textbf{b}-A\hat{\textbf{x}} \perp (x_1 \textbf{a}_1 + x_2 \textbf{a}_2 + \cdots +x_n \textbf{a}_n  ) \text{ for any vector }\textbf{x}
 $$
 
-* Or equivalently,
-
-$$
+* Or equivalently, $$
 \begin{matrix}
 \begin{matrix}
 (\textbf{b}-A\hat{\textbf{x}}) \perp \textbf{a}_1 \\
@@ -69,41 +63,33 @@ A^TA\hat{\textbf{x}})=A^T\textbf{b}
 \end{matrix}
 $$
 
-* Finally, given a least squares problem, $$𝐴\textbf{𝐱} \simeq \textbf{b}$$, we obtain
-
-$$
+* Finally, given a least squares problem, $$𝐴\textbf{𝐱} \simeq \textbf{b}$$, we obtain $$
 A^TA\hat{\textbf{x}}=A^T\textbf{b}
 $$
   * which is called a normal equation.
 
 * This can be viewed as a new linear system, $$C\textbf{x}=\textbf{d}$$,
 where a square matrix $$C=A^TA \in \mathbb{R}^{n\times n}$$, and $$d=A^T\textbf{b} \in \mathbb{R}^n$$.
-* If $$C = A^TA$$ is invertible, then the solution is computed as
-
-$$
+* If $$C = A^TA$$ is invertible, then the solution is computed as $$
 \hat{\textbf{x}} = (A^TA)^{-1}A^T\textbf{b}
 $$
 
 ## Another Derivation of Normal Equation.
 
 $$
-\begin{align*}
+\begin{align}
 \hat{\textbf{x}} &= \text{arg } \underset{\text{x}}{\text{min}} \Vert \textbf{b}-A\textbf{x} \Vert\\
 &=\text{arg } \underset{\text{x}}{\text{min} } \Vert \textbf{b}-A\textbf{x} \Vert ^2\\
 &=\text{arg } \underset{\text{x}}{\text{min} } (\textbf{b}-A\textbf{x} )^T(\textbf{b}-A\textbf{x})\\
 &= \textbf{b}^T\textbf{b} - \textbf{x}^T A^T \textbf{b} - \textbf{b}^T A \textbf{x} + \textbf{x}^T A^T A \textbf{x}
-\end{align*}
+\end{align}
 $$
 
-* Computing derivatives with regard to $$\textbf{x}$$, we obtain
-
-$$
+* Computing derivatives with regard to $$\textbf{x}$$, we obtain $$
 - A^T \textbf{b} - A^T \textbf{b} + 2 A^T A \textbf{x} =\textbf{0} \Leftrightarrow A^T A \textbf{x} = A^T \textbf{b}
 $$
 
-* Thus, if $$C=A^TA$$ is invertible, then the solution is computed as
-
-$$
+* Thus, if $$C=A^TA$$ is invertible, then the solution is computed as $$
 \textbf{x} = (A^T A)^{-1} A^T \textbf{b}
 $$
 
@@ -123,16 +109,12 @@ $$
 
 ## Orthogonal Projection Perspective
 
-* In the case of invertible $$C=A^TA$$, consider the orthogonal projecton of $$\textbf{b}$$ onto Col $$A$$ as
-
-$$
+* In the case of invertible $$C=A^TA$$, consider the orthogonal projecton of $$\textbf{b}$$ onto Col $$A$$ as $$
 \hat{\textbf{b}}=f(\textbf{b})=A\hat{\textbf{x}}= A (A^TA)^{-1}A^T \textbf{b}
 $$
 
-* Suppose that Col $$A$$ is a  2-dimensional subspace , consider a transformation of orthogonal projection $$\hat{\textbf{b}}$$ of $$\textbf{b}$$, given **orthonomal** basis $$\left\{ \textbf{u}_1,\textbf{u}_2 \right\}$$ of Col $$A$$:
-
-$$
-\begin{align *}
+* Suppose that Col $$A$$ is a  2-dimensional subspace , consider a transformation of orthogonal projection $$\hat{\textbf{b}}$$ of $$\textbf{b}$$, given **orthonomal** basis $$\left\{ \textbf{u}_1,\textbf{u}_2 \right\}$$ of Col $$A$$: $$
+\begin{align}
 \hat{\textbf{b}} &= f(\textbf{b}) \\
 &=A\hat{\textbf{x}} \\
 &= A (A^TA)^{-1}A^T \textbf{b} \\
@@ -145,27 +127,23 @@ $$
 _2\end{bmatrix}\begin{bmatrix} \textbf{u}_1^T \\ \textbf{u}
 _2^T\end{bmatrix} \textbf{b} \\
 &=UU^T \textbf{b} \Rightarrow \text{linear transformation} 
-\end{align *}
+\end{align}
 $$
 
 * When $$A=U=\begin{bmatrix} \textbf{u}_1 & \textbf{u}
-_2\end{bmatrix}$$ has orthonomal columns:
-
-$$
+_2\end{bmatrix}$$ has orthonomal columns: $$
 C=A^TA=\begin{bmatrix} \textbf{u}_1^T \\ \textbf{u}
 _2^T\end{bmatrix} \begin{bmatrix} \textbf{u}_1 & \textbf{u}
 _2\end{bmatrix}=I
 $$
 
-* Thus,
-
-$$
-\begin{align *}
+* Thus, $$
+\begin{align}
 \hat{\textbf{b}} &= f(\textbf{b}) \\
 &=A\hat{\textbf{x}} \\
 &= A (A^TA)^{-1}A^T \textbf{b} \\
 &= A (I)^{-1}A^T \textbf{b} \\
 &= A A^T \textbf{b} \\
 &= U U^T \textbf{b} \\
-\end{align *}
+\end{align}
 $$
