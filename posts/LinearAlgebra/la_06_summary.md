@@ -36,7 +36,7 @@ $$
 * That is, $$\textbf{b}$$ is closer to $$\hat{\textbf{b}}$$ than  $$A\textbf{x}$$ for any other $$\textbf{x}$$.
 * To satisfy this, the vector $$\textbf{b}-A\hat{\textbf{x}}$$ should be orthogonal to Col $$A$$.
 
-![Alt text](./1572784230644.png)
+![Alt text](./fig/la_06_summary_01.png)
 
 * This means $$\textbf{b}-A\hat{\textbf{x}}$$ should be orthogonal to any vector in Col $$A$$:
 $$
