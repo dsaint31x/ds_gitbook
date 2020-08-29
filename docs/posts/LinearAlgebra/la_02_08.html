@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 Hello Linear Algebra · GitBook</title>
+        <title>02_08 Subspaces of R to the Power n · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_01.html" />
+    <link rel="next" href="la_02_09.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="la_02_07.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
             
                 <a href="01_hello_linear_algebra.html">
             
@@ -395,7 +395,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.18" data-path="la_02_08.html">
+        <li class="chapter active" data-level="1.3.18" data-path="la_02_08.html">
             
                 <a href="la_02_08.html">
             
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 Hello Linear Algebra</a>
+        <a href="../.." >02_08 Subspaces of R to the Power n</a>
     </h1>
 </div>
 
@@ -841,13 +841,137 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Hello!</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ds_gitbook -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+                                <h1 id="ch02-matrix-algebra">Ch02. Matrix Algebra</h1>
+<h1 id="28-subspaces-of-r-to-the-power-n">2.8 Subspaces of R to the Power n</h1>
+<hr>
+<h2 id="definition--subspace-of-rn">Definition : Subspace of <script type="math/tex; ">R^n</script></h2>
+<p>A <strong>subspace</strong> of <script type="math/tex; ">\mathbb{R}^n</script> is any set <script type="math/tex; ">H</script> in <script type="math/tex; ">\mathbb{R}^n</script> that has three properties:</p>
+<ol>
+<li>The zero vector is in <script type="math/tex; ">H</script>.</li>
+<li>For each <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script> in <script type="math/tex; ">H</script>, the sum <script type="math/tex; ">\textbf{u}+\textbf{v}</script> is in <script type="math/tex; ">H</script>. : <strong>Addition</strong></li>
+<li>For each <script type="math/tex; ">\textbf{u}</script> in <script type="math/tex; ">H</script> and each scalar <script type="math/tex; ">c</script>, the vector <script type="math/tex; ">c\textbf{u}</script> is in <script type="math/tex; ">H</script>. : <strong>Scalar Multiple</strong></li>
+</ol>
+<blockquote>
+<p>&#xAC04;&#xB2E8;&#xD788;&#xB294; vector space&#xC758; &#xBD80;&#xBD84;&#xC9D1;&#xD569;&#xC774;&#xB77C;&#xACE0; &#xBCFC; &#xC218; &#xC788;&#xC74C;.</p>
+</blockquote>
+<hr>
+<p>A plane through the origin is the standard way to visualization the subspace in <script type="math/tex; ">R^3</script>. See Fig. 1 below:</p>
+<p><img src="fig/la_02_08_01.png" alt="Fig1"></p>
+<h2 id="example-1-">Example 1 :</h2>
+<blockquote>
+<p>If <script type="math/tex; ">\textbf{v}_1</script> and <script type="math/tex; ">\textbf{v}_2</script> are in <script type="math/tex; ">\mathbb{R}^n</script> and <script type="math/tex; ">H=\text{Span}\left\{ \textbf{v}_1, \textbf{v}_2 \right\}</script>, then <script type="math/tex; ">H</script> is a subspace of <script type="math/tex; ">\mathbb{R}^n</script>. </p>
+</blockquote>
+<p>To verify this statement, note that the zero veocor is in <script type="math/tex; ">H</script> (becuase <script type="math/tex; ">0\textbf{v}_1 + 0\textbf{v}_2</script> is a linear combination of <script type="math/tex; ">\textbf{v}_1</script> and <script type="math/tex; ">\textbf{v}_2</script>).</p>
+<h3 id="solution">Solution.</h3>
+<ul>
+<li>Now take two arbitrary vectors in <script type="math/tex; ">H</script>, say,</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\textbf{u} = s_1 \textbf{v}_1 + s_2 \textbf{v}_2
 </script>
+and
+<script type="math/tex; mode=display">
+\textbf{v} = t_1 \textbf{v}_1 + t_2 \textbf{v}_2
+</script></p>
+<p>Then
+<script type="math/tex; mode=display">
+\textbf{u+v} = (s_1+t_1) \textbf{v}_1 + (s_2+t_2) \textbf{v}_2
+</script></p>
+<ul>
+<li>which shows that <script type="math/tex; ">\textbf{u+v}</script> is a linear combination of <script type="math/tex; ">\textbf{v}_1</script> and <script type="math/tex; ">\textbf{v}_2</script> and hence is in <script type="math/tex; ">H</script>. </li>
+<li>Also, for any scalar <script type="math/tex; ">c</script>, the vector <script type="math/tex; ">c\textbf{u}</script> is in <script type="math/tex; ">H</script>, because <script type="math/tex; ">c\textbf{u}= c\left( s_1\textbf{v}_1 + s_2 \textbf{v}_2 \right) = cs_1\textbf{v}_1 + cs_2 \textbf{v}_2</script>.</li>
+</ul>
+<h2 id="definition--column-space">Definition : Column Space</h2>
+<p>The <strong>column space</strong> of a matrix <script type="math/tex; ">A</script> is the
+set <script type="math/tex; ">\text{Col }A</script> of all linear combinations of the columns of <script type="math/tex; ">A</script>.</p>
+<ul>
+<li>If <script type="math/tex; ">A=\begin{bmatrix} \textbf{a}_1 \cdots \textbf{a}_n \end{bmatrix}</script> with the columns of <script type="math/tex; ">\mathbb{R}^m</script>, then <script type="math/tex; ">\text{Col }A</script> is the same as <script type="math/tex; ">\text{Span }\left\{\textbf{a}_1, \cdots, \textbf{a}_n \right\}</script>. Example 4 shows that the <strong>Column space of an <script type="math/tex; ">m \times n</script> matrix is a subspace of <script type="math/tex; ">\mathbb{R}^m</script></strong>.</li>
+</ul>
+<h2 id="example-4">Example 4:</h2>
+<p>Let <script type="math/tex; ">A=\begin{bmatrix}
+1 & -3 & -4 \\
+-4 & 6 & -2 \\
+-3 & 7 & 6 
+\end{bmatrix}</script> and <script type="math/tex; "> \textbf{b} = \begin{bmatrix}
+3 \\ 3 \\ -4 \end{bmatrix}</script>.</p>
+<p>Determine whether <script type="math/tex; ">\textbf{b}</script> is in the column space of <script type="math/tex; ">A</script></p>
+<h3 id="solution">Solution:</h3>
+<ul>
+<li>The vector <script type="math/tex; ">\textbf{b}</script> is a linear combination of the columns of <script type="math/tex; ">A</script> 
+if and only if <script type="math/tex; ">\textbf{b}</script> can be written as <script type="math/tex; ">A\textbf{x}</script> for some <script type="math/tex; ">\textbf{x}</script>, 
+that is, if and only if the equation <script type="math/tex; ">A\textbf{x}=\textbf{b}</script> has a solution.</li>
+<li>Row reducing the augmented matrix <script type="math/tex; ">\begin{bmatrix} A & \textbf{b} \end{bmatrix} </script>,
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+1 & -3 &-4 & 3 \\
+-4 & 6 & -2 & 3 \\
+-3 & 7 & 6 & -4 
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & -3 &-4 & 3 \\
+0 & -6 & -18 & 15 \\
+0 & -2 & -6  & 5 
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & -3 &-4 & 3 \\
+0 & -6 & -18 & 15 \\
+0 & 0 & 0  & 0 
+\end{bmatrix}
+</script></li>
+<li>We conclude that <script type="math/tex; ">A\textbf{x}=\textbf{b}</script> is consistent and <script type="math/tex; ">\textbf{b}</script> is in <script type="math/tex; ">\text{Col }A</script>.</li>
+</ul>
+<h2 id="definition--null-space">Definition : Null Space</h2>
+<p>The <strong>null space</strong> of a matrix <script type="math/tex; ">A</script> is 
+the set <script type="math/tex; ">\text{Nul }A</script> of 
+all solutions of the homogenous equation <script type="math/tex; ">A\textbf{x}=\textbf{0}</script>.</p>
+<h2 id="theorem-12">Theorem 12</h2>
+<p>The null space of an <script type="math/tex; ">m \times n</script> matrix <script type="math/tex; ">A</script> is a subspace of <script type="math/tex; ">\mathbb{R}^n</script>.
+Equivalently, the set of all solutions of a systme <script type="math/tex; ">A\textbf{x}=\textbf{0}</script> of <script type="math/tex; ">m</script>
+homogenous linear equations 
+in <script type="math/tex; ">n</script> unknowns is a subspace of <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<h3 id="proof">Proof:</h3>
+<ul>
+<li>The zero vector is in <script type="math/tex; ">\text{Nul }A</script> (becuase <script type="math/tex; ">A\textbf{0}=\textbf{0}</script>).</li>
+<li>To show that <script type="math/tex; ">\text{Nul }A</script> satisfies that other two properties
+required for a subspace, take any <script type="math/tex; ">\textbf{u}</script> and <script type="math/tex; ">\textbf{v}</script> in <script type="math/tex; ">\text{Nul }A</script>.</li>
+<li>That is, suppose <script type="math/tex; ">A\textbf{u}=\textbf{0}</script> and <script type="math/tex; ">A\textbf{v}=\textbf{0}</script>. Then, by a 
+property of matrix multiplication,
+<script type="math/tex; mode=display">
+A(\textbf{u}+\textbf{v}) = A\textbf{u} + A\textbf{v} = \textbf{0} + \textbf{0} = \textbf{0}
+</script></li>
+<li>Thus <script type="math/tex; ">\textbf{u}+\textbf{v}</script> satisfies <script type="math/tex; ">A\textbf{x}=\textbf{0}</script>
+and so <script type="math/tex; ">\textbf{u}+\textbf{v}</script> is in <script type="math/tex; ">\text{Nul }A</script>.
+Also, for any scalar <script type="math/tex; ">c</script>,<script type="math/tex; ">A(c\textbf{u})=cA(\textbf{u})=c(\textbf{0})=\textbf{0}</script>, 
+which shows that <script type="math/tex; ">c\textbf{u}</script> is in <script type="math/tex; ">\text{Nul }A</script>.</li>
+</ul>
+<h2 id="definition--basis">Definition : Basis</h2>
+<p>A <strong>basis</strong> for a subspace <script type="math/tex; ">H</script> of <script type="math/tex; ">\mathbb{R}^n</script> is a
+linearly independent set in <script type="math/tex; ">H</script> that spans <script type="math/tex; ">H</script>.</p>
+<h2 id="example-5">Example 5</h2>
+<p>The columns of an invertible <script type="math/tex; ">n \times n</script> matrix form a basis 
+for all of <script type="math/tex; ">\mathbb{R}^n</script>
+because they are linearly independent and span <script type="math/tex; ">\mathbb{R}^n</script>
+by the Invertible Matrix Theorem.</p>
+<p>One such matrix is the <script type="math/tex; ">n \times n</script> identity matrix. 
+Its columns are denoted by <script type="math/tex; ">\textbf{e}_1, \cdots, \textbf{e}_n</script>:</p>
+<p><script type="math/tex; mode=display">
+\textbf{e}_1 = \begin{bmatrix}
+1 \\ 0 \\ \vdots \\ 0 \end{bmatrix},
+\textbf{e}_2 = \begin{bmatrix}
+0 \\ 1 \\ \vdots \\ 0 \end{bmatrix},
+\cdots
+\textbf{e}_n = \begin{bmatrix}
+0 \\ 0 \\ \vdots \\ 1 \end{bmatrix}
+</script></p>
+<ul>
+<li>The set <script type="math/tex; ">\left\{\textbf{e}_1, \cdots, \textbf{e}_n\right\}</script> is called the <strong>standard basis</strong> for <script type="math/tex; ">\mathbb{R}^n</script>.
+See Fig. 3 below.</li>
+</ul>
+<p><img src="fig/la_02_08_03.png" alt="fig3"></p>
+<h2 id="theorem-13">Theorem 13:</h2>
+<p>The pivot columns of a matrix <script type="math/tex; ">A</script> form a basis for the column space of <script type="math/tex; ">A</script>.</p>
 
                                 
                                 </section>
@@ -875,12 +999,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Linear Algebra">
+                <a href="la_02_07.html" class="navigation navigation-prev " aria-label="Previous page: 02_07 Applications to Computer Graphics">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_01.html" class="navigation navigation-next " aria-label="Next page: 01 01 Systems of Linear Eq.">
+                <a href="la_02_09.html" class="navigation navigation-next " aria-label="Next page: 02_09 Dimension and Rank">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +1015,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"next":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"previous":{"title":"Linear Algebra","level":"1.3","depth":1,"path":"posts/LinearAlgebra/README.md","ref":"posts/LinearAlgebra/README.md","articles":[{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},{"title":"01 03 Vector Equations","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},{"title":"01 08 Introduction to Linear Transformations","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_04_01.md","ref":"posts/LinearAlgebra/la_04_01.md","articles":[]},{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"path":"posts/LinearAlgebra/la_05_04.md","ref":"posts/LinearAlgebra/la_05_04.md","articles":[]},{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},{"title":"05_06","level":"1.3.32","depth":2,"path":"posts/LinearAlgebra/la_05_06.md","ref":"posts/LinearAlgebra/la_05_06.md","articles":[]},{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},{"title":"06_summary","level":"1.3.34","depth":2,"path":"posts/LinearAlgebra/la_06_summary.md","ref":"posts/LinearAlgebra/la_06_summary.md","articles":[]},{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},{"title":"07_02","level":"1.3.36","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},{"title":"07_03","level":"1.3.37","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},{"title":"07_04_02","level":"1.3.39","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},{"title":"-Hermitian Matrix","level":"1.3.41","depth":2,"path":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","ref":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","articles":[]},{"title":"-PositiveDefinite","level":"1.3.42","depth":2,"path":"posts/LinearAlgebra/la_svd_positive_definite.md","ref":"posts/LinearAlgebra/la_svd_positive_definite.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","mtime":"2019-07-29T00:19:23.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"next":{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},"previous":{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_08.md","mtime":"2019-10-08T05:04:20.784Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

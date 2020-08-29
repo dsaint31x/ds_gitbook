@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 Hello Linear Algebra · GitBook</title>
+        <title>07_04_02 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_01.html" />
+    <link rel="next" href="la_svd_summary.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="la_07_04_01.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
             
                 <a href="01_hello_linear_algebra.html">
             
@@ -668,7 +668,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.39" data-path="la_07_04_02.html">
+        <li class="chapter active" data-level="1.3.39" data-path="la_07_04_02.html">
             
                 <a href="la_07_04_02.html">
             
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 Hello Linear Algebra</a>
+        <a href="../.." >07_04_02</a>
     </h1>
 </div>
 
@@ -841,13 +841,149 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Hello!</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ds_gitbook -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                                <h1 id="ch-07-symmetric-matrices-and-quadratic-forms">Ch 07 Symmetric Matrices and Quadratic Forms</h1>
+<h1 id="74-the-singular-value-decomposition-2">7.4 The Singular Value Decomposition (2)</h1>
+<h2 id="example-3">Example 3</h2>
+<p>Use the results of Examples 1 and 2 to construct a singular value decomposition of <script type="math/tex; ">A=
+\begin{bmatrix}
+4 & 11 & 14 \\
+8 & 7 & -2 \\
+\end{bmatrix}
+</script></p>
+<h3 id="solution-of-example-3">Solution of Example 3</h3>
+<p>A construction can be divided into three steps.</p>
+<p><strong>Step 1. Find an orthogonal diagonalization of <script type="math/tex; ">A^TA</script>.</strong></p>
+<p>   That is, find the eigenvalues of <script type="math/tex; ">A^TA</script> and a corresponding orthonormal set of eigenvectors. If <script type="math/tex; ">A</script> had only two columns, the calculations could be done by hand. Larger matrices usually require a matrix program. However, for the matrix <script type="math/tex; ">A</script> here, the eigendata for <script type="math/tex; ">A^TA</script> are provided in Example 2.</p>
+<p><strong>Step 2. Set up <script type="math/tex; ">V</script> and <script type="math/tex; ">\Sigma</script>.</strong></p>
+<p>Arrange the eigenvalues of <script type="math/tex; ">A^TA</script> in decreasing order. 
+In Example 1, the eigenvalues are already listed in decreasing order: 360, 90, and 0. 
+The corresponding unit eigenvectors, <script type="math/tex; ">\textbf{v}_1, \textbf{v}_2, \text{ and}, \textbf{v}_3</script>, are the right singular vectors of <script type="math/tex; ">A</script>. 
+Using Example 1, construct</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+V &= \begin{bmatrix}
+\textbf{v}_1 & \textbf{v}_2 & \textbf{v}_3 
+\end{bmatrix} \\
+&=\begin{bmatrix}
+1/3 & -2/3 & 2/3 \\
+2/3 & -1/3 & -2/3 \\
+2/3 & 2/3 & 1/3 
+\end{bmatrix}
+\end{align*}
+</script></p>
+<p>The square roots of the eigenvalues are the singular values:</p>
+<p><script type="math/tex; mode=display">
+\sigma_1 = 6 \sqrt{10}, \\
+\sigma_2 = 3 \sqrt{10}, \\
+\sigma_3 = 0
+</script></p>
+<p>The nonzero singular values are the diagonal entries of <script type="math/tex; ">D</script>. </p>
+<p>The matrix <script type="math/tex; ">\Sigma</script> is the same size as <script type="math/tex; ">A</script>, 
+with <script type="math/tex; ">D</script> in its upper left corner and with 0&#x2019;s elsewhere.</p>
+<p><script type="math/tex; mode=display">
+\begin{align*}
+D &= \begin{bmatrix}
+6\sqrt{10} & 0 \\
+0 & 3\sqrt{10} \\
+\end{bmatrix}, \\
+\Sigma &= \begin{bmatrix}
+D & \textbf{0}
+\end{bmatrix} \\
+&= \begin{bmatrix}
+6\sqrt{10} & 0 & 0 \\ 
+0 & 3\sqrt{10} & 0
+\end{bmatrix} \\
+\end{align*}
+</script></p>
+<p><strong>Step 3. Construct <script type="math/tex; ">U</script>.</strong> </p>
+<p>When <script type="math/tex; ">A</script> has rank <script type="math/tex; ">r</script>, the first <script type="math/tex; ">r</script> columns of <script type="math/tex; ">U</script> are the normalized vectors obtained from <script type="math/tex; ">A\textbf{v}_1 \cdots A\textbf{v}_r</script>.
+In this example, 
+<script type="math/tex; ">A</script> has two nonzero singular values, so <script type="math/tex; ">\text{rank }A=2</script>.
+Recall from equation (2) and the paragraph before Example 2 that <script type="math/tex; ">||A\textbf{v}_1||=\sigma_1</script> and <script type="math/tex; ">||A\textbf{v}_2||=\sigma_2</script>.
+Thus,</p>
+<p><script type="math/tex; mode=display">
+\textbf{u}_1=\frac{1}{\sigma_1}A\textbf{v}_1=\frac{1}{6\sqrt{10}}
+\begin{bmatrix}
+18\\
+6
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{3}{\sqrt{10}}\\
+\frac{1}{\sqrt{10}}
+\end{bmatrix} \\
+\textbf{u}_2=\frac{1}{\sigma_2}A\textbf{v}_2=\frac{1}{3\sqrt{10}}
+\begin{bmatrix}
+3\\
+-9
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{\sqrt{10}}\\
+\frac{-3}{\sqrt{10}}
+\end{bmatrix}
+</script></p>
+<p>Note that 
+<script type="math/tex; ">\left\{\textbf{u}_1,\textbf{u}_2\right\}</script> is already a basis for <script type="math/tex; ">\mathbb{R}^2</script>.
+Thus no additional vectors are needed for <script type="math/tex; ">U</script>, and 
+<script type="math/tex; ">U = \begin{bmatrix}\textbf{u}_1 & \textbf{u}_2\end{bmatrix}</script>.</p>
+<p>The singular value decomposition of <script type="math/tex; ">A</script> is</p>
+<p><script type="math/tex; mode=display">
+A = 
+\begin{bmatrix}
+\frac{3}{\sqrt{10}} & \frac{1}{\sqrt{10}} \\
+\frac{1}{\sqrt{10}} & \frac{-3}{\sqrt{10}} \\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{6}{\sqrt{10}} & 0 & 0 \\
+0 & \frac{3}{\sqrt{10}} & 0\\
+\end{bmatrix}
+\begin{bmatrix}
+\frac{1}{3} & \frac{2}{3} & \frac{2}{3} \\
+\frac{-2}{3} & \frac{-1}{3} & \frac{2}{3}\\
+\frac{2}{3} & \frac{-2}{3} & \frac{1}{3}
+\end{bmatrix}
+</script></p>
+<h2 id="theorem-the-invertible-matrix-theorem-concluded">Theorem: The Invertible Matrix Theorem (concluded)</h2>
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">m \times n</script> matrix. Then the following statements are each equivalent to the statement that <script type="math/tex; ">A</script> is an invertible matrix.</p>
+<p>u. <script type="math/tex; ">\left(\text{Col }A\right)^{\perp} = \left\{\textbf{0}\right\}</script></p>
+<p>v. <script type="math/tex; ">\left(\text{Nul }A\right)^{\perp} = \mathbb{R}^n</script></p>
+<p>w. <script type="math/tex; ">\text{Row }A = \mathbb{R}^n</script></p>
+<p>x. <script type="math/tex; ">A</script> has <script type="math/tex; ">n</script> nonzero singular values.</p>
+<h2 id="example-7">Example 7</h2>
+<p><strong>Reduced SVD</strong> and the <strong>Pseudoinverse of <script type="math/tex; ">A</script></strong>) </p>
+<p>When <script type="math/tex; ">\Sigma</script> contains rows or columns of zeros, 
+a more compact decomposition of <script type="math/tex; ">A</script> is possible. 
+Using the notation established above, 
+let <script type="math/tex; ">r = \text{rank }A</script>, and 
+partition <script type="math/tex; ">U</script> and <script type="math/tex; ">V</script> into submatrices
+whose first blocks contain <script type="math/tex; ">r</script> columns:</p>
+<p><script type="math/tex; mode=display">
+U = \begin{bmatrix} U_r & U_{m-r} \end{bmatrix}\quad ,\text{where } 
+U_r=\begin{bmatrix} \textbf{u}_1 & \cdots & \textbf{u}_r \end{bmatrix} \\
+V = \begin{bmatrix} V_r & V_{n-r} \end{bmatrix}\quad ,\text{where } 
+V_r=\begin{bmatrix} \textbf{v}_1 & \cdots & \textbf{v}_r \end{bmatrix} \\
+</script></p>
+<p>Then <script type="math/tex; ">U_r</script> is <script type="math/tex; ">m \times r</script> and <script type="math/tex; ">V_r</script> is <script type="math/tex; ">n\times r</script>.
+Then partitioned matrix multiplication shows that</p>
+<p><script type="math/tex; mode=display">
+A = \begin{bmatrix} U_r & U_{m-r} \end{bmatrix}
+\begin{bmatrix} 
+D & \mathbb{0} \\
+\mathbb{0} & \mathbb{0}
+\end{bmatrix}
+\begin{bmatrix} V_r^T \\ V_{m-r}^T \end{bmatrix}
+=
+U_r D V_r^T
+</script></p>
+<p>This factorization of <script type="math/tex; ">A</script> is called a <strong>reduced singular value decomposition</strong> of <script type="math/tex; ">A</script>. 
+Since the diagonal entries in <script type="math/tex; ">D</script> are nonzero, 
+<script type="math/tex; ">D</script> is invertible. </p>
+<p>The following matrix is called the <strong>pseudoinverse</strong> 
+(also, the <strong>Moore-Penrose inverse</strong>) of <script type="math/tex; ">A</script>:</p>
+<p><script type="math/tex; mode=display">
+A^+ = V_r D^{-1} U_r^T \tag{10}
+</script></p>
 
                                 
                                 </section>
@@ -875,12 +1011,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Linear Algebra">
+                <a href="la_07_04_01.html" class="navigation navigation-prev " aria-label="Previous page: 07_04_01">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_01.html" class="navigation navigation-next " aria-label="Next page: 01 01 Systems of Linear Eq.">
+                <a href="la_svd_summary.html" class="navigation navigation-next " aria-label="Next page: SVD">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +1027,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"next":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"previous":{"title":"Linear Algebra","level":"1.3","depth":1,"path":"posts/LinearAlgebra/README.md","ref":"posts/LinearAlgebra/README.md","articles":[{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},{"title":"01 03 Vector Equations","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},{"title":"01 08 Introduction to Linear Transformations","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_04_01.md","ref":"posts/LinearAlgebra/la_04_01.md","articles":[]},{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"path":"posts/LinearAlgebra/la_05_04.md","ref":"posts/LinearAlgebra/la_05_04.md","articles":[]},{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},{"title":"05_06","level":"1.3.32","depth":2,"path":"posts/LinearAlgebra/la_05_06.md","ref":"posts/LinearAlgebra/la_05_06.md","articles":[]},{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},{"title":"06_summary","level":"1.3.34","depth":2,"path":"posts/LinearAlgebra/la_06_summary.md","ref":"posts/LinearAlgebra/la_06_summary.md","articles":[]},{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},{"title":"07_02","level":"1.3.36","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},{"title":"07_03","level":"1.3.37","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},{"title":"07_04_02","level":"1.3.39","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},{"title":"-Hermitian Matrix","level":"1.3.41","depth":2,"path":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","ref":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","articles":[]},{"title":"-PositiveDefinite","level":"1.3.42","depth":2,"path":"posts/LinearAlgebra/la_svd_positive_definite.md","ref":"posts/LinearAlgebra/la_svd_positive_definite.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","mtime":"2019-07-29T00:19:23.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"07_04_02","level":"1.3.39","depth":2,"next":{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},"previous":{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_07_04_02.md","mtime":"2019-08-20T12:51:05.503Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

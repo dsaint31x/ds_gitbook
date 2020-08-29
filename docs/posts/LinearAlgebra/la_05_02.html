@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 Hello Linear Algebra · GitBook</title>
+        <title>05_02 The Characteristic Equation · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_01.html" />
+    <link rel="next" href="la_05_03.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="la_05_01.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
             
                 <a href="01_hello_linear_algebra.html">
             
@@ -525,7 +525,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.28" data-path="la_05_02.html">
+        <li class="chapter active" data-level="1.3.28" data-path="la_05_02.html">
             
                 <a href="la_05_02.html">
             
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 Hello Linear Algebra</a>
+        <a href="../.." >05_02 The Characteristic Equation</a>
     </h1>
 </div>
 
@@ -841,13 +841,159 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Hello!</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ds_gitbook -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+                                <h1 id="ch05-eigenvectors-and-eigenvalues">Ch05. Eigenvectors and Eigenvalues</h1>
+<h1 id="52-the-characteristic-equation">5.2 The Characteristic Equation</h1>
+<blockquote>
+<p>Useful information about <strong>the eigenvalues</strong> of a square matrix <script type="math/tex; ">A</script> is <strong>encoded</strong> in <strong>a special scalar equation</strong> called <strong>the characteristic equation of <script type="math/tex; ">A</script></strong>.</p>
+</blockquote>
+<h2 id="determinants">Determinants</h2>
+<ul>
+<li>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">n \times n</script> matrix, let <script type="math/tex; ">U</script> be any echelon form obtained from <script type="math/tex; ">A</script> by row replacements and row interchanges (without scaling), and let <script type="math/tex; ">r</script> be the number of such row interchanges.</li>
+<li>Then the determinant of <script type="math/tex; ">A</script>, written as <script type="math/tex; ">\text{det }A</script>, is <strong><script type="math/tex; ">(-1)^{r}</script> times the products of diagonal entries <script type="math/tex; ">u_{11},\cdots,u_{nn}</script></strong> in <script type="math/tex; ">U</script>.</li>
+<li>If <script type="math/tex; ">A</script> is <strong>invertible</strong>, then <strong><script type="math/tex; ">u_{11},\cdots,u_{nn}</script> are all pivots</strong> (because <script type="math/tex; ">A \sim I_n</script> and the <script type="math/tex; ">u_{ii}</script> have not been scaled to 1&#x2019;s).</li>
+<li>Otherwise, at least <script type="math/tex; ">u_{nn}</script> is zero, and the product <script type="math/tex; ">u_{11}\cdots u_{nn}</script> is zero.</li>
+<li>Thus</li>
+</ul>
+<p><img src="fig/la_05_02_e01.png" alt="determinant"></p>
+<h2 id="example-2">Example 2</h2>
+<p>Compute <script type="math/tex; ">\text{det }A</script> for <script type="math/tex; mode=display">
+A=
+\begin{bmatrix}
+1 & 5 &  0 \\ 
+2 & 4 & -1 \\ 
+0 & -2 & 0 
+\end{bmatrix}
+</script>.</p>
+<h3 id="solution">Solution:</h3>
+<p>The following row reduction uses one row interchange:</p>
+<p><script type="math/tex; mode=display">
+A \sim 
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -6 & -1 \\ 0 & -2 &  0 \end{bmatrix} \sim 
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -2 &  0 \\ 0 & -6 & -1 \end{bmatrix} \sim
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -2 & -1 \\ 0 &  0 & -1 \end{bmatrix} 
+= U_1
+</script></p>
+<ul>
+<li>So <script type="math/tex; ">\text{det }A</script> equals <script type="math/tex; "> (-1)^1(1)(-2)(-1)=-2</script>.</li>
+</ul>
+<p>The following alternative row reduction avoids the row interchange and produces a different echelon form.</p>
+<ul>
+<li>The last step adds <script type="math/tex; ">\frac{-1}{3}</script> times row 2 to row 3: <script type="math/tex; mode=display">
+A \sim \begin{bmatrix} 1 & 5 & 0 \\ 0 & -6 & -1 \\ 0 & -2 & 0 \end{bmatrix} \sim 
+\begin{bmatrix} 1 & 5 & 0 \\ 0 & -6 & -1 \\ 0 & 0 & \frac{1}{3} \end{bmatrix} = U_2
+</script></li>
+<li>This time <script type="math/tex; ">\text{det }A</script> equals <script type="math/tex; "> (-1)^0(1)(-6)\left(\frac{1}{3}\right)=-2</script>, the same as before. <script type="math/tex; ">\blacksquare</script></li>
+</ul>
+<h2 id="theorem-the-invertible-matrix-theorem-continued">Theorem: The Invertible Matrix Theorem. (continued)</h2>
+<p>Let <script type="math/tex; ">A</script> be an <script type="math/tex; ">n \times n</script> matrix. Then <script type="math/tex; ">A</script> is <strong>invertible</strong> if and only if:</p>
+<p> 19.The number <strong>0 is not an eigenvalue</strong> of <script type="math/tex; ">A</script>.</p>
+<p> 20.The <strong>determinant of <script type="math/tex; ">A</script> is not zero</strong>.</p>
+<h2 id="theorem-3-properties-of-determinants">Theorem 3: Properties of Determinants</h2>
+<p>Let <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> be an <script type="math/tex; ">n \times n</script> matrices.</p>
+<ol>
+<li><script type="math/tex; ">A</script> is invertible if and only if <script type="math/tex; ">\text{det }A \ne 0</script>.</li>
+<li><script type="math/tex; ">\text{det }AB = (\text{det }A)(\text{det }B)</script>.</li>
+<li><script type="math/tex; ">\text{det }A^T = \text{det }A</script>.</li>
+<li>If <script type="math/tex; ">A</script> is triangular, then <script type="math/tex; ">\text{det }A</script> is the product of the entries on the main diagonal of <script type="math/tex; ">A</script>.</li>
+<li>Row operations and Determinants<ul>
+<li>A <em>row replacement</em> operation on <script type="math/tex; ">A</script> does not change the determinant. </li>
+<li>A <em>row interchange</em> changes the sign of the determinant. </li>
+<li>A <em>row scaling</em> also scales the determinant by the same scalar factor. </li>
+</ul>
+</li>
+</ol>
+<h2 id="the-characteristic-equation">The Characteristic Equation</h2>
+<ul>
+<li><strong>Theorem 3(1)</strong> shows how to determine when a matrix of the form <script type="math/tex; ">A-\lambda I</script> is not invetible.<blockquote>
+<p><script type="math/tex; ">\text{det }(A-\lambda I) \ne 0</script> &#xB85C; invertible&#xC5EC;&#xBD80; &#xD310;&#xBCC4;. </p>
+</blockquote>
+</li>
+<li>The scalar equation <script type="math/tex; ">\text{det } (A-\lambda I)=0</script> is called <strong>the characteristic equation of <script type="math/tex; ">A</script></strong>.</li>
+<li>A scalar <script type="math/tex; ">\lambda</script> is an eigenvalue of an matrix <script type="math/tex; ">A</script> if and only if <script type="math/tex; ">\lambda</script> satisfies the characteristic equation <script type="math/tex; mode=display">
+\text{det } (A-\lambda I)=0
+</script></li>
+</ul>
+<h2 id="example-3">Example 3</h2>
+<p>Find the characteristic equation of <script type="math/tex; mode=display">
+A = \begin{bmatrix} 
+5 & -2 &  6 & -1 \\
+0 &  3 & -8 &  0 \\
+0 &  0 &  5 &  4 \\
+0 &  0 &  0 &  1 
+\end{bmatrix}
+</script>.</p>
+<h3 id="solution-">Solution :</h3>
+<p>Form <script type="math/tex; ">A-\lambda I</script>, and use Theorem 3(4):</p>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\text{det }(A-\lambda I) &= \text{det }
+\begin{bmatrix}
+5-\lambda & -2 & 6 & -1 \\
+0 & 3-\lambda & -8 & 0 \\
+0 & 0 & 5-\lambda & 4 \\
+0 & 0 & 0 & 1-\lambda 
+\end{bmatrix} \\
+&= (5-\lambda)(3-\lambda)(5-\lambda)(1-\lambda)
+\end{align}
+</script></p>
+<ul>
+<li>The characteristic equation is <script type="math/tex; mode=display">
+(5-\lambda)^2(3-\lambda)(1-\lambda) = 0
 </script>
+or
+<script type="math/tex; mode=display">
+(\lambda-5)^2(\lambda-3)(\lambda-1) = 0
+</script></li>
+<li>Expanding the product, we can also write <script type="math/tex; mode=display">
+\lambda^4 -14 \lambda^3 + 68 \lambda^2 - 130 \lambda +75 = 0
+</script></li>
+</ul>
+<ul>
+<li>If <script type="math/tex; ">A</script> is an <script type="math/tex; ">n \times n </script> matrix, then <script type="math/tex; ">\text{det }(A-\lambda I)</script> is a polynomial of degree <script type="math/tex; ">n</script> called <strong>the characteristic polynomial of <script type="math/tex; ">A</script></strong>.</li>
+<li>The eigenvalue 5 in Example 3 is said to have multiplicity 2 because <script type="math/tex; ">(\lambda-5)</script> occurs two times as a factor of the characteristic polynomial.</li>
+<li>In general, the <strong>(algebraic) multiplicity</strong> of an eigenvalue <script type="math/tex; ">\lambda</script> is its multiplicity as a root of the characteristic equation.</li>
+</ul>
+<h2 id="similarity">Similarity</h2>
+<ul>
+<li>If <script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are <script type="math/tex; ">n \times n</script> matrices, then <strong><script type="math/tex; ">A</script> is similar to <script type="math/tex; ">B</script></strong> if there is an invertible matrix <script type="math/tex; ">P</script> such that <script type="math/tex; ">P^{-1}AP=B</script>, or, equivalently, <script type="math/tex; ">A=PBP^{-1}</script>.</li>
+<li>Writing <script type="math/tex; ">Q</script> for <script type="math/tex; ">P^{-1}</script>, we have <script type="math/tex; ">Q^{-1}BQ=A</script>.</li>
+<li>So <script type="math/tex; ">B</script> is also similar to <script type="math/tex; ">A</script>, and we say simply that <strong><script type="math/tex; ">A</script>
+and <script type="math/tex; ">B</script> are similar</strong>.</li>
+<li>Changing <script type="math/tex; ">A</script> into <script type="math/tex; ">P^{-1}AP</script> is called a <strong>similarity transformation</strong>.</li>
+</ul>
+<h2 id="theorem-4">Theorem 4:</h2>
+<p>If <script type="math/tex; ">n \times n</script> matrices <strong><script type="math/tex; ">A</script> and <script type="math/tex; ">B</script> are similar</strong>, then they have <strong>the same characteristic polynomial</strong> and hence <strong>the same eigenvalues (with the same multiplicities)</strong>.</p>
+<h3 id="proof">Proof:</h3>
+<p>If <script type="math/tex; ">B=P^{-1}AP</script> then,
+<script type="math/tex; mode=display">
+B-\lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP-\lambda P)= P^{-1}(A-\lambda I )P
+</script></p>
+<ul>
+<li>Using the multiplicative property (2) in Theorem (3), we compute
+<script type="math/tex; mode=display">
+\begin{align}
+\text{det}(B-\lambda I) &= \text{det}\left[ P^{-1}(A-\lambda I)P\right] \\
+&= \text{det}(P^{-1})\text{det}(A-\lambda I)\text{det}(P) \tag{2}
+\end{align}
+</script></li>
+<li>Since <script type="math/tex; ">\text{det}(P^{-1})\text{det}(P) = \text{det}(P^{-1}P)= \text{det }I = 1</script>, we see from equation (2) that <script type="math/tex; ">\text{det}(B-\lambda I) = \text{det}(A-\lambda I)</script>.</li>
+</ul>
+<h2 id="warnings">Warnings</h2>
+<ul>
+<li>The matrices 
+<script type="math/tex; mode=display">
+\begin{bmatrix} 
+2 & 1 \\ 
+0 & 2 
+\end{bmatrix} \text{ and }
+\begin{bmatrix} 
+2 & 0 \\ 
+0 & 2 
+\end{bmatrix} 
+</script> 
+are <strong>not similar even though they have the same eigenvalues</strong>.</li>
+<li><strong>Similarity</strong> is not the same as <strong>row equivalence</strong> (If <script type="math/tex; ">A</script> is row equivalent to <script type="math/tex; ">B</script>, then <script type="math/tex; ">B=EA</script> for some invertible matrix <script type="math/tex; ">E</script>). Row operations on a matrix usually change its eigenvalues.</li>
+</ul>
 
                                 
                                 </section>
@@ -875,12 +1021,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Linear Algebra">
+                <a href="la_05_01.html" class="navigation navigation-prev " aria-label="Previous page: 05_01 Eigenvectors and Eigenvalues">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_01.html" class="navigation navigation-next " aria-label="Next page: 01 01 Systems of Linear Eq.">
+                <a href="la_05_03.html" class="navigation navigation-next " aria-label="Next page: 05_03 Diagonalization">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +1037,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"next":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"previous":{"title":"Linear Algebra","level":"1.3","depth":1,"path":"posts/LinearAlgebra/README.md","ref":"posts/LinearAlgebra/README.md","articles":[{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},{"title":"01 03 Vector Equations","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},{"title":"01 08 Introduction to Linear Transformations","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_04_01.md","ref":"posts/LinearAlgebra/la_04_01.md","articles":[]},{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"path":"posts/LinearAlgebra/la_05_04.md","ref":"posts/LinearAlgebra/la_05_04.md","articles":[]},{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},{"title":"05_06","level":"1.3.32","depth":2,"path":"posts/LinearAlgebra/la_05_06.md","ref":"posts/LinearAlgebra/la_05_06.md","articles":[]},{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},{"title":"06_summary","level":"1.3.34","depth":2,"path":"posts/LinearAlgebra/la_06_summary.md","ref":"posts/LinearAlgebra/la_06_summary.md","articles":[]},{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},{"title":"07_02","level":"1.3.36","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},{"title":"07_03","level":"1.3.37","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},{"title":"07_04_02","level":"1.3.39","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},{"title":"-Hermitian Matrix","level":"1.3.41","depth":2,"path":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","ref":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","articles":[]},{"title":"-PositiveDefinite","level":"1.3.42","depth":2,"path":"posts/LinearAlgebra/la_svd_positive_definite.md","ref":"posts/LinearAlgebra/la_svd_positive_definite.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","mtime":"2019-07-29T00:19:23.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"next":{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},"previous":{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_05_02.md","mtime":"2019-07-29T00:19:23.238Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

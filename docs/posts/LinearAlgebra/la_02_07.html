@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 Hello Linear Algebra · GitBook</title>
+        <title>02_07 Applications to Computer Graphics · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_01.html" />
+    <link rel="next" href="la_02_08.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="la_02_06.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
             
                 <a href="01_hello_linear_algebra.html">
             
@@ -382,7 +382,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.17" data-path="la_02_07.html">
+        <li class="chapter active" data-level="1.3.17" data-path="la_02_07.html">
             
                 <a href="la_02_07.html">
             
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 Hello Linear Algebra</a>
+        <a href="../.." >02_07 Applications to Computer Graphics</a>
     </h1>
 </div>
 
@@ -841,13 +841,244 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Hello!</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ds_gitbook -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                                <h1 id="27-applications-to-computer-graphics">2.7 Applications to Computer Graphics</h1>
+<ul>
+<li>Computer graphics are images displayed or animated on a computer screen. </li>
+<li>Applications of computer graphics are widespread and growing rapidly. </li>
+<li>For instance, <strong>computer aided design (CAD)</strong> is an integral part of many engineering processes.</li>
+</ul>
+<p>Most interactive computer software for business and industry makes use of computer graphics 
+in the screen displays and for other functions, such as </p>
+<ul>
+<li>graphical display of data, </li>
+<li>desktop publishing, and </li>
+<li>slide production for commercial and educational presentations. </li>
+</ul>
+<p>Consequently, anyone studying a computer language invariably spends time
+learning how to use at least two-dimensional (2D) graphics.</p>
+<p>This section examines some of the basic mathematics 
+used to manipulate and display graphical images.</p>
+<ul>
+<li>Often, curved lines are approximated by short straight-line segments, and </li>
+<li>a figure is defined mathematically by <strong>a list of points</strong>.</li>
+</ul>
+<h2 id="example-1">EXAMPLE 1</h2>
+<p>The capital letter <strong>N</strong> in Figure 1 is determined by eight points, or
+vertices. The coordinates of the points can be stored in a data matrix, <script type="math/tex; ">D</script>.</p>
+<p><img src="fig/la_02_07_01.png" alt="fig1">
+<img src="fig/la_02_07_01_a.png" alt="fig1a"></p>
+<p>In addition to <script type="math/tex; ">D</script>, 
+it is necessary to specify which vertices are connected by lines, but we omit this detail.</p>
+<hr>
+<p>The main reason graphical objects are described by 
+collections of straight-line segments is that 
+the standard transformations in computer graphics 
+<strong>map line segments onto other line segments</strong>.</p>
+<p>Once the vertices that describe an object have been transformed, their images can be connected with the
+appropriate straight lines to produce the complete image of the original object.</p>
+<h2 id="example-2">EXAMPLE 2</h2>
+<p>Given <script type="math/tex; ">A=\begin{bmatrix} 1 & .25 \\ 0 & 1 \end{bmatrix}</script>, 
+describe the effect of the shear transformation 
+<script type="math/tex; ">\textbf{x} \mapsto A\textbf{x}</script> on the letter <script type="math/tex; ">N</script> in Example 1.</p>
+<h3 id="solution">Solution</h3>
+<p>By definition of matrix multiplication, the columns of the product AD
+contain the images of the vertices of the letter N.</p>
+<p><script type="math/tex; ">
+\displaystyle AD = \left[\begin{matrix}0 & 0.5 & 2.105 & 6 & 8.0 & 7.5 & 5.895 & 2.0\\0 & 0 & 6.42 & 0 & 8 & 8 & 1.58 & 8\end{matrix}\right]
+</script></p>
+<p>The transformed vertices are plotted in Figure 2, along with connecting line segments
+that correspond to those in the original figure.</p>
+<p><img src="fig/la_02_07_02.png" alt="fig2"></p>
+<hr>
+<p>The mathematics of computer graphics is intimately connected with matrix multiplication. 
+Unfortunately, <strong>translating an object</strong> on a screen does not correspond directly
+to <strong>matrix multiplication</strong> 
+because <em>translation is not a linear transformation</em>. 
+The standard way to avoid this difficulty is to introduce what are called <strong>homogeneous coordinates</strong>.</p>
+<h2 id="homogeneous-coordinates">Homogeneous Coordinates</h2>
+<p>Each point <script type="math/tex; ">(x,y)</script> in <script type="math/tex; ">\mathbb{R}^2</script> 
+can be identified with the point <script type="math/tex; ">(x,y,1)</script> on the plane in <script type="math/tex; ">\mathbb{R}^3</script>
+that lies one unit above the <script type="math/tex; ">xy</script>-plane. </p>
+<p>We say that <script type="math/tex; ">(x,y)</script> has <strong><em>homogeneous coordinates</em></strong> <script type="math/tex; ">(x, y, 1)</script>. </p>
+<ul>
+<li>For instance, the point (0, 0) has homogeneous coordinates (0, 0, 1). </li>
+</ul>
+<p><strong> Homogeneous coordinates for points</strong> are not added or multiplied by scalars, 
+but they can be transformed via multiplication by <script type="math/tex; ">3 \times  3</script> matrices.</p>
+<h3 id="translation">Translation</h3>
+<p>In homogeneous coordiantes, the translation can be computed via matrix multiplication:</p>
+<p><script type="math/tex; ">
+\left[\begin{matrix}1 & 0 & h\\0 & 1 & k\\0 & 0 & 1\end{matrix}\right]
+\begin{bmatrix}x \\y \\ 1\end{bmatrix} = 
+\begin{bmatrix}x+h \\y+k \\ 1\end{bmatrix} 
+</script></p>
+<h2 id="example-5">Example 5</h2>
+<p>Any linear transformation on <script type="math/tex; ">\mathbb{R}^2</script> is represented with respect to 
+homogeneous coordinates by a partitioned matrix of the form <script type="math/tex; ">\begin{bmatrix}A & 0 \\ 0 & 1\end{bmatrix}</script>,
+where <script type="math/tex; ">A</script> is a <script type="math/tex; ">2\times 2</script> matrix.
+Typical examples are</p>
+<p><img src="fig/la_02_07_ex5.png" alt="fig"></p>
+<h2 id="composite-transformations">Composite Transformations</h2>
+<ul>
+<li>The movement of a figure on a computer screen often requires 
+two or more basic transformations. </li>
+<li>The <strong>composition</strong> of such transformations corresponds to 
+<strong>matrix multiplication</strong> when <strong>homogeneous coordinates are used</strong>.</li>
+</ul>
+<h2 id="example-6">EXAMPLE 6</h2>
+<p>Find the <script type="math/tex; ">3 \times 3</script> matrix that corresponds to the composite 
+transformation of a scaling by .3, a rotation of <script type="math/tex; ">90^\circ</script>
+about the origin, and finally a translation that
+adds (5, 2) to each point of a figure.</p>
+<h3 id="solution">Solution</h3>
+<p>If <script type="math/tex; ">\phi = \pi/2</script>, then <script type="math/tex; ">\sin{\phi}=1</script> and <script type="math/tex; ">\cos{\phi}=0</script>. From Examples 4 and 5, we
+have</p>
+<p><img src="fig/la_02_07_ex6.png" alt="fig"></p>
+<p>The matrix for the composite transformation is</p>
+<p><script type="math/tex; ">
+\begin{align}
+\begin{bmatrix}
+1 & 0 & -.5 \\
+0 & 1 & 2 \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+0 & -1 & 0\\
+1 & 0 & \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+.3 & 0 & 0 \\
+0 & .3 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+&=
+\begin{bmatrix}
+0 & -1 & -.5 \\
+1 & 0 & 2 \\
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+.3 & 0 & 0 \\
+0 & .3 & 0 \\
+0 & 0 & 1
+\end{bmatrix} \\
+&=
+\begin{bmatrix}
+0 & -.3 & -.5\\
+.3 & 0 & 2\\
+0 & 0 & 1\\
+\end{bmatrix}
+\end{align}
+</script></p>
+<h2 id="homogeneous-3d-coordinates">Homogeneous 3D Coordinates</h2>
+<p>By analogy with the 2D case, we say that <script type="math/tex; ">(x, y, z, 1)</script> are homogeneous coordinates for
+the point <script type="math/tex; ">(x, y, z)</script> in <script type="math/tex; ">\mathbb{R}^3</script>.
+In general, <script type="math/tex; ">(X, Y, Z, H)</script> are homogeneous coordinates for <script type="math/tex; ">(x, y, z)</script>
+if <script type="math/tex; ">H \ne 0</script> and</p>
+<p><script type="math/tex; ">
+\begin {align}
+x &= \frac{X}{H}\\
+y &= \frac{Y}{H}\\
+z &= \frac{Z}{H}
+\end {align}
+</script></p>
+<ul>
+<li>Each nonzero scalar multiple of <script type="math/tex; ">(x, y, z, 1)</script> gives a set of homogeneous coordinates
+for <script type="math/tex; ">(x, y, z)</script> </li>
+<li>For instance, both (10,-6,14, 2) and (-15, 9,-21,-3) are homogeneous
+coordinates for (5,-3,7).</li>
+</ul>
+<h2 id="example-7-">EXAMPLE 7 :</h2>
+<p>Give <script type="math/tex; ">4\times 4</script> matrices for the following transformations:</p>
+<ul>
+<li>a. Rotation about the y-axis through an angle of <script type="math/tex; ">30^\circ</script>. 
+   (By convention, a positive angle is the counterclockwise direction 
+   when looking toward the origin from 
+   the positive half of the axis of rotation&#x2014;in this case, the y-axis.)</li>
+<li>b. Translation by the vector <script type="math/tex; ">\textbf{p}=(-6,4,5)</script>.</li>
+</ul>
+<h3 id="solution">Solution</h3>
+<p><img src="fig/la_02_07_05.png" alt="fig05"></p>
+<h4 id="a">a.</h4>
+<p>First, construct the <script type="math/tex; ">3 \times 3</script> matrix for the rotation. </p>
+<ul>
+<li>The vector <script type="math/tex; ">\textbf{e}_1</script> rotates down toward the negative <script type="math/tex; ">z</script>-axis, stopping at <script type="math/tex; ">(\cos{30^\circ},0,-\sin{30^\circ}) = (\sqrt{3}/2,0,-.5)</script>.</li>
+<li>The vector <script type="math/tex; ">\textbf{e}_2</script> on the <script type="math/tex; ">y</script>-axis does not move, but </li>
+<li><script type="math/tex; ">\textbf{e}_3</script> on the <script type="math/tex; ">z</script>-axis rotates down toward the positive <script type="math/tex; ">x</script>-axis, stopping at <script type="math/tex; ">(\sin{30^\circ},0,\cos{30^\circ}) = (.5,0,\sqrt{3}/2)</script>.</li>
+<li>See Figure 5. From Section 1.9, the stardard matrix for this rotation is </li>
+</ul>
+<p><script type="math/tex; ">
+\begin{bmatrix}
+\sqrt{3}/2 & 0 & .5 \\
+0 & 1 & 0 \\
+-.5 & 0 & \sqrt{3}/2 
+\end{bmatrix}
+</script></p>
+<p>So the rotation matrix for homogeneous coordinates is</p>
+<p><script type="math/tex; ">
+A=\begin{bmatrix}
+\sqrt{3}/2 & 0 & .5 &0\\
+0 & 1 & 0 &0\\
+-.5 & 0 & \sqrt{3}/2 &0 \\
+0 & 0 & 0 & 1 
+\end{bmatrix}
+</script></p>
+<h4 id="b">b.</h4>
+<p>We want <script type="math/tex; ">(x, y, z, 1)</script> to map to <script type="math/tex; ">(x-6, y+4, z+5, 1)</script>. The matrix that does this is</p>
+<p><script type="math/tex; ">
+\begin{bmatrix}
+1 & 0 & 0 &-6 \\
+0 & 1 & 0 & 4 \\
+0 & 0 & 1 & 5 \\
+0 & 0 & 0 & 1 
+\end{bmatrix}
+</script></p>
+<h2 id="perspective-projections">Perspective Projections</h2>
+<p>A three-dimensional object is represented on the two-dimensional computer screen by projecting the object onto a viewing plane. 
+(We ignore other important steps, such as selecting the portion of the viewing plane to display on the screen.) </p>
+<p>For simplicity, let </p>
+<ul>
+<li>the <script type="math/tex; ">xy</script>-plane represent the computer screen, and imagine that </li>
+<li>the eye of a viewer is along the positive <script type="math/tex; ">z</script>-axis, at a point <script type="math/tex; ">(0,0,d)</script>. </li>
+</ul>
+<p>A <em>perspective projection</em> maps each point <script type="math/tex; ">(x, y, z)</script> onto an image point <script type="math/tex; ">(x^*,y^*,0)</script> 
+so that the two points and <strong>the eye position,
+called the <em>center of projection</em></strong>, are on a line. See Figure 6(a).</p>
+<p><img src="fig/la_02_07_06.png" alt="fig6"></p>
+<p>The triangle in the <script type="math/tex; ">xz</script>-plane in Figure 6(a) is redrawn in part (b) showing the lengths
+of line segments. Similar triangles show that</p>
+<p><script type="math/tex; ">
+\begin{align}
+\frac{x^*}{d}&=\frac{x}{d-z} \\
+x^* &= \frac{dx}{d-z}=\frac{x}{1-z/d}
+\end{align}
+</script></p>
+<p>Similarly,</p>
+<p><script type="math/tex; ">
+y^*=\frac{y}{1-z/d}
+</script></p>
+<p>Using homogeneous coordinates, we can represent the perspective projection by a matrix, say, <script type="math/tex; ">P</script>. 
+We want <script type="math/tex; ">(x,y,z,1)</script> to map into <script type="math/tex; ">\left( \frac{x}{1-z/d},\frac{y}{1-z/d},0,1\right)</script>. 
+Scaling these coordinates by <script type="math/tex; ">1-z/d</script>, we can also use <script type="math/tex; ">(x,y,0,1-z/d)</script> as homogeneous coordinates for the images.
+Now it is easy to display <script type="math/tex; ">P</script>. In fact,</p>
+<p><script type="math/tex; ">
+P
+\begin{bmatrix}
+x \\y \\ z \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 & 0 &0 &0 \\0&1&0&0 \\ 0&0&0&0 \\ 0&0&-1/d&1
+\end{bmatrix}
+\begin{bmatrix}
+x \\y \\ z \\ 1
+\end{bmatrix}
+=
+\begin{bmatrix}
+x \\y \\ 0 \\ 1-z/d
+\end{bmatrix}
+</script></p>
 
                                 
                                 </section>
@@ -875,12 +1106,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Linear Algebra">
+                <a href="la_02_06.html" class="navigation navigation-prev " aria-label="Previous page: 02_06 The Leontief Input-Output Model">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_01.html" class="navigation navigation-next " aria-label="Next page: 01 01 Systems of Linear Eq.">
+                <a href="la_02_08.html" class="navigation navigation-next " aria-label="Next page: 02_08 Subspaces of R to the Power n">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +1122,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"next":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"previous":{"title":"Linear Algebra","level":"1.3","depth":1,"path":"posts/LinearAlgebra/README.md","ref":"posts/LinearAlgebra/README.md","articles":[{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},{"title":"01 03 Vector Equations","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},{"title":"01 08 Introduction to Linear Transformations","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_04_01.md","ref":"posts/LinearAlgebra/la_04_01.md","articles":[]},{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"path":"posts/LinearAlgebra/la_05_04.md","ref":"posts/LinearAlgebra/la_05_04.md","articles":[]},{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},{"title":"05_06","level":"1.3.32","depth":2,"path":"posts/LinearAlgebra/la_05_06.md","ref":"posts/LinearAlgebra/la_05_06.md","articles":[]},{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},{"title":"06_summary","level":"1.3.34","depth":2,"path":"posts/LinearAlgebra/la_06_summary.md","ref":"posts/LinearAlgebra/la_06_summary.md","articles":[]},{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},{"title":"07_02","level":"1.3.36","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},{"title":"07_03","level":"1.3.37","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},{"title":"07_04_02","level":"1.3.39","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},{"title":"-Hermitian Matrix","level":"1.3.41","depth":2,"path":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","ref":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","articles":[]},{"title":"-PositiveDefinite","level":"1.3.42","depth":2,"path":"posts/LinearAlgebra/la_svd_positive_definite.md","ref":"posts/LinearAlgebra/la_svd_positive_definite.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","mtime":"2019-07-29T00:19:23.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"next":{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},"previous":{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_02_07.md","mtime":"2019-10-28T02:27:38.950Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 Hello Linear Algebra · GitBook</title>
+        <title>01_02 Difference Equation · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_01.html" />
+    <link rel="next" href="la_02_01.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="la_01_09.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
             
                 <a href="01_hello_linear_algebra.html">
             
@@ -291,7 +291,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
+        <li class="chapter active" data-level="1.3.10" data-path="la_01_10_02_Difference_Equation.html">
             
                 <a href="la_01_10_02_Difference_Equation.html">
             
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 Hello Linear Algebra</a>
+        <a href="../.." >01_02 Difference Equation</a>
     </h1>
 </div>
 
@@ -841,13 +841,75 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Hello!</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ds_gitbook -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                                <h1 id="ch0110-linear-models-in-business-science-and-engineering">Ch01.10 Linear Models in Business, Science, and Engineering</h1>
+<h2 id="011002--difference-equation">01.10.02 : Difference Equation</h2>
+<ul>
+<li>In many fields, a dynamic system that changes over a time should be mathematically modeled. </li>
+<li>Several features of the system are each measured at discrete time intervals, producing a sequence of vectors, <script type="math/tex; "> \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots, </script>. </li>
+<li>The entries in <script type="math/tex; ">\textbf{x}_k</script> provide information about the state of system at the time of the <script type="math/tex; ">k</script>th measurement.</li>
+<li>If there is a matrix <script type="math/tex; ">A</script> such that <script type="math/tex; ">\textbf{x}_1=A\textbf{x}_0, \textbf{x}_2=A\textbf{x}_1</script>, and , in general 
+<script type="math/tex; mode=display">
+\textbf{x}_{k+1}=A\textbf{x}_k \text{  for }k=0,1,2,\cdots
+</script></li>
+<li>then it is called a linear difference equation (or recurrence relation)</li>
+<li>Given such an equation, one can compute <script type="math/tex; ">\textbf{x}_1,\textbf{x}_2</script>, and so on, provided <script type="math/tex; ">\textbf{x}_0</script> is known.</li>
+<li>The dicussion below illustrates how a difference equation might arise.</li>
+<li>A subject of interest to demographers is the movement of populations or groups of people from one region to another. The simple model here considers the changes in the population of a certain city and its surrounding suburbs over a period of years.</li>
+<li>Fix an initial year-say,2019- and denote the populations of the city and suburbs that year by <script type="math/tex; ">r_0</script> and <script type="math/tex; ">s_0</script>, repectively. Let <script type="math/tex; ">\textbf{x}_0</script> be the population vector
+<script type="math/tex; mode=display">
+\textbf{x}_0 = \begin{bmatrix}r_0 \\ s_0 \end{bmatrix}
+\begin{matrix} \text{City population, 2019} \\ \text{Suburban population, 2019} \end{matrix}
+</script></li>
+<li>For 2020 and subsequent years, denote the populations of the city and suburbs by vectors
+<script type="math/tex; mode=display">
+\textbf{x}_1 = \begin{bmatrix}r_1 \\ s_1 \end{bmatrix},
+\textbf{x}_2 = \begin{bmatrix}r_2 \\ s_2 \end{bmatrix},
+\textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
+</script></li>
+<li>Our goal is to describe mathematically how these vectors might be related.</li>
+<li>Suppose demographic studies show that each year about 5% of the city&apos;s population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
+<img src="fig/la_01_10_02.png" alt="figure2"></li>
+<li>After 1 year, the original <script type="math/tex; ">r_0</script> persons in the city are now distributed between city and suburbs as
+<script type="math/tex; mode=display">
+\begin{bmatrix}.95 r_0 \\.05 r_0\end{bmatrix} = r_0 
+\begin{bmatrix}.95 \\ .05 \end{bmatrix}
+\begin{matrix} \text{Remain in city} \\ \text{Move to suburbs} \end{matrix} \tag{6}
+</script></li>
+<li>The so persons in the suburbs in 2019 are distributed 1 year later as
+<script type="math/tex; mode=display">
+s_0\begin{bmatrix}.03 \\.97 \end{bmatrix} 
+\begin{matrix} \text{Move to city} \\ \text{Remain in suburbs} \end{matrix}
+\tag{7}
+</script></li>
+<li>The vectors in (6) and (7) account for all of the populations in 2020. Thus
+<script type="math/tex; mode=display">
+\begin{bmatrix} r_1 \\ s_1 \end{bmatrix}
+=r_0\begin{bmatrix} .95 \\ .05 \end{bmatrix}
++s_0\begin{bmatrix} .03 \\ .97 \end{bmatrix}
+=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+\begin{bmatrix} r_0 \\ s_0 \end{bmatrix}
+</script></li>
+<li>That is, 
+<script type="math/tex; mode=display">
+\textbf{x}_1 = M \textbf{x}_0 \tag{8}
+</script></li>
+<li>Where <script type="math/tex; ">M</script> is the migration matrix determined by the following table:
+<script type="math/tex; mode=display">
+M=\begin{bmatrix} .95 &.03 \\ .05 & .97 \end{bmatrix}
+</script></li>
+<li>Equation (8) describes how the population changes
+from 2019 to 2020. If the migration percentages
+remain constant, then the change from 2020 to 2021
+is given by
+<script type="math/tex; mode=display">
+\textbf{x}_2 = M \textbf{x}_1 
+</script></li>
+<li>And similarly for 2021 to 2022 and subsequent years. In general,
+<script type="math/tex; mode=display">
+\textbf{x}_{k+1} = M\textbf{x}_k \text{ for }k=0,1,2,\cdots \tag{9}
+</script></li>
+<li>The sequence of vectors <script type="math/tex; ">\left\{ \textbf{x}_0, \textbf{x}_1, \textbf{x}_2, \cdots \right\}</script> describes the population of the city/suburban region over a period of years.</li>
+</ul>
 
                                 
                                 </section>
@@ -875,12 +937,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Linear Algebra">
+                <a href="la_01_09.html" class="navigation navigation-prev " aria-label="Previous page: 01 09 The Matrix of a Linear Transformation">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_01.html" class="navigation navigation-next " aria-label="Next page: 01 01 Systems of Linear Eq.">
+                <a href="la_02_01.html" class="navigation navigation-next " aria-label="Next page: 02_01_Matrix_Algebra">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +953,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"next":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"previous":{"title":"Linear Algebra","level":"1.3","depth":1,"path":"posts/LinearAlgebra/README.md","ref":"posts/LinearAlgebra/README.md","articles":[{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},{"title":"01 03 Vector Equations","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},{"title":"01 08 Introduction to Linear Transformations","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_04_01.md","ref":"posts/LinearAlgebra/la_04_01.md","articles":[]},{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"path":"posts/LinearAlgebra/la_05_04.md","ref":"posts/LinearAlgebra/la_05_04.md","articles":[]},{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},{"title":"05_06","level":"1.3.32","depth":2,"path":"posts/LinearAlgebra/la_05_06.md","ref":"posts/LinearAlgebra/la_05_06.md","articles":[]},{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},{"title":"06_summary","level":"1.3.34","depth":2,"path":"posts/LinearAlgebra/la_06_summary.md","ref":"posts/LinearAlgebra/la_06_summary.md","articles":[]},{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},{"title":"07_02","level":"1.3.36","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},{"title":"07_03","level":"1.3.37","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},{"title":"07_04_02","level":"1.3.39","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},{"title":"-Hermitian Matrix","level":"1.3.41","depth":2,"path":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","ref":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","articles":[]},{"title":"-PositiveDefinite","level":"1.3.42","depth":2,"path":"posts/LinearAlgebra/la_svd_positive_definite.md","ref":"posts/LinearAlgebra/la_svd_positive_definite.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","mtime":"2019-07-29T00:19:23.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"next":{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},"previous":{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","mtime":"2019-08-20T12:30:49.291Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

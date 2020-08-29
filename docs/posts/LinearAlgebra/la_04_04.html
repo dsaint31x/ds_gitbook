@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 Hello Linear Algebra · GitBook</title>
+        <title>04_04 Coordinate Systems · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_01.html" />
+    <link rel="next" href="la_04_05.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="la_04_03.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
             
                 <a href="01_hello_linear_algebra.html">
             
@@ -460,7 +460,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.23" data-path="la_04_04.html">
+        <li class="chapter active" data-level="1.3.23" data-path="la_04_04.html">
             
                 <a href="la_04_04.html">
             
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 Hello Linear Algebra</a>
+        <a href="../.." >04_04 Coordinate Systems</a>
     </h1>
 </div>
 
@@ -841,13 +841,287 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Hello!</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ds_gitbook -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                                <h1 id="vector-spaces">Vector Spaces</h1>
+<h1 id="44-coordinae-systems">4.4 Coordinae Systems</h1>
+<h2 id="theorem-7-the-unique-reresentation-theorem">Theorem 7: The Unique Reresentation Theorem</h2>
+<p>Let <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script>
+be a basis for
+vector space <script type="math/tex; ">V</script>. Then for each <script type="math/tex; ">\textbf{x}</script> in <script type="math/tex; ">V</script>, there exists
+<strong>a unique set</strong> of scalars <script type="math/tex; ">c_1, \cdots, c_n</script>
+such that</p>
+<p><script type="math/tex; mode=display">
+\textbf{x} = c_1 \textbf{b}_1 + \cdots + c_n\textbf{b}_n \tag{1}
+</script></p>
+<h3 id="proof">Proof:</h3>
+<ul>
+<li>Since <script type="math/tex; ">B</script> spans <script type="math/tex; ">V</script>, there exist scalars such that (1) holds.</li>
+<li>Suppose <script type="math/tex; ">\textbf{x}</script> also has the representation</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\textbf{x} = d_1 \textbf{b}_1 + \cdots + d_n\textbf{b}_n 
+</script></p>
+<p>for scalars <script type="math/tex; ">d_1, \cdots, d_n</script>.</p>
+<ul>
+<li>Then, subtracting, we have</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\textbf{0} = \textbf{x}- \textbf{x} = (c_1-d_1)\textbf{b}_1 + \cdots +(c_n-d_n)\textbf{b}_n \tag{2}
+</script></p>
+<ul>
+<li>Since <script type="math/tex; ">B</script> is linearly independent, the weights in (2)
+must all be zero. That is, <script type="math/tex; ">c_j = d_j</script> for <script type="math/tex; ">1\le j\le n</script>.</li>
+</ul>
+<h2 id="definition">Definition:</h2>
+<ul>
+<li>Suppose <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script>
+is a basis for <script type="math/tex; ">V</script> and <script type="math/tex; ">\textbf{x}</script> is in <script type="math/tex; ">V</script>. </li>
+<li><strong>The coordinates of <script type="math/tex; ">\textbf{x}</script> relative to the basis <script type="math/tex; ">B</script></strong> 
+(or the <strong><script type="math/tex; ">B</script>-coordinate of <script type="math/tex; ">\textbf{x}</script></strong> ) are the weights 
+<script type="math/tex; ">c_1, \cdots, c_n</script> such that <script type="math/tex; ">\textbf{x} = c_1\textbf{b}_1 + \cdots + c_n \textbf{b}_n</script>.</li>
+<li>If <script type="math/tex; ">c_1, \cdots,c_n</script> are the <script type="math/tex; ">B</script><strong>-coordinates of</strong> <script type="math/tex; ">\textbf{x}</script>, 
+then the vector in <script type="math/tex; ">\mathbb{R}^n</script></li>
+</ul>
+<p><script type="math/tex; mode=display">
+[\textbf{x}]_B = \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} 
+</script></p>
+<p>  is the <strong>coordinate vector of <script type="math/tex; ">\textbf{x}</script> (relative to <script type="math/tex; ">B</script>)</strong>, or
+  the **<script type="math/tex; ">B</script>-coordinate vector of <script type="math/tex; ">\textbf{x}</script>.</p>
+<ul>
+<li><p>The mapping <script type="math/tex; ">\textbf{x} \mapsto [\textbf{x}]_B</script>
+is the coordinate mapping (determined by <script type="math/tex; ">B</script>).</p>
+</li>
+<li><p>When a basis <script type="math/tex; ">B</script> for <script type="math/tex; ">\mathbb{R}^n</script> is fixed, 
+the <script type="math/tex; ">B</script>-coordinate vector of a specified <script type="math/tex; ">\textbf{x}</script> 
+is easily found, as in the example below.</p>
+</li>
+</ul>
+<h2 id="example-1">Example 1:</h2>
+<p>Let <script type="math/tex; ">\textbf{b}_1 = \begin {bmatrix} 1 \\ 0 \end{bmatrix}, 
+\textbf{b}_2 = \begin{bmatrix} 1 \\ 2 \end{bmatrix},
+\textbf{x} = \begin{bmatrix} 1 \\ 6 \end{bmatrix}</script>, and <script type="math/tex; ">B=\left\{ \textbf{b}_1, \textbf{b}_2 \right\}</script>.
+Find the coordinate vector <script type="math/tex; ">[\textbf{x}]_B</script> 
+of <script type="math/tex; ">\textbf{x}</script>
+relative to <script type="math/tex; ">B</script>.</p>
+<h3 id="solution">Solution:</h3>
+<ul>
+<li>The <script type="math/tex; ">B</script>-coordinate <script type="math/tex; ">c_1, c_2</script> of <script type="math/tex; ">\textbf{x}</script> satisfy</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin {align}
+c_1 \begin{bmatrix}  1 \\ 0 \end{bmatrix} + 
+c_2 \begin{bmatrix} 1 \\ 2 \end{bmatrix} &= 
+\begin{bmatrix} 1 \\ 6 \end{bmatrix} \\
+c_1 \textbf{b}_1 + c_2 \textbf{b}_2 &= \textbf{x}
+\end {align}
+</script></p>
+<pre><code>or
+</code></pre><p><script type="math/tex; mode=display">
+\begin {align}
+\begin{bmatrix} 1 & 1 \\ 0 & 2 \end{bmatrix}
+\begin{bmatrix} c_1    \\ c_2   \end{bmatrix} &=
+\begin{bmatrix}      1 \\ 6     \end{bmatrix} \\ 
+\begin{bmatrix}\textbf{b}_1 & \textbf{b}_2 \end{bmatrix} [\textbf{x}]_B &= \textbf{x}
+\end {align}  \tag{3}
+</script></p>
+<ul>
+<li><p>This equation can be solved by row operations on an
+augmented matrix or by using the inverse of the matrix
+on the left.</p>
+</li>
+<li><p>In any case, the solution is <script type="math/tex; ">c_1=-2, c_2=3</script>.</p>
+</li>
+<li><p>Thus <script type="math/tex; ">\textbf{x}=-2\textbf{b}_1+3\textbf{b}_2</script> and </p>
+</li>
+</ul>
+<p><script type="math/tex; mode=display">
+[\textbf{x}]_B = \begin{bmatrix} c_1 \\ c_2 \end{bmatrix} = \begin{bmatrix} -2 \\ 3 \end{bmatrix} </script></p>
+<ul>
+<li>See the follwing figure.</li>
+</ul>
+<p><img src="fig/la_04_04_ex1.png" alt="fig"></p>
+<ul>
+<li><p>The matrix in (3) changes the <script type="math/tex; ">B</script>-coordinates of a
+vector <script type="math/tex; ">\textbf{x}</script> into the standard coordinates for <script type="math/tex; ">\textbf{x}</script>.</p>
+</li>
+<li><p>An analogous change of coordinates can be carried
+out in <script type="math/tex; ">\mathbb{R}^n</script>
+for a basis <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script></p>
+</li>
+<li><p>Let <script type="math/tex; ">P_B = \begin{bmatrix} \textbf{b}_1 & \textbf{b}_2 & \cdots & \textbf{b}_n \end{bmatrix}</script></p>
+</li>
+</ul>
+<ul>
+<li>Then the vector equation</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\textbf{x} = c_1 \textbf{b}_1 + c_2 \textbf{b}_2 + \cdots + c_n \textbf{b}_n
+</script></p>
+<p>  is equivalent to</p>
+<p><script type="math/tex; mode=display">
+\textbf{x} = P_B [\textbf{x}]_B \tag{4}
+</script></p>
+<ul>
+<li><p><script type="math/tex; ">P_B</script> is called the <strong>change-of-coordinates matrix</strong> 
+from <script type="math/tex; ">B</script> to the standard basis in <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+</li>
+<li><p>Left-multiplication by <script type="math/tex; ">P_B</script> 
+transforms the coordinate
+vector <script type="math/tex; ">[\textbf{x}]_B</script><br>into <script type="math/tex; ">\textbf{x}</script>.</p>
+</li>
+<li><p>Since the columns of <script type="math/tex; ">P_B</script> form a basis for <script type="math/tex; ">\mathbb{R}^n</script>, <script type="math/tex; ">P_B</script> 
+is invertible (by the Invertible Matrix Theorem).</p>
+</li>
+<li><p>Left-multiplication by <script type="math/tex; ">P_B^{-1}</script>
+converts <script type="math/tex; ">\textbf{x}</script> into its <script type="math/tex; ">B</script>-coordinate vector:</p>
+</li>
+</ul>
+<p><script type="math/tex; mode=display">
+P_B^{-1} \textbf{x} = [\textbf{x}]_B
+</script></p>
+<ul>
+<li><p>The correspondence <script type="math/tex; ">\textbf{x} \mapsto [\textbf{x}]_B</script>
+produced by <script type="math/tex; ">P_B^{-1}</script>,
+is the coordinate mapping.</p>
+</li>
+<li><p>Since <script type="math/tex; ">P_B^{-1}</script>, is an invertible matrix, the coordinate
+mapping is a one-to-one linear transformation from <script type="math/tex; ">\mathbb{R}^n</script> 
+onto <script type="math/tex; ">\mathbb{R}^n</script>,
+by the Invertible Matrix Theorem.</p>
+</li>
+</ul>
+<h2 id="theorem-8-">Theorem 8 :</h2>
+<p>Let <script type="math/tex; ">B=\left\{ \textbf{b}_1, \cdots, \textbf{b}_n \right\}</script> be a basis for a vector space <script type="math/tex; ">V</script>. 
+Then the coordinate mapping <script type="math/tex; ">\textbf{x} \mapsto [\textbf{x}]_B</script>, 
+is a <strong>one-to-one</strong> linear transformation from <script type="math/tex; ">V</script> <strong>onto</strong> <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<h3 id="proof-">Proof :</h3>
+<ul>
+<li>Take two typical vectors in <script type="math/tex; ">V</script>,
+say,</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\textbf{u} = c_1 \textbf{b}_1 + \cdots + c_n \textbf{b}_n \\
+\textbf{w} = d_1 \textbf{b}_1 + \cdots + d_n \textbf{b}_n 
+</script></p>
+<ul>
+<li>Then, using vector operations,</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\textbf{u}+\textbf{w} = (c_1+d_1) \textbf{b}_1 + \cdots + (c_n+d_n) \textbf{b}_n 
+</script></p>
+<ul>
+<li>It follows that</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{align}
+[ \textbf{u} + \textbf{w} ]_B &=\begin{bmatrix} c_1+d_1 \\ \vdots \\ c_n+d_n \end{bmatrix} \\
+&=\begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} +
+\begin{bmatrix} d_1 \\ \vdots \\ d_n \end{bmatrix} \\
+&= [\textbf{u}]_B + [\textbf{w}]_B
+\end{align}
+</script></p>
+<ul>
+<li><p>So <strong>the coordinate mapping preserves <em>addition</em></strong>.</p>
+</li>
+<li><p>If <script type="math/tex; ">r</script> is any scalar, then</p>
+</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{align}
+r\textbf{u} &= r (c_1 \textbf{b}_1 + \cdots + c_n \textbf{b}_n) \\
+&= (rc_1)\textbf{b}_1 + \cdots + (rc_n) \textbf{b}_n
+\end{align}
+</script></p>
+<ul>
+<li>So</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{align}
+[r\textbf{u}]_B &= \begin{bmatrix} rc_1 \\ \vdots \\ rc_n \end{bmatrix} \\
+&= r \begin{bmatrix} c_1 \\ \vdots \\ c_n \end{bmatrix} \\
+&= r [\textbf{u}]_B
+\end{align}
+</script></p>
+<ul>
+<li>Thus <strong>the coordinate mapping also preserves <em>scalar multiplication</em></strong> and </li>
+<li><p>hence is a <strong>linear transformation</strong>.</p>
+</li>
+<li><p><strong>one-to-one</strong> and <strong>onto</strong> &#xC99D;&#xBA85;&#xC740; &#xC219;&#xC81C;. <script type="math/tex; ">\blacksquare</script></p>
+</li>
+</ul>
+<p>The linearity of the coordinate mapping can extend to <strong>linear combinations</strong>.</p>
+<p>If <script type="math/tex; ">\textbf{u}_1, \cdots, \textbf{u}_p</script> 
+are in <script type="math/tex; ">V</script> and if <script type="math/tex; ">c_1, \cdots, c_p</script> 
+are scalars, then</p>
+<p><script type="math/tex; mode=display">
+[c_1 \textbf{u}_1 + \cdots + c_p \textbf{u}_p ] = c_1[\textbf{u}_1]_B +\cdots+ c_p[\textbf{u}_p]_B \tag{5}
+</script></p>
+<ul>
+<li>In words, (5) says that the <script type="math/tex; ">B</script>-coordinate vector of a
+linear combination of <script type="math/tex; ">\textbf{u}_1, \cdots, \textbf{u}_p</script> 
+is <strong>the same linear combination of their <em>coordinate vectors</em></strong>.</li>
+</ul>
+<h2 id="isomorphism-&#xB3D9;&#xD615;&#xC0AC;&#xC0C1;">Isomorphism (&#xB3D9;&#xD615;&#xC0AC;&#xC0C1;)</h2>
+<p>The <em>coordinate mapping in Theorem 8</em> is an important example of 
+an <strong>isomorphism</strong> from <script type="math/tex; ">V</script> onto <script type="math/tex; ">\mathbb{R}^n</script>.</p>
+<ul>
+<li>In general, 
+a one-to-one linear transformation 
+from a vector space <script type="math/tex; ">V</script> onto a vector space <script type="math/tex; ">W</script> 
+is called an
+<strong>isomorphism from <script type="math/tex; ">V</script> onto <script type="math/tex; ">W</script>.</strong></li>
+<li>The notation and terminology for <script type="math/tex; ">V</script> and <script type="math/tex; ">W</script> may differ,
+but the two spaces are indistinguishable as vector spaces.</li>
+<li>Every vector space calculation in <script type="math/tex; ">V</script> 
+is accurately reproduced in <script type="math/tex; ">W</script>, and vice versa.</li>
+<li>In particular, any real vector space with a basis of <script type="math/tex; ">n</script>
+vectors is indistinguishable from <script type="math/tex; ">\mathbb{R}^n</script>.</li>
+</ul>
+<h2 id="example-5">Example 5:</h2>
+<h2 id="example-7">Example 7:</h2>
+<p>Let <script type="math/tex; ">\textbf{v}_1=\begin{bmatrix} 3 \\ 6 \\ 2 \end{bmatrix},
+\textbf{v}_2=\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix},
+\textbf{x}=\begin{bmatrix} 3 \\ 12 \\ 7 \end{bmatrix}
+</script>, and <script type="math/tex; ">B=\left\{ \textbf{v}_1, \textbf{v}_2 \right\}</script>.</p>
+<p>Then <script type="math/tex; ">B</script> is a basis for <script type="math/tex; ">H= \text{Span }\left\{ \textbf{v}_1, \textbf{v}_2 \right\}</script>.</p>
+<p>Determine if <script type="math/tex; ">\bf{x}</script> is in <script type="math/tex; ">H</script>, and if it is, find the coordinate
+vector of <script type="math/tex; ">\bf{x}</script> relative to <script type="math/tex; ">B</script>.</p>
+<h2 id="solution-">Solution :</h2>
+<ul>
+<li>If <script type="math/tex; ">\textbf{x}</script> is in <script type="math/tex; ">H</script>, then the following vector equation is consistent:</li>
+</ul>
+<p><script type="math/tex; mode=display">
+c_1\begin{bmatrix} 3  \\ 6 \\ 2 \end{bmatrix} +
+c_2\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} =
+\begin{bmatrix} 3 \\ 12 \\ 7 \end{bmatrix}
+</script></p>
+<ul>
+<li><p>The scalars <script type="math/tex; ">c_1</script> and <script type="math/tex; ">c_2</script>, 
+if they exist, are the <script type="math/tex; ">B</script>-
+coordinates of <script type="math/tex; ">\textbf{x}</script>.</p>
+</li>
+<li><p>Using row operations, we obtain</p>
+</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{bmatrix}
+3 & -1 & 3 \\
+6 & 0 & 12 \\
+2 & -1 & 7 
+\end{bmatrix}
+\sim
+\begin{bmatrix}
+1 & 0 & 2 \\
+0 & 1 & 3 \\
+0 & 0 & 0 
+\end{bmatrix}
+</script></p>
+<ul>
+<li><p>Thus <script type="math/tex; ">c_1=2, c_2=3</script> and <script type="math/tex; ">[\textbf{x}]_B = \begin{bmatrix} 2 \\ 3 \end{bmatrix}</script>.</p>
+</li>
+<li><p>The coordinate system on <script type="math/tex; ">H</script> determined by <script type="math/tex; ">B</script> is shown in the following figure.</p>
+</li>
+</ul>
+<p><img src="fig/la_04_04_07.png" alt="fig"></p>
 
                                 
                                 </section>
@@ -875,12 +1149,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Linear Algebra">
+                <a href="la_04_03.html" class="navigation navigation-prev " aria-label="Previous page: 04_03 Linearly Independent Sets; Bases">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_01.html" class="navigation navigation-next " aria-label="Next page: 01 01 Systems of Linear Eq.">
+                <a href="la_04_05.html" class="navigation navigation-next " aria-label="Next page: 04_05 The Dimension of a Vector Space">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +1165,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"next":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"previous":{"title":"Linear Algebra","level":"1.3","depth":1,"path":"posts/LinearAlgebra/README.md","ref":"posts/LinearAlgebra/README.md","articles":[{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},{"title":"01 03 Vector Equations","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},{"title":"01 08 Introduction to Linear Transformations","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_04_01.md","ref":"posts/LinearAlgebra/la_04_01.md","articles":[]},{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"path":"posts/LinearAlgebra/la_05_04.md","ref":"posts/LinearAlgebra/la_05_04.md","articles":[]},{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},{"title":"05_06","level":"1.3.32","depth":2,"path":"posts/LinearAlgebra/la_05_06.md","ref":"posts/LinearAlgebra/la_05_06.md","articles":[]},{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},{"title":"06_summary","level":"1.3.34","depth":2,"path":"posts/LinearAlgebra/la_06_summary.md","ref":"posts/LinearAlgebra/la_06_summary.md","articles":[]},{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},{"title":"07_02","level":"1.3.36","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},{"title":"07_03","level":"1.3.37","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},{"title":"07_04_02","level":"1.3.39","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},{"title":"-Hermitian Matrix","level":"1.3.41","depth":2,"path":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","ref":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","articles":[]},{"title":"-PositiveDefinite","level":"1.3.42","depth":2,"path":"posts/LinearAlgebra/la_svd_positive_definite.md","ref":"posts/LinearAlgebra/la_svd_positive_definite.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","mtime":"2019-07-29T00:19:23.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"next":{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},"previous":{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_04.md","mtime":"2019-11-12T06:08:40.660Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

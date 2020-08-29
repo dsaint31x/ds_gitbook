@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>01 Hello Linear Algebra · GitBook</title>
+        <title>04_01 Vector Spaces and Subspaces · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="la_01_01.html" />
+    <link rel="next" href="la_04_02.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="la_02_09.html" />
     
 
     </head>
@@ -174,7 +174,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="01_hello_linear_algebra.html">
+        <li class="chapter " data-level="1.3.1" data-path="01_hello_linear_algebra.html">
             
                 <a href="01_hello_linear_algebra.html">
             
@@ -421,7 +421,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.20" data-path="la_04_01.html">
+        <li class="chapter active" data-level="1.3.20" data-path="la_04_01.html">
             
                 <a href="la_04_01.html">
             
@@ -826,7 +826,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >01 Hello Linear Algebra</a>
+        <a href="../.." >04_01 Vector Spaces and Subspaces</a>
     </h1>
 </div>
 
@@ -841,13 +841,121 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>Hello!</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ds_gitbook -->
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3232161401562757" data-ad-slot="6357462623" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+                                <h1 id="ch04-vector-space">Ch04 Vector Space</h1>
+<h1 id="41-vector-spaces-and-subspaces">4.1 Vector Spaces and Subspaces</h1>
+<h2 id="definition--vector-space">Definition : Vector Space</h2>
+<p>A <strong>Vector space</strong> is a nonempty set <script type="math/tex; ">V</script> of objects, called <strong>vectors</strong>, </p>
+<p>on which are defined two operations, called</p>
+<ul>
+<li>addition and</li>
+<li>multiplication by scalars (real numbers),</li>
+</ul>
+<p>subject to the ten axioms (or rules) listed below.</p>
+<p>The <strong>axioms</strong> must hold for all vectors <script type="math/tex; ">\bf{u}</script>,<script type="math/tex; ">\bf{v}</script>, and <script type="math/tex; ">\bf{w}</script> in <script type="math/tex; ">V</script> for all scalars <script type="math/tex; ">c</script> and <script type="math/tex; ">d</script>.</p>
+<ol>
+<li>The sum of <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script>, denoted by <script type="math/tex; ">\textbf{u}+\textbf{v}</script>, is in <script type="math/tex; ">V</script>.</li>
+<li><script type="math/tex; ">\textbf{u}+\textbf{v} = \textbf{v}+\textbf{u}</script> :commutative</li>
+<li><script type="math/tex; ">(\textbf{u}+\textbf{v})+\textbf{w} = \textbf{u} +(\textbf{v}+\textbf{w})</script>. :associative</li>
+<li>There is a <strong>zero</strong> vecot <script type="math/tex; ">\textbf{0}</script> in <script type="math/tex; ">V</script> such that <script type="math/tex; ">\textbf{u}+\textbf{0} = \textbf{u}</script>.</li>
+<li>For each <script type="math/tex; ">\textbf{u}</script> in <script type="math/tex; ">V</script>, there is a vector <script type="math/tex; ">-\textbf{u}</script> in <script type="math/tex; ">V</script> such that <script type="math/tex; ">\textbf{u}+(-\textbf{u})=\textbf{0}</script>.</li>
+<li>The scalar multiple of <script type="math/tex; ">\textbf{u}</script> by <script type="math/tex; ">c</script>, denoted by <script type="math/tex; ">c\textbf{u}</script>, is in <script type="math/tex; ">V</script>.</li>
+<li><script type="math/tex; ">c(\textbf{u}+\textbf{v}) = c\textbf{u} + c\textbf{v}</script>. :distributive</li>
+<li><script type="math/tex; ">(c+d)\textbf{u} = c\textbf{u} + d\textbf{u}</script> :distributive</li>
+<li><script type="math/tex; ">c(d\textbf{u}) = (cd)\textbf{u}</script>. : associative</li>
+<li><script type="math/tex; ">1\textbf{u} = \textbf{u}</script></li>
+</ol>
+<blockquote>
+<p>Scalar&#xB97C; real number&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xC9C0; &#xC54A;&#xACE0; complex number&#xB85C; &#xD655;&#xC7A5;&#xD560; &#xACBD;&#xC6B0;, complex vector space&#xAC00; &#xB418;&#xBA70; <script type="math/tex; ">R</script>&#xC774; &#xC544;&#xB2CC; <script type="math/tex; ">C</script> &#xC0C1;&#xC758; vector&#xB4E4;&#xC744; &#xB2E4;&#xB8E8;&#xAC8C; &#xB41C;&#xB2E4;.</p>
+</blockquote>
+<p>Using these axioms, we can show that </p>
+<ul>
+<li>the <strong>zero vector</strong> in Axiom 4 is unique, and 
+<em>the vector <script type="math/tex; ">-\textbf{u}</script>, called the <strong>negative of <script type="math/tex; ">\textbf{u}</script>, in Axiom 5 is </strong>unique*</em> for each <script type="math/tex; ">\textbf{u}</script> in <script type="math/tex; ">V</script>.</li>
+</ul>
+<p>For each <script type="math/tex; ">\textbf{u}</script> in <script type="math/tex; ">V</script> and scalar <script type="math/tex; ">c</script>,</p>
+<p><script type="math/tex; mode=display">
+0\textbf{u} = \textbf{0} \tag{1}
 </script>
+<script type="math/tex; "> 
+c\textbf{0} = \textbf{0} \tag{2} 
+</script>
+<script type="math/tex; mode=display">
+-\textbf{u} = (-1)\textbf{u} \tag{3} 
+</script></p>
+<h2 id="example-2">Example 2:</h2>
+<p>Let <script type="math/tex; ">V</script> be the set of all arrows (directed line segments) in three-dimensional space, 
+with two arrows regarded as equal if they have the same length and point in the same direction. 
+Define addition by the parallelogram rule, and for each <script type="math/tex; ">\textbf{v}</script> in <script type="math/tex; ">V</script>, 
+define <script type="math/tex; ">c\textbf{v}</script> to be the arrow whose length is <script type="math/tex; ">\lvert c \rvert</script> times the length of <script type="math/tex; ">\textbf{v}</script>, 
+pointing in the same direction as <script type="math/tex; ">\textbf{v}</script> if <script type="math/tex; ">c \ge 0</script> and 
+otherwise pointing in the opposite direction.</p>
+<p>See the following figure below. Show that <script type="math/tex; ">V</script> is a <strong>vector space</strong>.</p>
+<p><img src="fig/la_04_01_01.png" alt="fig1"></p>
+<h3 id="solution">Solution:</h3>
+<ul>
+<li>The definition of <script type="math/tex; ">V</script> is geometric, using concepts of length and direction.</li>
+<li>No <em>x y z</em>-coordinate system is invovled.</li>
+<li>An arrow of zero length is a single point and represents the <strong>zero vector</strong>.</li>
+<li>The negative of <script type="math/tex; ">\textbf{v}</script> is <script type="math/tex; ">(-1)\textbf{v}</script>.</li>
+<li>So Axioms 1, 4, 5, 6, and 10 are evident. See the figures below.</li>
+</ul>
+<p><img src="fig/la_04_01_02.png" alt="fig2"></p>
+<h2 id="definition">Definition</h2>
+<p>A subspace of a vector space <script type="math/tex; ">V</script> is a subset <script type="math/tex; ">H</script> of <script type="math/tex; ">V</script> that has three properties:</p>
+<ol>
+<li>The zero vector of <script type="math/tex; ">V</script> is in <script type="math/tex; ">H</script>.</li>
+<li><script type="math/tex; ">H</script> is closed under vector addtion. That is, for each <script type="math/tex; ">\bf{u}</script> and <script type="math/tex; ">\bf{v}</script> in <script type="math/tex; ">H</script>, the sum <script type="math/tex; ">\textbf{u}+\textbf{v}</script> is in <script type="math/tex; ">H</script>.</li>
+<li><script type="math/tex; ">H</script> is closed under multiplication by scalars. That is, for each <script type="math/tex; ">\bf{u}</script> in <script type="math/tex; ">H</script> and each scalar <script type="math/tex; ">c</script>, the vector <script type="math/tex; ">c\textbf{u}</script> is in <script type="math/tex; ">H</script>.</li>
+</ol>
+<ul>
+<li>Properties (1), (2), and (3) guarantee that a subspace <script type="math/tex; ">H</script> of <script type="math/tex; ">V</script> is itself a vector space, 
+under the vector space operations already defined in <script type="math/tex; ">V</script>.</li>
+<li>Every subspace is a vector space.</li>
+<li>Conversely, every vector space is a subspace (of itself and possibly of other larger spaces).</li>
+</ul>
+<h2 id="a-subspace-spanned-by-a-set">A Subspace Spanned by a Set</h2>
+<p>The set consisting of <strong>only the zero vector</strong> in a vector space <script type="math/tex; ">V</script> is a subspace of <script type="math/tex; ">V</script>, called the <strong>zero subspace</strong> and written as <script type="math/tex; ">\left\{\textbf{0}\right\}</script>.</p>
+<p>As the term <strong>liniear combination</strong> refers to <em>any sum of scalar multiples of vectors</em>, and <script type="math/tex; ">\text{Span }\left\{ \textbf{v}_1,\cdots,\textbf{v}_p\right\}</script> denotes the set of all vectors that can be written as linear combinations of <script type="math/tex; ">\textbf{v}_1, \cdots, \textbf{v}_p</script>.</p>
+<h2 id="example-10">Example 10:</h2>
+<p>Given <script type="math/tex; ">\bf{v}_1</script> and <script type="math/tex; ">\bf{v}_2</script> in a vector space <script type="math/tex; ">V</script>, let <script type="math/tex; ">H=\text{Span }\left\{ \textbf{v}_1, \textbf{v}_2 \right\}</script>. Show that <script type="math/tex; ">H</script> is a subspace of <script type="math/tex; ">V</script>.</p>
+<h3 id="solution">Solution:</h3>
+<ul>
+<li>The zero vector is in <script type="math/tex; ">H</script>, since <script type="math/tex; ">\textbf{0} = 0\textbf{v}_1 + 0\textbf{v}_2</script>.</li>
+<li>To show that <script type="math/tex; ">H</script> is closed uncer vector addition, take two arbitrary vectors in <script type="math/tex; ">H</script>, say,</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\textbf{u} = s_1 \textbf{v}_1 + s_2 \textbf{v}_2 \text{ and } \textbf{w} = t_1 \textbf{v}_1 + t_2 \textbf{v}_2.
+</script></p>
+<ul>
+<li>By Axioms 2,3, and 8 for the vector space <script type="math/tex; ">V</script>,</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{align}
+\textbf{u}+\textbf{w} &= (s_1 \textbf{v}_1 +s_2 \textbf{v}_2) + (t_1 \textbf{v}_1 + t_2 \textbf{v}_2) \\
+&= (s_1 +t_1)\textbf{v}_1 + (s_2+t_2)\textbf{v}_2
+\end{align}
+</script></p>
+<ul>
+<li>So <script type="math/tex; ">\textbf{u}+\textbf{v}</script> is in <script type="math/tex; ">H</script>.</li>
+<li><p>Furthermore, if <script type="math/tex; ">c</script> is any scalar, then by Axioms 7 and 9, 
+<script type="math/tex; mode=display">
+\begin{align}
+c\textbf{u} &= c(s_1 \textbf{v}_1 + s_2 \textbf{v}_2) \\
+&=(cs_1)\textbf{v}_1 + (cs_2)\textbf{v}_2
+\end{align}
+</script>
+which shows that <script type="math/tex; ">c\textbf{u}</script> is in <script type="math/tex; ">H</script> and <script type="math/tex; ">H</script> is closed under scalar multiplication.</p>
+</li>
+<li><p>Thus <script type="math/tex; ">H</script> is a subspace of <script type="math/tex; ">V</script>.</p>
+</li>
+</ul>
+<h2 id="theorem-1">Theorem 1:</h2>
+<p>If <script type="math/tex; ">\textbf{v}_1, \cdots, \textbf{v}_p</script> are in a vector space <script type="math/tex; ">V</script>, then <script type="math/tex; ">\text{Span }\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\}</script> is a subspace of <script type="math/tex; ">V</script>.</p>
+<p>We call <script type="math/tex; ">\text{Span }\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\}</script> <strong>the subspace spanned</strong> (or **generated) by <script type="math/tex; ">\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\}</script>.</p>
+<p>Give any subspace <script type="math/tex; ">H</script> and <script type="math/tex; ">V</script>, a <strong>spanning</strong> (or <strong>generating</strong>) set for <script type="math/tex; ">H</script> is a set <script type="math/tex; ">\left\{ \textbf{v}_1, \cdots, \textbf{v}_p \right\}</script> in <script type="math/tex; ">H</script> such that</p>
+<p><script type="math/tex; mode=display">
+H = \text{Span }\left\{ \textbf{v}_1, \cdots \textbf{v}_p \right\}
+</script></p>
 
                                 
                                 </section>
@@ -875,12 +983,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Linear Algebra">
+                <a href="la_02_09.html" class="navigation navigation-prev " aria-label="Previous page: 02_09 Dimension and Rank">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="la_01_01.html" class="navigation navigation-next " aria-label="Next page: 01 01 Systems of Linear Eq.">
+                <a href="la_04_02.html" class="navigation navigation-next " aria-label="Next page: 04_02 Null Spaces, Column Spaces, and Linear Trnasformations">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -891,7 +999,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"next":{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},"previous":{"title":"Linear Algebra","level":"1.3","depth":1,"path":"posts/LinearAlgebra/README.md","ref":"posts/LinearAlgebra/README.md","articles":[{"title":"01 Hello Linear Algebra","level":"1.3.1","depth":2,"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","ref":"posts/LinearAlgebra/01_hello_linear_algebra.md","articles":[]},{"title":"01 01 Systems of Linear Eq.","level":"1.3.2","depth":2,"path":"posts/LinearAlgebra/la_01_01.md","ref":"posts/LinearAlgebra/la_01_01.md","articles":[]},{"title":"01 02 Row Reduction and Echelon Forms","level":"1.3.3","depth":2,"path":"posts/LinearAlgebra/la_01_02.md","ref":"posts/LinearAlgebra/la_01_02.md","articles":[]},{"title":"01 03 Vector Equations","level":"1.3.4","depth":2,"path":"posts/LinearAlgebra/la_01_03.md","ref":"posts/LinearAlgebra/la_01_03.md","articles":[]},{"title":"01 04 Matrix Equation","level":"1.3.5","depth":2,"path":"posts/LinearAlgebra/la_01_04.md","ref":"posts/LinearAlgebra/la_01_04.md","articles":[]},{"title":"01 05 Solution Sets of Linear Systems","level":"1.3.6","depth":2,"path":"posts/LinearAlgebra/la_01_05.md","ref":"posts/LinearAlgebra/la_01_05.md","articles":[]},{"title":"01 07 Linear Independence","level":"1.3.7","depth":2,"path":"posts/LinearAlgebra/la_01_07.md","ref":"posts/LinearAlgebra/la_01_07.md","articles":[]},{"title":"01 08 Introduction to Linear Transformations","level":"1.3.8","depth":2,"path":"posts/LinearAlgebra/la_01_08.md","ref":"posts/LinearAlgebra/la_01_08.md","articles":[]},{"title":"01 09 The Matrix of a Linear Transformation","level":"1.3.9","depth":2,"path":"posts/LinearAlgebra/la_01_09.md","ref":"posts/LinearAlgebra/la_01_09.md","articles":[]},{"title":"01_02 Difference Equation","level":"1.3.10","depth":2,"path":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","ref":"posts/LinearAlgebra/la_01_10_02_Difference_Equation.md","articles":[]},{"title":"02_01_Matrix_Algebra","level":"1.3.11","depth":2,"path":"posts/LinearAlgebra/la_02_01.md","ref":"posts/LinearAlgebra/la_02_01.md","articles":[]},{"title":"02_02_Inverse_Matrix","level":"1.3.12","depth":2,"path":"posts/LinearAlgebra/la_02_02.md","ref":"posts/LinearAlgebra/la_02_02.md","articles":[]},{"title":"02_03 Characterizations of Invertible Matrices","level":"1.3.13","depth":2,"path":"posts/LinearAlgebra/la_02_03.md","ref":"posts/LinearAlgebra/la_02_03.md","articles":[]},{"title":"02_04 Partitioned Matrices","level":"1.3.14","depth":2,"path":"posts/LinearAlgebra/la_02_04.md","ref":"posts/LinearAlgebra/la_02_04.md","articles":[]},{"title":"02_05 Matrix Factorization","level":"1.3.15","depth":2,"path":"posts/LinearAlgebra/la_02_05.md","ref":"posts/LinearAlgebra/la_02_05.md","articles":[]},{"title":"02_06 The Leontief Input-Output Model","level":"1.3.16","depth":2,"path":"posts/LinearAlgebra/la_02_06.md","ref":"posts/LinearAlgebra/la_02_06.md","articles":[]},{"title":"02_07 Applications to Computer Graphics","level":"1.3.17","depth":2,"path":"posts/LinearAlgebra/la_02_07.md","ref":"posts/LinearAlgebra/la_02_07.md","articles":[]},{"title":"02_08 Subspaces of R to the Power n","level":"1.3.18","depth":2,"path":"posts/LinearAlgebra/la_02_08.md","ref":"posts/LinearAlgebra/la_02_08.md","articles":[]},{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"path":"posts/LinearAlgebra/la_04_01.md","ref":"posts/LinearAlgebra/la_04_01.md","articles":[]},{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},{"title":"04_03 Linearly Independent Sets; Bases","level":"1.3.22","depth":2,"path":"posts/LinearAlgebra/la_04_03.md","ref":"posts/LinearAlgebra/la_04_03.md","articles":[]},{"title":"04_04 Coordinate Systems","level":"1.3.23","depth":2,"path":"posts/LinearAlgebra/la_04_04.md","ref":"posts/LinearAlgebra/la_04_04.md","articles":[]},{"title":"04_05 The Dimension of a Vector Space","level":"1.3.24","depth":2,"path":"posts/LinearAlgebra/la_04_05.md","ref":"posts/LinearAlgebra/la_04_05.md","articles":[]},{"title":"04_06 Rank","level":"1.3.25","depth":2,"path":"posts/LinearAlgebra/la_04_06.md","ref":"posts/LinearAlgebra/la_04_06.md","articles":[]},{"title":"04_07 Change of Basis","level":"1.3.26","depth":2,"path":"posts/LinearAlgebra/la_04_07.md","ref":"posts/LinearAlgebra/la_04_07.md","articles":[]},{"title":"05_01 Eigenvectors and Eigenvalues","level":"1.3.27","depth":2,"path":"posts/LinearAlgebra/la_05_01.md","ref":"posts/LinearAlgebra/la_05_01.md","articles":[]},{"title":"05_02 The Characteristic Equation","level":"1.3.28","depth":2,"path":"posts/LinearAlgebra/la_05_02.md","ref":"posts/LinearAlgebra/la_05_02.md","articles":[]},{"title":"05_03 Diagonalization","level":"1.3.29","depth":2,"path":"posts/LinearAlgebra/la_05_03.md","ref":"posts/LinearAlgebra/la_05_03.md","articles":[]},{"title":"05_04 Eigenvectors and Linear Transformations","level":"1.3.30","depth":2,"path":"posts/LinearAlgebra/la_05_04.md","ref":"posts/LinearAlgebra/la_05_04.md","articles":[]},{"title":"05_05","level":"1.3.31","depth":2,"path":"posts/LinearAlgebra/la_05_05.md","ref":"posts/LinearAlgebra/la_05_05.md","articles":[]},{"title":"05_06","level":"1.3.32","depth":2,"path":"posts/LinearAlgebra/la_05_06.md","ref":"posts/LinearAlgebra/la_05_06.md","articles":[]},{"title":"06_01","level":"1.3.33","depth":2,"path":"posts/LinearAlgebra/la_06_01.md","ref":"posts/LinearAlgebra/la_06_01.md","articles":[]},{"title":"06_summary","level":"1.3.34","depth":2,"path":"posts/LinearAlgebra/la_06_summary.md","ref":"posts/LinearAlgebra/la_06_summary.md","articles":[]},{"title":"07_01","level":"1.3.35","depth":2,"path":"posts/LinearAlgebra/la_07_01.md","ref":"posts/LinearAlgebra/la_07_01.md","articles":[]},{"title":"07_02","level":"1.3.36","depth":2,"path":"posts/LinearAlgebra/la_07_02.md","ref":"posts/LinearAlgebra/la_07_02.md","articles":[]},{"title":"07_03","level":"1.3.37","depth":2,"path":"posts/LinearAlgebra/la_07_03.md","ref":"posts/LinearAlgebra/la_07_03.md","articles":[]},{"title":"07_04_01","level":"1.3.38","depth":2,"path":"posts/LinearAlgebra/la_07_04_01.md","ref":"posts/LinearAlgebra/la_07_04_01.md","articles":[]},{"title":"07_04_02","level":"1.3.39","depth":2,"path":"posts/LinearAlgebra/la_07_04_02.md","ref":"posts/LinearAlgebra/la_07_04_02.md","articles":[]},{"title":"SVD","level":"1.3.40","depth":2,"path":"posts/LinearAlgebra/la_svd_summary.md","ref":"posts/LinearAlgebra/la_svd_summary.md","articles":[]},{"title":"-Hermitian Matrix","level":"1.3.41","depth":2,"path":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","ref":"posts/LinearAlgebra/la_svd_symmetric_hermitian_matrix.md","articles":[]},{"title":"-PositiveDefinite","level":"1.3.42","depth":2,"path":"posts/LinearAlgebra/la_svd_positive_definite.md","ref":"posts/LinearAlgebra/la_svd_positive_definite.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/01_hello_linear_algebra.md","mtime":"2019-07-29T00:19:23.230Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"04_01 Vector Spaces and Subspaces","level":"1.3.20","depth":2,"next":{"title":"04_02 Null Spaces, Column Spaces, and Linear Trnasformations","level":"1.3.21","depth":2,"path":"posts/LinearAlgebra/la_04_02.md","ref":"posts/LinearAlgebra/la_04_02.md","articles":[]},"previous":{"title":"02_09 Dimension and Rank","level":"1.3.19","depth":2,"path":"posts/LinearAlgebra/la_02_09.md","ref":"posts/LinearAlgebra/la_02_09.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["mathjax","adsense"],"pluginsConfig":{"adsense":{"client":"ca-pub-3232161401562757","slot":"6357462623","format":"auto","element":".page-inner h1"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/LinearAlgebra/la_04_01.md","mtime":"2019-10-17T13:12:35.318Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-29T10:31:22.414Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
