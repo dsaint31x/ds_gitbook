@@ -11,9 +11,9 @@ $$
 $$
 * then it is called a linear difference equation (or recurrence relation)
 * Given such an equation, one can compute $$\textbf{x}_1,\textbf{x}_2$$, and so on, provided $$\textbf{x}_0$$ is known.
-* The dicussion below illustrates how a difference equation might arise.
+* The discussion below illustrates how a difference equation might arise.
 * A subject of interest to demographers is the movement of populations or groups of people from one region to another. The simple model here considers the changes in the population of a certain city and its surrounding suburbs over a period of years.
-* Fix an initial year-say,2019- and denote the populations of the city and suburbs that year by $$r_0$$ and $$s_0$$, repectively. Let $$\textbf{x}_0$$ be the population vector
+* Fix an initial year-say,2019- and denote the populations of the city and suburbs that year by $$r_0$$ and $$s_0$$, respectively. Let $$\textbf{x}_0$$ be the population vector
 $$
 \textbf{x}_0 = \begin{bmatrix}r_0 \\ s_0 \end{bmatrix}
 \begin{matrix} \text{City population, 2019} \\ \text{Suburban population, 2019} \end{matrix}
@@ -25,7 +25,7 @@ $$
 \textbf{x}_3 = \begin{bmatrix}r_3 \\ s_3 \end{bmatrix}
 $$
 * Our goal is to describe mathematically how these vectors might be related.
-* Suppose demographic studies show that each year about 5% of the city's population moves to the suburbs (and 95% remains in the city), while 3% of the suburban populatoni moves to the city (and 97% remains in the suburs). See Fig.2 below:
+* Suppose demographic studies show that each year about 5% of the city's population moves to the suburbs (and 95% remains in the city), while 3% of the suburban population moves to the city (and 97% remains in the suburs). See Fig.2 below:
 ![figure2](./fig/la_01_10_02.png)
 * After 1 year, the original $$r_0$$ persons in the city are now distributed between city and suburbs as
 $$
